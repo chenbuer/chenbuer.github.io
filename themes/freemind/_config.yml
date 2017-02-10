@@ -1,0 +1,68 @@
+slogan: "谈技术也谈风月."
+
+theme: bootstrap
+inverse: true
+
+menu:
+  - title: Archives
+    url: archives
+    intro: "All the articles."
+    icon: "fa fa-archive"
+  - title: Categories
+    url: categories
+    intro: "All the categories."
+    icon: "fa fa-folder"
+  - title: Tags
+    url: tags
+    intro: "All the tags."
+    icon: "fa fa-tags"
+  - title: About
+    url: about
+    intro: "About me."
+    icon: "fa fa-user"
+
+links:
+  - title: "Github"
+    url: http://www.github.com/chenbuer
+    intro: "我的github地址."
+    icon: "fa fa-github"
+  - title: "twitter"
+    url: https://twitter.com/chenzybuer1
+    intro: "我的twitter地址."
+    icon: "fa fa-twitter"
+  - title: "facebook"
+    url: https://www.facebook.com/profile.php?id=100008395485667
+    intro: "我的facebook地址."
+    icon: "fa fa-facebook"
+  - title: "微博"
+    url: http://weibo.com/u/1845561841
+    intro: "想不到我也有微博吧."
+    icon: "fa fa-weibo"
+
+widgets:
+- search
+- category
+- tagcloud
+- recent_posts  
+- links
+
+rss: 
+fancybox: true
+favicon: favicon.png
+duoshuo_shortname:
+
+# Analytics
+google_analytics:
+  enable: false
+  siteid:
+baidu_tongji:
+  enable: false
+  siteid:
+
+# search
+# swiftype_key: ZP2ZSuHgipSZfRyU8uTR
+
+# share widgets
+bdshare: true
+jiathis: false
+
