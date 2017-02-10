@@ -109,83 +109,9 @@
 		
             
 		
-            
-		
         
         <!-- render other articles -->
         
-           
-			  
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> 2017-02-11 </div>
-			<div class="article-title"><a href="/2017/02/11/Hibernate操作流程/" >Hibernate操作流程</a></div>						
-		</h3>
-	
-
-
-			  <div class="entry">
-  <div class="row">
-	
-	
-		<p>在一个测试类中表示如下所示：</p>
-<pre><code>package springMVC5;
-
-
-
-
-import info.baitian.db.Students;
-
-
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistry;
-import org.hibernate.service.ServiceRegistryBuilder;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
-
-public class TestHibernate {
-
-    private SessionFactory sessionFactory;
-    private Session session;
-    private Transaction transaction;
-
-
-    @Before
-    public void before(){
-        Configuration cfg=new Configuration().configure();
-        ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings(cfg.getProperties()).buildServiceRegistry();
-        sessionFactory = cfg.buildSessionFactory(serviceRegistry);
-        session=sessionFactory.openSession();
-        transaction=session.beginTransaction();
-    }
-    @After
-    public void after(){
-        transaction.commit();
-        session.close();
-        sessionFactory.close();
-    }
-
-
-
-    @Test
-    public void testAdd(){
-        Students s=new Students(&quot;wuxiaxia&quot;);
-        session.save(s);
-    }
-}
-</code></pre>
-	
-	</div>
-</div>
-
-           
-		
            
 			  
 	
@@ -243,7 +169,7 @@ public class TestHibernate {
 			
   <div id="site_search">
    <div class="form-group">
-    <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索" class="st-search-input st-default-search-input form-control"/>
+    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search" class="st-search-input st-default-search-input form-control"/>
    </div>  
   <div id="local-search-result"></div>
   </div>
@@ -257,12 +183,8 @@ public class TestHibernate {
 		
 			
 <div class="widget">
-  <h4>最新文章</h4>
+  <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
-    
-      <li>
-        <a href="/2017/02/11/Hibernate操作流程/" ><i class="fa fa-file-o"></i>Hibernate操作流程</a>
-      </li>
     
       <li>
         <a href="/2017/02/10/hello-world/" ><i class="fa fa-file-o"></i>Hello World</a>
@@ -274,7 +196,7 @@ public class TestHibernate {
 		
 			
 <div class="widget">
-	<h4>链接</h4>
+	<h4>Links</h4>
 	<ul class="blogroll list-unstyled">
 	
 		<li><i class="fa fa-github"></i><a href="http://www.github.com/chenbuer" title="我的github地址." target="_blank"]);">Github</a></li>
