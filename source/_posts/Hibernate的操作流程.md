@@ -6,7 +6,7 @@ tags: java
 
 在一个测试类中表示如下所示：
 
-``` java
+```java
 package springMVC5;
 
 import info.baitian.db.Students;    
