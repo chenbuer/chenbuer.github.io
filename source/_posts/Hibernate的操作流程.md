@@ -3,8 +3,8 @@ title: Hibernate的操作流程
 date: 2017-02-11 01:55:52
 tags: java
 ---
-在一个测试类中表示如下所示：
 
+在一个测试类中表示如下所示：
 
 ``` java
 package springMVC5;
