@@ -45,10 +45,9 @@ public class TestHibernate {
 	    
     @Test
     public void testAdd(){
-	    Students s=new Students("wuxiaxia");
+	    Students s=new Students("buer");
 	    session.save(s);
     }
 }
     
-```    
-    
+```
