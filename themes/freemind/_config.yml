@@ -18,7 +18,7 @@ menu:
     icon: "fa fa-tags"
   - title: About
     url: about
-    intro: "About me."
+    intro: "关于我."
     icon: "fa fa-user"
 
 links:
