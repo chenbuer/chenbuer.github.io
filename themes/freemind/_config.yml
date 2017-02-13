@@ -1,4 +1,4 @@
-slogan: "在这里，谈技术也谈风月."
+slogan: "屌不屌还得靠自己."
 
 theme: cosmo
 default: true
@@ -6,7 +6,7 @@ default: true
 menu:
   - title: Archives
     url: archives
-    intro: "All the articles."
+    intro: "所有文章."
     icon: "fa fa-archive"
   - title: Categories
     url: categories
