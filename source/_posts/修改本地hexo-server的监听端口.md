@@ -1,7 +1,7 @@
 ---
 title: 修改本地hexo-server的监听端口
 date: 2017-02-13 20:49:09
-tags:
+tags: hexo
 ---
 
 已经在本地模块中安装了hexo-server，而且也已经运行起来了：
