@@ -6,7 +6,7 @@ tags: Hibernate
 ---
 
 ### 在一个测试类中表示如下所示：
----
+
 ```java
 package springMVC5;
 
