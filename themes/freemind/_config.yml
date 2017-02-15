@@ -34,10 +34,6 @@ links:
     url: https://www.facebook.com/profile.php?id=100008395485667
     intro: "我的facebook地址."
     icon: "fa fa-facebook"
-  - title: "微博"
-    url: http://weibo.com/u/1845561841
-    intro: "想不到我也有微博吧."
-    icon: "fa fa-weibo"
 
 widgets:
 - search
