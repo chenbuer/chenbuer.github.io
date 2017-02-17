@@ -13,6 +13,7 @@ INFO  Start processing
 INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
 ```
 但是打开浏览器*并不能正确的显示页面*，可能是在windows下端口冲突，故修改hexo-server的监听端口（文件路径为`node_modules/hexo-server/index.js`）：
+<!--more-->
 ```javascript
 hexo.config.server = assign({
   port: 4444,

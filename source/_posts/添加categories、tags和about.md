@@ -20,7 +20,7 @@ layout: tags
 ---
 3.restart hexo and refresh the browser
 ```
-
+<!--more-->
 2. about页面有一个方法，应该也可以像上面一样手动创建(参考[about页面的生成方法](https://segmentfault.com/q/1010000000618915/a-1020000000752865))：
 ```bash
 hexo new page "about"

@@ -5,8 +5,9 @@ categories: java
 tags: Hibernate
 ---
 
-### 在一个测试类中表示如下所示：
+> 在一个测试类中表示如下所示：
 
+<!--more-->
 ```java
 package springMVC5;
 

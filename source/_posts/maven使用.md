@@ -9,7 +9,7 @@ tags: maven
 
 下载完成之后，创建环境变量`M2_HOME=E:\apache-maven-3.3.9`也就是指向安装目录。在path环境变量中添加`%M2_HOME%\bin`也就是指向安装目录。在path环境变量中添加
 在eclipse中Window->Preference->Maven4MyEclipse中设置Installationsd到达安装目录，User Settins中设置配置文件在`E:\maven-repo\settings.xml`
-
+<!--more-->
 
 2. 错误`-Dmaven.multiModuleProjectDirectory maven myeclipse`
 
