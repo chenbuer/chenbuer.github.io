@@ -67,7 +67,7 @@ body {
 }
 
 .page .more {
-  text-pull: right;
+  float: right !important;
 }
 
 .post .date {
