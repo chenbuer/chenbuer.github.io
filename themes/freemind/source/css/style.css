@@ -68,6 +68,8 @@ body {
 
 .page .more {
   float: right !important;
+  background-color: #DEEBF7;
+  color: black;
 }
 
 .post .date {
