@@ -9,10 +9,10 @@ date: 2017-02-13 21:27:44
 这两天看的东西有点杂：druid、shiro、maven、hibernate和springMVC结合。
 看hibernate和spingmvc主要是因为学习maven的时候，配置看的有点不清晰，当时自己做小项目的时候也只是出了问题重新配，能跑就行。
 所以有必要自己规划一下学习的路线。
-实话说，自己一个人从主配置到把项目跑起来，期间的累只有自己知道。不过：
+实话说，自己一个人从主配置到把项目跑起来，期间的累只有自己知道。毕竟：
 > #### 经历了千辛万苦获得到的东西，在最后才太会笑得很开心。
 
-东西看的太乱也有糊涂的时候：在看shiro的时候去druid源码里面搜SecurityUtills类，没找到，怀疑自己是不是进了一个假的repo。所以一个scheme的需求迫在眉睫。
+东西看的太乱也有糊涂的时候：在看[shiro](https://github.com/apache/shiro)([教程](http://jinnianshilongnian.iteye.com/blog/2018398))的时候去[druid](https://github.com/alibaba/druid)([教程](http://blog.csdn.net/yunnysunny/article/details/8657095))源码里面搜SecurityUtills类，没找到，怀疑自己是不是进了一个假的repo。所以一个scheme的需求迫在眉睫。
 
 Scheme：
 - hibernate与springMVC结合配置 
