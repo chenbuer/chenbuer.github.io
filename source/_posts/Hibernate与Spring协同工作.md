@@ -1,5 +1,5 @@
 ---
-title: Q/A
+title: Hibernate与Spring协同工作
 date: 2017-02-19 18:10:20
 categories: java
 tags: hibernate
@@ -19,8 +19,11 @@ tags: hibernate
     </init-param>
 </servlet>
 ```
+检查发现spring的配置文件`applicationContext.xml`中有了的数据库的配置，Hibernate的配置文件`hibernate.cfg.xml`中也配置了数据库信息。
+其实`hibernate.cfg.xml`已经不再需要，可以将hibernate配置最为一个bean注入到spring中，为dataSource。再利用dataSource最为一个bean注入到sesssionFactory，并且可以将sessionFactory最为一个bean注入给transaction。
 <!--more-->
-在看看`applicationContext.xml`的配置如下：
+-------
+再看看`applicationContext.xml`的配置如下：
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
