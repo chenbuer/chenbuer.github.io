@@ -1,7 +1,7 @@
 ---
 title: maven使用
 date: 2017-02-16 23:26:25
-categories: java
+categories: JAVA
 tags: maven
 ---
 

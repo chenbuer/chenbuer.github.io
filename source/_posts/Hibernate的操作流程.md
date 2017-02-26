@@ -1,8 +1,8 @@
 ---
 title: Hibernate的操作流程
 date: 2017-02-11 01:55:52
-categories: java
-tags: Hibernate
+categories: JAVA
+tags: hibernate
 ---
 
 > 在一个测试类中表示如下所示：
