@@ -70,6 +70,12 @@ body {
   float: right !important;
   background-color: #DEEBF7;
   color: black;
+  border-bottom: 1px solid #009688;
+}
+
+.page .more:hover {
+  border-bottom: 1px solid #009688;
+  background-color: #009688;
 }
 
 .post .date {
@@ -297,7 +303,8 @@ img, video {
   font-size: 1.2em;
   color: #888;  
   display:block;
-  margin-bottom: 1em;
+  margin-bottom: 0em;/*原来margin-bottom: 1em;没有text-align*/
+  text-align: center;
 }
 
 /* =============================================================================
@@ -544,3 +551,9 @@ td {
   *zoom: 1;
 }
 
+/**
+自定义
+*/
+#site_search{
+  margin-top: 21px;
+}
