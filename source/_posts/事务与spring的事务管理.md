@@ -1,8 +1,8 @@
 ---
 title: 事务与spring的事务管理
 date: 2017-02-28 00:04:40
-tags: [hibernate,spring]
 categories: JAVA
+tags: [hibernate,spring]
 ---
 理解了spring的事务管理，必须要理解事务以及AOP，当然DI是基础，这样也就深刻理解了spring了。
 ### 一、事务的隔离级别
