@@ -44,7 +44,7 @@ widgets:
 
 rss: 
 fancybox: true
-favicon: favicon.png
+favicon: logo.ico
 duoshuo_shortname:
 
 # Analytics
