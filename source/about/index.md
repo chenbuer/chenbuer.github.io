@@ -20,5 +20,7 @@ Scheme：
 - druid与hibernate在结合了spring的情况下的使用  
 - shiro的使用
 - 利用的easyui完成一个后台的通用管理系统，当然也可以自己找一个repo去fork看懂，甚至pullRequest
-- 看一个基于bootstrap的后台管理系统，这个在做完上一个任务的情况下应该轻松一点
-
+- 看一个基于bootstrap的后台管理系统，这个在做完上一个任务的情况下应该轻松一点(这个暂时不做了，还是先做好一个吧)
+- 分布式学习dubbo zookeeper
+- no sql的几个框架redis mangodb
+- 消息队列kafka和各种mq
