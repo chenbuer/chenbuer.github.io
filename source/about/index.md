@@ -12,6 +12,16 @@ date: 2017-02-13 21:27:44
 实话说，自己一个人从主配置到把项目跑起来，期间的累只有自己知道。毕竟：
 > #### 经历了千辛万苦获得到的东西，在最后才太会笑得很开心。
 
+
+只是学习SSM，已经不能满足新的技术需求了，为了更上一层楼，给自己分配一些新的任务：
+- 用dubbo将服务进行拆分，拆分成两个部分，一个是视图层和控制层，另一个是结合了dao层的持久层。
+(今天[20170618]终于将第一部分完成了，在启动服务的时候，有很多jar不符合，当时的做法是将原来的单层结构的pom.xml直接整到了facade里面，而controller和service都引用；在启动controller的时候，出现了两个问题；[1]监听器问题：InitComponent类implements AplicationContextAware，实现了setApplication方法了，应该不会出现applicationContext为空的情况，但是debug可见该值为空，查找原因是applicaitonContext.xml中没有配置这个bean，[查看教程](http://www.cnblogs.com/kxdblog/p/5988027.html), [2]就是困扰了一天的（java.lang.NoSuchMethodError: org.springframework.util.ClassUtils.getMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;）错误，个人认为是dubbo引用的比较旧的spring，经询问，解决方法是在dubbo的dependecy中配置extension标签规避，查看[网上人家dubbo结合springMVC项目](http://blog.csdn.net/aixiaoyang168/article/details/51362675))
+- 将结合了持久层改成用springboot框架处理。
+- 利用vue将试图层和控制层解耦，这样就完全将MVC进行了解耦。
+- 利用docker将不同的服务封装到不同的容器中。当然了，数据库mysql一开始就可以设置为docker容器。
+
+
+- - - 
 东西看的太乱也有糊涂的时候：在看[shiro](https://github.com/apache/shiro)([教程](http://jinnianshilongnian.iteye.com/blog/2018398))的时候去[druid](https://github.com/alibaba/druid)([教程](http://blog.csdn.net/yunnysunny/article/details/8657095))源码里面搜SecurityUtills类，没找到，怀疑自己是不是进了一个假的repo。所以一个scheme的需求迫在眉睫。
 
 Scheme：
