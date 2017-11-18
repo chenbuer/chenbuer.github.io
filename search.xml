@@ -4,6 +4,34 @@
   
     
     <entry>
+      <title><![CDATA[给pages添加评论功能]]></title>
+      <url>http://chenbuer.github.com/2017/11/19/%E7%BB%99pages%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>最近很多的评论插件都停用了，多说直接停止服务，disqus经常访问不了。所以只能求助GitHub，给了我们新的利器<a href="https://github.com/imsun/gitment" target="_blank" rel="noopener">Gitment</a></p>
+</blockquote>
+<p>具体的使用步骤如下：</p>
+<a id="more"></a>
+<h4 id="一、首先需要在GitHub的OAuth-Apps里面注册一个repo"><a href="#一、首先需要在GitHub的OAuth-Apps里面注册一个repo" class="headerlink" title="一、首先需要在GitHub的OAuth Apps里面注册一个repo"></a>一、首先需要在GitHub的OAuth Apps里面注册一个repo</h4><p>这个可以参考gitment的文档，不赘述，也是GitHub OAuth的一般注册方法</p>
+<h4 id="二、将Gitment的静态文件配置到文章中"><a href="#二、将Gitment的静态文件配置到文章中" class="headerlink" title="二、将Gitment的静态文件配置到文章中"></a>二、将Gitment的静态文件配置到文章中</h4><p>我的文件主要是配置在themes-&gt;freemind-&gt;layout-&gt;_partial-&gt;post-&gt;comment.ejs文件中。</p>
+<p>【完毕】</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 静态网页 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[springMVC使用注意点]]></title>
       <url>http://chenbuer.github.com/2017/04/19/springMVC%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E7%82%B9/</url>
       <content type="html"><![CDATA[<h3 id="一、尽量不用-Response"><a href="#一、尽量不用-Response" class="headerlink" title="一、尽量不用@Response"></a>一、尽量不用@Response</h3><blockquote>
