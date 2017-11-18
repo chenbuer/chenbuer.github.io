@@ -1,4 +1,5 @@
-<% if (page.comment){ %>
+<!-- <% if (page.comment){ %>
+  
 <section id="comment">
   <h2 class="title"><%= __('comment') %></h2>
 
@@ -10,4 +11,20 @@
   	 </div>
   <% } %>
 </section>
-<% } %>
+<% } %> -->
+
+<!--我自己添加的评论功能-->
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'chenbuer',
+  repo: 'chenbuer.github.io',
+  oauth: {
+  client_id: 'c8819a6086d97f4c90e7',
+  client_secret: '64f822e6b47604072e08527a965817df12faeab6',
+  },
+})
+gitment.render('container')
+</script>
