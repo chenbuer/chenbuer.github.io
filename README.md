@@ -18,6 +18,6 @@ $ git branch -a
 
 # 切换远程分支
 切换到 origin/Release分支，并在本地新建分支 hexo
-```
+```shell
 $ git checkout -b hexo origin/hexo
 ```
