@@ -1,0 +1,9 @@
+---
+title: IDEA设置与操作
+date: 2017-12-11 20:29:20
+categories: JAVA
+tags: 工具
+---
+一、工具栏中文乱码，但是编辑框不乱码
+http://www.cnblogs.com/jlxuqiang/p/4083596.html
+进入IDE Settings 里的 Appearance项，选中Override default fonts by ，把 Name 设置为 SimSun，Size 根据自己喜好设置（我一般设为 12）。确定
