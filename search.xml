@@ -6,8 +6,7 @@
     <entry>
       <title><![CDATA[IDEA设置与操作]]></title>
       <url>http://chenbuer.github.com/2017/12/11/IDEA%E8%AE%BE%E7%BD%AE%E4%B8%8E%E6%93%8D%E4%BD%9C/</url>
-      <content type="html"><![CDATA[<p>一、工具栏中文乱码，但是编辑框不乱码<br><a href="http://www.cnblogs.com/jlxuqiang/p/4083596.html" target="_blank" rel="noopener">http://www.cnblogs.com/jlxuqiang/p/4083596.html</a><br>进入IDE Settings 里的 Appearance项，选中Override default fonts by ，把 Name 设置为 SimSun，Size 根据自己喜好设置（我一般设为 12）。确定</p>
-<p>二、alt+ctrl+箭头<br>在IDEA中alt+ctrl+←代表后退，alt+ctrl+→代表前进，但是Windows本身有热键，表示旋转屏幕，那么就去除旋转屏幕的热键。<br><a href="https://jingyan.baidu.com/article/ceb9fb10dfc7c28cad2ba026.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/ceb9fb10dfc7c28cad2ba026.html</a></p>
+      <content type="html"><![CDATA[<p>一、工具栏中文乱码，但是编辑框不乱码<br><a href="http://www.cnblogs.com/jlxuqiang/p/4083596.html" target="_blank" rel="noopener">http://www.cnblogs.com/jlxuqiang/p/4083596.html</a><br>进入IDE Settings 里的 Appearance项，选中Override default fonts by ，把 Name 设置为 SimSun，Size 根据自己喜好设置（我一般设为 12）。确定<br><a id="more"></a><br>二、alt+ctrl+箭头<br>在IDEA中alt+ctrl+←代表后退，alt+ctrl+→代表前进，但是Windows本身有热键，表示旋转屏幕，那么就去除旋转屏幕的热键。<br><a href="https://jingyan.baidu.com/article/ceb9fb10dfc7c28cad2ba026.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/ceb9fb10dfc7c28cad2ba026.html</a></p>
 <p>三、键盘映射</p>
 <p><a href="http://www.ituring.com.cn/article/37792" target="_blank" rel="noopener">http://www.ituring.com.cn/article/37792</a></p>
 ]]></content>
@@ -32,6 +31,7 @@
       <url>http://chenbuer.github.com/2017/12/11/git/</url>
       <content type="html"><![CDATA[<p>一. 设置代理</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://proxy.chenbuer.com:8080</span><br><span class="line">git config --global https.proxy http://proxy.chenbuer.com:8080</span><br><span class="line">git config --global http.sslverify <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>二. 撤销代理</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br></pre></td></tr></table></figure>
 <p>三. 如果要查当前的代理配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --get http.proxy</span><br><span class="line">git config --global --get https.proxy</span><br></pre></td></tr></table></figure></p>
