@@ -11,7 +11,7 @@ git config --global http.proxy http://proxy.chenbuer.com:8080
 git config --global https.proxy http://proxy.chenbuer.com:8080
 git config --global http.sslverify false
 ```
-
+<!--more-->
 
 二. 撤销代理
 
