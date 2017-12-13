@@ -6,9 +6,14 @@ tags: 工具
 ---
 一. 设置代理
 ```bash
-git config --global http.proxy http://proxy.chenbuer.com:8080
-git config --global https.proxy http://proxy.chenbuer.com:8080
+git config --global http.proxy http://127.0.0.1:8087
+git config --global https.proxy http://127.0.0.1:8087
 git config --global http.sslverify false
+```
+也可以设置socket代理，不错：
+```bash
+git config --global http.proxy 'socks5://127.0.0.1:1080'
+git config --global https.proxy 'socks5://127.0.0.1:1080'
 ```
 <!--more-->
 
