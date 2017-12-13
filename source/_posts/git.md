@@ -5,7 +5,6 @@ categories: GIT
 tags: 工具
 ---
 一. 设置代理
-
 ```bash
 git config --global http.proxy http://proxy.chenbuer.com:8080
 git config --global https.proxy http://proxy.chenbuer.com:8080
@@ -14,7 +13,6 @@ git config --global http.sslverify false
 <!--more-->
 
 二. 撤销代理
-
 ```bash
 git config --global --unset http.proxy
 git config --global --unset https.proxy
