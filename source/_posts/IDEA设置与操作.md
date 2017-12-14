@@ -13,6 +13,8 @@ http://www.cnblogs.com/jlxuqiang/p/4083596.html
 https://jingyan.baidu.com/article/ceb9fb10dfc7c28cad2ba026.html
 
 三、键盘映射
-ctrl+alt+o  删除不用的import
+ctrl+alt+o        删除不用的import
+ctrl+左击          跳转到定义
+shift+ctrl+左击    跳转到接口实现
 http://www.ituring.com.cn/article/37792
 
