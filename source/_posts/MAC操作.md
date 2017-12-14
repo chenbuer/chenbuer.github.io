@@ -32,3 +32,5 @@ open CONSOLA*.TTF
 [docker](https://www.docker.com/docker-mac)
 
 [docker-mysql](https://hub.alauda.cn/repos/alauda/mysql)
+
+[snipaste](https://zh.snipaste.com/)
