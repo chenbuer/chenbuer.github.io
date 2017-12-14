@@ -3,9 +3,12 @@ title: 关于我
 date: 2017-02-13 21:27:44
 ---
 
-> ### 我是陈不二，请多指教
+> ### 我是陈不二，请多指教 Here is my schedule:
+
+ 下面主要学习dubbo，任重道远
 
 
+---
 这两天看的东西有点杂：druid、shiro、maven、hibernate和springMVC结合。
 看hibernate和spingmvc主要是因为学习maven的时候，配置看的有点不清晰，当时自己做小项目的时候也只是出了问题重新配，能跑就行。
 所以有必要自己规划一下学习的路线。
