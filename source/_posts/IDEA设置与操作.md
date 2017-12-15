@@ -18,7 +18,7 @@ ctrl+alt+o               删除不用的import
 ctrl+左击                 跳转到定义
 shift+ctrl+左击           跳转到接口实现
 ctrl+F4                  关闭当前窗口
-ctrl+j(command + j)      只能提示
+ctrl+j(command + j)      智能提示
 http://www.ituring.com.cn/article/37792
 
 ### 四、不能创建package
