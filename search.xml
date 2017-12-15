@@ -42,6 +42,7 @@
 <h3 id="二、alt-ctrl-箭头"><a href="#二、alt-ctrl-箭头" class="headerlink" title="二、alt+ctrl+箭头"></a>二、alt+ctrl+箭头</h3><p>在IDEA中alt+ctrl+←代表后退，<br>alt+ctrl+→代表前进，但是Windows本身有热键，表示旋转屏幕，那么就去除旋转屏幕的热键。<br><a href="https://jingyan.baidu.com/article/ceb9fb10dfc7c28cad2ba026.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/ceb9fb10dfc7c28cad2ba026.html</a></p>
 <h3 id="三、键盘映射"><a href="#三、键盘映射" class="headerlink" title="三、键盘映射"></a>三、键盘映射</h3><p>ctrl+alt+o               删除不用的import<br>ctrl+左击                 跳转到定义<br>shift+ctrl+左击           跳转到接口实现<br>ctrl+F4                  关闭当前窗口<br>ctrl+j(command + j)      智能提示<br><a href="http://www.ituring.com.cn/article/37792" target="_blank" rel="noopener">http://www.ituring.com.cn/article/37792</a></p>
 <h3 id="四、不能创建package"><a href="#四、不能创建package" class="headerlink" title="四、不能创建package"></a>四、不能创建package</h3><p><img src="https://github.com/chenbuer/markdownImgs/blob/master/blog/canNotCreatePackage.png?raw=true" alt="不能创建package"></p>
+<h3 id="五、使得package展示和eclipse一样"><a href="#五、使得package展示和eclipse一样" class="headerlink" title="五、使得package展示和eclipse一样"></a>五、使得package展示和eclipse一样</h3><p><img src="https://github.com/chenbuer/markdownImgs/blob/master/blog/makePackageLikeEclipse.png?raw=true" alt="使得package展示和eclipse一样"></p>
 ]]></content>
       
         <categories>
