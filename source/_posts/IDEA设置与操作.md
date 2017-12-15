@@ -14,10 +14,11 @@ alt+ctrl+→代表前进，但是Windows本身有热键，表示旋转屏幕，�
 https://jingyan.baidu.com/article/ceb9fb10dfc7c28cad2ba026.html
 
 ### 三、键盘映射
-ctrl+alt+o        删除不用的import
-ctrl+左击          跳转到定义
-shift+ctrl+左击    跳转到接口实现
-ctrl+F4           关闭当前窗口
+ctrl+alt+o               删除不用的import
+ctrl+左击                 跳转到定义
+shift+ctrl+左击           跳转到接口实现
+ctrl+F4                  关闭当前窗口
+ctrl+j(command + j)      只能提示
 http://www.ituring.com.cn/article/37792
 
 ### 四、不能创建package
