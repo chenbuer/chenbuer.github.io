@@ -5,17 +5,19 @@
     
     <entry>
       <title><![CDATA[MAC操作]]></title>
-      <url>http://chenbuer.github.com/2017/12/15/IDEA%E8%AE%BE%E7%BD%AE%E4%B8%8E%E6%93%8D%E4%BD%9C.1/</url>
-      <content type="html"><![CDATA[<p>一. 给mac安装Consolas 字体</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># brew is a part of Mac OS X package manager called Homebrew (http://brew.sh/).</span></span><br><span class="line">brew install cabextract</span><br><span class="line"><span class="built_in">cd</span> ~/Downloads</span><br><span class="line">mkdir consolas</span><br><span class="line"><span class="built_in">cd</span> consolas</span><br><span class="line">curl -O http://download.microsoft.com/download/f/5/a/f5a3df76-d856-4a61-a6bd-722f52a5be26/PowerPointViewer.exe</span><br><span class="line">cabextract PowerPointViewer.exe</span><br><span class="line">cabextract ppviewer.cab</span><br><span class="line">open CONSOLA*.TTF</span><br><span class="line"><span class="comment"># Press Intall font. That is all.</span></span><br></pre></td></tr></table></figure>
+      <url>http://chenbuer.github.com/2017/12/15/MAC%E6%93%8D%E4%BD%9C/</url>
+      <content type="html"><![CDATA[<h3 id="一-给mac安装Consolas-字体"><a href="#一-给mac安装Consolas-字体" class="headerlink" title="一. 给mac安装Consolas 字体"></a>一. 给mac安装Consolas 字体</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># brew is a part of Mac OS X package manager called Homebrew (http://brew.sh/).</span></span><br><span class="line">brew install cabextract</span><br><span class="line"><span class="built_in">cd</span> ~/Downloads</span><br><span class="line">mkdir consolas</span><br><span class="line"><span class="built_in">cd</span> consolas</span><br><span class="line">curl -O http://download.microsoft.com/download/f/5/a/f5a3df76-d856-4a61-a6bd-722f52a5be26/PowerPointViewer.exe</span><br><span class="line">cabextract PowerPointViewer.exe</span><br><span class="line">cabextract ppviewer.cab</span><br><span class="line">open CONSOLA*.TTF</span><br><span class="line"><span class="comment"># Press Intall font. That is all.</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p><a href="http://ikato.com/blog/how-to-install-consolas-font-on-mac-os-x.html" target="_blank" rel="noopener">参考链接</a></p>
-<p>二. 安装的软件</p>
-<p><a href="http://www.cnblogs.com/wang1024/p/7485758.html" target="_blank" rel="noopener">IDEA</a></p>
-<p><a href="http://www.jianshu.com/p/2172835cfb17" target="_blank" rel="noopener">office</a></p>
-<p><a href="http://www.eclipse.org/downloads/" target="_blank" rel="noopener">eclipse</a></p>
+<h3 id="二-安装的软件"><a href="#二-安装的软件" class="headerlink" title="二. 安装的软件"></a>二. 安装的软件</h3><p><a href="http://www.jianshu.com/p/2172835cfb17" target="_blank" rel="noopener">office</a></p>
 <p><a href="https://www.docker.com/docker-mac" target="_blank" rel="noopener">docker</a></p>
 <p><a href="https://hub.alauda.cn/repos/alauda/mysql" target="_blank" rel="noopener">docker-mysql</a></p>
+<p><a href="https://zh.snipaste.com/" target="_blank" rel="noopener">snipaste</a></p>
+<p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">安装Java8</a>-<a href="https://gist.github.com/schnell18/bcb9833f725be22f6acd01f94b486392" target="_blank" rel="noopener">卸载Java9</a></p>
+<p><a href="https://zookeeper.apache.org/releases.html#download" target="_blank" rel="noopener">zookeeper</a>-<a href="http://www.jianshu.com/p/0ba61bf7149f" target="_blank" rel="noopener">安装参考</a></p>
+<p><a href="http://www.cnblogs.com/wang1024/p/7485758.html" target="_blank" rel="noopener">IDEA</a></p>
+<p><a href="http://www.eclipse.org/downloads/" target="_blank" rel="noopener">eclipse</a></p>
+<p><a href="https://github.com/XX-net/XX-Net/wiki/IPv6-Mac" target="_blank" rel="noopener">开启IPV6</a></p>
 ]]></content>
       
         <categories>
@@ -37,7 +39,7 @@
       <title><![CDATA[IDEA设置与操作]]></title>
       <url>http://chenbuer.github.com/2017/12/11/IDEA%E8%AE%BE%E7%BD%AE%E4%B8%8E%E6%93%8D%E4%BD%9C/</url>
       <content type="html"><![CDATA[<p>一、工具栏中文乱码，但是编辑框不乱码<br><a href="http://www.cnblogs.com/jlxuqiang/p/4083596.html" target="_blank" rel="noopener">http://www.cnblogs.com/jlxuqiang/p/4083596.html</a><br>进入IDE Settings 里的 Appearance项，选中Override default fonts by ，把 Name 设置为 SimSun，Size 根据自己喜好设置（我一般设为 12）。确定<br><a id="more"></a><br>二、alt+ctrl+箭头<br>在IDEA中alt+ctrl+←代表后退，<br>alt+ctrl+→代表前进，但是Windows本身有热键，表示旋转屏幕，那么就去除旋转屏幕的热键。<br><a href="https://jingyan.baidu.com/article/ceb9fb10dfc7c28cad2ba026.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/ceb9fb10dfc7c28cad2ba026.html</a></p>
-<p>三、键盘映射<br>ctrl+alt+o        删除不用的import<br>ctrl+左击          跳转到定义<br>shift+ctrl+左击    跳转到接口实现<br><a href="http://www.ituring.com.cn/article/37792" target="_blank" rel="noopener">http://www.ituring.com.cn/article/37792</a></p>
+<p>三、键盘映射<br>ctrl+alt+o        删除不用的import<br>ctrl+左击          跳转到定义<br>shift+ctrl+左击    跳转到接口实现<br>ctrl+F4           关闭当前窗口<br><a href="http://www.ituring.com.cn/article/37792" target="_blank" rel="noopener">http://www.ituring.com.cn/article/37792</a></p>
 ]]></content>
       
         <categories>
@@ -58,11 +60,11 @@
     <entry>
       <title><![CDATA[GIT]]></title>
       <url>http://chenbuer.github.com/2017/12/11/git/</url>
-      <content type="html"><![CDATA[<p>一. 设置代理<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global https.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global http.sslverify <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
+      <content type="html"><![CDATA[<h3 id="一-设置代理"><a href="#一-设置代理" class="headerlink" title="一. 设置代理"></a>一. 设置代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global https.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global http.sslverify <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>也可以设置socket代理，不错：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy <span class="string">'socks5://127.0.0.1:1080'</span></span><br><span class="line">git config --global https.proxy <span class="string">'socks5://127.0.0.1:1080'</span></span><br></pre></td></tr></table></figure></p>
-<p>二. 撤销代理<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br></pre></td></tr></table></figure></p>
-<p>三. 如果要查当前的代理配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --get http.proxy</span><br><span class="line">git config --global --get https.proxy</span><br></pre></td></tr></table></figure></p>
+<h3 id="二-撤销代理"><a href="#二-撤销代理" class="headerlink" title="二. 撤销代理"></a>二. 撤销代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br></pre></td></tr></table></figure>
+<h3 id="三-如果要查当前的代理配置"><a href="#三-如果要查当前的代理配置" class="headerlink" title="三. 如果要查当前的代理配置"></a>三. 如果要查当前的代理配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --get http.proxy</span><br><span class="line">git config --global --get https.proxy</span><br></pre></td></tr></table></figure>
 <p>四. 切换到远程分支<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -t origin/hexo</span><br></pre></td></tr></table></figure></p>
 ]]></content>
       
