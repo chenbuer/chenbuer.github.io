@@ -24,3 +24,5 @@ http://www.ituring.com.cn/article/37792
 ### 四、不能创建package
 ![不能创建package](https://github.com/chenbuer/markdownImgs/blob/master/blog/canNotCreatePackage.png?raw=true)
 
+### 五、使得package展示和eclipse一样
+![使得package展示和eclipse一样](https://github.com/chenbuer/markdownImgs/blob/master/blog/makePackageLikeEclipse.png?raw=true)
