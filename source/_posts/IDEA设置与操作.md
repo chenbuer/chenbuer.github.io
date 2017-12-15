@@ -21,5 +21,5 @@ ctrl+F4           关闭当前窗口
 http://www.ituring.com.cn/article/37792
 
 ### 四、不能创建package
-![不能创建package](https://github.com/chenbuer/markdownImgs/blob/master/blog/canNotCreatePackage.png)
+![不能创建package](https://github.com/chenbuer/markdownImgs/blob/master/blog/canNotCreatePackage.png?raw=true)
 
