@@ -24,7 +24,19 @@ shift+ctrl+左击           跳转到接口实现
 
 ctrl+F4                  关闭当前窗口
 
-ctrl+j(command + j)      智能提示
+ctrl + alt + space       智能提示
+
+ctrl+j(command + j)      智能提示(一些简写的提示)
+
+ctr + U                  定位到类的父类、接口     
+
+ctr + H                  查看类的继承结构             
+
+ctr + shift + H          查看方法的继承结构          
+
+ctr + alt +H             查看类或方法被调用情况  
+
+Ctrl + Shift + I         原地参看类、方法的声明 
 
 [参考链接](http://www.ituring.com.cn/article/37792)
 
