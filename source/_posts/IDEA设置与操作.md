@@ -36,4 +36,5 @@ ctrl+j(command + j)      智能提示
 
 ### 六、函数的注释因为跟入参不一致，IDEA红色报错
 ![函数的注释因为跟入参不一致，IDEA红色报错](https://github.com/chenbuer/markdownImgs/blob/master/blog/annotationIsRed.png?raw=true)
+
 [参考链接](http://blog.csdn.net/river_continent/article/details/72841428)
