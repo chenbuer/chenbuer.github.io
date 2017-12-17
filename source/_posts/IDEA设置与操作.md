@@ -31,7 +31,7 @@ alt+ctrl+→代表前进，但是Windows本身有热键，表示旋转屏幕，�
 | ctrl + alt +H        |            查看类或方法被调用情况  |
 | Ctrl + Shift + I     |        原地参看类、方法的声明 |
 
-[参考链接](http://www.ituring.com.cn/article/37792)
+[参考链接1](http://www.ituring.com.cn/article/37792)-[参考链接2](http://blog.csdn.net/wfp458113181wfp/article/details/24579781)
 
 ### 四、不能创建package
 ![不能创建package](https://github.com/chenbuer/markdownImgs/blob/master/blog/canNotCreatePackage.png?raw=true)
