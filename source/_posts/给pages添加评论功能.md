@@ -11,7 +11,7 @@ tags: hexo
 
 <!--more-->
 #### 一、首先需要在GitHub的OAuth Apps里面注册一个repo
-这个可以参考gitment的文档，不赘述，也是GitHub OAuth的一般注册方法
+这个可以参考gitment的文档，不赘述，也是GitHub OAuth的一般注册方法
 
 #### 二、将Gitment的静态文件配置到文章中
 我的文件主要是配置在themes->freemind->layout->_partial->post->comment.ejs文件中。
