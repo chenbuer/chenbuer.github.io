@@ -29,7 +29,13 @@ git config --global --get http.proxy
 git config --global --get https.proxy
 ```
 
-四. 切换到远程分支
+### 四. 切换到远程分支
 ```bash
 git checkout -t origin/hexo
+```
+
+### 五. Windows下手动改修配置文件
+在Windows下找不到的gitconfig文件，但是我们都知道的Linux下`~/.gitconfig`。所以，用gitbash吧：
+```bash
+$ vi ~/.gitconfig
 ```
