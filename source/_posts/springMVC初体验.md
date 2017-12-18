@@ -11,7 +11,7 @@ tags: spring
   * spring的beans配置文件
   * springMVC的配置文件
   * Mybatis配置文件
-log4j的配置文件
+  * log4j的配置文件
 * 替代@Response的工具类
 * 用@service和@Resource定义bean和使用bean
 <!-- more -->
@@ -308,7 +308,7 @@ log4j.appender.appender1.layout=org.apache.log4j.TTCCLayout
 log4j.appender.appender2.layout=org.apache.log4j.TTCCLayout  
 ```
 
-### 三、尽量不用@Response
+### 三、替代@Response的工具类
 > 因为使用@Response会出现中文乱码的情况，所以可以用一个工具类：
 
 ```java
@@ -328,7 +328,7 @@ public class ResponseUtil {
 
 ```
 
-### 四、springMVC中利用@service和@Resource注释
+### 四、用@service和@Resource定义bean和使用bean
 
 > 在service层定义一个service类，用注释@Service；在利用这个bean的时候用@Resource表示：
 
