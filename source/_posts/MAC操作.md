@@ -1,7 +1,7 @@
 ---
 title: MAC操作
 date: 2017-12-15 1:20:20
-categories: 工具
+categories: MAC
 tags: 工具
 ---
 ### 一. 给mac安装Consolas 字体
