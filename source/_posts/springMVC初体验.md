@@ -5,10 +5,15 @@ categories: JAVA
 tags: spring
 ---
 主要包含了:
-- springMVC第一个控制器
-- springMVC与Mybatis整合时一些常用的配置文件
-- 替代@Response的工具类
-- 用@service和@Resource定义bean和使用bean
+* springMVC第一个控制器
+* springMVC与Mybatis整合时一些常用的配置文件
+  * web.xml
+  * spring的beans配置文件
+  * springMVC的配置文件
+  * Mybatis配置文件
+log4j的配置文件
+* 替代@Response的工具类
+* 用@service和@Resource定义bean和使用bean
 <!-- more -->
 
 ### 一、springMVC第一个控制器
