@@ -1,5 +1,5 @@
 ---
-title: struts2配置文件
+title: Struts2配置文件
 date: 2017-03-01 21:20:01
 categories: JAVA
 tags: struts

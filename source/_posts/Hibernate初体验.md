@@ -1,13 +1,66 @@
 ---
-title: Hibernate与Spring协同工作
-date: 2017-02-19 18:10:20
+title: Hibernate初体验
+date: 2017-02-11 01:55:52
 categories: JAVA
-tags: hibernate
+tags: Hibernate
 ---
+
+### 一、Hibernate的操作流程
+
+> 在一个测试类中表示如下所示：
+
+<!--more-->
+```java
+package springMVC5;
+
+import info.baitian.db.Students;    
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
+import org.hibernate.service.ServiceRegistryBuilder;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test; 
+ 
+public class TestHibernate {
+
+    private SessionFactory sessionFactory;
+    private Session session;
+    private Transaction transaction;
+    
+    
+    @Before
+    public void before(){
+        Configuration cfg=new Configuration().configure();
+        ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings(cfg.getProperties()).buildServiceRegistry();
+        sessionFactory = cfg.buildSessionFactory(serviceRegistry);
+        session=sessionFactory.openSession();
+        transaction=session.beginTransaction();
+   }
+    @After
+    public void after(){
+	    transaction.commit();
+	    session.close();
+	    sessionFactory.close();
+    }
+	    
+	    
+    @Test
+    public void testAdd(){
+	    Students s=new Students("buer");
+	    session.save(s);
+    }
+}
+    
+```
+
+### 二、Hibernate与Spring协同工作
+
 检查发现spring的配置文件`applicationContext.xml`中有了的数据库的配置，Hibernate的配置文件`hibernate.cfg.xml`中也配置了数据库信息。
 其实`hibernate.cfg.xml`已经不再需要，可以将hibernate配置最为一个bean注入到spring中，为dataSource。再利用dataSource最为一个bean注入到sesssionFactory，并且可以将sessionFactory最为一个bean注入给transaction。
 
-<!--more-->
 在spring的配置文件中可以指定hibernate的配置文件（在配置sessionFactory的时候）：
 ```xml
 <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">  

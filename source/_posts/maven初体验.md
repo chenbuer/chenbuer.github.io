@@ -1,8 +1,8 @@
 ---
-title: maven使用
+title: maven初体验
 date: 2017-02-16 23:26:25
 categories: JAVA
-tags: 工具
+tags: maven
 ---
 
 1. maven配置(本地仓库配置和本地设置、以及在eclipse中的配置)
