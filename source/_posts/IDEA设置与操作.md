@@ -46,9 +46,11 @@ alt+ctrl+→代表前进，但是Windows本身有热键，表示旋转屏幕，�
 
 ### 七、IDEA中SVN不好使
 > 现象：
+
 ![IDEA中SVN不好使](https://github.com/chenbuer/markdownImgs/blob/master/blog/ideaSvnUnuseful.png?raw=true)
 
 > 解决方法：
+
 ![IDEA中SVN不好使的解决方法](https://github.com/chenbuer/markdownImgs/blob/master/blog/ideaSvnUnusefulSolution.png?raw=true)
 
 [参考链接](http://blog.csdn.net/u012940983/article/details/38679667)
