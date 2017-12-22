@@ -54,3 +54,12 @@ alt+ctrl+→代表前进，但是Windows本身有热键，表示旋转屏幕，�
 ![IDEA中SVN不好使的解决方法](https://github.com/chenbuer/markdownImgs/blob/master/blog/ideaSvnUnusefulSolution.png?raw=true)
 
 [参考链接](http://blog.csdn.net/u012940983/article/details/38679667)
+
+### 八、删除文件，SVN提示Schedule for Deletion
+> 现象：
+
+![Schedule for Deletion](https://github.com/chenbuer/markdownImgs/blob/master/blog/scheduleForDel.png?raw=true)
+
+> 不同选择会有不同的结果：选择Yes之后Status为deleted，选择No之后Status为missing
+
+![不同选择会有不同的结果](https://github.com/chenbuer/markdownImgs/blob/master/blog/scheduleForDelAndChooseYes.png?raw=true)
