@@ -109,6 +109,14 @@
 </blockquote>
 <p><img src="https://github.com/chenbuer/markdownImgs/blob/master/blog/ideaSvnUnusefulSolution.png?raw=true" alt="IDEA中SVN不好使的解决方法"></p>
 <p><a href="http://blog.csdn.net/u012940983/article/details/38679667" target="_blank" rel="noopener">参考链接</a></p>
+<h3 id="八、删除文件，SVN提示Schedule-for-Deletion"><a href="#八、删除文件，SVN提示Schedule-for-Deletion" class="headerlink" title="八、删除文件，SVN提示Schedule for Deletion"></a>八、删除文件，SVN提示Schedule for Deletion</h3><blockquote>
+<p>现象：</p>
+</blockquote>
+<p><img src="https://github.com/chenbuer/markdownImgs/blob/master/blog/scheduleForDel.png?raw=true" alt="Schedule for Deletion"></p>
+<blockquote>
+<p>不同选择会有不同的结果：选择Yes之后Status为deleted，选择No之后Status为missing</p>
+</blockquote>
+<p><img src="https://github.com/chenbuer/markdownImgs/blob/master/blog/scheduleForDelAndChooseYes.png?raw=true" alt="不同选择会有不同的结果"></p>
 ]]></content>
       
         <categories>
