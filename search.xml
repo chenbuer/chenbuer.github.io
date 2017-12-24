@@ -18,6 +18,8 @@
 <p><a href="http://www.cnblogs.com/wang1024/p/7485758.html" target="_blank" rel="noopener">IDEA</a></p>
 <p><a href="http://www.eclipse.org/downloads/" target="_blank" rel="noopener">eclipse</a></p>
 <p><a href="https://github.com/XX-net/XX-Net/wiki/IPv6-Mac" target="_blank" rel="noopener">开启IPV6</a></p>
+<h3 id="三、关闭仪表盘-dashboard"><a href="#三、关闭仪表盘-dashboard" class="headerlink" title="三、关闭仪表盘(dashboard)"></a>三、关闭仪表盘(dashboard)</h3><p>系统偏好设置-&gt;调度中心（或者直接搜索dashboard）-&gt;仪表盘的下拉框选择关闭</p>
+<p><a href="https://www.maczd.com/post/39.html" target="_blank" rel="noopener">参考链接</a></p>
 ]]></content>
       
         <categories>
@@ -44,53 +46,65 @@
 <h3 id="三、键盘映射"><a href="#三、键盘映射" class="headerlink" title="三、键盘映射"></a>三、键盘映射</h3><table>
 <thead>
 <tr>
-<th>操作方法</th>
+<th>操作方法(Windows)</th>
+<th>操作方法(Mac)</th>
 <th>操作作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>ctrl+alt+o</td>
+<td></td>
 <td>删除不用的import</td>
 </tr>
 <tr>
 <td>ctrl+左击</td>
+<td></td>
 <td>跳转到定义</td>
 </tr>
 <tr>
 <td>shift+ctrl+左击</td>
+<td></td>
 <td>跳转到接口实现</td>
 </tr>
 <tr>
 <td>ctrl+F4</td>
+<td></td>
 <td>关闭当前窗口</td>
 </tr>
 <tr>
 <td>ctrl + alt + space</td>
+<td></td>
 <td>智能提示</td>
 </tr>
 <tr>
-<td>ctrl+j(command + j)</td>
+<td>ctrl+j</td>
+<td>command + j</td>
 <td>智能提示(一些简写的提示)</td>
 </tr>
 <tr>
 <td>ctrl + U</td>
+<td></td>
 <td>定位到类的父类、接口</td>
 </tr>
 <tr>
+<td>ctrl + H</td>
 <td>ctrl + H</td>
 <td>查看类的继承结构</td>
 </tr>
 <tr>
 <td>ctrl + shift + H</td>
+<td></td>
 <td>查看方法的继承结构</td>
 </tr>
 <tr>
 <td>ctrl + alt +H</td>
+<td></td>
 <td>查看类或方法被调用情况</td>
 </tr>
 <tr>
 <td>Ctrl + Shift + I</td>
+<td></td>
 <td>原地参看类、方法的声明</td>
 </tr>
 </tbody>
