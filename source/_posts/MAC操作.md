@@ -40,3 +40,9 @@ open CONSOLA*.TTF
 [eclipse](http://www.eclipse.org/downloads/)
 
 [开启IPV6](https://github.com/XX-net/XX-Net/wiki/IPv6-Mac)
+
+### 三、关闭仪表盘(dashboard)
+
+系统偏好设置->调度中心（或者直接搜索dashboard）->仪表盘的下拉框选择关闭
+
+[参考链接](https://www.maczd.com/post/39.html)
