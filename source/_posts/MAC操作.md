@@ -41,8 +41,14 @@ open CONSOLA*.TTF
 
 [开启IPV6](https://github.com/XX-net/XX-Net/wiki/IPv6-Mac)
 
+[快捷设置窗口大小Spectacle](https://www.zhihu.com/question/21075430)
+
 ### 三、关闭仪表盘(dashboard)
 
 系统偏好设置->调度中心（或者直接搜索dashboard）->仪表盘的下拉框选择关闭
 
 [参考链接](https://www.maczd.com/post/39.html)
+
+### 四、Mac常用键的简写
+
+![Mac常用键的简写](https://github.com/chenbuer/markdownImgs/blob/master/blog/mac%E5%B8%B8%E7%94%A8%E9%94%AE.png?raw=true)
