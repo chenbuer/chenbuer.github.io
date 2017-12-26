@@ -25,3 +25,26 @@ M2_HOME=D:\Apps\apache-maven-3.3.1
 在这个路径下还有的关于[创建maven工程](http://panyongzheng.iteye.com/blog/2200514)的方法
 
 3. [修改maven中央仓库的方法](http://blog.csdn.net/whh743/article/details/53579668)
+
+4. `mvn install`报错：
+```bash
+[ERROR] Failure executing javac, but could not parse the error:
+[ERROR] javac: 无效的目标版本： 1.7
+```
+原因本地path下配置的是jdk1.6，但是pom中配置的jdk1.7：
+```xml
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>1.7</source>
+                <target>1.7</target>
+                <encoding>UTF-8</encoding>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+```
+将其中的source和target标签改成1.6
