@@ -39,3 +39,28 @@ git checkout -t origin/hexo
 ```bash
 $ vi ~/.gitconfig
 ```
+
+### 六. 用https也不用每次都输入密码
+很多环境下并不能用ssh，所以`git clone`的时候Clone with SSH也不好使，只能用https协议。用https协议在每次提交的时候，都要手动输入用户名和密码。所以修改本地repository下的git配置文件。
+修改前：
+```xml
+[core]
+        repositoryformatversion = 0
+        filemode = false
+        bare = false
+        logallrefupdates = true
+        symlinks = false
+        ignorecase = true
+        hideDotFiles = dotGitOnly
+[remote "origin"]
+        url = https://github.com/chenbuer/chenbuer.github.io.git
+        fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+        remote = origin
+        merge = refs/heads/master
+[branch "hexo"]
+        remote = origin
+        merge = refs/heads/hexo
+```
+修改之后：
+![modGitCfg](https://github.com/chenbuer/markdownImgs/blob/master/blog/modGitCfg.png?raw=true)
