@@ -47,4 +47,4 @@ M2_HOME=D:\Apps\apache-maven-3.3.1
     </plugins>
 </build>
 ```
-将其中的source和target标签改成1.6
+将其中的source和target标签改成1.6就行了。
