@@ -4,6 +4,55 @@
   
     
     <entry>
+      <title><![CDATA[Spring笔记]]></title>
+      <url>http://chenbuer.github.com/2017/12/28/Spring%E7%AC%94%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<h3 id="一、Ajax请求返回json对象"><a href="#一、Ajax请求返回json对象" class="headerlink" title="一、Ajax请求返回json对象"></a>一、Ajax请求返回json对象</h3><p>直接用<code>@Response</code>会出现中文乱码的情况，所以之前做的时候都写了一个工具类：<br><a href="https://github.com/chenbuer/springboot-soa-blog/blob/master/springboot-soa-blog-controller%2Fsrc%2Fmain%2Fjava%2Fcom%2Fchenbuer%2Futil%2FResponseUtil.java" target="_blank" rel="noopener">ResponseUtil.java</a><br><a id="more"></a><br>其实可以这样写<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getQszgListInfo</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 要返回的解决</span></span><br><span class="line">        Map&lt;String, Object&gt; res = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">        ...</span><br><span class="line">        <span class="keyword">return</span> JSONObject.toJSONString(res);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      
+        <categories>
+            
+            <category> JAVA </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> JAVA </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Java基础]]></title>
+      <url>http://chenbuer.github.com/2017/12/25/Java%E5%9F%BA%E7%A1%80/</url>
+      <content type="html"><![CDATA[<h3 id="一、List处理"><a href="#一、List处理" class="headerlink" title="一、List处理"></a>一、List处理</h3><blockquote>
+<p>1.1 List截取字符串</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">noRaiseDrop.subList(fromIndex, toIndex);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>1.2 List拼接</p>
+</blockquote>
+<p>用Apache的org.apache.commons.lang.StringUtils.<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.commons<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-pool2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.4.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">StringUtils.join(list, <span class="string">","</span>)</span><br></pre></td></tr></table></figure>]]></content>
+      
+        <categories>
+            
+            <category> JAVA </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> JAVA </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[MAC操作]]></title>
       <url>http://chenbuer.github.com/2017/12/15/MAC%E6%93%8D%E4%BD%9C/</url>
       <content type="html"><![CDATA[<h3 id="一-给mac安装Consolas-字体"><a href="#一-给mac安装Consolas-字体" class="headerlink" title="一. 给mac安装Consolas 字体"></a>一. 给mac安装Consolas 字体</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># brew is a part of Mac OS X package manager called Homebrew (http://brew.sh/).</span></span><br><span class="line">brew install cabextract</span><br><span class="line"><span class="built_in">cd</span> ~/Downloads</span><br><span class="line">mkdir consolas</span><br><span class="line"><span class="built_in">cd</span> consolas</span><br><span class="line">curl -O http://download.microsoft.com/download/f/5/a/f5a3df76-d856-4a61-a6bd-722f52a5be26/PowerPointViewer.exe</span><br><span class="line">cabextract PowerPointViewer.exe</span><br><span class="line">cabextract ppviewer.cab</span><br><span class="line">open CONSOLA*.TTF</span><br><span class="line"><span class="comment"># Press Intall font. That is all.</span></span><br></pre></td></tr></table></figure>
@@ -61,7 +110,7 @@
 </tr>
 <tr>
 <td>ctrl+左击</td>
-<td></td>
+<td>command+左击</td>
 <td>跳转到定义</td>
 </tr>
 <tr>
@@ -105,6 +154,11 @@
 <td>查看类或方法被调用情况</td>
 </tr>
 <tr>
+<td>alt + insert</td>
+<td></td>
+<td>自动生成getter/setter</td>
+</tr>
+<tr>
 <td>Ctrl + Shift + I</td>
 <td></td>
 <td>原地参看类、方法的声明</td>
@@ -133,6 +187,14 @@
 <p>不同选择会有不同的结果：选择Yes之后Status为deleted，选择No之后Status为missing</p>
 </blockquote>
 <p><img src="https://github.com/chenbuer/markdownImgs/blob/master/blog/scheduleForDelAndChooseYes.png?raw=true" alt="不同选择会有不同的结果"></p>
+<h3 id="九、IDEA的JDK设置"><a href="#九、IDEA的JDK设置" class="headerlink" title="九、IDEA的JDK设置"></a>九、IDEA的JDK设置</h3><blockquote>
+<p>每个module都可以设置自己的：</p>
+</blockquote>
+<p><img src="https://github.com/chenbuer/markdownImgs/blob/master/blog/IDEAAddJdk.png?raw=true" alt="每个module单独设置"></p>
+<blockquote>
+<p>全局的设置？如下：</p>
+</blockquote>
+<p><img src="https://github.com/chenbuer/markdownImgs/blob/master/blog/globalJdkSetting.png?raw=true" alt="全局JDK设置"></p>
 ]]></content>
       
         <categories>
@@ -160,6 +222,8 @@
 <h3 id="三-如果要查当前的代理配置"><a href="#三-如果要查当前的代理配置" class="headerlink" title="三. 如果要查当前的代理配置"></a>三. 如果要查当前的代理配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --get http.proxy</span><br><span class="line">git config --global --get https.proxy</span><br></pre></td></tr></table></figure>
 <h3 id="四-切换到远程分支"><a href="#四-切换到远程分支" class="headerlink" title="四. 切换到远程分支"></a>四. 切换到远程分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -t origin/hexo</span><br></pre></td></tr></table></figure>
 <h3 id="五-Windows下手动改修配置文件"><a href="#五-Windows下手动改修配置文件" class="headerlink" title="五. Windows下手动改修配置文件"></a>五. Windows下手动改修配置文件</h3><p>在Windows下找不到的gitconfig文件，但是我们都知道的Linux下<code>~/.gitconfig</code>。所以，用gitbash吧：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi ~/.gitconfig</span><br></pre></td></tr></table></figure></p>
+<h3 id="六-用https也不用每次都输入密码"><a href="#六-用https也不用每次都输入密码" class="headerlink" title="六. 用https也不用每次都输入密码"></a>六. 用https也不用每次都输入密码</h3><p>很多环境下并不能用ssh，所以<code>git clone</code>的时候Clone with SSH也不好使，只能用https协议。用https协议在每次提交的时候，都要手动输入用户名和密码。所以修改本地repository下的git配置文件。<br>修改前：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = false</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">        symlinks = false</span><br><span class="line">        ignorecase = true</span><br><span class="line">        hideDotFiles = dotGitOnly</span><br><span class="line">[remote "origin"]</span><br><span class="line">        url = https://github.com/chenbuer/chenbuer.github.io.git</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch "master"]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/master</span><br><span class="line">[branch "hexo"]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/hexo</span><br></pre></td></tr></table></figure></p>
+<p>修改之后：<br><img src="https://github.com/chenbuer/markdownImgs/blob/master/blog/modGitCfg.png?raw=true" alt="modGitCfg"></p>
 ]]></content>
       
         <categories>
@@ -482,8 +546,14 @@
 <p>或者说是错误<code>Check $M2_HOME environment variable and mvn script match.</code>，解决方法是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">可以设一个环境变量M2_HOME指向你的maven安装目录</span><br><span class="line">M2_HOME=D:\Apps\apache-maven-3.3.1</span><br><span class="line">然后在Window-&gt;Preference-&gt;Java-&gt;Installed JREs-&gt;Edit</span><br><span class="line">在Default VM arguments中设置</span><br><span class="line">-Dmaven.multiModuleProjectDirectory=$M2_HOME</span><br></pre></td></tr></table></figure></p>
 <p>具体可以<a href="http://fxb4632242.iteye.com/blog/2193945" target="_blank" rel="noopener">参考路径</a><br>在这个路径下还有的关于<a href="http://panyongzheng.iteye.com/blog/2200514" target="_blank" rel="noopener">创建maven工程</a>的方法</p>
 <ol>
-<li><a href="http://blog.csdn.net/whh743/article/details/53579668" target="_blank" rel="noopener">修改maven中央仓库的方法</a></li>
+<li><p><a href="http://blog.csdn.net/whh743/article/details/53579668" target="_blank" rel="noopener">修改maven中央仓库的方法</a></p>
+</li>
+<li><p><code>mvn install</code>报错：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[ERROR] Failure executing javac, but could not parse the error:</span><br><span class="line">[ERROR] javac: 无效的目标版本： 1.7</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
+<p>原因本地path下配置的是jdk1.6，但是pom中配置的jdk1.7：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">source</span>&gt;</span>1.7<span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">target</span>&gt;</span>1.7<span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">encoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">encoding</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>将其中的source和target标签改成1.6就行了。</p>
 ]]></content>
       
         <categories>

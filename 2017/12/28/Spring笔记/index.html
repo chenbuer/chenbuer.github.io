@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>MAC操作 | 陈不二的博客</title>
+  <title>Spring笔记 | 陈不二的博客</title>
   <meta name="author" content="陈不二">
   
   <meta name="description" content="谈技术也谈风月">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="MAC操作"/>
+  <meta property="og:title" content="Spring笔记"/>
   <meta property="og:site_name" content="陈不二的博客"/>
 
   
@@ -91,7 +91,7 @@
 
 	
 		<div class="page-header ">		
-			<h1 class="title "> MAC操作</h1>
+			<h1 class="title "> Spring笔记</h1>
 		</div>		
 	
 
@@ -111,22 +111,7 @@
 	<div class="mypage">		
 	  		
 
-	  <h3 id="一-给mac安装Consolas-字体"><a href="#一-给mac安装Consolas-字体" class="headerlink" title="一. 给mac安装Consolas 字体"></a>一. 给mac安装Consolas 字体</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># brew is a part of Mac OS X package manager called Homebrew (http://brew.sh/).</span></span><br><span class="line">brew install cabextract</span><br><span class="line"><span class="built_in">cd</span> ~/Downloads</span><br><span class="line">mkdir consolas</span><br><span class="line"><span class="built_in">cd</span> consolas</span><br><span class="line">curl -O http://download.microsoft.com/download/f/5/a/f5a3df76-d856-4a61-a6bd-722f52a5be26/PowerPointViewer.exe</span><br><span class="line">cabextract PowerPointViewer.exe</span><br><span class="line">cabextract ppviewer.cab</span><br><span class="line">open CONSOLA*.TTF</span><br><span class="line"><span class="comment"># Press Intall font. That is all.</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p><a href="http://ikato.com/blog/how-to-install-consolas-font-on-mac-os-x.html" target="_blank" rel="noopener">参考链接</a></p>
-<h3 id="二-安装的软件"><a href="#二-安装的软件" class="headerlink" title="二. 安装的软件"></a>二. 安装的软件</h3><p><a href="http://www.jianshu.com/p/2172835cfb17" target="_blank" rel="noopener">office</a></p>
-<p><a href="https://www.docker.com/docker-mac" target="_blank" rel="noopener">docker</a></p>
-<p><a href="https://hub.alauda.cn/repos/alauda/mysql" target="_blank" rel="noopener">docker-mysql</a></p>
-<p><a href="https://zh.snipaste.com/" target="_blank" rel="noopener">snipaste</a></p>
-<p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">安装Java8</a>-<a href="https://gist.github.com/schnell18/bcb9833f725be22f6acd01f94b486392" target="_blank" rel="noopener">卸载Java9</a></p>
-<p><a href="https://zookeeper.apache.org/releases.html#download" target="_blank" rel="noopener">zookeeper</a>-<a href="http://www.jianshu.com/p/0ba61bf7149f" target="_blank" rel="noopener">安装参考</a></p>
-<p><a href="http://www.cnblogs.com/wang1024/p/7485758.html" target="_blank" rel="noopener">IDEA</a></p>
-<p><a href="http://www.eclipse.org/downloads/" target="_blank" rel="noopener">eclipse</a></p>
-<p><a href="https://github.com/XX-net/XX-Net/wiki/IPv6-Mac" target="_blank" rel="noopener">开启IPV6</a></p>
-<p><a href="https://www.zhihu.com/question/21075430" target="_blank" rel="noopener">快捷设置窗口大小Spectacle</a></p>
-<h3 id="三、关闭仪表盘-dashboard"><a href="#三、关闭仪表盘-dashboard" class="headerlink" title="三、关闭仪表盘(dashboard)"></a>三、关闭仪表盘(dashboard)</h3><p>系统偏好设置-&gt;调度中心（或者直接搜索dashboard）-&gt;仪表盘的下拉框选择关闭</p>
-<p><a href="https://www.maczd.com/post/39.html" target="_blank" rel="noopener">参考链接</a></p>
-<h3 id="四、Mac常用键的简写"><a href="#四、Mac常用键的简写" class="headerlink" title="四、Mac常用键的简写"></a>四、Mac常用键的简写</h3><p><img src="https://github.com/chenbuer/markdownImgs/blob/master/blog/mac%E5%B8%B8%E7%94%A8%E9%94%AE.png?raw=true" alt="Mac常用键的简写"></p>
+	  <h3 id="一、Ajax请求返回json对象"><a href="#一、Ajax请求返回json对象" class="headerlink" title="一、Ajax请求返回json对象"></a>一、Ajax请求返回json对象</h3><p>直接用<code>@Response</code>会出现中文乱码的情况，所以之前做的时候都写了一个工具类：<br><a href="https://github.com/chenbuer/springboot-soa-blog/blob/master/springboot-soa-blog-controller%2Fsrc%2Fmain%2Fjava%2Fcom%2Fchenbuer%2Futil%2FResponseUtil.java" target="_blank" rel="noopener">ResponseUtil.java</a><br><a id="more"></a><br>其实可以这样写<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getQszgListInfo</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 要返回的解决</span></span><br><span class="line">        Map&lt;String, Object&gt; res = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">        ...</span><br><span class="line">        <span class="keyword">return</span> JSONObject.toJSONString(res);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
 	  
 	</div>
 
@@ -135,14 +120,14 @@
 	<div class="pagination">
 <ul class="pagination">
 	 
-				
-    	<li class="prev"><a href="/2017/12/25/Java基础/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
-  		
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>归档</a></li>
 
 		
-		   <li class="next"><a href="/2017/12/11/IDEA设置与操作/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+		   <li class="next"><a href="/2017/12/25/Java基础/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -210,7 +195,7 @@ gitment.render('container')
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2017-12-15 
+	2017-12-28 
 	</div>
 	
 
@@ -221,7 +206,7 @@ gitment.render('container')
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/MAC/">MAC<span>1</span></a></li>
+    <li><a href="/categories/JAVA/">JAVA<span>9</span></a></li>
   </li>
 
     </ul>
@@ -234,7 +219,7 @@ gitment.render('container')
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/工具/">工具<span>4</span></a></li>
+  <li><a href="/tags/JAVA/">JAVA<span>3</span></a></li>
     </ul>
 	</div>
 		

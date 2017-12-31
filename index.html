@@ -137,9 +137,67 @@
 		
             
 		
+            
+		
+            
+		
         
         <!-- render other articles -->
         
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2017-12-28 </div>
+			<div class="article-title"><a href="/2017/12/28/Spring笔记/" >Spring笔记</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	
+		<h3 id="一、Ajax请求返回json对象"><a href="#一、Ajax请求返回json对象" class="headerlink" title="一、Ajax请求返回json对象"></a>一、Ajax请求返回json对象</h3><p>直接用<code>@Response</code>会出现中文乱码的情况，所以之前做的时候都写了一个工具类：<br><a href="https://github.com/chenbuer/springboot-soa-blog/blob/master/springboot-soa-blog-controller%2Fsrc%2Fmain%2Fjava%2Fcom%2Fchenbuer%2Futil%2FResponseUtil.java" target="_blank" rel="noopener">ResponseUtil.java</a><br>
+		<!-- only display read_more button if there's more to display -->
+		<a type="button" href="/2017/12/28/Spring笔记/#more" class="btn btn-default more">继续阅读</a>
+	
+	</div>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2017-12-25 </div>
+			<div class="article-title"><a href="/2017/12/25/Java基础/" >Java基础</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	
+		<h3 id="一、List处理"><a href="#一、List处理" class="headerlink" title="一、List处理"></a>一、List处理</h3><blockquote>
+<p>1.1 List截取字符串</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">noRaiseDrop.subList(fromIndex, toIndex);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>1.2 List拼接</p>
+</blockquote>
+<p>用Apache的org.apache.commons.lang.StringUtils.<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.commons<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-pool2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.4.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">StringUtils.join(list, <span class="string">","</span>)</span><br></pre></td></tr></table></figure>
+	
+	</div>
+</div>
+
+           
+		
            
 			  
 	
@@ -182,60 +240,6 @@
 		<h3 id="一、工具栏中文乱码，但是编辑框不乱码"><a href="#一、工具栏中文乱码，但是编辑框不乱码" class="headerlink" title="一、工具栏中文乱码，但是编辑框不乱码"></a>一、工具栏中文乱码，但是编辑框不乱码</h3><p>进入IDE Settings 里的 Appearance项，选中Override default fonts by ，把 Name 设置为 SimSun，Size 根据自己喜好设置（我一般设为 12）。确定<br>
 		<!-- only display read_more button if there's more to display -->
 		<a type="button" href="/2017/12/11/IDEA设置与操作/#more" class="btn btn-default more">继续阅读</a>
-	
-	</div>
-</div>
-
-           
-		
-           
-			  
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> 2017-12-11 </div>
-			<div class="article-title"><a href="/2017/12/11/git/" >GIT</a></div>						
-		</h3>
-	
-
-
-			  <div class="entry">
-  <div class="row">
-	
-	
-		<h3 id="一-设置代理"><a href="#一-设置代理" class="headerlink" title="一. 设置代理"></a>一. 设置代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global https.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global http.sslverify <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-		<!-- only display read_more button if there's more to display -->
-		<a type="button" href="/2017/12/11/git/#more" class="btn btn-default more">继续阅读</a>
-	
-	</div>
-</div>
-
-           
-		
-           
-			  
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> 2017-04-09 </div>
-			<div class="article-title"><a href="/2017/04/09/tomcat应用技巧/" >tomcat应用技巧</a></div>						
-		</h3>
-	
-
-
-			  <div class="entry">
-  <div class="row">
-	
-	
-		<p>这篇文章介绍了：</p>
-<ul>
-<li>URL中去掉项目名</li>
-<li>URL中携带中文避免乱码</li>
-</ul>
-<h3 id="一、URL中去掉项目名"><a href="#一、URL中去掉项目名" class="headerlink" title="一、URL中去掉项目名"></a>一、URL中去掉项目名</h3><p>部署一个项目到tomcat中的，在server.xml中会增加一行记录，如：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Context</span> <span class="attr">docBase</span>=<span class="string">"blog"</span> <span class="attr">path</span>=<span class="string">"/blog"</span> <span class="attr">reloadable</span>=<span class="string">"true"</span> <span class="attr">source</span>=<span class="string">"org.eclipse.jst.j2ee.server:blog"</span>/&gt;</span><span class="tag">&lt;/<span class="name">Host</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>然后我们本地访问这个项目的时候需要输入的URL如下：<br>
-		<!-- only display read_more button if there's more to display -->
-		<a type="button" href="/2017/04/09/tomcat应用技巧/#more" class="btn btn-default more">继续阅读</a>
 	
 	</div>
 </div>
@@ -292,7 +296,7 @@
 		
 			<li><a href="/categories/GIT/">GIT<span>1</span></a></li>
 		
-			<li><a href="/categories/JAVA/">JAVA<span>7</span></a></li>
+			<li><a href="/categories/JAVA/">JAVA<span>9</span></a></li>
 		
 			<li><a href="/categories/Linux/">Linux<span>1</span></a></li>
 		
@@ -313,25 +317,25 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/struts/">struts<span>1</span></a></li>
-		
-			<li><a href="/tags/Hibernate/">Hibernate<span>1</span></a></li>
-		
-			<li><a href="/tags/maven/">maven<span>1</span></a></li>
+			<li><a href="/tags/apache2/">apache2<span>1</span></a></li>
 		
 			<li><a href="/tags/hibernate/">hibernate<span>1</span></a></li>
 		
-			<li><a href="/tags/JAVA/">JAVA<span>1</span></a></li>
-		
 			<li><a href="/tags/spring/">spring<span>3</span></a></li>
 		
-			<li><a href="/tags/apache2/">apache2<span>1</span></a></li>
+			<li><a href="/tags/Hibernate/">Hibernate<span>1</span></a></li>
+		
+			<li><a href="/tags/工具/">工具<span>4</span></a></li>
+		
+			<li><a href="/tags/maven/">maven<span>1</span></a></li>
 		
 			<li><a href="/tags/yii2-tree-manager/">yii2-tree-manager<span>1</span></a></li>
 		
+			<li><a href="/tags/struts/">struts<span>1</span></a></li>
+		
 			<li><a href="/tags/tomcat/">tomcat<span>1</span></a></li>
 		
-			<li><a href="/tags/工具/">工具<span>4</span></a></li>
+			<li><a href="/tags/JAVA/">JAVA<span>3</span></a></li>
 		
 		 
 		</ul>
@@ -345,6 +349,14 @@
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2017/12/28/Spring笔记/" ><i class="fa fa-file-o"></i>Spring笔记</a>
+      </li>
+    
+      <li>
+        <a href="/2017/12/25/Java基础/" ><i class="fa fa-file-o"></i>Java基础</a>
+      </li>
+    
+      <li>
         <a href="/2017/12/15/MAC操作/" ><i class="fa fa-file-o"></i>MAC操作</a>
       </li>
     
@@ -354,14 +366,6 @@
     
       <li>
         <a href="/2017/12/11/git/" ><i class="fa fa-file-o"></i>GIT</a>
-      </li>
-    
-      <li>
-        <a href="/2017/04/09/tomcat应用技巧/" ><i class="fa fa-file-o"></i>tomcat应用技巧</a>
-      </li>
-    
-      <li>
-        <a href="/2017/04/06/jsp添加jstl库/" ><i class="fa fa-file-o"></i>jsp添加jstl库</a>
       </li>
     
   </ul>
