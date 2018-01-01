@@ -19,3 +19,8 @@ public String getQszgListInfo(HttpServletRequest request) {
         return JSONObject.toJSONString(res);
     }
 ```
+
+### 二、tiny-spring学习
+1. step-1-container-register-and-get
+
+`BeanFactory`是注册和获取bean的工厂，说白了就是讲bean初始化并放到一个Map中，key值就是beanName，获取的时候，根据这个beanName获取到他的对象。就是这么简单。
