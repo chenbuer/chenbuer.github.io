@@ -115,8 +115,8 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
-			<div class="date"> 2017-12-11 </div>
-			<div class="article-title"><a href="/2017/12/11/git/" >GIT</a></div>						
+			<div class="date"> 2017-12-15 </div>
+			<div class="article-title"><a href="/2017/12/15/MAC操作/" >MAC操作</a></div>						
 		</h3>
 	
 
@@ -125,9 +125,9 @@
   <div class="row">
 	
 	
-		<h3 id="一-设置代理"><a href="#一-设置代理" class="headerlink" title="一. 设置代理"></a>一. 设置代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global https.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global http.sslverify <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+		<h3 id="一-给mac安装Consolas-字体"><a href="#一-给mac安装Consolas-字体" class="headerlink" title="一. 给mac安装Consolas 字体"></a>一. 给mac安装Consolas 字体</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># brew is a part of Mac OS X package manager called Homebrew (http://brew.sh/).</span></span><br><span class="line">brew install cabextract</span><br><span class="line"><span class="built_in">cd</span> ~/Downloads</span><br><span class="line">mkdir consolas</span><br><span class="line"><span class="built_in">cd</span> consolas</span><br><span class="line">curl -O http://download.microsoft.com/download/f/5/a/f5a3df76-d856-4a61-a6bd-722f52a5be26/PowerPointViewer.exe</span><br><span class="line">cabextract PowerPointViewer.exe</span><br><span class="line">cabextract ppviewer.cab</span><br><span class="line">open CONSOLA*.TTF</span><br><span class="line"><span class="comment"># Press Intall font. That is all.</span></span><br></pre></td></tr></table></figure>
 		<!-- only display read_more button if there's more to display -->
-		<a type="button" href="/2017/12/11/git/#more" class="btn btn-default more">继续阅读</a>
+		<a type="button" href="/2017/12/15/MAC操作/#more" class="btn btn-default more">继续阅读</a>
 	
 	</div>
 </div>
@@ -163,6 +163,30 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> 2017-12-11 </div>
+			<div class="article-title"><a href="/2017/12/11/git/" >GIT</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	
+		<h3 id="一-设置代理"><a href="#一-设置代理" class="headerlink" title="一. 设置代理"></a>一. 设置代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global https.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global http.sslverify <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+		<!-- only display read_more button if there's more to display -->
+		<a type="button" href="/2017/12/11/git/#more" class="btn btn-default more">继续阅读</a>
+	
+	</div>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> 2017-04-09 </div>
 			<div class="article-title"><a href="/2017/04/09/tomcat应用技巧/" >tomcat应用技巧</a></div>						
 		</h3>
@@ -182,30 +206,6 @@
 <p>然后我们本地访问这个项目的时候需要输入的URL如下：<br>
 		<!-- only display read_more button if there's more to display -->
 		<a type="button" href="/2017/04/09/tomcat应用技巧/#more" class="btn btn-default more">继续阅读</a>
-	
-	</div>
-</div>
-
-           
-		
-           
-			  
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> 2017-04-06 </div>
-			<div class="article-title"><a href="/2017/04/06/jsp添加jstl库/" >jsp添加jstl库</a></div>						
-		</h3>
-	
-
-
-			  <div class="entry">
-  <div class="row">
-	
-	
-		<p>一、在pom.xml中添加依赖：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 添加jtl支持 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jstl<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-		<!-- only display read_more button if there's more to display -->
-		<a type="button" href="/2017/04/06/jsp添加jstl库/#more" class="btn btn-default more">继续阅读</a>
 	
 	</div>
 </div>
@@ -262,7 +262,7 @@
 		
 			<li><a href="/categories/GIT/">GIT<span>1</span></a></li>
 		
-			<li><a href="/categories/JAVA/">JAVA<span>10</span></a></li>
+			<li><a href="/categories/JAVA/">JAVA<span>11</span></a></li>
 		
 			<li><a href="/categories/Linux/">Linux<span>1</span></a></li>
 		
@@ -283,25 +283,25 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/tomcat/">tomcat<span>1</span></a></li>
-		
-			<li><a href="/tags/apache2/">apache2<span>1</span></a></li>
-		
-			<li><a href="/tags/JAVA/">JAVA<span>4</span></a></li>
-		
-			<li><a href="/tags/spring/">spring<span>3</span></a></li>
-		
-			<li><a href="/tags/struts/">struts<span>1</span></a></li>
+			<li><a href="/tags/maven/">maven<span>1</span></a></li>
 		
 			<li><a href="/tags/Hibernate/">Hibernate<span>1</span></a></li>
 		
+			<li><a href="/tags/JAVA/">JAVA<span>5</span></a></li>
+		
+			<li><a href="/tags/spring/">spring<span>3</span></a></li>
+		
+			<li><a href="/tags/tomcat/">tomcat<span>1</span></a></li>
+		
 			<li><a href="/tags/hibernate/">hibernate<span>1</span></a></li>
 		
-			<li><a href="/tags/工具/">工具<span>4</span></a></li>
+			<li><a href="/tags/struts/">struts<span>1</span></a></li>
 		
-			<li><a href="/tags/maven/">maven<span>1</span></a></li>
+			<li><a href="/tags/apache2/">apache2<span>1</span></a></li>
 		
 			<li><a href="/tags/yii2-tree-manager/">yii2-tree-manager<span>1</span></a></li>
+		
+			<li><a href="/tags/工具/">工具<span>4</span></a></li>
 		
 		 
 		</ul>
@@ -313,6 +313,10 @@
 <div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2018/01/06/XML操作/" ><i class="fa fa-file-o"></i>XML操作</a>
+      </li>
     
       <li>
         <a href="/2018/01/02/JSON/" ><i class="fa fa-file-o"></i>JSON</a>
@@ -328,10 +332,6 @@
     
       <li>
         <a href="/2017/12/15/MAC操作/" ><i class="fa fa-file-o"></i>MAC操作</a>
-      </li>
-    
-      <li>
-        <a href="/2017/12/11/git/" ><i class="fa fa-file-o"></i>GIT</a>
       </li>
     
   </ul>
