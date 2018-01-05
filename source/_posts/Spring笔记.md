@@ -11,6 +11,8 @@ tags: JAVA
 <!--more-->
 其实可以这样写
 ```java
+@RequestMapping(value = "/path/of/URL", produces = "text/plain;charset=UTF-8")
+@ResponseBody
 public String getQszgListInfo(HttpServletRequest request) {
 
         // 要返回的解决
