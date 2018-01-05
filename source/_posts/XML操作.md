@@ -25,36 +25,19 @@ tags: JAVA
 </学生花名册>
 ```
 <!--more-->
+目标是将上述的xml解析成为一个map对象：
+```javascript
+  [id1:{
+      属性1：值1，
+      属性2：值2
+  }，
+  id2:{
+      属性1：值1，
+      属性2：值2
+  }]
+ ```
 代码如下：
 ```java
-package com.chenbuer.xml;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
-
-/**
- * Created by buer on 2018/1/6.
- *
- * 将xml转成：
- * [id1:{
- *     属性1：值1，
- *     属性2：值2
- * }，
- * id2:{
- *     属性1：值1，
- *     属性2：值2
- * }]
- *
- */
 public class XMLParseTest {
     private Map<String,Object> parseXML(String path){
         try {
@@ -118,7 +101,3 @@ public class XMLParseTest {
 
 ```
 
-### 二、tiny-spring学习
-1. step-1-container-register-and-get
-
-`BeanFactory`是注册和获取bean的工厂，说白了就是讲bean初始化并放到一个Map中，key值就是beanName，获取的时候，根据这个beanName获取到他的对象。就是这么简单。
