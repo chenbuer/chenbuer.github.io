@@ -74,3 +74,11 @@ alt+ctrl+→代表前进，但是Windows本身有热键，表示旋转屏幕，�
 > 全局的设置？如下：
 
 ![全局JDK设置](https://github.com/chenbuer/markdownImgs/blob/master/blog/globalJdkSetting.png?raw=true)
+
+### 十、MAC下IDEA补全快捷键和搜狗快捷键冲突
+这两个快捷键都是`ctrl+Space`，所以就给IDEA添加一个补全的快捷键为`Option+Command+Space`与Windows下的`Alt+Ctrl+Space`对应起来，但是`Option+Command+Space`又与系统快捷键冲突。处理方法如下：
+> 删除系统的快捷键
+
+![删除系统的快捷键](https://github.com/chenbuer/markdownImgs/blob/master/blog/idea-completion/rmMacAltCmdSpace.png?raw=true)
+> 给IDEA增加一个快捷键
+![给IDEA增加一个快捷键](https://github.com/chenbuer/markdownImgs/blob/master/blog/idea-completion/addOneCutForCompletion.png?raw=true)
