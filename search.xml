@@ -4,9 +4,35 @@
   
     
     <entry>
+      <title><![CDATA[JSON]]></title>
+      <url>http://chenbuer.github.com/2018/01/02/JSON/</url>
+      <content type="html"><![CDATA[<h3 id="一、fastjson"><a href="#一、fastjson" class="headerlink" title="一、fastjson"></a>一、fastjson</h3><p>解析字符串：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//data是json字符串，TraderProductListDto是要转换为的dto</span></span><br><span class="line">JSONObject.parseArray(data, TraderProductListDto.class);</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+]]></content>
+      
+        <categories>
+            
+            <category> JAVA </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> JAVA </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Spring笔记]]></title>
       <url>http://chenbuer.github.com/2017/12/28/Spring%E7%AC%94%E8%AE%B0/</url>
-      <content type="html"><![CDATA[<h3 id="一、Ajax请求返回json对象"><a href="#一、Ajax请求返回json对象" class="headerlink" title="一、Ajax请求返回json对象"></a>一、Ajax请求返回json对象</h3><p>直接用<code>@Response</code>会出现中文乱码的情况，所以之前做的时候都写了一个工具类：<br><a href="https://github.com/chenbuer/springboot-soa-blog/blob/master/springboot-soa-blog-controller%2Fsrc%2Fmain%2Fjava%2Fcom%2Fchenbuer%2Futil%2FResponseUtil.java" target="_blank" rel="noopener">ResponseUtil.java</a><br><a id="more"></a><br>其实可以这样写<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getQszgListInfo</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 要返回的解决</span></span><br><span class="line">        Map&lt;String, Object&gt; res = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">        ...</span><br><span class="line">        <span class="keyword">return</span> JSONObject.toJSONString(res);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+      <content type="html"><![CDATA[<h3 id="一、Ajax请求返回json对象"><a href="#一、Ajax请求返回json对象" class="headerlink" title="一、Ajax请求返回json对象"></a>一、Ajax请求返回json对象</h3><p>直接用<code>@Response</code>会出现中文乱码的情况，所以之前做的时候都写了一个工具类：<br><a href="https://github.com/chenbuer/springboot-soa-blog/blob/master/springboot-soa-blog-controller%2Fsrc%2Fmain%2Fjava%2Fcom%2Fchenbuer%2Futil%2FResponseUtil.java" target="_blank" rel="noopener">ResponseUtil.java</a><br><a id="more"></a><br>其实可以这样写<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/path/of/URL"</span>, produces = <span class="string">"text/plain;charset=UTF-8"</span>)</span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getQszgListInfo</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 要返回的解决</span></span><br><span class="line">        Map&lt;String, Object&gt; res = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">        ...</span><br><span class="line">        <span class="keyword">return</span> JSONObject.toJSONString(res);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="二、tiny-spring学习"><a href="#二、tiny-spring学习" class="headerlink" title="二、tiny-spring学习"></a>二、tiny-spring学习</h3><ol>
+<li>step-1-container-register-and-get</li>
+</ol>
+<p><code>BeanFactory</code>是注册和获取bean的工厂，说白了就是讲bean初始化并放到一个Map中，key值就是beanName，获取的时候，根据这个beanName获取到他的对象。就是这么简单。</p>
 ]]></content>
       
         <categories>
@@ -76,6 +102,35 @@
         <categories>
             
             <category> MAC </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[GIT]]></title>
+      <url>http://chenbuer.github.com/2017/12/11/git/</url>
+      <content type="html"><![CDATA[<h3 id="一-设置代理"><a href="#一-设置代理" class="headerlink" title="一. 设置代理"></a>一. 设置代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global https.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global http.sslverify <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>也可以设置socket代理，不错：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy <span class="string">'socks5://127.0.0.1:1080'</span></span><br><span class="line">git config --global https.proxy <span class="string">'socks5://127.0.0.1:1080'</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="二-撤销代理"><a href="#二-撤销代理" class="headerlink" title="二. 撤销代理"></a>二. 撤销代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br></pre></td></tr></table></figure>
+<h3 id="三-如果要查当前的代理配置"><a href="#三-如果要查当前的代理配置" class="headerlink" title="三. 如果要查当前的代理配置"></a>三. 如果要查当前的代理配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --get http.proxy</span><br><span class="line">git config --global --get https.proxy</span><br></pre></td></tr></table></figure>
+<h3 id="四-切换到远程分支"><a href="#四-切换到远程分支" class="headerlink" title="四. 切换到远程分支"></a>四. 切换到远程分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -t origin/hexo</span><br></pre></td></tr></table></figure>
+<h3 id="五-Windows下手动改修配置文件"><a href="#五-Windows下手动改修配置文件" class="headerlink" title="五. Windows下手动改修配置文件"></a>五. Windows下手动改修配置文件</h3><p>在Windows下找不到的gitconfig文件，但是我们都知道的Linux下<code>~/.gitconfig</code>。所以，用gitbash吧：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi ~/.gitconfig</span><br></pre></td></tr></table></figure></p>
+<h3 id="六-用https也不用每次都输入密码"><a href="#六-用https也不用每次都输入密码" class="headerlink" title="六. 用https也不用每次都输入密码"></a>六. 用https也不用每次都输入密码</h3><p>很多环境下并不能用ssh，所以<code>git clone</code>的时候Clone with SSH也不好使，只能用https协议。用https协议在每次提交的时候，都要手动输入用户名和密码。所以修改本地repository下的git配置文件。<br>修改前：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = false</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">        symlinks = false</span><br><span class="line">        ignorecase = true</span><br><span class="line">        hideDotFiles = dotGitOnly</span><br><span class="line">[remote "origin"]</span><br><span class="line">        url = https://github.com/chenbuer/chenbuer.github.io.git</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch "master"]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/master</span><br><span class="line">[branch "hexo"]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/hexo</span><br></pre></td></tr></table></figure></p>
+<p>修改之后：<br><img src="https://github.com/chenbuer/markdownImgs/blob/master/blog/modGitCfg.png?raw=true" alt="modGitCfg"></p>
+]]></content>
+      
+        <categories>
+            
+            <category> GIT </category>
             
         </categories>
         
@@ -200,35 +255,6 @@
         <categories>
             
             <category> JAVA </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 工具 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[GIT]]></title>
-      <url>http://chenbuer.github.com/2017/12/11/git/</url>
-      <content type="html"><![CDATA[<h3 id="一-设置代理"><a href="#一-设置代理" class="headerlink" title="一. 设置代理"></a>一. 设置代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global https.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global http.sslverify <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>也可以设置socket代理，不错：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy <span class="string">'socks5://127.0.0.1:1080'</span></span><br><span class="line">git config --global https.proxy <span class="string">'socks5://127.0.0.1:1080'</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="二-撤销代理"><a href="#二-撤销代理" class="headerlink" title="二. 撤销代理"></a>二. 撤销代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br></pre></td></tr></table></figure>
-<h3 id="三-如果要查当前的代理配置"><a href="#三-如果要查当前的代理配置" class="headerlink" title="三. 如果要查当前的代理配置"></a>三. 如果要查当前的代理配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --get http.proxy</span><br><span class="line">git config --global --get https.proxy</span><br></pre></td></tr></table></figure>
-<h3 id="四-切换到远程分支"><a href="#四-切换到远程分支" class="headerlink" title="四. 切换到远程分支"></a>四. 切换到远程分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -t origin/hexo</span><br></pre></td></tr></table></figure>
-<h3 id="五-Windows下手动改修配置文件"><a href="#五-Windows下手动改修配置文件" class="headerlink" title="五. Windows下手动改修配置文件"></a>五. Windows下手动改修配置文件</h3><p>在Windows下找不到的gitconfig文件，但是我们都知道的Linux下<code>~/.gitconfig</code>。所以，用gitbash吧：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi ~/.gitconfig</span><br></pre></td></tr></table></figure></p>
-<h3 id="六-用https也不用每次都输入密码"><a href="#六-用https也不用每次都输入密码" class="headerlink" title="六. 用https也不用每次都输入密码"></a>六. 用https也不用每次都输入密码</h3><p>很多环境下并不能用ssh，所以<code>git clone</code>的时候Clone with SSH也不好使，只能用https协议。用https协议在每次提交的时候，都要手动输入用户名和密码。所以修改本地repository下的git配置文件。<br>修改前：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = false</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">        symlinks = false</span><br><span class="line">        ignorecase = true</span><br><span class="line">        hideDotFiles = dotGitOnly</span><br><span class="line">[remote "origin"]</span><br><span class="line">        url = https://github.com/chenbuer/chenbuer.github.io.git</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch "master"]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/master</span><br><span class="line">[branch "hexo"]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/hexo</span><br></pre></td></tr></table></figure></p>
-<p>修改之后：<br><img src="https://github.com/chenbuer/markdownImgs/blob/master/blog/modGitCfg.png?raw=true" alt="modGitCfg"></p>
-]]></content>
-      
-        <categories>
-            
-            <category> GIT </category>
             
         </categories>
         
