@@ -16,7 +16,7 @@ tags: JAVA
 @ResponseBody
 public String getQszgListInfo(HttpServletRequest request) {
 
-        // 要返回的解决
+        // 要返回的json
         Map<String, Object> res = new HashMap<String, Object>();
         ...
         return JSONObject.toJSONString(res);
