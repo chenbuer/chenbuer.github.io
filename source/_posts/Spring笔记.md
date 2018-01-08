@@ -11,7 +11,8 @@ tags: JAVA
 <!--more-->
 其实可以这样写
 ```java
-@RequestMapping(value = "/path/of/URL", produces = "text/plain;charset=UTF-8")
+
+@RequestMapping(value = "/path/of/URL", produces = { "application/json;charset=UTF-8" })
 @ResponseBody
 public String getQszgListInfo(HttpServletRequest request) {
 
@@ -21,6 +22,7 @@ public String getQszgListInfo(HttpServletRequest request) {
         return JSONObject.toJSONString(res);
     }
 ```
+返回文本，RequestMapping可以写为`@RequestMapping(value = "/path/of/URL", produces = "text/plain;charset=UTF-8")`。[官方文档](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestMapping.html#produces--)
 
 ### 二、tiny-spring学习
 1. step-1-container-register-and-get
