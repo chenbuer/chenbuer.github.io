@@ -39,6 +39,11 @@ tags: JAVA
 代码如下：
 ```java
 public class XMLParseTest {
+
+    @Test
+    public void test(){
+        parseXML("students.xml  ");
+    }
     private Map<String,Object> parseXML(String path){
         try {
             // 获取到DocumentBuilder
@@ -46,7 +51,10 @@ public class XMLParseTest {
             DocumentBuilder db = dbf.newDocumentBuilder();
 
             //获取到Document
-            InputStream in = new FileInputStream(path);
+//            InputStream in = new FileInputStream(path);//经常出现找不到文件的错误
+            URL resource = getClass().getClassLoader().getResource(path);
+            URLConnection urlConnection = resource.openConnection();
+            final InputStream in = urlConnection.getInputStream();
             Document doc = db.parse(in);
 
             //获取到根节点
@@ -57,7 +65,7 @@ public class XMLParseTest {
             if (null == childNodes){
                 return null;
             }
-            
+
             // 所有学生的所有信息都放到了这个map里面
             Map<String, Object> allStds = new HashMap<String, Object>();
 
@@ -80,23 +88,21 @@ public class XMLParseTest {
                         String attribute = stdOne.getNodeName();
                         String val = stdOne.getNodeValue();
                         oneStdAttrs.put(attribute,val);
-                        
+
                     }
 
                     allStds.put(id, oneStdChildNodes);
 
                 }
             }
-            
+
             return allStds;
 
         } catch (Exception e) {
             e.printStackTrace();
+            return null;
         }
-
     }
-
-
 }
 
 ```
