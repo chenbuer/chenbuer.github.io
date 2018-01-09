@@ -82,3 +82,9 @@ alt+ctrl+→代表前进，但是Windows本身有热键，表示旋转屏幕，�
 ![删除系统的快捷键](https://github.com/chenbuer/markdownImgs/blob/master/blog/idea-completion/rmMacAltCmdSpace.png?raw=true)
 > 给IDEA增加一个快捷键
 ![给IDEA增加一个快捷键](https://github.com/chenbuer/markdownImgs/blob/master/blog/idea-completion/addOneCutForCompletion.png?raw=true)
+
+### 十一、pom.xml中增加了jar包，但是在Library中没有添加进来
+
+> 解决方法：
+
+![pom.xml中增加了jar包，但是在Library中没有添加进来](https://github.com/chenbuer/markdownImgs/blob/master/blog/IDEAMvnAutoImport.png?raw=true)
