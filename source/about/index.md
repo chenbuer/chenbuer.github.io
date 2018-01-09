@@ -5,7 +5,8 @@ date: 2017-02-13 21:27:44
 
 > ### 我是陈不二，请多指教 Here is my schedule:
 
- 下面主要学习dubbo，任重道远
+ 下面主要学习dubbo，任重道远。
+ 学习dubbo需要先了解spring，看了tiny-spring，还需要了解一下xml解析，用原生的dom包不如学习一下dom4j。
 
 
 ---
