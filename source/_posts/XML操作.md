@@ -5,7 +5,7 @@ categories: JAVA
 tags: JAVA
 ---
 
-### 一、直接利用的jdk解析xml
+### 一、需要被解析的xml
 解析一个这样的xml：
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -25,7 +25,43 @@ tags: JAVA
 </学生花名册>
 ```
 <!--more-->
-目标是将上述的xml解析成为一个map对象：
+
+### 二、利用Dom4j进行解析
+```java
+public void dom4jParseXML(String path){
+        SAXReader reader = new SAXReader();
+        try {
+            URL resource = getClass().getClassLoader().getResource(path);
+            org.dom4j.Document document = reader.read(resource);
+            org.dom4j.Element rootElement = document.getRootElement();
+            Iterator it = rootElement.elementIterator();
+            while (it.hasNext()){
+                //获取到每一个学生
+                org.dom4j.Element ele = (org.dom4j.Element) it.next();
+
+                System.out.println("======开始一个学生的解析======");
+                //开始某一个学生的解析
+                List<Attribute> attributes = ele.attributes();
+                for (Attribute attribute : attributes) {
+                    System.out.println(attribute.getName() + ":" + attribute.getValue());
+                }
+                //获取该学生的所有的子节点
+                Iterator stdAtt = ele.elementIterator();
+                while (stdAtt.hasNext()){
+                    org.dom4j.Element oneAttr = (org.dom4j.Element) stdAtt.next();
+                    System.out.println(oneAttr.getQName().getName() +":"+ oneAttr.getText());
+                }
+                System.out.println("======结束一个学生的解析======");
+
+            }
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        }
+    }
+```
+
+### 三、直接利用的jdk的dom进行解析
+目标是将上述的xml解析成为一个map对象：
 ```javascript
   [id1:{
       属性1：值1，
