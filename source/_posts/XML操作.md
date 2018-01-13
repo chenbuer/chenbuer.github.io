@@ -29,38 +29,45 @@ tags: JAVA
 ### 二、利用Dom4j进行解析
 ```java
 public void dom4jParseXML(String path){
-        SAXReader reader = new SAXReader();
-        try {
-            URL resource = getClass().getClassLoader().getResource(path);
-            org.dom4j.Document document = reader.read(resource);
-            org.dom4j.Element rootElement = document.getRootElement();
-            Iterator it = rootElement.elementIterator();
-            while (it.hasNext()){
-                //获取到每一个学生
-                org.dom4j.Element ele = (org.dom4j.Element) it.next();
+    try {
+        // 1. 获取SAXReader对象
+        org.dom4j.io.SAXReader reader = new SAXReader();
+        // 获取resouce
+        URL resource = getClass().getClassLoader().getResource(path);
+        // 2. 利用SAXReader对象的read方法获取Docment对象
+        org.dom4j.Document document = reader.read(resource);
+        // 3. 获取document对象的根节点
+        org.dom4j.Element rootElement = document.getRootElement();
+        // 4. 通过根节点的elementIterator方法获取对应下面的所有子节点
+        Iterator it = rootElement.elementIterator();
+        // 5. 循环迭代器
+        while (it.hasNext()){
+            // 5.1 获取到每一个学生节点
+            org.dom4j.Element ele = (org.dom4j.Element) it.next();
 
-                System.out.println("======开始一个学生的解析======");
-                //开始某一个学生的解析
-                List<Attribute> attributes = ele.attributes();
-                for (Attribute attribute : attributes) {
-                    System.out.println(attribute.getName() + ":" + attribute.getValue());
-                }
-                //获取该学生的所有的子节点
-                Iterator stdAtt = ele.elementIterator();
-                while (stdAtt.hasNext()){
-                    org.dom4j.Element oneAttr = (org.dom4j.Element) stdAtt.next();
-                    System.out.println(oneAttr.getQName().getName() +":"+ oneAttr.getText());
-                }
-                System.out.println("======结束一个学生的解析======");
-
+            System.out.println("======开始一个学生的解析======");
+            //开始某一个学生的解析
+            List<Attribute> attributes = ele.attributes();
+            for (Attribute attribute : attributes) {
+                System.out.println(attribute.getName() + ":" + attribute.getValue());
             }
-        } catch (DocumentException e) {
-            e.printStackTrace();
+            //获取该学生的所有的子节点
+            Iterator stdAtt = ele.elementIterator();
+            while (stdAtt.hasNext()){
+                org.dom4j.Element oneAttr = (org.dom4j.Element) stdAtt.next();
+                System.out.println(oneAttr.getQName().getName() +":"+ oneAttr.getText());
+            }
+            System.out.println("======结束一个学生的解析======");
+
         }
+    } catch (DocumentException e) {
+        e.printStackTrace();
     }
+}
 ```
 
 ### 三、直接利用的jdk的dom进行解析
+（目前此段代码还有点儿问题，暂时不究，后期再补）
 目标是将上述的xml解析成为一个map对象：
 ```javascript
   [id1:{
