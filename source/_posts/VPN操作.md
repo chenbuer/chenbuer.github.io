@@ -22,3 +22,7 @@ Thunderbolt Bridge
 Bluetooth PAN
 ➜ /Users/buer $ sudo networksetup -setdnsservers Wi-Fi 192.168.121.20
 ```
+操作完了记得改回来
+```bash
+sudo networksetup -setdnsservers Wi-Fi 8.8.8.8
+```
