@@ -28,3 +28,43 @@ StringUtils.join(list, ",")
 
 ### 二、Spring + tomcat jndi配置
 [配置方法](http://www.cnblogs.com/zhilin-yang/p/4958000.html)
+
+### 三、org.springframework.beans.BeanUtils#copyProperties的使用
+```java
+public class BeanUtilsCopyTest {
+    @Test
+    public void test(){
+        A a = new A("a",1,2L,"d");
+        System.out.println("a======");
+        System.out.println(a);
+        B b = new B();
+        System.out.println("b======");
+        BeanUtils.copyProperties(a,b);
+        System.out.println(b);
+    }
+
+    class A{
+        private String a;
+        private int b;
+        private long c;
+        private String d;
+        // 省略getter/setter和toString()和构造函数
+    }
+
+
+    class B{
+        private int b;
+        private long c;
+        private String d;
+        private String e;
+        // 省略getter/setter和toString()
+    }
+}
+```
+运行结果
+```java
+a======
+A{a='a', b=1, c=2, d='d'}
+b======
+B{b=1, c=2, d='d', e='null'}
+```
