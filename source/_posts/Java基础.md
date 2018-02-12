@@ -109,4 +109,7 @@ public class ThreadPoolTaskExectorTest {
     }
 }
 ```
-只要把要执行的runnable对象（task）扔进`ThreadPoolTaskExecutor taskExecutor`中去，然后他就自己按照配置策略，去执行对应的runnable对象中的run方法
+只要把要执行的runnable对象（task）扔进`ThreadPoolTaskExecutor taskExecutor`中去，然后他就自己按照配置策略，去执行对应的runnable对象中的run方法。
+
+另外：
+[Callable和Runnable用法的比较](http://blog.csdn.net/xtwolf008/article/details/7713580)
