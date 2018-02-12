@@ -72,3 +72,41 @@ B{b=1, c=2, d='d', e='null'}
 ### 四、@Qualifier与@Autowired
 简单讲，就是@Autowired是根据类型来寻找bean的，当一个接口可能有好几个实现类，并且都注释为Bean，就需要@Qualifier来指定对应的bean id。
 [参考链接](http://blog.csdn.net/clerk0324/article/details/25198457)
+
+### 五、ThreadPoolTaskExecutor的使用
+关于它的配置可以[参考链接](http://blog.csdn.net/seminmredoxu/article/details/7000709)
+使用方法：
+首先定义线程池：
+```xml
+<bean id ="taskExecutor"  class ="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor" >
+    <property name ="corePoolSize" value ="5" /> 
+    <property name ="keepAliveSeconds" value ="300" /> 
+    <property name ="maxPoolSize" value ="10" /> 
+    <property name ="queueCapacity" value ="25" /> 
+  </bean>
+```
+然后使用线程池：
+```java
+public class ThreadPoolTaskExectorTest {
+    /**
+     * 线程池
+     */
+    @Autowired
+    @Qualifier("runBatchTaskExecutor")
+    ThreadPoolTaskExecutor taskExecutor;
+
+    @Test
+    public void crateTask(){
+        CreateLoanInfoTask task = new CreateLoanInfoTask();
+        taskExecutor.execute(task);
+    }
+    
+    class CreateLoanInfoTask implements Runnable{
+
+        public void run() {
+            // 省略具体的逻辑
+        }
+    }
+}
+```
+只要把要执行的runnable对象（task）扔进`ThreadPoolTaskExecutor taskExecutor`中去，然后他就自己按照配置策略，去执行对应的runnable对象中的run方法
