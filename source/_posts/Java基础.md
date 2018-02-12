@@ -25,3 +25,6 @@ noRaiseDrop.subList(fromIndex, toIndex);
 ```java
 StringUtils.join(list, ",")
 ```
+
+### 二、Spring + tomcat jndi配置
+[配置方法](http://www.cnblogs.com/zhilin-yang/p/4958000.html)
