@@ -113,3 +113,18 @@ public class ThreadPoolTaskExectorTest {
 
 另外：
 [Callable和Runnable用法的比较](http://blog.csdn.net/xtwolf008/article/details/7713580)
+
+### 六、FutureTask
+菜鸟A：问一个基础的问题，线程池可以理解为java异步编程的一种方法吗？
+
+老鸟B：对啊，多线程就是一种异步编程啊。多线程就是为了达到异步的
+
+菜鸟A：在上面讲的ThreadPoolTaskExector。如果线程池连的Runnable里面的run方法，是跟另一个系统交互的。另一个系统返回的response怎么处理呢？
+
+他可以在run()中等待结果response，可以立即处理response，也可以将response封装成一个runnable对象再次扔到其他的线程池中等待处理。
+
+但是，他还是需要等待response的。
+
+老鸟B：这个时候用Callable、Future和FutureTask就更好了
+
+[Callable、Future和FutureTask](http://www.cnblogs.com/dolphin0520/p/3949310.html)
