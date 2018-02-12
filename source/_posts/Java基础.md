@@ -68,3 +68,7 @@ A{a='a', b=1, c=2, d='d'}
 b======
 B{b=1, c=2, d='d', e='null'}
 ```
+
+### 四、@Qualifier与@Autowired
+简单讲，就是@Autowired是根据类型来寻找bean的，当一个接口可能有好几个实现类，并且都注释为Bean，就需要@Qualifier来指定对应的bean id。
+[参考链接](http://blog.csdn.net/clerk0324/article/details/25198457)
