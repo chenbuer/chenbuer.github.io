@@ -88,3 +88,15 @@ alt+ctrl+→代表前进，但是Windows本身有热键，表示旋转屏幕，�
 > 解决方法：
 
 ![pom.xml中增加了jar包，但是在Library中没有添加进来](https://github.com/chenbuer/markdownImgs/blob/master/blog/IDEAMvnAutoImport.png?raw=true)
+
+
+### 十二、IDEA设置tomcat，在选择deploy项目时war和war exploded的区别
+一个project有两个选择，一个是选择war，一个是选择war exploded
+> war模式：将WEB工程以包的形式上传到服务器 ；先打成war包，再发布；
+
+> war exploded模式：将WEB工程以当前文件夹的位置关系上传到服务器；war exploded模式是直接把文件夹、jsp页面 、classes等等移到Tomcat 部署文件夹里面，进行加载部署。因此这种方式支持热部署，一般在开发的时候也是用这种方式。
+
+热部署的时候有多热？是修改之后立即生效，还是重启之后生效？是这个配置：
+[IDEA部署tomcat热部署](http://img.blog.csdn.net/20170223094201219?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGxnZW4xNTczODc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+[参考链接](http://blog.csdn.net/linjpg/article/details/73322881)
