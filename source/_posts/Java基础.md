@@ -114,7 +114,7 @@ public class ThreadPoolTaskExectorTest {
 另外：
 [Callable和Runnable用法的比较](http://blog.csdn.net/xtwolf008/article/details/7713580)
 
-### 六、FutureTask
+### 六、Callable、Future和FutureTask
 菜鸟A：问一个基础的问题，线程池可以理解为java异步编程的一种方法吗？
 
 老鸟B：对啊，多线程就是一种异步编程啊。多线程就是为了达到异步的
