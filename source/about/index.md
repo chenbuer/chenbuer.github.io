@@ -8,6 +8,7 @@ date: 2017-02-13 21:27:44
  下面主要学习dubbo，任重道远。
  学习dubbo需要先了解spring，看了tiny-spring，还需要了解一下xml解析，用原生的dom包不如学习一下dom4j。
 
+如何提高自己的情商，需要长久锻炼与思考。
 
 ---
 这两天看的东西有点杂：druid、shiro、maven、hibernate和springMVC结合。
