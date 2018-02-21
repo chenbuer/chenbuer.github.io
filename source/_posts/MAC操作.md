@@ -43,7 +43,7 @@ open CONSOLA*.TTF
 
 [快捷设置窗口大小Spectacle](https://www.zhihu.com/question/21075430)
 
-[Python3](http://pythonguidecn.readthedocs.io/zh/latest/starting/install3/osx.html)
+[Mac OS X 安装pip , ipython](http://blog.csdn.net/jobschen/article/details/49559023) | [Python3](http://pythonguidecn.readthedocs.io/zh/latest/starting/install3/osx.html)
 
 ### 三、关闭仪表盘(dashboard)
 
