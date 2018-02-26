@@ -128,3 +128,13 @@ public class ThreadPoolTaskExectorTest {
 老鸟B：这个时候用Callable、Future和FutureTask就更好了
 
 [Callable、Future和FutureTask](http://www.cnblogs.com/dolphin0520/p/3949310.html)
+
+### 七、FTP操作
+利用commons-net这个jar包：
+```xml
+<dependency>
+    <groupId>commons-net</groupId>
+    <artifactId>commons-net</artifactId>
+    <version>3.3</version>
+</dependency>
+```
