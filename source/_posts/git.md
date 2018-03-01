@@ -64,3 +64,10 @@ $ vi ~/.gitconfig
 ```
 修改之后：
 ![modGitCfg](https://github.com/chenbuer/markdownImgs/blob/master/blog/modGitCfg.png?raw=true)
+
+### 七、本地添加github远程
+首先需要在github上添加repo为test，然后在本地项目下执行命令：
+```bash
+git init
+git remote add origin https://github.com/chenbuer/test //关联远程仓库
+```
