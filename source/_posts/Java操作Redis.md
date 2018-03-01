@@ -171,6 +171,12 @@ public class RedisTest {
 [参考链接](http://blog.csdn.net/lihao21/article/details/48370687)
 
 ### 三、从缓存中处理请求的两种方式：time&count
+首先：两种模式下，时间阈值（假设10s） 和 count阈值（100） 都是有用的
+
+时间模式：若5s时已经add了100个，再等5s到10s后处理；若到了10s，还没add到100个，也处理
+
+cout模式（适合较多数据的时候）：若5s时add到了100，直接处理；若到了10s，还没add到100个，也处理
+
 ```java
 if (MODE_TIME.equals(mode)) {
     do {
