@@ -15,6 +15,7 @@ noRaiseDrop.subList(fromIndex, toIndex);
 > 1.2 List拼接
 
 用Apache的org.apache.commons.lang.StringUtils.
+<!--more-->
 ```xml
 <dependency>
     <groupId>org.apache.commons</groupId>
