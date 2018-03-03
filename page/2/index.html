@@ -115,6 +115,30 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> 2017-12-28 </div>
+			<div class="article-title"><a href="/2017/12/28/Spring笔记/" >Spring笔记</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	
+		<h3 id="一、Ajax请求返回json对象"><a href="#一、Ajax请求返回json对象" class="headerlink" title="一、Ajax请求返回json对象"></a>一、Ajax请求返回json对象</h3><p>直接用<code>@Response</code>会出现中文乱码的情况，所以之前做的时候都写了一个工具类：<br><a href="https://github.com/chenbuer/springboot-soa-blog/blob/master/springboot-soa-blog-controller%2Fsrc%2Fmain%2Fjava%2Fcom%2Fchenbuer%2Futil%2FResponseUtil.java" target="_blank" rel="noopener">ResponseUtil.java</a><br>
+		<!-- only display read_more button if there's more to display -->
+		<a type="button" href="/2017/12/28/Spring笔记/#more" class="btn btn-default more">继续阅读</a>
+	
+	</div>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> 2017-12-25 </div>
 			<div class="article-title"><a href="/2017/12/25/Java基础/" >Java基础</a></div>						
 		</h3>
@@ -132,25 +156,9 @@
 <blockquote>
 <p>1.2 List拼接</p>
 </blockquote>
-<p>用Apache的org.apache.commons.lang.StringUtils.<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.commons<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-pool2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.4.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">StringUtils.join(list, <span class="string">","</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="二、Spring-tomcat-jndi配置"><a href="#二、Spring-tomcat-jndi配置" class="headerlink" title="二、Spring + tomcat jndi配置"></a>二、Spring + tomcat jndi配置</h3><p><a href="http://www.cnblogs.com/zhilin-yang/p/4958000.html" target="_blank" rel="noopener">配置方法</a></p>
-<h3 id="三、org-springframework-beans-BeanUtils-copyProperties的使用"><a href="#三、org-springframework-beans-BeanUtils-copyProperties的使用" class="headerlink" title="三、org.springframework.beans.BeanUtils#copyProperties的使用"></a>三、org.springframework.beans.BeanUtils#copyProperties的使用</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BeanUtilsCopyTest</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">        A a = <span class="keyword">new</span> A(<span class="string">"a"</span>,<span class="number">1</span>,<span class="number">2L</span>,<span class="string">"d"</span>);</span><br><span class="line">        System.out.println(<span class="string">"a======"</span>);</span><br><span class="line">        System.out.println(a);</span><br><span class="line">        B b = <span class="keyword">new</span> B();</span><br><span class="line">        System.out.println(<span class="string">"b======"</span>);</span><br><span class="line">        BeanUtils.copyProperties(a,b);</span><br><span class="line">        System.out.println(b);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> String a;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> b;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">long</span> c;</span><br><span class="line">        <span class="keyword">private</span> String d;</span><br><span class="line">        <span class="comment">// 省略getter/setter和toString()和构造函数</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">B</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> b;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">long</span> c;</span><br><span class="line">        <span class="keyword">private</span> String d;</span><br><span class="line">        <span class="keyword">private</span> String e;</span><br><span class="line">        <span class="comment">// 省略getter/setter和toString()</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a======</span><br><span class="line">A&#123;a=<span class="string">'a'</span>, b=<span class="number">1</span>, c=<span class="number">2</span>, d=<span class="string">'d'</span>&#125;</span><br><span class="line">b======</span><br><span class="line">B&#123;b=<span class="number">1</span>, c=<span class="number">2</span>, d=<span class="string">'d'</span>, e=<span class="string">'null'</span>&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="四、-Qualifier与-Autowired"><a href="#四、-Qualifier与-Autowired" class="headerlink" title="四、@Qualifier与@Autowired"></a>四、@Qualifier与@Autowired</h3><p>简单讲，就是@Autowired是根据类型来寻找bean的，当一个接口可能有好几个实现类，并且都注释为Bean，就需要@Qualifier来指定对应的bean id。<br><a href="http://blog.csdn.net/clerk0324/article/details/25198457" target="_blank" rel="noopener">参考链接</a></p>
-<h3 id="五、ThreadPoolTaskExecutor的使用"><a href="#五、ThreadPoolTaskExecutor的使用" class="headerlink" title="五、ThreadPoolTaskExecutor的使用"></a>五、ThreadPoolTaskExecutor的使用</h3><p>关于它的配置可以<a href="http://blog.csdn.net/seminmredoxu/article/details/7000709" target="_blank" rel="noopener">参考链接</a><br>使用方法：<br>首先定义线程池：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span> =<span class="string">"taskExecutor"</span>  <span class="attr">class</span> =<span class="string">"org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor"</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span> =<span class="string">"corePoolSize"</span> <span class="attr">value</span> =<span class="string">"5"</span> /&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span> =<span class="string">"keepAliveSeconds"</span> <span class="attr">value</span> =<span class="string">"300"</span> /&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span> =<span class="string">"maxPoolSize"</span> <span class="attr">value</span> =<span class="string">"10"</span> /&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span> =<span class="string">"queueCapacity"</span> <span class="attr">value</span> =<span class="string">"25"</span> /&gt;</span> </span><br><span class="line">  <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>然后使用线程池：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadPoolTaskExectorTest</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 线程池</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="meta">@Qualifier</span>(<span class="string">"runBatchTaskExecutor"</span>)</span><br><span class="line">    ThreadPoolTaskExecutor taskExecutor;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">crateTask</span><span class="params">()</span></span>&#123;</span><br><span class="line">        CreateLoanInfoTask task = <span class="keyword">new</span> CreateLoanInfoTask();</span><br><span class="line">        taskExecutor.execute(task);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">CreateLoanInfoTask</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="comment">// 省略具体的逻辑</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>只要把要执行的runnable对象（task）扔进<code>ThreadPoolTaskExecutor taskExecutor</code>中去，然后他就自己按照配置策略，去执行对应的runnable对象中的run方法。</p>
-<p>另外：<br><a href="http://blog.csdn.net/xtwolf008/article/details/7713580" target="_blank" rel="noopener">Callable和Runnable用法的比较</a></p>
-<h3 id="六、Callable、Future和FutureTask"><a href="#六、Callable、Future和FutureTask" class="headerlink" title="六、Callable、Future和FutureTask"></a>六、Callable、Future和FutureTask</h3><p>菜鸟A：问一个基础的问题，线程池可以理解为java异步编程的一种方法吗？</p>
-<p>老鸟B：对啊，多线程就是一种异步编程啊。多线程就是为了达到异步的</p>
-<p>菜鸟A：在上面讲的ThreadPoolTaskExector。如果线程池连的Runnable里面的run方法，是跟另一个系统交互的。另一个系统返回的response怎么处理呢？</p>
-<p>他可以在run()中等待结果response，可以立即处理response，也可以将response封装成一个runnable对象再次扔到其他的线程池中等待处理。</p>
-<p>但是，他还是需要等待response的。</p>
-<p>老鸟B：这个时候用Callable、Future和FutureTask就更好了</p>
-<p><a href="http://www.cnblogs.com/dolphin0520/p/3949310.html" target="_blank" rel="noopener">Callable、Future和FutureTask</a></p>
-<h3 id="七、FTP操作"><a href="#七、FTP操作" class="headerlink" title="七、FTP操作"></a>七、FTP操作</h3><p>利用commons-net这个jar包：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-net<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-net<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-
+<p>用Apache的org.apache.commons.lang.StringUtils.<br>
+		<!-- only display read_more button if there's more to display -->
+		<a type="button" href="/2017/12/25/Java基础/#more" class="btn btn-default more">继续阅读</a>
 	
 	</div>
 </div>
@@ -199,30 +207,6 @@
 		<h3 id="一、工具栏中文乱码，但是编辑框不乱码"><a href="#一、工具栏中文乱码，但是编辑框不乱码" class="headerlink" title="一、工具栏中文乱码，但是编辑框不乱码"></a>一、工具栏中文乱码，但是编辑框不乱码</h3><p>进入IDE Settings 里的 Appearance项，选中Override default fonts by ，把 Name 设置为 SimSun，Size 根据自己喜好设置（我一般设为 12）。确定<br>
 		<!-- only display read_more button if there's more to display -->
 		<a type="button" href="/2017/12/11/IDEA设置与操作/#more" class="btn btn-default more">继续阅读</a>
-	
-	</div>
-</div>
-
-           
-		
-           
-			  
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> 2017-12-11 </div>
-			<div class="article-title"><a href="/2017/12/11/git/" >GIT</a></div>						
-		</h3>
-	
-
-
-			  <div class="entry">
-  <div class="row">
-	
-	
-		<h3 id="一-设置代理"><a href="#一-设置代理" class="headerlink" title="一. 设置代理"></a>一. 设置代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global https.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global http.sslverify <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-		<!-- only display read_more button if there's more to display -->
-		<a type="button" href="/2017/12/11/git/#more" class="btn btn-default more">继续阅读</a>
 	
 	</div>
 </div>
@@ -300,25 +284,25 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/spring/">spring<span>3</span></a></li>
-		
-			<li><a href="/tags/工具/">工具<span>5</span></a></li>
-		
-			<li><a href="/tags/yii2-tree-manager/">yii2-tree-manager<span>1</span></a></li>
-		
-			<li><a href="/tags/apache2/">apache2<span>1</span></a></li>
-		
 			<li><a href="/tags/hibernate/">hibernate<span>1</span></a></li>
 		
 			<li><a href="/tags/JAVA/">JAVA<span>6</span></a></li>
 		
+			<li><a href="/tags/apache2/">apache2<span>1</span></a></li>
+		
+			<li><a href="/tags/yii2-tree-manager/">yii2-tree-manager<span>1</span></a></li>
+		
+			<li><a href="/tags/struts/">struts<span>1</span></a></li>
+		
+			<li><a href="/tags/工具/">工具<span>5</span></a></li>
+		
 			<li><a href="/tags/Hibernate/">Hibernate<span>1</span></a></li>
+		
+			<li><a href="/tags/spring/">spring<span>3</span></a></li>
 		
 			<li><a href="/tags/maven/">maven<span>1</span></a></li>
 		
 			<li><a href="/tags/tomcat/">tomcat<span>1</span></a></li>
-		
-			<li><a href="/tags/struts/">struts<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -330,6 +314,10 @@
 <div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2018/02/28/Java操作Redis/" ><i class="fa fa-file-o"></i>Java操作Redis</a>
+      </li>
     
       <li>
         <a href="/2018/02/09/VPN操作/" ><i class="fa fa-file-o"></i>VPN操作</a>
@@ -345,10 +333,6 @@
     
       <li>
         <a href="/2017/12/28/Spring笔记/" ><i class="fa fa-file-o"></i>Spring笔记</a>
-      </li>
-    
-      <li>
-        <a href="/2017/12/25/Java基础/" ><i class="fa fa-file-o"></i>Java基础</a>
       </li>
     
   </ul>

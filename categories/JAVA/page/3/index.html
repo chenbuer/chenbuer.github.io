@@ -109,6 +109,29 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> 2017-03-01 </div>
+			<div class="article-title"><a href="/2017/03/01/struts2配置文件/" >Struts2配置文件</a></div>						
+		</h3>
+	
+
+
+	    	<div class="entry">
+  <div class="row">
+	
+	
+		<h4 id="一、web-xml"><a href="#一、web-xml" class="headerlink" title="一、web.xml"></a>一、web.xml</h4><p>路径为webRoot/WEB-INF：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attr">xmlns</span>=<span class="string">"http://java.sun.com/xml/ns/javaee"</span> <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"</span> <span class="attr">version</span>=<span class="string">"3.0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">display-name</span>&gt;</span>hw<span class="tag">&lt;/<span class="name">display-name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>struts2<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>struts2<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.jsp<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
+		<!-- only display read_more button if there's more to display -->
+		<a type="button" href="/2017/03/01/struts2配置文件/#more" class="btn btn-default more">继续阅读</a>
+	
+	</div>
+</div>
+
+	  
+	    	
+	
+	<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> 2017-02-28 </div>
 			<div class="article-title"><a href="/2017/02/28/事务与spring的事务管理/" >事务与spring的事务管理</a></div>						
 		</h3>
@@ -175,29 +198,6 @@
 </blockquote>
 		<!-- only display read_more button if there's more to display -->
 		<a type="button" href="/2017/02/11/Hibernate初体验/#more" class="btn btn-default more">继续阅读</a>
-	
-	</div>
-</div>
-
-	  
-	    	
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> 2012-02-28 </div>
-			<div class="article-title"><a href="/2012/02/28/Java操作Redis/" >Java操作Redis</a></div>						
-		</h3>
-	
-
-
-	    	<div class="entry">
-  <div class="row">
-	
-	
-		<h3 id="一、利用jedis客户端直接操作reids"><a href="#一、利用jedis客户端直接操作reids" class="headerlink" title="一、利用jedis客户端直接操作reids"></a>一、利用jedis客户端直接操作reids</h3><p><a href="http://www.cnblogs.com/edisonfeng/p/3571870.html" target="_blank" rel="noopener">基础操作参考</a></p>
-<p>1.1 概念： 切片池 &amp; 非切片池<br>关于切片池和非切片池的区别，  一般项目基本都使用非切片池；切片池主要用于分布式项目，可以设置主从Redis库。<br>
-		<!-- only display read_more button if there's more to display -->
-		<a type="button" href="/2012/02/28/Java操作Redis/#more" class="btn btn-default more">继续阅读</a>
 	
 	</div>
 </div>
@@ -270,25 +270,25 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/struts/">struts<span>1</span></a></li>
-		
-			<li><a href="/tags/maven/">maven<span>1</span></a></li>
-		
-			<li><a href="/tags/apache2/">apache2<span>1</span></a></li>
+			<li><a href="/tags/tomcat/">tomcat<span>1</span></a></li>
 		
 			<li><a href="/tags/工具/">工具<span>5</span></a></li>
 		
-			<li><a href="/tags/hibernate/">hibernate<span>1</span></a></li>
-		
-			<li><a href="/tags/tomcat/">tomcat<span>1</span></a></li>
-		
-			<li><a href="/tags/spring/">spring<span>3</span></a></li>
+			<li><a href="/tags/JAVA/">JAVA<span>6</span></a></li>
 		
 			<li><a href="/tags/Hibernate/">Hibernate<span>1</span></a></li>
 		
+			<li><a href="/tags/maven/">maven<span>1</span></a></li>
+		
 			<li><a href="/tags/yii2-tree-manager/">yii2-tree-manager<span>1</span></a></li>
 		
-			<li><a href="/tags/JAVA/">JAVA<span>6</span></a></li>
+			<li><a href="/tags/apache2/">apache2<span>1</span></a></li>
+		
+			<li><a href="/tags/struts/">struts<span>1</span></a></li>
+		
+			<li><a href="/tags/spring/">spring<span>3</span></a></li>
+		
+			<li><a href="/tags/hibernate/">hibernate<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -300,6 +300,10 @@
 <div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2018/02/28/Java操作Redis/" ><i class="fa fa-file-o"></i>Java操作Redis</a>
+      </li>
     
       <li>
         <a href="/2018/02/09/VPN操作/" ><i class="fa fa-file-o"></i>VPN操作</a>
@@ -315,10 +319,6 @@
     
       <li>
         <a href="/2017/12/28/Spring笔记/" ><i class="fa fa-file-o"></i>Spring笔记</a>
-      </li>
-    
-      <li>
-        <a href="/2017/12/25/Java基础/" ><i class="fa fa-file-o"></i>Java基础</a>
       </li>
     
   </ul>
