@@ -196,3 +196,7 @@ if (MODE_TIME.equals(mode)) {
 }
 ```
 
+### 四、Redis Sentinel
+[官方文档](http://redis.io/topics/sentinel)
+
+[Redis Sentinel机制与用法](https://segmentfault.com/a/1190000002680804)
