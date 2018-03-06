@@ -100,3 +100,6 @@ alt+ctrl+→代表前进，但是Windows本身有热键，表示旋转屏幕，�
 [IDEA部署tomcat热部署](http://img.blog.csdn.net/20170223094201219?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGxnZW4xNTczODc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
 [参考链接](http://blog.csdn.net/linjpg/article/details/73322881)
+
+### 十三、安装插件sonarLint
+[参考链接](http://www.onstepr.com/posts/77)
