@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Spring笔记 | 陈不二的博客</title>
+  <title>Mycat初体验 | 陈不二的博客</title>
   <meta name="author" content="陈不二">
   
   <meta name="description" content="谈技术也谈风月">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Spring笔记"/>
+  <meta property="og:title" content="Mycat初体验"/>
   <meta property="og:site_name" content="陈不二的博客"/>
 
   
@@ -91,7 +91,7 @@
 
 	
 		<div class="page-header ">		
-			<h1 class="title "> Spring笔记</h1>
+			<h1 class="title "> Mycat初体验</h1>
 		</div>		
 	
 
@@ -111,12 +111,7 @@
 	<div class="mypage">		
 	  		
 
-	  <h3 id="一、Ajax请求返回json对象"><a href="#一、Ajax请求返回json对象" class="headerlink" title="一、Ajax请求返回json对象"></a>一、Ajax请求返回json对象</h3><p>直接用<code>@Response</code>会出现中文乱码的情况，所以之前做的时候都写了一个工具类：<br><a href="https://github.com/chenbuer/springboot-soa-blog/blob/master/springboot-soa-blog-controller%2Fsrc%2Fmain%2Fjava%2Fcom%2Fchenbuer%2Futil%2FResponseUtil.java" target="_blank" rel="noopener">ResponseUtil.java</a><br><a id="more"></a><br>其实可以这样写<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/path/of/URL"</span>, produces = &#123; <span class="string">"application/json;charset=UTF-8"</span> &#125;)</span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getQszgListInfo</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 要返回的json</span></span><br><span class="line">        Map&lt;String, Object&gt; res = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">        ...</span><br><span class="line">        <span class="keyword">return</span> JSONObject.toJSONString(res);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p>返回文本，RequestMapping可以写为<code>@RequestMapping(value = &quot;/path/of/URL&quot;, produces = &quot;text/plain;charset=UTF-8&quot;)</code>。<a href="https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestMapping.html#produces--" target="_blank" rel="noopener">官方文档</a></p>
-<h3 id="二、tiny-spring学习"><a href="#二、tiny-spring学习" class="headerlink" title="二、tiny-spring学习"></a>二、tiny-spring学习</h3><ol>
-<li>step-1-container-register-and-get</li>
-</ol>
-<p><code>BeanFactory</code>是注册和获取bean的工厂，说白了就是讲bean初始化并放到一个Map中，key值就是beanName，获取的时候，根据这个beanName获取到他的对象。就是这么简单。</p>
+	  <h3 id="一、Mycat的schema-xml的配置"><a href="#一、Mycat的schema-xml的配置" class="headerlink" title="一、Mycat的schema.xml的配置"></a>一、Mycat的schema.xml的配置</h3><p><a href="https://www.jianshu.com/p/26513f428ecf" target="_blank" rel="noopener">Mycat配置</a><br><a id="more"></a></p>
 	  
 	</div>
 
@@ -126,13 +121,13 @@
 <ul class="pagination">
 	 
 				
-    	<li class="prev"><a href="/2018/01/02/JSON/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+    	<li class="prev"><a href="/2017/03/27/springMVC初体验/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
   		
 
         <li><a href="/archives"><i class="fa fa-archive"></i>归档</a></li>
 
 		
-		   <li class="next"><a href="/2017/12/25/Java基础/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+		   <li class="next"><a href="/2017/03/01/ubuntu14-04-配置apache2虚拟主机/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -200,7 +195,7 @@ gitment.render('container')
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2017-12-28 
+	2017-03-13 
 	</div>
 	
 
@@ -211,7 +206,7 @@ gitment.render('container')
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/JAVA/">JAVA<span>12</span></a></li>
+    <li><a href="/categories/工具/">工具<span>2</span></a></li>
   </li>
 
     </ul>
