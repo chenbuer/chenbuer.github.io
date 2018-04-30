@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>jsp添加jstl库 | 陈不二的博客</title>
+  <title>zheng | 陈不二的博客</title>
   <meta name="author" content="陈不二">
   
   <meta name="description" content="谈技术也谈风月">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="jsp添加jstl库"/>
+  <meta property="og:title" content="zheng"/>
   <meta property="og:site_name" content="陈不二的博客"/>
 
   
@@ -91,7 +91,7 @@
 
 	
 		<div class="page-header ">		
-			<h1 class="title "> jsp添加jstl库</h1>
+			<h1 class="title "> zheng</h1>
 		</div>		
 	
 
@@ -111,10 +111,9 @@
 	<div class="mypage">		
 	  		
 
-	  <p>一、在pom.xml中添加依赖：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 添加jtl支持 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jstl<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+	  <h3 id="一-zheng的启动顺序"><a href="#一-zheng的启动顺序" class="headerlink" title="一. zheng的启动顺序"></a>一. zheng的启动顺序</h3><p><img src="https://github.com/chenbuer/zheng/blob/master/project-bootstrap/zhengStart.png" alt="启动顺序"></p>
 <a id="more"></a>
-<p>二、在需要利用的地方需要加上标签<br>&lt;%@ taglib prefix=”c”<br>           uri=”<a href="http://java.sun.com/jsp/jstl/core" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/core</a>“ %&gt;<br>三、具体利用方法可以参考<a href="http://www.runoob.com/jsp/jsp-jstl.html" target="_blank" rel="noopener">jsp常用用法</a></p>
-	  
+<h3 id="二、权限管理系统"><a href="#二、权限管理系统" class="headerlink" title="二、权限管理系统"></a>二、权限管理系统</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">├── zheng-upms -- 用户权限管理系统</span><br><span class="line">|    ├── zheng-upms-common -- upms系统公共模块</span><br><span class="line">|    ├── zheng-upms-dao -- 代码生成模块，无需开发</span><br><span class="line">|    ├── zheng-upms-client -- 集成upms依赖包，提供单点认证、授权、统一会话管理</span><br><span class="line">|    ├── zheng-upms-rpc-api -- rpc接口包</span><br><span class="line">|    ├── zheng-upms-rpc-service -- rpc服务提供者</span><br><span class="line">|    └── zheng-upms-server -- 用户权限系统及SSO服务端[端口:1111]</span><br></pre></td></tr></table></figure>	  
 	</div>
 
 	<div>
@@ -122,14 +121,14 @@
 	<div class="pagination">
 <ul class="pagination">
 	 
-				
-    	<li class="prev"><a href="/2017/04/09/tomcat应用技巧/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
-  		
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>归档</a></li>
 
 		
-		   <li class="next"><a href="/2017/03/27/springMVC初体验/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+		   <li class="next"><a href="/2018/02/28/Java操作Redis/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -197,7 +196,7 @@ gitment.render('container')
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2017-04-06 
+	2018-04-30 
 	</div>
 	
 
@@ -221,7 +220,7 @@ gitment.render('container')
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/spring/">spring<span>3</span></a></li>
+  <li><a href="/tags/JAVA/">JAVA<span>8</span></a></li>
     </ul>
 	</div>
 		
