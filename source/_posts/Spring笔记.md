@@ -24,6 +24,9 @@ public String getQszgListInfo(HttpServletRequest request) {
 ```
 返回文本，RequestMapping可以写为`@RequestMapping(value = "/path/of/URL", produces = "text/plain;charset=UTF-8")`。[官方文档](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestMapping.html#produces--)
 
+也可以參照[
+让zheng更完美地支持ajax提交的json数据](https://blog.csdn.net/ctmold/article/details/79081483)
+
 ### 二、tiny-spring学习
 1. step-1-container-register-and-get
 
