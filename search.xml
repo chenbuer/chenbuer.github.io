@@ -6,9 +6,21 @@
     <entry>
       <title><![CDATA[zheng]]></title>
       <url>http://chenbuer.github.com/2018/04/30/zheng/</url>
-      <content type="html"><![CDATA[<h3 id="一-zheng的启动顺序"><a href="#一-zheng的启动顺序" class="headerlink" title="一. zheng的启动顺序"></a>一. zheng的启动顺序</h3><p><img src="https://github.com/chenbuer/zheng/blob/master/project-bootstrap/zhengStart.png" alt="启动顺序"></p>
+      <content type="html"><![CDATA[<h3 id="一-zheng的启动顺序"><a href="#一-zheng的启动顺序" class="headerlink" title="一. zheng的启动顺序"></a>一. zheng的启动顺序</h3><ul>
+<li><strong>ZhengCmsRpcServiceApplication.main</strong></li>
+<li><strong>ZhengUpmsRpcServiceApplication.main</strong></li>
+<li><strong>zheng-upms-server(jetty)</strong></li>
+<li><strong>zheng-cms-admin(jetty)</strong></li>
+</ul>
 <a id="more"></a>
-<h3 id="二、权限管理系统"><a href="#二、权限管理系统" class="headerlink" title="二、权限管理系统"></a>二、权限管理系统</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">├── zheng-upms -- 用户权限管理系统</span><br><span class="line">|    ├── zheng-upms-common -- upms系统公共模块</span><br><span class="line">|    ├── zheng-upms-dao -- 代码生成模块，无需开发</span><br><span class="line">|    ├── zheng-upms-client -- 集成upms依赖包，提供单点认证、授权、统一会话管理</span><br><span class="line">|    ├── zheng-upms-rpc-api -- rpc接口包</span><br><span class="line">|    ├── zheng-upms-rpc-service -- rpc服务提供者</span><br><span class="line">|    └── zheng-upms-server -- 用户权限系统及SSO服务端[端口:1111]</span><br></pre></td></tr></table></figure>]]></content>
+<h3 id="二、权限管理系统"><a href="#二、权限管理系统" class="headerlink" title="二、权限管理系统"></a>二、权限管理系统</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">├── zheng-upms -- 用户权限管理系统</span><br><span class="line">|    ├── zheng-upms-common -- upms系统公共模块</span><br><span class="line">|    ├── zheng-upms-dao -- 代码生成模块，无需开发</span><br><span class="line">|    ├── zheng-upms-client -- 集成upms依赖包，提供单点认证、授权、统一会话管理</span><br><span class="line">|    ├── zheng-upms-rpc-api -- rpc接口包</span><br><span class="line">|    ├── zheng-upms-rpc-service -- rpc服务提供者</span><br><span class="line">|    └── zheng-upms-server -- 用户权限系统及SSO服务端(是一个web工程)[端口:1111]</span><br></pre></td></tr></table></figure>
+<h3 id="三、Example实体类"><a href="#三、Example实体类" class="headerlink" title="三、Example实体类"></a>三、Example实体类</h3><p>mybatis-generator自动生成实体类会生成Example实体类，方便查询。具体使用可以参考：</p>
+<ul>
+<li><a href="https://www.cnblogs.com/kangping/p/6001519.html" target="_blank" rel="noopener">参考一</a></li>
+<li><a href="https://blog.csdn.net/zhemeban/article/details/71901759" target="_blank" rel="noopener">参考二</a></li>
+<li><a href="http://www.mybatis.org/generator/generatedobjects/exampleClassUsage.html" target="_blank" rel="noopener">参考三</a></li>
+</ul>
+<h3 id="四、"><a href="#四、" class="headerlink" title="四、"></a>四、</h3>]]></content>
       
         <categories>
             
