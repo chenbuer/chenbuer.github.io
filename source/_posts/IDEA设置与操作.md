@@ -103,3 +103,7 @@ alt+ctrl+→代表前进，但是Windows本身有热键，表示旋转屏幕，�
 
 ### 十三、安装插件sonarLint
 [参考链接](http://www.onstepr.com/posts/77)
+
+### 十四、IDEA中的properties文件中文显示不正确
+[参考链接](https://blog.csdn.net/lzjansing/article/details/50593023)
+settings->搜索File Encoding->把最下面的“Transparent native-to-ascii conversion”打上勾

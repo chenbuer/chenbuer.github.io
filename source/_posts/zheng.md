@@ -21,6 +21,7 @@ tags: JAVA
 |    ├── zheng-upms-rpc-service -- rpc服务提供者
 |    └── zheng-upms-server -- 用户权限系统及SSO服务端(是一个web工程)[端口:1111]
 ```
+
 ### 三、Example实体类
 mybatis-generator自动生成实体类会生成Example实体类，方便查询。具体使用可以参考：
 - [参考一](https://www.cnblogs.com/kangping/p/6001519.html)
