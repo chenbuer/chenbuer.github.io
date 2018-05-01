@@ -157,3 +157,17 @@ lombok的可以对POJO进行很多封装，减少了很多重复性代码的书�
 [参考](https://segmentfault.com/a/1190000005133786)
 
 [参考](https://blog.csdn.net/mccand1234/article/details/53456411)
+
+### 六、filter和interceptor之间的区别
+拦截器是AOP( Aspect-Oriented Programming)的一种实现，底层通过动态代理模式完成。
+
+区别：
+- **拦截器**是基于java的反射机制的，而**过滤器**是基于函数回调。
+- 拦截器不依赖于servlet容器，而过**滤器依赖于servlet容器**。
+- 拦截器只能对action请求起作用，而过滤器则可以对几乎所有的请求起作用。
+- 拦截器可以访问action上下文、值栈里的对象，而过滤器不能。
+- 在action的生命周期中，拦截器可以多次被调用，而过滤器只能在容器初始化时被调用一次。
+
+[参考1](https://blog.csdn.net/qq_36411874/article/details/53996873)
+
+[参考2](https://www.jianshu.com/p/3e6433ead5c3)
