@@ -107,3 +107,9 @@ alt+ctrl+→代表前进，但是Windows本身有热键，表示旋转屏幕，�
 ### 十四、IDEA中的properties文件中文显示不正确
 [参考链接](https://blog.csdn.net/lzjansing/article/details/50593023)
 settings->搜索File Encoding->把最下面的“Transparent native-to-ascii conversion”打上勾
+
+### 十五、pom的依赖关系
+IDEA可以直接展示pom之间的依赖关系，简直牛逼的一腿
+![](https://img-blog.csdn.net/20171130184732567)
+
+[参考](https://blog.csdn.net/qq_27093465/article/details/69226949)。学习怎么利用这个排除依赖冲突
