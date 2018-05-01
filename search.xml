@@ -31,6 +31,20 @@
 <li>@ToString<br><a href="https://segmentfault.com/a/1190000005133786" target="_blank" rel="noopener">参考</a></li>
 </ul>
 <p><a href="https://blog.csdn.net/mccand1234/article/details/53456411" target="_blank" rel="noopener">参考</a></p>
+<h3 id="六、filter和interceptor之间的区别"><a href="#六、filter和interceptor之间的区别" class="headerlink" title="六、filter和interceptor之间的区别"></a>六、filter和interceptor之间的区别</h3><p>拦截器是AOP( Aspect-Oriented Programming)的一种实现，底层通过动态代理模式完成。</p>
+<p>区别：</p>
+<ul>
+<li><strong>拦截器</strong>是基于java的反射机制的，而<strong>过滤器</strong>是基于函数回调。</li>
+<li>拦截器不依赖于servlet容器，而过<strong>滤器依赖于servlet容器</strong>。</li>
+<li>拦截器只能对action请求起作用，而过滤器则可以对几乎所有的请求起作用。</li>
+<li>拦截器可以访问action上下文、值栈里的对象，而过滤器不能。</li>
+<li>在action的生命周期中，拦截器可以多次被调用，而过滤器只能在容器初始化时被调用一次。<blockquote>
+<p>两者的本质区别：从灵活性上说拦截器功能更强大些，Filter能做的事情，他都能做，而且可以在请求前，请求后执行，比较灵活。Filter主要是针对URL地址做一个编码的事情、过滤掉没用的参数、安全校验（比较泛的，比如登录不登录之类），太细的话，还是建议用interceptor。不过还是根据不同情况选择合适的。</p>
+</blockquote>
+</li>
+</ul>
+<p><a href="https://blog.csdn.net/qq_36411874/article/details/53996873" target="_blank" rel="noopener">参考1</a></p>
+<p><a href="https://www.jianshu.com/p/3e6433ead5c3" target="_blank" rel="noopener">参考2</a></p>
 ]]></content>
       
         <categories>
@@ -390,6 +404,8 @@
 <p><a href="http://blog.csdn.net/linjpg/article/details/73322881" target="_blank" rel="noopener">参考链接</a></p>
 <h3 id="十三、安装插件sonarLint"><a href="#十三、安装插件sonarLint" class="headerlink" title="十三、安装插件sonarLint"></a>十三、安装插件sonarLint</h3><p><a href="http://www.onstepr.com/posts/77" target="_blank" rel="noopener">参考链接</a></p>
 <h3 id="十四、IDEA中的properties文件中文显示不正确"><a href="#十四、IDEA中的properties文件中文显示不正确" class="headerlink" title="十四、IDEA中的properties文件中文显示不正确"></a>十四、IDEA中的properties文件中文显示不正确</h3><p><a href="https://blog.csdn.net/lzjansing/article/details/50593023" target="_blank" rel="noopener">参考链接</a><br>settings-&gt;搜索File Encoding-&gt;把最下面的“Transparent native-to-ascii conversion”打上勾</p>
+<h3 id="十五、pom的依赖关系"><a href="#十五、pom的依赖关系" class="headerlink" title="十五、pom的依赖关系"></a>十五、pom的依赖关系</h3><p>IDEA可以直接展示pom之间的依赖关系，简直牛逼的一腿<br><img src="https://img-blog.csdn.net/20171130184732567" alt=""></p>
+<p><a href="https://blog.csdn.net/qq_27093465/article/details/69226949" target="_blank" rel="noopener">参考</a>。学习怎么利用这个排除依赖冲突</p>
 ]]></content>
       
         <categories>
