@@ -172,3 +172,6 @@ lombok的可以对POJO进行很多封装，减少了很多重复性代码的书�
 [参考1](https://blog.csdn.net/qq_36411874/article/details/53996873)
 
 [参考2](https://www.jianshu.com/p/3e6433ead5c3)
+
+### 七、sso
+[参考](https://www.cnblogs.com/ywlaker/p/6113927.html)
