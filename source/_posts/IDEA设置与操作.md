@@ -113,3 +113,6 @@ IDEA可以直接展示pom之间的依赖关系，简直牛逼的一腿
 ![](https://img-blog.csdn.net/20171130184732567)
 
 [参考](https://blog.csdn.net/qq_27093465/article/details/69226949)。学习怎么利用这个排除依赖冲突
+
+### 十六、不让import星号
+[参考](https://blog.csdn.net/jackrex/article/details/40181223)
