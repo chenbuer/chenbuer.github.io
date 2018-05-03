@@ -154,6 +154,7 @@ lombok的可以对POJO进行很多封装，减少了很多重复性代码的书�
 - @Builder
 - @Data
 - @ToString
+
 [参考](https://segmentfault.com/a/1190000005133786)
 
 [参考](https://blog.csdn.net/mccand1234/article/details/53456411)
