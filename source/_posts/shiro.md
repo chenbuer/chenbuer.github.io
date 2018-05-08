@@ -154,6 +154,8 @@ public class MyCredentialsMatcher extends SimpleCredentialsMatcher {
     }
 }
 ```
+[参考一](http://www.cnblogs.com/chyu/p/5958720.html)--[参考二](http://jinnianshilongnian.iteye.com/blog/2022468)
+
 最后MyCredentialsMatcher这个bean注入自定义Realm中。
 
 (2) 也可以不用自定义`MyCredentialsMatcher`，直接在`doGetAuthenticationInfo`把密码校验给校验了。zheng项目就是这么做的。
