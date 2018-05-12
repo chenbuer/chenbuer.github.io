@@ -77,6 +77,8 @@
 <h3 id="七、为什么登陆cms的后台，验证之后跳转到upms的后台"><a href="#七、为什么登陆cms的后台，验证之后跳转到upms的后台" class="headerlink" title="七、为什么登陆cms的后台，验证之后跳转到upms的后台"></a>七、为什么登陆cms的后台，验证之后跳转到upms的后台</h3><p>因为cms后台就是redirect到upms后台的</p>
 <h3 id="八、ehcache"><a href="#八、ehcache" class="headerlink" title="八、ehcache"></a>八、ehcache</h3><p><a href="https://www.jianshu.com/p/5a0669d6305e" target="_blank" rel="noopener">参考1</a></p>
 <p><a href="http://raychase.iteye.com/blog/1545906" target="_blank" rel="noopener">参考2</a></p>
+<h3 id="九、关于分布式"><a href="#九、关于分布式" class="headerlink" title="九、关于分布式"></a>九、关于分布式</h3><p>可以把分布式系统看做一个以系统，他的应用是因为现在服务系统的计算越来越大，利用分散的主机分散大量请求的处理。</p>
+<p><strong>但是很多的东西却因为分散导致了数据不一致，比如session、比如cache，所以又需要集中处理，集中处理常见的有一个集中服务提供一致性保证，比如利用的redis，但是需要网络IO处理，这样又损耗了一定的性能</strong></p>
 ]]></content>
       
         <categories>
@@ -338,6 +340,36 @@
     </entry>
     
     <entry>
+      <title><![CDATA[GIT]]></title>
+      <url>http://chenbuer.github.com/2017/12/11/git/</url>
+      <content type="html"><![CDATA[<h3 id="一-设置代理"><a href="#一-设置代理" class="headerlink" title="一. 设置代理"></a>一. 设置代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global https.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global http.sslverify <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>也可以设置socket代理，不错：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy <span class="string">'socks5://127.0.0.1:1080'</span></span><br><span class="line">git config --global https.proxy <span class="string">'socks5://127.0.0.1:1080'</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="二-撤销代理"><a href="#二-撤销代理" class="headerlink" title="二. 撤销代理"></a>二. 撤销代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br></pre></td></tr></table></figure>
+<h3 id="三-如果要查当前的代理配置"><a href="#三-如果要查当前的代理配置" class="headerlink" title="三. 如果要查当前的代理配置"></a>三. 如果要查当前的代理配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --get http.proxy</span><br><span class="line">git config --global --get https.proxy</span><br></pre></td></tr></table></figure>
+<h3 id="四-切换到远程分支"><a href="#四-切换到远程分支" class="headerlink" title="四. 切换到远程分支"></a>四. 切换到远程分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -t origin/hexo</span><br></pre></td></tr></table></figure>
+<h3 id="五-Windows下手动改修配置文件"><a href="#五-Windows下手动改修配置文件" class="headerlink" title="五. Windows下手动改修配置文件"></a>五. Windows下手动改修配置文件</h3><p>在Windows下找不到的gitconfig文件，但是我们都知道的Linux下<code>~/.gitconfig</code>。所以，用gitbash吧：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi ~/.gitconfig</span><br></pre></td></tr></table></figure></p>
+<h3 id="六-用https也不用每次都输入密码"><a href="#六-用https也不用每次都输入密码" class="headerlink" title="六. 用https也不用每次都输入密码"></a>六. 用https也不用每次都输入密码</h3><p>很多环境下并不能用ssh，所以<code>git clone</code>的时候Clone with SSH也不好使，只能用https协议。用https协议在每次提交的时候，都要手动输入用户名和密码。所以修改本地repository下的git配置文件。<br>修改前：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = false</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">        symlinks = false</span><br><span class="line">        ignorecase = true</span><br><span class="line">        hideDotFiles = dotGitOnly</span><br><span class="line">[remote "origin"]</span><br><span class="line">        url = https://github.com/chenbuer/chenbuer.github.io.git</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch "master"]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/master</span><br><span class="line">[branch "hexo"]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/hexo</span><br></pre></td></tr></table></figure></p>
+<p>修改之后：<br><img src="https://github.com/chenbuer/markdownImgs/blob/master/blog/modGitCfg.png?raw=true" alt="modGitCfg"></p>
+<h3 id="七、本地添加github远程"><a href="#七、本地添加github远程" class="headerlink" title="七、本地添加github远程"></a>七、本地添加github远程</h3><p>首先需要在github上添加repo为test，然后在本地项目下执行命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin https://github.com/chenbuer/<span class="built_in">test</span> //关联远程仓库</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      
+        <categories>
+            
+            <category> GIT </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[IDEA设置与操作]]></title>
       <url>http://chenbuer.github.com/2017/12/11/IDEA%E8%AE%BE%E7%BD%AE%E4%B8%8E%E6%93%8D%E4%BD%9C/</url>
       <content type="html"><![CDATA[<h3 id="一、工具栏中文乱码，但是编辑框不乱码"><a href="#一、工具栏中文乱码，但是编辑框不乱码" class="headerlink" title="一、工具栏中文乱码，但是编辑框不乱码"></a>一、工具栏中文乱码，但是编辑框不乱码</h3><p>进入IDE Settings 里的 Appearance项，选中Override default fonts by ，把 Name 设置为 SimSun，Size 根据自己喜好设置（我一般设为 12）。确定<br><a id="more"></a><br><a href="http://www.cnblogs.com/jlxuqiang/p/4083596.html" target="_blank" rel="noopener">参考链接</a></p>
@@ -473,36 +505,6 @@
         <categories>
             
             <category> JAVA </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 工具 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[GIT]]></title>
-      <url>http://chenbuer.github.com/2017/12/11/git/</url>
-      <content type="html"><![CDATA[<h3 id="一-设置代理"><a href="#一-设置代理" class="headerlink" title="一. 设置代理"></a>一. 设置代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global https.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global http.sslverify <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>也可以设置socket代理，不错：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy <span class="string">'socks5://127.0.0.1:1080'</span></span><br><span class="line">git config --global https.proxy <span class="string">'socks5://127.0.0.1:1080'</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="二-撤销代理"><a href="#二-撤销代理" class="headerlink" title="二. 撤销代理"></a>二. 撤销代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br></pre></td></tr></table></figure>
-<h3 id="三-如果要查当前的代理配置"><a href="#三-如果要查当前的代理配置" class="headerlink" title="三. 如果要查当前的代理配置"></a>三. 如果要查当前的代理配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --get http.proxy</span><br><span class="line">git config --global --get https.proxy</span><br></pre></td></tr></table></figure>
-<h3 id="四-切换到远程分支"><a href="#四-切换到远程分支" class="headerlink" title="四. 切换到远程分支"></a>四. 切换到远程分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -t origin/hexo</span><br></pre></td></tr></table></figure>
-<h3 id="五-Windows下手动改修配置文件"><a href="#五-Windows下手动改修配置文件" class="headerlink" title="五. Windows下手动改修配置文件"></a>五. Windows下手动改修配置文件</h3><p>在Windows下找不到的gitconfig文件，但是我们都知道的Linux下<code>~/.gitconfig</code>。所以，用gitbash吧：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi ~/.gitconfig</span><br></pre></td></tr></table></figure></p>
-<h3 id="六-用https也不用每次都输入密码"><a href="#六-用https也不用每次都输入密码" class="headerlink" title="六. 用https也不用每次都输入密码"></a>六. 用https也不用每次都输入密码</h3><p>很多环境下并不能用ssh，所以<code>git clone</code>的时候Clone with SSH也不好使，只能用https协议。用https协议在每次提交的时候，都要手动输入用户名和密码。所以修改本地repository下的git配置文件。<br>修改前：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = false</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">        symlinks = false</span><br><span class="line">        ignorecase = true</span><br><span class="line">        hideDotFiles = dotGitOnly</span><br><span class="line">[remote "origin"]</span><br><span class="line">        url = https://github.com/chenbuer/chenbuer.github.io.git</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch "master"]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/master</span><br><span class="line">[branch "hexo"]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/hexo</span><br></pre></td></tr></table></figure></p>
-<p>修改之后：<br><img src="https://github.com/chenbuer/markdownImgs/blob/master/blog/modGitCfg.png?raw=true" alt="modGitCfg"></p>
-<h3 id="七、本地添加github远程"><a href="#七、本地添加github远程" class="headerlink" title="七、本地添加github远程"></a>七、本地添加github远程</h3><p>首先需要在github上添加repo为test，然后在本地项目下执行命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin https://github.com/chenbuer/<span class="built_in">test</span> //关联远程仓库</span><br></pre></td></tr></table></figure></p>
-]]></content>
-      
-        <categories>
-            
-            <category> GIT </category>
             
         </categories>
         
@@ -940,6 +942,61 @@
         <tags>
             
             <tag> Hibernate </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[久未出门]]></title>
+      <url>http://chenbuer.github.com/2017/02/11/%E4%B9%85%E6%9C%AA%E5%87%BA%E9%97%A8/</url>
+      <content type="html"><![CDATA[<p>许久未出门，<br>偶见好多人，<br>拥进人群，<br>撞得胳臂疼，<br><a id="more"></a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 风月 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 风月 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[zheng]]></title>
+      <url>http://chenbuer.github.com/2011/05/20/%E4%B8%8A%E5%B8%9D%E7%9A%84%E6%9C%AC%E6%84%8F%EF%BC%9A%E4%BA%8C%E5%80%BC%E7%B3%BB%E7%BB%9F/</url>
+      <content type="html"><![CDATA[<p>昨天突然有这么一个想法，觉得，大自然赋予我们最原始的数制是二进制的：0和1，而我们人类一开始没有体会到上帝的本意最先创造了十进制。<br><a id="more"></a><br>0和1、好和坏、输入和输出、接受和放弃……应该可以这么说，自然界最简单的系统都是二值的系统。不过，自然界最神奇的就是所有的所有庞大的系统都可以由最简单的二值系统累加而成，像原来发射电报用的时通时断的摩斯电码就能表述任何完整信息，然而我们最熟悉不过的庞大的二值系统就是计算机，这个可以处理巨大运算的机器，就像我们好多的计算机课本封面上写的那一大长串的01代码。</p>
+<p>那我们就要思考了这么简单的0和1就怎么组成了这么强大的系统。不难发现，当我们二值的运算的位数越高我们表达的信息就越多，由此我们的信息就越复杂。就像下面的树所表示的那样：</p>
+<p><img src="https://github.com/chenbuer/markdownImgs/blob/master/blog/binaryPic.png?raw=true" alt="二值系统"></p>
+<p>图一</p>
+<p>再用另一种方式来表达，像下面的表格展示的那样，同样我们只用三位来表示一个稍微简单的系统：</p>
+<p><img src="https://github.com/chenbuer/markdownImgs/blob/master/blog/binaryTable.png?raw=true" alt="二值系统表"></p>
+<p>表一</p>
+<p>可以看见：“d2那一列的数字分别是：00001111；d1那一列的数字分别是：00110011；d0那一列的数字分别是：01010101”。所以说，系统可以由不同频率的二值系统组成。我们把最高位d2经历的时间设为1秒，经历了从0到1和从1到0的两次跳变就是一个周期，那么d2的频率就是1赫兹，d1的频率就是0.5赫兹，d0的频率就是0.25赫兹。所以可以这样认为：系统的复杂度由他的最高频率决定，他的最高频率越高，系统越复杂，反之，系统越简单。这就好比是一个信号，不管什么周期性的信号都可以用不同频率的正玄函数累加而成，信号越复杂，正玄函数最高频率就越高。只不过我把周期的正玄函数换成了01信号，同样是适合的，原来，这一切只是级数的相加而已。</p>
+<p>可以发现，系统的复杂度带来了两个结果：1、系统功能变强了；2、系统的分工更明确了。所以说，一个系统的分工越明确他的功能就越强，这两个命题的相关系数接近1。</p>
+<p>说到这儿，不禁联想到了我们实际生活的社会。原先我们社会的生产力不够强大是因为我们社会的分工不够多样化，我们的分工不够细化。而现今的社会生产力这么强大，是因为我们的社会分工越来越细化，专业方向越来越明确，每个人要做的事情不多，可是很精，由此组成了强大的社会系统。同样把这个理论应用到企业、机关也是合适的。</p>
+<p>再来看看人，一个人就是一个处理器。处理器的位数对应这个人的深度，或者我们可以将图1的位数看成是树的深度。深度越深，这个人就越强大，就越难理解，处理事情的能力就越强。</p>
+<p>这让人遐想啊。可以这样认为，人是一个非常连续的信号，要用数字量来模拟他，取样的周期越短才能越接近，所以人的位数很高，是一个复杂的系统，人是很难研究的，心理学就是很复杂的学科，要考虑的额外因素太多了，因为人的深度太深了。在我看来，自然科学最复杂的学科就是生物了，人文科学最复杂的就是心理学了，而电类相对来说计算机科学是比较复杂的。<br>在说一个应用就是解释什么是理论。通常来说理论就是忽略很多的微小的因素总结出来的结论，所以理论总是这样定义“在理想条件下……”。在灰度图中，低频部分代表的是图像背景，而高频则是图像的轮廓，类比一下，理论就是低频的背景，而高频的就是那些被忽略的高频的部分。理论是在低频滤波器的滤波之后剩下的低频的背景。在此理论这个背景之上，我们添加各种线条就形成不同的图像，就是各种具体的实际情况。那之所以说有些人的理论不准确，有些人的准确，就是说有些滤波器比较理想，把高频部分滤的很干净；有些就是滤波器不理想，还剩余一些痕迹，就像擦黑板没有擦干净，还有一些隐约的线条，写上去的字就显得模糊，这个理论就不好用。那有人要是追根究底问我要是把低频部分也滤掉了只剩下白白的背景那是什么，那我只能装装哲学的告诉你那就是宇宙。</p>
+<p>厚黑教主李宗吾说：西方人把他们的智慧都用在了物理学的研究上，中国人把智慧都用在了人性的研究上。这两样是相通了，相比较而言，中国人研究的系统要比西方人研究的复杂的多。</p>
+<p>说到这儿，联想到中国的八卦。“太极生两仪，两仪生四象，四象生八卦”。早在几千年前中国的智者就说出了这样的道理。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 风月 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 风月 </tag>
             
         </tags>
         
