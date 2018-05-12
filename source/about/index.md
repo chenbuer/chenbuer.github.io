@@ -5,7 +5,11 @@ date: 2017-02-13 21:27:44
 
 > ### 我是陈不二，请多指教 Here is my schedule:
 
- 下面主要学习dubbo，任重道远。
+个人规划先学习好一个完整的框架，所以利用[zheng项目](https://github.com/chenbuer/zheng)，不过这个项目有很多未完善的地方，issue和群都几乎没什么回答，no choice，自己去挖掘把。
+
+---
+
+ 下面主要学习dubbo，任重道远。(dubbo源码学习还是需要具备一定的基础，自己已经学习完了tinySpring和dom4j，但是SPI等基础还是需要深入学习)
  学习dubbo需要先了解spring，看了tiny-spring，还需要了解一下xml解析，用原生的dom包不如学习一下dom4j。
 
 如何提高自己的情商，需要长久锻炼与思考。
