@@ -159,3 +159,13 @@ public class MyCredentialsMatcher extends SimpleCredentialsMatcher {
 最后MyCredentialsMatcher这个bean注入自定义Realm中。
 
 (2) 也可以不用自定义`MyCredentialsMatcher`，直接在`doGetAuthenticationInfo`把密码校验给校验了。zheng项目就是这么做的。
+
+### 四、realm和subject的个人理解
+realm可以理解为安全数据源。
+
+自定义的realm，如继承自`AuthorizingRealm`，实现了`doGetAuthenticationInfo(AuthenticationToken authenticationToken)`(这个方法之后用户就获得了用户是否验证通过信息保存到subject对象中)和`doGetAuthorizationInfo(PrincipalCollection principalCollection)`(这个方法之后，就可以检查用户是否具备了某些权限保存到了subject对象中)。在业务代码中我们可以这样判断authenticate和authorization结果：
+```java
+Subject subject = SecurityUtils.getSubject();
+subject.checkRole("admin");     // 检查用户有没有"admin"这个角色
+subject.isAuthenticated();                  // 检查这个用户有没有鉴权通过
+```
