@@ -169,6 +169,15 @@ Subject subject = SecurityUtils.getSubject();
 subject.hasRole("admin");       // 检查用户有没有"admin"这个角色
 subject.isAuthenticated();      // 检查这个用户有没有鉴权通过
 ```
+上面理解是错误的，实际上是：
+> Subject自己不会实现相应的身份验证/授权逻辑，而是通过DelegatingSubject委托给SecurityManager实现；及可以理解为Subject是一个面门。[参考](http://jinnianshilongnian.iteye.com/blog/2022468)
+> subject的使用：
+1. 身份验证（login）
+2. 授权（hasRole*/isPermitted*或checkRole*/checkPermission*）
+3. 将相应的数据存储到会话（Session）
+4. 切换身份（RunAs）/多线程身份传播
+5. 退出
+
 > 1、首先调用 Subject.isPermitted*/hasRole*接口，其会委托给 SecurityManager，而
 SecurityManager 接着会委托给 Authorizer；
 
