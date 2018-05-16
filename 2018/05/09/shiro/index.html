@@ -122,7 +122,16 @@
 <p>(2) 也可以不用自定义<code>MyCredentialsMatcher</code>，直接在<code>doGetAuthenticationInfo</code>把密码校验给校验了。zheng项目就是这么做的。</p>
 <h3 id="四、realm和subject的个人理解"><a href="#四、realm和subject的个人理解" class="headerlink" title="四、realm和subject的个人理解"></a>四、realm和subject的个人理解</h3><p>realm可以理解为安全数据源。</p>
 <p>自定义的realm，如继承自<code>AuthorizingRealm</code>，实现了<code>doGetAuthenticationInfo(AuthenticationToken authenticationToken)</code>(这个方法之后用户就获得了用户是否验证通过信息保存到subject对象中)和<code>doGetAuthorizationInfo(PrincipalCollection principalCollection)</code>(这个方法之后，就可以检查用户是否具备了某些权限保存到了subject对象中)。在业务代码中我们可以这样判断authenticate和authorization结果：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Subject subject = SecurityUtils.getSubject();</span><br><span class="line">subject.hasRole(<span class="string">"admin"</span>);       <span class="comment">// 检查用户有没有"admin"这个角色</span></span><br><span class="line">subject.isAuthenticated();      <span class="comment">// 检查这个用户有没有鉴权通过</span></span><br></pre></td></tr></table></figure></p>
+<p>上面理解是错误的，实际上是：</p>
 <blockquote>
+<p>Subject自己不会实现相应的身份验证/授权逻辑，而是通过DelegatingSubject委托给SecurityManager实现；及可以理解为Subject是一个面门。<a href="http://jinnianshilongnian.iteye.com/blog/2022468" target="_blank" rel="noopener">参考</a><br>subject的使用：</p>
+<ol>
+<li>身份验证（login）</li>
+<li>授权（hasRole<em>/isPermitted</em>或checkRole<em>/checkPermission</em>）</li>
+<li>将相应的数据存储到会话（Session）</li>
+<li>切换身份（RunAs）/多线程身份传播</li>
+<li>退出</li>
+</ol>
 <p>1、首先调用 Subject.isPermitted<em>/hasRole</em>接口，其会委托给 SecurityManager，而<br>SecurityManager 接着会委托给 Authorizer；</p>
 <p>2、Authorizer 是真正的授权者，如果我们调用如 isPermitted(“user:view”)，其首先会<strong>通过<code>PermissionResolver</code> 把字符串转换成相应的 Permission 实例</strong>；</p>
 <p>3、在进行授权之前，其会调用相应的 Realm 获取 Subject 相应的角色/权限用于匹配传入的<br>角色/权限；</p>
