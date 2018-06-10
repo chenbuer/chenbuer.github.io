@@ -109,8 +109,6 @@ tags: 前端
 - 浮动
 - 定位 (position)
     - static(默认)
-    - relative
-        - top
-        - bottom
-        - left
-        - right
+    - relative,用top、bottom、left、right来配合使用，发生位移
+    - absolute,用top、bottom、left、right来配合使用，与relative相比较，位移的方向会变化，同时，脱离正常的文档流
+    - fixed：用top、bottom、left、right来配合使用，位置不变，脱离文档流
