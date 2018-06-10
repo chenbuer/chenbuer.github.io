@@ -45,7 +45,27 @@ tags: 前端
 - font-style    文字样式
 
 # 行内元素 & 块元素
-行内元素 // todo
+- 行内元素(内联元素)，一行显示，直到这行显示满了会换行
+***行内元素并不具有宽高设置，且垂直方向上margin和padding都是不生效的***
+
+\<span\> \<a\> \<em\>(变斜) 等
+
+- 块级元素，独占一行
+
+\<p\> \<div\> \<h1-6\> \<ul\> \<li\> \<ol\> \<dl\> \<dt\> \<dd\> 等
+
+- dispaly:inline
+
+    元素显示为内联元素，元素前后没有换行符
+
+- display:block
+
+    元素显示为块级元素，前后有换行符
+
+- display:inline-block
+
+    行内块元素，元素呈现为inline，具有block相应特性(width、height、padding、margin都生效)
+
 
 # 背景样式
 - background-color 设置元素的背景颜色
@@ -56,9 +76,41 @@ tags: 前端
 
 # 盒子模型
 - 内边距 padding
+    - padding:值1 // 4个方向都为值1
+    - padding:值1 值2   // 值1是上下，值2是左右
+    - padding:值1 值2 值3   // 值1是上，值2是左右，值3是下
+    - padding:值1 值2 值3 值4 //分别对应上、右、下、左
 - 外边距 margin
+    - margin可以设置为负值，但是padding不可以设置为负值
 - 边框 border
     - border-width
     - border-color
-    - border-style
+    - border-style(none,dotted,dashed,solid,groove[3D凹槽边框]...)
 
+# float属性
+
+一旦给元素设置了浮动属性，元素就脱离原来的文档流；但是会正常占用文字的空间（不会覆盖文字）
+- float:left
+- float:right
+- float:none
+- float:inherit
+
+# clear属性：消除浮动带来的副作用
+- clear:none
+- clear:left
+    - 不允许该元素(标签)左边有浮动元素
+- clear:right
+    - 不允许右边有浮动元素
+- clear:both
+    - 左右都不允许
+
+# 三中布局方式
+- 标准流
+- 浮动
+- 定位 (position)
+    - static(默认)
+    - relative
+        - top
+        - bottom
+        - left
+        - right
