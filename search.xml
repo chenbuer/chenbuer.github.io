@@ -46,7 +46,25 @@
 <li>font-weight   文字粗细</li>
 <li>font-style    文字样式</li>
 </ul>
-<h1 id="行内元素-amp-块元素"><a href="#行内元素-amp-块元素" class="headerlink" title="行内元素 &amp; 块元素"></a>行内元素 &amp; 块元素</h1><p>行内元素 // todo</p>
+<h1 id="行内元素-amp-块元素"><a href="#行内元素-amp-块元素" class="headerlink" title="行内元素 &amp; 块元素"></a>行内元素 &amp; 块元素</h1><ul>
+<li>行内元素(内联元素)，一行显示，直到这行显示满了会换行<br><strong><em>行内元素并不具有宽高设置，且垂直方向上margin和padding都是不生效的</em></strong></li>
+</ul>
+<p>\<span\> \<a\> \<em\>(变斜) 等</em\></a\></span\></p>
+<ul>
+<li>块级元素，独占一行</li>
+</ul>
+<p>\<p\> \<div\> \<h1-6\> \<ul\> \<li\> \<ol\> \<dl\> \<dt\> \<dd\> 等</dd\></dt\></dl\></ol\></li\></ul\></h1-6\></div\></p\></p>
+<ul>
+<li><p>dispaly:inline</p>
+<p>  元素显示为内联元素，元素前后没有换行符</p>
+</li>
+<li><p>display:block</p>
+<p>  元素显示为块级元素，前后有换行符</p>
+</li>
+<li><p>display:inline-block</p>
+<p>  行内块元素，元素呈现为inline，具有block相应特性(width、height、padding、margin都生效)</p>
+</li>
+</ul>
 <h1 id="背景样式"><a href="#背景样式" class="headerlink" title="背景样式"></a>背景样式</h1><ul>
 <li>background-color 设置元素的背景颜色</li>
 <li>background-img   把图像设置为背景</li>
@@ -55,8 +73,17 @@
 <li>background-repeat     背景图像是否重复&amp;如何重复(no-repeat,repeat-x,repeat-y,repeat[默认])</li>
 </ul>
 <h1 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h1><ul>
-<li>内边距 padding</li>
-<li>外边距 margin</li>
+<li>内边距 padding<ul>
+<li>padding:值1 // 4个方向都为值1</li>
+<li>padding:值1 值2   // 值1是上下，值2是左右</li>
+<li>padding:值1 值2 值3   // 值1是上，值2是左右，值3是下</li>
+<li>padding:值1 值2 值3 值4 //分别对应上、右、下、左</li>
+</ul>
+</li>
+<li>外边距 margin<ul>
+<li>margin可以设置为负值，但是padding不可以设置为负值</li>
+</ul>
+</li>
 <li>边框 border<ul>
 <li>border-width</li>
 <li>border-color</li>
