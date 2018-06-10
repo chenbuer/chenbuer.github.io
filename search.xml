@@ -91,6 +91,39 @@
 </ul>
 </li>
 </ul>
+<h1 id="float属性"><a href="#float属性" class="headerlink" title="float属性"></a>float属性</h1><p>一旦给元素设置了浮动属性，元素就脱离原来的文档流；但是会正常占用文字的空间（不会覆盖文字）</p>
+<ul>
+<li>float:left</li>
+<li>float:right</li>
+<li>float:none</li>
+<li>float:inherit</li>
+</ul>
+<h1 id="clear属性：消除浮动带来的副作用"><a href="#clear属性：消除浮动带来的副作用" class="headerlink" title="clear属性：消除浮动带来的副作用"></a>clear属性：消除浮动带来的副作用</h1><ul>
+<li>clear:none</li>
+<li>clear:left<ul>
+<li>不允许该元素(标签)左边有浮动元素</li>
+</ul>
+</li>
+<li>clear:right<ul>
+<li>不允许右边有浮动元素</li>
+</ul>
+</li>
+<li>clear:both<ul>
+<li>左右都不允许</li>
+</ul>
+</li>
+</ul>
+<h1 id="三中布局方式"><a href="#三中布局方式" class="headerlink" title="三中布局方式"></a>三中布局方式</h1><ul>
+<li>标准流</li>
+<li>浮动</li>
+<li>定位 (position)<ul>
+<li>static(默认)</li>
+<li>relative,用top、bottom、left、right来配合使用，发生位移</li>
+<li>absolute,用top、bottom、left、right来配合使用，与relative相比较，位移的方向会变化，同时，脱离正常的文档流</li>
+<li>fixed：用top、bottom、left、right来配合使用，位置不变，脱离文档流</li>
+</ul>
+</li>
+</ul>
 ]]></content>
       
         <categories>
