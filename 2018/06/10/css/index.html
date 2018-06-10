@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>tomcat应用技巧 | 陈不二的博客</title>
+  <title>css | 陈不二的博客</title>
   <meta name="author" content="陈不二">
   
   <meta name="description" content="谈技术也谈风月">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="tomcat应用技巧"/>
+  <meta property="og:title" content="css"/>
   <meta property="og:site_name" content="陈不二的博客"/>
 
   
@@ -91,7 +91,7 @@
 
 	
 		<div class="page-header ">		
-			<h1 class="title "> tomcat应用技巧</h1>
+			<h1 class="title "> css</h1>
 		</div>		
 	
 
@@ -111,17 +111,64 @@
 	<div class="mypage">		
 	  		
 
-	  <p>这篇文章介绍了：</p>
-<ul>
-<li>URL中去掉项目名</li>
-<li>URL中携带中文避免乱码</li>
+	  <h1 id="伪类，不一定只对a标签，其他标签也适用"><a href="#伪类，不一定只对a标签，其他标签也适用" class="headerlink" title="伪类，不一定只对a标签，其他标签也适用"></a>伪类，不一定只对a标签，其他标签也适用</h1><ul>
+<li>:link   a标签未访问状态</li>
+<li>:visited   已访问状态</li>
+<li>:hover    鼠标悬浮状态</li>
+<li>:active   激活状态，比如点击了<a id="more"></a>
+</li>
 </ul>
-<h3 id="一、URL中去掉项目名"><a href="#一、URL中去掉项目名" class="headerlink" title="一、URL中去掉项目名"></a>一、URL中去掉项目名</h3><p>部署一个项目到tomcat中的，在server.xml中会增加一行记录，如：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Context</span> <span class="attr">docBase</span>=<span class="string">"blog"</span> <span class="attr">path</span>=<span class="string">"/blog"</span> <span class="attr">reloadable</span>=<span class="string">"true"</span> <span class="attr">source</span>=<span class="string">"org.eclipse.jst.j2ee.server:blog"</span>/&gt;</span><span class="tag">&lt;/<span class="name">Host</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>然后我们本地访问这个项目的时候需要输入的URL如下：<br><a id="more"></a></p>
-<blockquote>
-<p><a href="http://localhost:8080/blog" target="_blank" rel="noopener">http://localhost:8080/blog</a><br>但是我们实际部署到的时候，一般是这样的：<br><a href="http://www.chenbuer.com/" target="_blank" rel="noopener">http://www.chenbuer.com/</a><br>只有域名，而没有多余的路径（也就是上面的项目名）。那么在编码的时候如何去掉这样的项目名，使得编码的时候与实际部署的时候没有区别，操作如下：<br>将server.xml中的Content标签改为如下（<strong>去掉的path中的值</strong>）:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Context</span> <span class="attr">docBase</span>=<span class="string">"blog"</span> <span class="attr">path</span>=<span class="string">"/"</span> <span class="attr">reloadable</span>=<span class="string">"true"</span> <span class="attr">source</span>=<span class="string">"org.eclipse.jst.j2ee.server:blog"</span>/&gt;</span><span class="tag">&lt;/<span class="name">Host</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="二、URL中携带中文避免乱码"><a href="#二、URL中携带中文避免乱码" class="headerlink" title="二、URL中携带中文避免乱码"></a>二、URL中携带中文避免乱码</h3><p>在server.xml中的Connector中添加<strong>URIEncoding=”UTF-8”</strong>(一定要注意不是<strong>URLIEncoding=”UTF-8”</strong>)，变为如下:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">URIEncoding</span>=<span class="string">"UTF-8"</span> <span class="attr">connectionTimeout</span>=<span class="string">"20000"</span> <span class="attr">port</span>=<span class="string">"8080"</span> <span class="attr">protocol</span>=<span class="string">"HTTP/1.1"</span> <span class="attr">redirectPort</span>=<span class="string">"8443"</span>/&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="样式继承"><a href="#样式继承" class="headerlink" title="样式继承"></a>样式继承</h1><p>父元素的样式，子元素可以从父元素那儿继承部分样式。如border就不可以继承</p>
+<h1 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h1><p>如 <code>p a em</code> 就表示p标签中a标签中的em标签</p>
+<h1 id="文字样式设计属性"><a href="#文字样式设计属性" class="headerlink" title="文字样式设计属性"></a>文字样式设计属性</h1><ul>
+<li>font-family   字体</li>
+<li>font-size     文字大小<ul>
+<li>绝对单位<ul>
+<li>in 英寸</li>
+<li>cm 厘米</li>
+<li>mm 毫米</li>
+<li>pt 磅</li>
+<li>pc pica，1pc=12pt</li>
+<li>xx-small 9px</li>
+<li>x-small</li>
+<li>small</li>
+<li>medium 16px</li>
+<li>large</li>
+<li>x-large</li>
+<li>xx-large 28px</li>
+</ul>
+</li>
+<li>相对单位<ul>
+<li>px 像素，受分辨率的影响</li>
+<li>larger（相对父元素大点儿） smaller（相对父元素小点儿）</li>
+<li><strong>em</strong> 相对于父元素字体大小的n倍</li>
+<li>percent 相对于父元素字体大小的具体倍数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>font-color    文字颜色</li>
+<li>font-weight   文字粗细</li>
+<li>font-style    文字样式</li>
+</ul>
+<h1 id="行内元素-amp-块元素"><a href="#行内元素-amp-块元素" class="headerlink" title="行内元素 &amp; 块元素"></a>行内元素 &amp; 块元素</h1><p>行内元素 // todo</p>
+<h1 id="背景样式"><a href="#背景样式" class="headerlink" title="背景样式"></a>背景样式</h1><ul>
+<li>background-color 设置元素的背景颜色</li>
+<li>background-img   把图像设置为背景</li>
+<li>background-position   设置背景图像的起始位置</li>
+<li>background-attachment 背景图像是否固定(固定住用fixed，sroll)</li>
+<li>background-repeat     背景图像是否重复&amp;如何重复(no-repeat,repeat-x,repeat-y,repeat[默认])</li>
+</ul>
+<h1 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h1><ul>
+<li>内边距 padding</li>
+<li>外边距 margin</li>
+<li>边框 border<ul>
+<li>border-width</li>
+<li>border-color</li>
+<li>border-style</li>
+</ul>
+</li>
+</ul>
 	  
 	</div>
 
@@ -130,14 +177,14 @@
 	<div class="pagination">
 <ul class="pagination">
 	 
-				
-    	<li class="prev"><a href="/2017/12/11/IDEA设置与操作/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
-  		
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>归档</a></li>
 
 		
-		   <li class="next"><a href="/2017/04/06/jsp添加jstl库/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+		   <li class="next"><a href="/2018/06/04/webpack/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -205,12 +252,23 @@ gitment.render('container')
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2017-04-09 
+	2018-06-10 
 	</div>
 	
 
 	<!-- categories -->
     
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/前端/">前端<span>1</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
 
 	<!-- tags -->
 	
@@ -218,7 +276,7 @@ gitment.render('container')
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/tomcat/">tomcat<span>1</span></a></li>
+  <li><a href="/tags/前端/">前端<span>1</span></a></li>
     </ul>
 	</div>
 		

@@ -4,6 +4,84 @@
   
     
     <entry>
+      <title><![CDATA[css]]></title>
+      <url>http://chenbuer.github.com/2018/06/10/css/</url>
+      <content type="html"><![CDATA[<h1 id="伪类，不一定只对a标签，其他标签也适用"><a href="#伪类，不一定只对a标签，其他标签也适用" class="headerlink" title="伪类，不一定只对a标签，其他标签也适用"></a>伪类，不一定只对a标签，其他标签也适用</h1><ul>
+<li>:link   a标签未访问状态</li>
+<li>:visited   已访问状态</li>
+<li>:hover    鼠标悬浮状态</li>
+<li>:active   激活状态，比如点击了<a id="more"></a>
+</li>
+</ul>
+<h1 id="样式继承"><a href="#样式继承" class="headerlink" title="样式继承"></a>样式继承</h1><p>父元素的样式，子元素可以从父元素那儿继承部分样式。如border就不可以继承</p>
+<h1 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h1><p>如 <code>p a em</code> 就表示p标签中a标签中的em标签</p>
+<h1 id="文字样式设计属性"><a href="#文字样式设计属性" class="headerlink" title="文字样式设计属性"></a>文字样式设计属性</h1><ul>
+<li>font-family   字体</li>
+<li>font-size     文字大小<ul>
+<li>绝对单位<ul>
+<li>in 英寸</li>
+<li>cm 厘米</li>
+<li>mm 毫米</li>
+<li>pt 磅</li>
+<li>pc pica，1pc=12pt</li>
+<li>xx-small 9px</li>
+<li>x-small</li>
+<li>small</li>
+<li>medium 16px</li>
+<li>large</li>
+<li>x-large</li>
+<li>xx-large 28px</li>
+</ul>
+</li>
+<li>相对单位<ul>
+<li>px 像素，受分辨率的影响</li>
+<li>larger（相对父元素大点儿） smaller（相对父元素小点儿）</li>
+<li><strong>em</strong> 相对于父元素字体大小的n倍</li>
+<li>percent 相对于父元素字体大小的具体倍数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>font-color    文字颜色</li>
+<li>font-weight   文字粗细</li>
+<li>font-style    文字样式</li>
+</ul>
+<h1 id="行内元素-amp-块元素"><a href="#行内元素-amp-块元素" class="headerlink" title="行内元素 &amp; 块元素"></a>行内元素 &amp; 块元素</h1><p>行内元素 // todo</p>
+<h1 id="背景样式"><a href="#背景样式" class="headerlink" title="背景样式"></a>背景样式</h1><ul>
+<li>background-color 设置元素的背景颜色</li>
+<li>background-img   把图像设置为背景</li>
+<li>background-position   设置背景图像的起始位置</li>
+<li>background-attachment 背景图像是否固定(固定住用fixed，sroll)</li>
+<li>background-repeat     背景图像是否重复&amp;如何重复(no-repeat,repeat-x,repeat-y,repeat[默认])</li>
+</ul>
+<h1 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h1><ul>
+<li>内边距 padding</li>
+<li>外边距 margin</li>
+<li>边框 border<ul>
+<li>border-width</li>
+<li>border-color</li>
+<li>border-style</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 前端 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[webpack]]></title>
       <url>http://chenbuer.github.com/2018/06/04/webpack/</url>
       <content type="html"><![CDATA[<h2 id="一、webpack中文文档路径"><a href="#一、webpack中文文档路径" class="headerlink" title="一、webpack中文文档路径"></a>一、webpack中文文档路径</h2><p><a href="https://webpack.docschina.org/configuration/" target="_blank" rel="noopener">webpack文档</a></p>
@@ -380,6 +458,36 @@
     </entry>
     
     <entry>
+      <title><![CDATA[GIT]]></title>
+      <url>http://chenbuer.github.com/2017/12/11/git/</url>
+      <content type="html"><![CDATA[<h3 id="一-设置代理"><a href="#一-设置代理" class="headerlink" title="一. 设置代理"></a>一. 设置代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global https.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global http.sslverify <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>也可以设置socket代理，不错：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy <span class="string">'socks5://127.0.0.1:1080'</span></span><br><span class="line">git config --global https.proxy <span class="string">'socks5://127.0.0.1:1080'</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="二-撤销代理"><a href="#二-撤销代理" class="headerlink" title="二. 撤销代理"></a>二. 撤销代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br></pre></td></tr></table></figure>
+<h3 id="三-如果要查当前的代理配置"><a href="#三-如果要查当前的代理配置" class="headerlink" title="三. 如果要查当前的代理配置"></a>三. 如果要查当前的代理配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --get http.proxy</span><br><span class="line">git config --global --get https.proxy</span><br></pre></td></tr></table></figure>
+<h3 id="四-切换到远程分支"><a href="#四-切换到远程分支" class="headerlink" title="四. 切换到远程分支"></a>四. 切换到远程分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -t origin/hexo</span><br></pre></td></tr></table></figure>
+<h3 id="五-Windows下手动改修配置文件"><a href="#五-Windows下手动改修配置文件" class="headerlink" title="五. Windows下手动改修配置文件"></a>五. Windows下手动改修配置文件</h3><p>在Windows下找不到的gitconfig文件，但是我们都知道的Linux下<code>~/.gitconfig</code>。所以，用gitbash吧：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi ~/.gitconfig</span><br></pre></td></tr></table></figure></p>
+<h3 id="六-用https也不用每次都输入密码"><a href="#六-用https也不用每次都输入密码" class="headerlink" title="六. 用https也不用每次都输入密码"></a>六. 用https也不用每次都输入密码</h3><p>很多环境下并不能用ssh，所以<code>git clone</code>的时候Clone with SSH也不好使，只能用https协议。用https协议在每次提交的时候，都要手动输入用户名和密码。所以修改本地repository下的git配置文件。<br>修改前：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = false</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">        symlinks = false</span><br><span class="line">        ignorecase = true</span><br><span class="line">        hideDotFiles = dotGitOnly</span><br><span class="line">[remote "origin"]</span><br><span class="line">        url = https://github.com/chenbuer/chenbuer.github.io.git</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch "master"]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/master</span><br><span class="line">[branch "hexo"]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/hexo</span><br></pre></td></tr></table></figure></p>
+<p>修改之后：<br><img src="https://github.com/chenbuer/markdownImgs/blob/master/blog/modGitCfg.png?raw=true" alt="modGitCfg"></p>
+<h3 id="七、本地添加github远程"><a href="#七、本地添加github远程" class="headerlink" title="七、本地添加github远程"></a>七、本地添加github远程</h3><p>首先需要在github上添加repo为test，然后在本地项目下执行命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin https://github.com/chenbuer/<span class="built_in">test</span> //关联远程仓库</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      
+        <categories>
+            
+            <category> GIT </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[IDEA设置与操作]]></title>
       <url>http://chenbuer.github.com/2017/12/11/IDEA%E8%AE%BE%E7%BD%AE%E4%B8%8E%E6%93%8D%E4%BD%9C/</url>
       <content type="html"><![CDATA[<h3 id="一、工具栏中文乱码，但是编辑框不乱码"><a href="#一、工具栏中文乱码，但是编辑框不乱码" class="headerlink" title="一、工具栏中文乱码，但是编辑框不乱码"></a>一、工具栏中文乱码，但是编辑框不乱码</h3><p>进入IDE Settings 里的 Appearance项，选中Override default fonts by ，把 Name 设置为 SimSun，Size 根据自己喜好设置（我一般设为 12）。确定<br><a id="more"></a><br><a href="http://www.cnblogs.com/jlxuqiang/p/4083596.html" target="_blank" rel="noopener">参考链接</a></p>
@@ -515,36 +623,6 @@
         <categories>
             
             <category> JAVA </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 工具 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[GIT]]></title>
-      <url>http://chenbuer.github.com/2017/12/11/git/</url>
-      <content type="html"><![CDATA[<h3 id="一-设置代理"><a href="#一-设置代理" class="headerlink" title="一. 设置代理"></a>一. 设置代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global https.proxy http://127.0.0.1:8087</span><br><span class="line">git config --global http.sslverify <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>也可以设置socket代理，不错：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy <span class="string">'socks5://127.0.0.1:1080'</span></span><br><span class="line">git config --global https.proxy <span class="string">'socks5://127.0.0.1:1080'</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="二-撤销代理"><a href="#二-撤销代理" class="headerlink" title="二. 撤销代理"></a>二. 撤销代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br></pre></td></tr></table></figure>
-<h3 id="三-如果要查当前的代理配置"><a href="#三-如果要查当前的代理配置" class="headerlink" title="三. 如果要查当前的代理配置"></a>三. 如果要查当前的代理配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --get http.proxy</span><br><span class="line">git config --global --get https.proxy</span><br></pre></td></tr></table></figure>
-<h3 id="四-切换到远程分支"><a href="#四-切换到远程分支" class="headerlink" title="四. 切换到远程分支"></a>四. 切换到远程分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -t origin/hexo</span><br></pre></td></tr></table></figure>
-<h3 id="五-Windows下手动改修配置文件"><a href="#五-Windows下手动改修配置文件" class="headerlink" title="五. Windows下手动改修配置文件"></a>五. Windows下手动改修配置文件</h3><p>在Windows下找不到的gitconfig文件，但是我们都知道的Linux下<code>~/.gitconfig</code>。所以，用gitbash吧：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi ~/.gitconfig</span><br></pre></td></tr></table></figure></p>
-<h3 id="六-用https也不用每次都输入密码"><a href="#六-用https也不用每次都输入密码" class="headerlink" title="六. 用https也不用每次都输入密码"></a>六. 用https也不用每次都输入密码</h3><p>很多环境下并不能用ssh，所以<code>git clone</code>的时候Clone with SSH也不好使，只能用https协议。用https协议在每次提交的时候，都要手动输入用户名和密码。所以修改本地repository下的git配置文件。<br>修改前：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">        repositoryformatversion = 0</span><br><span class="line">        filemode = false</span><br><span class="line">        bare = false</span><br><span class="line">        logallrefupdates = true</span><br><span class="line">        symlinks = false</span><br><span class="line">        ignorecase = true</span><br><span class="line">        hideDotFiles = dotGitOnly</span><br><span class="line">[remote "origin"]</span><br><span class="line">        url = https://github.com/chenbuer/chenbuer.github.io.git</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch "master"]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/master</span><br><span class="line">[branch "hexo"]</span><br><span class="line">        remote = origin</span><br><span class="line">        merge = refs/heads/hexo</span><br></pre></td></tr></table></figure></p>
-<p>修改之后：<br><img src="https://github.com/chenbuer/markdownImgs/blob/master/blog/modGitCfg.png?raw=true" alt="modGitCfg"></p>
-<h3 id="七、本地添加github远程"><a href="#七、本地添加github远程" class="headerlink" title="七、本地添加github远程"></a>七、本地添加github远程</h3><p>首先需要在github上添加repo为test，然后在本地项目下执行命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin https://github.com/chenbuer/<span class="built_in">test</span> //关联远程仓库</span><br></pre></td></tr></table></figure></p>
-]]></content>
-      
-        <categories>
-            
-            <category> GIT </category>
             
         </categories>
         
