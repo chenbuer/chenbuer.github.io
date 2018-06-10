@@ -60,7 +60,7 @@
 <li>边框 border<ul>
 <li>border-width</li>
 <li>border-color</li>
-<li>border-style</li>
+<li>border-style(none,dotted,dashed,solid,groove[3D凹槽边框]…)</li>
 </ul>
 </li>
 </ul>
@@ -1037,27 +1037,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[久未出门]]></title>
-      <url>http://chenbuer.github.com/2017/02/11/%E4%B9%85%E6%9C%AA%E5%87%BA%E9%97%A8/</url>
-      <content type="html"><![CDATA[<p>许久未出门，<br>偶见好多人，<br>拥进人群，<br>撞得胳臂疼，<br><a id="more"></a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> 风月 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 风月 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[Hibernate初体验]]></title>
       <url>http://chenbuer.github.com/2017/02/11/Hibernate%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
       <content type="html"><![CDATA[<h3 id="一、Hibernate的操作流程"><a href="#一、Hibernate的操作流程" class="headerlink" title="一、Hibernate的操作流程"></a>一、Hibernate的操作流程</h3><blockquote>
@@ -1081,6 +1060,27 @@
         <tags>
             
             <tag> Hibernate </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[久未出门]]></title>
+      <url>http://chenbuer.github.com/2017/02/11/%E4%B9%85%E6%9C%AA%E5%87%BA%E9%97%A8/</url>
+      <content type="html"><![CDATA[<p>许久未出门，<br>偶见好多人，<br>拥进人群，<br>撞得胳臂疼，<br><a id="more"></a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 风月 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 风月 </tag>
             
         </tags>
         
