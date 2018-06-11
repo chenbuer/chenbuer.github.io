@@ -5,7 +5,7 @@ categories: 前端
 tags: 前端
 ---
 
-# 伪类，不一定只对a标签，其他标签也适用
+# 伪类，不一定只对a标签，其他标签也适用
 - :link   a标签未访问状态
 - :visited   已访问状态
 - :hover    鼠标悬浮状态
@@ -118,3 +118,12 @@ tags: 前端
 [链接](http://www.9958.pw/post/css_tuxing)
 
 [或者链接，与上面内容一样](http://www.cnblogs.com/top5/archive/2012/02/14/2351959.html)
+
+# flex布局
+- 想要的布局居中两种方法
+    - 方法1：容器设置两个属性 
+    ```css
+    justify-content:space-between;/* 两端对齐 */
+    align-items:center;/* 在交叉轴(cross-axis)上对齐方式,多行时候用align-content属性 */
+    ```
+    - 方法2：容器设置属性`justify-content:space-between`,设置项目属性`align-self:center`
