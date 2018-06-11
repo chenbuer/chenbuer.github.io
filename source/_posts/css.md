@@ -104,7 +104,7 @@ tags: 前端
 - clear:both
     - 左右都不允许
 
-# 三中布局方式
+# 三种布局方式
 - 标准流
 - 浮动
 - 定位 (position)
@@ -112,3 +112,9 @@ tags: 前端
     - relative,用top、bottom、left、right来配合使用，发生位移
     - absolute,用top、bottom、left、right来配合使用，与relative相比较，位移的方向会变化，同时，脱离正常的文档流
     - fixed：用top、bottom、left、right来配合使用，位置不变，脱离文档流
+
+
+# 有意思的css画图
+[链接](http://www.9958.pw/post/css_tuxing)
+
+[或者链接，与上面内容一样](http://www.cnblogs.com/top5/archive/2012/02/14/2351959.html)
