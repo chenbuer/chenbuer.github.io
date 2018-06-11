@@ -21,3 +21,4 @@ $ git branch -a
 ```shell
 $ git checkout -b hexo origin/hexo
 ```
+$ git checkout -b hexo(这个是本地新建分支hexo) origin/hexo(这个是远端已经存在的分支)
