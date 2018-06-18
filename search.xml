@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title><![CDATA[nginx配置]]></title>
+      <url>http://chenbuer.github.com/2018/06/19/nginx%E9%85%8D%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<h3 id="Centos下降前段文件放到了buer家目录下"><a href="#Centos下降前段文件放到了buer家目录下" class="headerlink" title="Centos下降前段文件放到了buer家目录下"></a>Centos下降前段文件放到了buer家目录下</h3><p>修改Nginx配置之后，访问报403错误，是访问权限错误。修改方法：</p>
+<p>I solved this problem by adding user settings.</p>
+<p>in nginx.conf</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">worker_processes 4;</span><br><span class="line">user username</span><br></pre></td></tr></table></figure>
+<p>change the ‘username’ with linux user name.<br><a id="more"></a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 运维 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 运维 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[css]]></title>
       <url>http://chenbuer.github.com/2018/06/10/css/</url>
       <content type="html"><![CDATA[<h1 id="伪类，不一定只对a标签，其他标签也适用"><a href="#伪类，不一定只对a标签，其他标签也适用" class="headerlink" title="伪类，不一定只对a标签，其他标签也适用"></a>伪类，不一定只对a标签，其他标签也适用</h1><ul>
