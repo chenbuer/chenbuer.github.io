@@ -4,6 +4,30 @@
   
     
     <entry>
+      <title><![CDATA[buer系统过程中的问题]]></title>
+      <url>http://chenbuer.github.com/2018/07/08/buer%E7%B3%BB%E7%BB%9F%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<h3 id="一、controller中收不到post发来参数"><a href="#一、controller中收不到post发来参数" class="headerlink" title="一、controller中收不到post发来参数"></a>一、controller中收不到post发来参数</h3><p><a href="https://blog.csdn.net/qq_35420123/article/details/80674861" target="_blank" rel="noopener">参考一</a></p>
+<p><a href="https://github.com/axios/axios/blob/master/README.md#using-applicationx-www-form-urlencoded-format" target="_blank" rel="noopener">参考二</a><br><a id="more"></a><br>解决方法是用qs将参数进行stringify</p>
+<h3 id="二、vue-router中动态添加路由"><a href="#二、vue-router中动态添加路由" class="headerlink" title="二、vue-router中动态添加路由"></a>二、vue-router中动态添加路由</h3><p>用addRoutes方法，调用该方法前后打印router.options.routes是没有用的，都没有变化，但是动态路由其实已经设置进去了。 </p>
+<p>另外显示的地方需要在Sidebar/index.vue下，将sidebar的route属性改成想要的值，也就是store中permission中的routers属性。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> java </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[vue学习]]></title>
       <url>http://chenbuer.github.com/2018/07/01/vue%E5%AD%A6%E4%B9%A0/</url>
       <content type="html"><![CDATA[<h3 id="一、处理cookie用模块js-cookie"><a href="#一、处理cookie用模块js-cookie" class="headerlink" title="一、处理cookie用模块js-cookie"></a>一、处理cookie用模块js-cookie</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Cookies <span class="keyword">from</span> <span class="string">'js-cookie'</span></span><br><span class="line"><span class="comment">// 获取到cookie中key对应的value值</span></span><br><span class="line"><span class="keyword">return</span> Cookies.get(<span class="string">"key"</span>)</span><br><span class="line"><span class="comment">// 置cookie中key对应的值为value</span></span><br><span class="line"><span class="keyword">return</span> Cookies.set(<span class="string">"key"</span>, <span class="string">"value"</span>)</span><br></pre></td></tr></table></figure>
