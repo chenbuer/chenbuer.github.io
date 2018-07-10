@@ -5,21 +5,21 @@ categories: 前端
 tags: 前端
 ---
 
-# 伪类，不一定只对a标签，其他标签也适用
+#### 一、伪类，不一定只对a标签，其他标签也适用
 - :link   a标签未访问状态
 - :visited   已访问状态
 - :hover    鼠标悬浮状态
 - :active   激活状态，比如点击了
 <!--more-->
 
-# 样式继承
+#### 二、样式继承
 父元素的样式，子元素可以从父元素那儿继承部分样式。如border就不可以继承
 
-# 后代选择器
+#### 三、后代选择器
 如 `p a em` 就表示p标签中a标签中的em标签
 
 
-# 文字样式设计属性
+#### 四、文字样式设计属性
 - font-family   字体
 - font-size     文字大小
     - 绝对单位
@@ -44,7 +44,7 @@ tags: 前端
 - font-weight   文字粗细
 - font-style    文字样式
 
-# 行内元素 & 块元素
+#### 五、行内元素 & 块元素
 - 行内元素(内联元素)，一行显示，直到这行显示满了会换行
 ***行内元素并不具有宽高设置，且垂直方向上margin和padding都是不生效的***
 
@@ -67,14 +67,14 @@ tags: 前端
     行内块元素，元素呈现为inline，具有block相应特性(width、height、padding、margin都生效)
 
 
-# 背景样式
+#### 六、背景样式
 - background-color 设置元素的背景颜色
 - background-img   把图像设置为背景
 - background-position   设置背景图像的起始位置
 - background-attachment 背景图像是否固定(固定住用fixed，sroll)
 - background-repeat     背景图像是否重复&如何重复(no-repeat,repeat-x,repeat-y,repeat[默认])
 
-# 盒子模型
+#### 七、盒子模型
 - 内边距 padding
     - padding:值1 // 4个方向都为值1
     - padding:值1 值2   // 值1是上下，值2是左右
@@ -87,7 +87,7 @@ tags: 前端
     - border-color
     - border-style(none,dotted,dashed,solid,groove[3D凹槽边框]...)
 
-# float属性
+#### 八、float属性
 
 一旦给元素设置了浮动属性，元素就脱离原来的文档流；但是会正常占用文字的空间（不会覆盖文字）
 - float:left
@@ -95,7 +95,7 @@ tags: 前端
 - float:none
 - float:inherit
 
-# clear属性：消除浮动带来的副作用
+#### 九、clear属性：消除浮动带来的副作用
 - clear:none
 - clear:left
     - 不允许该元素(标签)左边有浮动元素
@@ -104,7 +104,7 @@ tags: 前端
 - clear:both
     - 左右都不允许
 
-# 三种布局方式
+#### 十、三种布局方式
 - 标准流
 - 浮动
 - 定位 (position)
@@ -114,12 +114,12 @@ tags: 前端
     - fixed：用top、bottom、left、right来配合使用，位置不变，脱离文档流
 
 
-# 有意思的css画图
+#### 十一、有意思的css画图
 [链接](http://www.9958.pw/post/css_tuxing)
 
 [或者链接，与上面内容一样](http://www.cnblogs.com/top5/archive/2012/02/14/2351959.html)
 
-# flex布局
+#### 十二、flex布局
 - 想要的布局居中两种方法
     - 方法1：容器设置两个属性 
     ```css
