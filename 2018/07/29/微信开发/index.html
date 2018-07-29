@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>buer系统过程中的问题 | 陈不二的博客</title>
+  <title>微信开发 | 陈不二的博客</title>
   <meta name="author" content="陈不二">
   
   <meta name="description" content="谈技术也谈风月">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="buer系统过程中的问题"/>
+  <meta property="og:title" content="微信开发"/>
   <meta property="og:site_name" content="陈不二的博客"/>
 
   
@@ -91,7 +91,7 @@
 
 	
 		<div class="page-header ">		
-			<h1 class="title "> buer系统过程中的问题</h1>
+			<h1 class="title "> 微信开发</h1>
 		</div>		
 	
 
@@ -111,27 +111,8 @@
 	<div class="mypage">		
 	  		
 
-	  <h3 id="一、controller中收不到post发来参数"><a href="#一、controller中收不到post发来参数" class="headerlink" title="一、controller中收不到post发来参数"></a>一、controller中收不到post发来参数</h3><p><a href="https://blog.csdn.net/qq_35420123/article/details/80674861" target="_blank" rel="noopener">参考一</a></p>
-<p><a href="https://github.com/axios/axios/blob/master/README.md#using-applicationx-www-form-urlencoded-format" target="_blank" rel="noopener">参考二</a><br><a id="more"></a><br>解决方法是用qs将参数进行stringify</p>
-<h3 id="二、vue-router中动态添加路由"><a href="#二、vue-router中动态添加路由" class="headerlink" title="二、vue-router中动态添加路由"></a>二、vue-router中动态添加路由</h3><p>用addRoutes方法，调用该方法前后打印router.options.routes是没有用的，都没有变化，但是动态路由其实已经设置进去了。 </p>
-<p>另外显示的地方需要在Sidebar/index.vue下，将sidebar的route属性改成想要的值，也就是store中permission中的routers属性。</p>
-<h3 id="三、阿里云Nginx启动之后无法访问"><a href="#三、阿里云Nginx启动之后无法访问" class="headerlink" title="三、阿里云Nginx启动之后无法访问"></a>三、阿里云Nginx启动之后无法访问</h3><ul>
-<li><p>安装Nginx，直接用yum：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y nginx</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装之后，本地curl可以访问，但是远程访问不了，应该是防火墙问题（<a href="https://blog.csdn.net/AKai66/article/details/78245470" target="_blank" rel="noopener">参考链接一</a>  –  <a href="https://blog.csdn.net/u010920327/article/details/78117855" target="_blank" rel="noopener">参考链接二</a>）：</p>
-<ul>
-<li><p>关闭firewall防火墙</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service #停止firewall</span><br><span class="line"></span><br><span class="line">systemctl disable firewalld.service #禁止firewall开机启动</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>启动iptables防火墙</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">yum -y install iptables-services # 先安装</span><br><span class="line"></span><br><span class="line">编辑iptables防火墙配置文件（/etc/sysconfig/iptables），开启80端口的访问权限，在 </span><br><span class="line">-A INPUT -p tcp -m state --state NEW -m tcp--dport 22 -j ACCEPT行的上面或者下面添加-A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT</span><br><span class="line"></span><br><span class="line">systemctl restart iptables.service #最后重启防火墙使配置生效</span><br><span class="line"></span><br><span class="line">systemctl enable iptables.service #设置防火墙开机启动</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<pre><code>- 还是访问不了，需要在控制台上打开网络与安全中的安全组，[修改安全组规则](https://www.jianshu.com/p/ec34db456c8b)
-</code></pre>	  
+	  <h3 id="一、本地映射工具"><a href="#一、本地映射工具" class="headerlink" title="一、本地映射工具"></a>一、本地映射工具</h3><p>用ngrok，<a href="https://blog.csdn.net/u011886447/article/details/73268407" target="_blank" rel="noopener">操作方法</a></p>
+	  
 	</div>
 
 	<div>
@@ -139,14 +120,14 @@
 	<div class="pagination">
 <ul class="pagination">
 	 
-				
-    	<li class="prev"><a href="/2018/07/28/buer系统部署/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
-  		
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>归档</a></li>
 
 		
-		   <li class="next"><a href="/2018/07/01/vue学习/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+		   <li class="next"><a href="/2018/07/28/buer系统部署/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -214,7 +195,7 @@ gitment.render('container')
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2018-07-08 
+	2018-07-29 
 	</div>
 	
 
