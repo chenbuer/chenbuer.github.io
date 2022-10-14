@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title><![CDATA[家]]></title>
+      <url>https://chenbuer.github.io/2020/10/05/%E5%AE%B6/</url>
+      <content type="html"><![CDATA[<p>十一的时候把奶奶和父母带到装修好的房子住了一宿。</p>
+<a id="more"></a>
+<p>奶奶老了。刚下车，车库的光照也并不明亮，往电梯的一个台阶奶奶踉跄了一下。奶奶87了，她这个年纪就怕摔倒了。平时在家里，坑坑洼洼的砖泥路她身手矫健，种菜苗，拎水浇水都不在话下，陌生的地方平地都能绊脚，再走路她就得牵着我或者爸爸，她的手心都出汗了。<br>转了趟虹悦城，她倒是挺感兴趣，抓着衣服摸摸布料，看看样式，说谁谁穿着好看；金店的售货员给她一只手带上两个戒指她笑得合不拢嘴，询问着价钱。她讲着方言，她和售货员之间语言并不通，但是她自己复述的时候却讲讲头头是道，我和老爸在旁边也是哈哈大笑。半个下午，奶奶兴奋劲就过去了，晚上和第二天就略显疲态，回程的车上也少搭我话。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 风月 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 风月 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[内网穿透工具ngrok]]></title>
       <url>https://chenbuer.github.io/2018/07/29/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E5%B7%A5%E5%85%B7ngrok/</url>
       <content type="html"><![CDATA[<h3 id="一、本地映射工具"><a href="#一、本地映射工具" class="headerlink" title="一、本地映射工具"></a>一、本地映射工具</h3><p>用ngrok，<a href="https://blog.csdn.net/u011886447/article/details/73268407" target="_blank" rel="noopener">操作方法</a></p>
@@ -30,7 +53,7 @@
       <content type="html"><![CDATA[<h3 id="一、Nginx虚拟机"><a href="#一、Nginx虚拟机" class="headerlink" title="一、Nginx虚拟机"></a>一、Nginx虚拟机</h3><p>不再赘述，碰到一个坑就是：虚拟机配置好了，但是admin的url一直访问不了，原来是因为自己没有配置DNS的A类型域名解析。<br><a id="more"></a></p>
 <h3 id="二、安装redis"><a href="#二、安装redis" class="headerlink" title="二、安装redis"></a>二、安装redis</h3><p>直接利用的yum工具安装</p>
 <p><a href="https://www.jianshu.com/p/ebda253a8daa" target="_blank" rel="noopener">参考链接</a></p>
-<h3 id="三、安装数据库mariadb"><a href="#三、安装数据库mariadb" class="headerlink" title="三、安装数据库mariadb"></a>三、安装数据库mariadb</h3><p>直接利用yum工具安装：<code>yum install mariadb-server mariadb</code></p>
+<h3 id="三、安装数据库mariadb"><a href="#三、安装数据库mariadb" class="headerlink" title="三、安装数据库mariadb"></a>三、安装数据库mariadb</h3><p>直接利用yum工具安装：<code>yum install mariadb-server mariadb</code></p>
 <p><a href="http://www.cnblogs.com/starof/p/4680083.html" target="_blank" rel="noopener">参考链接</a></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mariadb  #启动MariaDB</span><br><span class="line">systemctl stop mariadb  #停止MariaDB</span><br><span class="line">systemctl restart mariadb  #重启MariaDB</span><br><span class="line">systemctl enable mariadb  #设置开机启动</span><br></pre></td></tr></table></figure>
 <p>直接登录，没有密码:<code>mysql -u root -p</code></p>
@@ -44,11 +67,11 @@
 <h3 id="六、命令行执行sql文件"><a href="#六、命令行执行sql文件" class="headerlink" title="六、命令行执行sql文件"></a>六、命令行执行sql文件</h3><p><a href="https://www.jianshu.com/p/43052c237bf1" target="_blank" rel="noopener">参考链接</a><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line">use xxx;</span><br><span class="line">source path/xxx.sql</span><br></pre></td></tr></table></figure></p>
 <h3 id="七、打开8080端口"><a href="#七、打开8080端口" class="headerlink" title="七、打开8080端口"></a>七、打开8080端口</h3><p><a href="https://www.jianshu.com/p/b66277ad24c2" target="_blank" rel="noopener">参考文档</a></p>
 <p>除了要在安全策略组里面打开8080，还需要设置防火墙，我是直接关闭<code>systemctl stop firewalld.service</code></p>
-<p><strong>attention: 后来改成了利用Nginx的反向代理，就不需要打开8080端口了</strong></p>
+<p><strong>attention: 后来改成了利用Nginx的反向代理，就不需要打开8080端口了</strong></p>
 <h3 id="八、Nginx部署vue项目，刷新之后是Nginx的404页面"><a href="#八、Nginx部署vue项目，刷新之后是Nginx的404页面" class="headerlink" title="八、Nginx部署vue项目，刷新之后是Nginx的404页面"></a>八、Nginx部署vue项目，刷新之后是Nginx的404页面</h3><p>在server的配置中加上如下：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">    try_files $uri $uri/ /index.html last;</span><br><span class="line">    index index.html;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><a href="https://blog.csdn.net/zjcjava/article/details/78255018" target="_blank" rel="noopener">参考链接</a></p>
 <p>attention：对于java后台数据的请求利用Nginx的反向代理实现：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location /api &#123;</span><br><span class="line">    proxy_pass http://127.0.0.1:8080/api/;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="九、springboot运行一段时间之后就挂了"><a href="#九、springboot运行一段时间之后就挂了" class="headerlink" title="九、springboot运行一段时间之后就挂了"></a>九、springboot运行一段时间之后就挂了</h3><p><a href="https://blog.csdn.net/zzq900503/article/details/80577490" target="_blank" rel="noopener">参考链接</a></p>
+<h3 id="九、springboot运行一段时间之后就挂了"><a href="#九、springboot运行一段时间之后就挂了" class="headerlink" title="九、springboot运行一段时间之后就挂了"></a>九、springboot运行一段时间之后就挂了</h3><p><a href="https://blog.csdn.net/zzq900503/article/details/80577490" target="_blank" rel="noopener">参考链接</a></p>
 <p>个人估计远程的bash断了之后，对应的进行也就断了，所以用nohup命令，<a href="https://www.cnblogs.com/superjt/p/4079013.html" target="_blank" rel="noopener">参见</a>。<code>nohup java -jar buer-***.jar</code></p>
 <h3 id="十、springboot和vue整合"><a href="#十、springboot和vue整合" class="headerlink" title="十、springboot和vue整合"></a>十、springboot和vue整合</h3><p>可以Google下，还没细看，<a href="https://blog.csdn.net/u014098584/article/details/78912378" target="_blank" rel="noopener">参考链接一</a></p>
 <p><a href="https://blog.csdn.net/sinat_27639721/article/details/78229040" target="_blank" rel="noopener">参考链接二</a></p>
@@ -193,7 +216,7 @@
 <li>font-size     文字大小<ul>
 <li>绝对单位<ul>
 <li>in 英寸</li>
-<li>cm 厘米</li>
+<li>cm 厘米</li>
 <li>mm 毫米</li>
 <li>pt 磅</li>
 <li>pc pica，1pc=12pt</li>
@@ -358,7 +381,7 @@
 <h3 id="二、subject-login-发生了什么"><a href="#二、subject-login-发生了什么" class="headerlink" title="二、subject.login()发生了什么"></a>二、subject.login()发生了什么</h3><p><a href="http://blog.51cto.com/luchunli/1830020" target="_blank" rel="noopener">参考</a></p>
 <p>所以最终还是回归到了我们自定义的<code>doGetAuthenticationInfo(AuthenticationToken authenticationToken)</code>方法。</p>
 <h3 id="三、权限验证"><a href="#三、权限验证" class="headerlink" title="三、权限验证"></a>三、权限验证</h3><p>(1) 可以简单书写如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> AuthenticationInfo <span class="title">doGetAuthenticationInfo</span><span class="params">(AuthenticationToken authcToken)</span> <span class="keyword">throws</span> AuthenticationException </span>&#123;  </span><br><span class="line">        UsernamePasswordToken token = (UsernamePasswordToken) authcToken;  </span><br><span class="line">        User user = accountManager.findUserByUserName(token.getUsername());  </span><br><span class="line">        <span class="keyword">if</span> (user != <span class="keyword">null</span>) &#123;  </span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> SimpleAuthenticationInfo(user.getUserName(), user.getPassword(), getName());  </span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;  </span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;  </span><br><span class="line">        &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>但是这时候我们就回有一疑问：这里面都没有验证密码？这个其实是交给<code>credentialsMatcher</code>去验证的。所以我们可以自定义一个bean，其实现类继承自<code>SimpleCredentialsMatcher</code>，复写<code>doCredentialsMatch</code>方法:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyCredentialsMatcher</span> <span class="keyword">extends</span> <span class="title">SimpleCredentialsMatcher</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">doCredentialsMatch</span><span class="params">(AuthenticationToken token, AuthenticationInfo info)</span> </span>&#123;</span><br><span class="line">        UsernamePasswordToken usernamePasswordToken = (UsernamePasswordToken) token;</span><br><span class="line">        String password = String.valueOf(usernamePasswordToken.getPassword());</span><br><span class="line">        String dbpassword = (String) info.getCredentials();</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.equals(password, dbpassword);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>但是这时候我们就回有一疑问：这里面都没有验证密码？这个其实是交给<code>credentialsMatcher</code>去验证的。所以我们可以自定义一个bean，其实现类继承自<code>SimpleCredentialsMatcher</code>，复写<code>doCredentialsMatch</code>方法:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyCredentialsMatcher</span> <span class="keyword">extends</span> <span class="title">SimpleCredentialsMatcher</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">doCredentialsMatch</span><span class="params">(AuthenticationToken token, AuthenticationInfo info)</span> </span>&#123;</span><br><span class="line">        UsernamePasswordToken usernamePasswordToken = (UsernamePasswordToken) token;</span><br><span class="line">        String password = String.valueOf(usernamePasswordToken.getPassword());</span><br><span class="line">        String dbpassword = (String) info.getCredentials();</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.equals(password, dbpassword);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><a href="http://www.cnblogs.com/chyu/p/5958720.html" target="_blank" rel="noopener">参考一</a>–<a href="http://jinnianshilongnian.iteye.com/blog/2022468" target="_blank" rel="noopener">参考二</a></p>
 <p>最后MyCredentialsMatcher这个bean注入自定义Realm中。</p>
 <p>(2) 也可以不用自定义<code>MyCredentialsMatcher</code>，直接在<code>doGetAuthenticationInfo</code>把密码校验给校验了。zheng项目就是这么做的。</p>
@@ -443,7 +466,7 @@
 <h3 id="八、ehcache"><a href="#八、ehcache" class="headerlink" title="八、ehcache"></a>八、ehcache</h3><p><a href="https://www.jianshu.com/p/5a0669d6305e" target="_blank" rel="noopener">参考1</a></p>
 <p><a href="http://raychase.iteye.com/blog/1545906" target="_blank" rel="noopener">参考2</a></p>
 <h3 id="九、关于分布式"><a href="#九、关于分布式" class="headerlink" title="九、关于分布式"></a>九、关于分布式</h3><p>可以把分布式系统看做一个以系统，他的应用是因为现在服务系统的计算越来越大，利用分散的主机分散大量请求的处理。</p>
-<p><strong>但是很多的东西却因为分散导致了数据不一致，比如session、比如cache，所以又需要集中处理，集中处理常见的有一个集中服务提供一致性保证，比如利用的redis，但是需要网络IO处理，这样又损耗了一定的性能</strong></p>
+<p><strong>但是很多的东西却因为分散导致了数据不一致，比如session、比如cache，所以又需要集中处理，集中处理常见的有一个集中服务提供一致性保证，比如利用的redis，但是需要网络IO处理，这样又损耗了一定的性能</strong></p>
 ]]></content>
       
         <categories>
@@ -496,12 +519,12 @@
     <entry>
       <title><![CDATA[很多话，但是不知道如何表达]]></title>
       <url>https://chenbuer.github.io/2018/02/19/%E5%BE%88%E5%A4%9A%E8%AF%9D%EF%BC%8C%E4%BD%86%E6%98%AF%E4%B8%8D%E7%9F%A5%E5%A6%82%E4%BD%95%E8%A1%A8%E8%BE%BE/</url>
-      <content type="html"><![CDATA[<p>每次回来就莫名的手足无措。明明之前就做好了准备，知道这是一个玩笑，但是身边的人都很严肃，自己也就变得认真与紧张起来。</p>
+      <content type="html"><![CDATA[<p>每次回来就莫名的手足无措。明明之前就做好了准备，知道这是一个玩笑，但是身边的人都很严肃，自己也就变得认真与紧张起来。</p>
 <a id="more"></a>
-<p>身边的人都在教我正确的生活状态。我不反感，也不完全认可，同样也感谢。因为一直都太让大家操心了。哥说，不要再让父母等待了。这确也让我哑口无言。他们在与我谈论工作的时候，总让我感受到他们在坚持某种难受的状态，而这种状态需要我去帮助他们解脱一样。似乎我的婚姻，以及其他的一切的都成了他们的负担，成了他们的责任，都是他们没做好。我不认可，但是我改变不了他们的想法，并且我尝试改变他们的观念，但多是徒劳无功。</p>
-<p>我知道他们并没有考虑太多我的感受，而是在一个劲的表达自己的想法与情绪。但是我对于自己现在的一切也抱有埋怨与不满。就好像一个人熬到深夜，蜷缩着捂暖冰凉的床单。我的心里也确切知道生活本不应该这样。是该改变一下状态，也改变一下心态。</p>
+<p>身边的人都在教我正确的生活状态。我不反感，也不完全认可，同样也感谢。因为一直都太让大家操心了。哥说，不要再让父母等待了。这确也让我哑口无言。他们在与我谈论工作的时候，总让我感受到他们在坚持某种难受的状态，而这种状态需要我去帮助他们解脱一样。似乎我的婚姻，以及其他的一切的都成了他们的负担，成了他们的责任，都是他们没做好。我不认可，但是我改变不了他们的想法，并且我尝试改变他们的观念，但多是徒劳无功。</p>
+<p>我知道他们并没有考虑太多我的感受，而是在一个劲的表达自己的想法与情绪。但是我对于自己现在的一切也抱有埋怨与不满。就好像一个人熬到深夜，蜷缩着捂暖冰凉的床单。我的心里也确切知道生活本不应该这样。是该改变一下状态，也改变一下心态。</p>
 <p>我所坚持的或许还是软弱，软弱于习惯已有的环境而不愿意改变，更不敢去尝试新鲜的东西。这样就被拘泥住了，自己还活的理直气壮。</p>
-<p>也许尝试一下才能判断好与坏，不然剩给自己就剩下不尽的唏嘘。当我经历过了，也体会过了其中酸甜，才可以说，这样的生活滋味不好受，不好受。这或许也是妥协。</p>
+<p>也许尝试一下才能判断好与坏，不然剩给自己就剩下不尽的唏嘘。当我经历过了，也体会过了其中酸甜，才可以说，这样的生活滋味不好受，不好受。这或许也是妥协。</p>
 <p>呸，呸！</p>
 <p>多一些勇气，无须畏畏缩缩，表达出来自己的想法。多一些尝试，无须裹足不前，抓住每一个机会。生活可能是一件很复杂的事情，生活也可能是一件很简单的事情。接下来的时间，希望所有人都好，当然也希望自己一切都好。</p>
 <p>我活在社会中，我也活在自己的世界中。干巴得。</p>
@@ -528,7 +551,7 @@
       <content type="html"><![CDATA[<h3 id="一-客户端选择"><a href="#一-客户端选择" class="headerlink" title="一. 客户端选择"></a>一. 客户端选择</h3><p>Windows可以选择OpenVPN客户端</p>
 <p>mac可以选择<a href="https://tunnelblick.net/downloads.html" target="_blank" rel="noopener">tunnelblick</a></p>
 <a id="more"></a>
-<h3 id="二-登录之后可能不能自动修改DNS地址"><a href="#二-登录之后可能不能自动修改DNS地址" class="headerlink" title="二. 登录之后可能不能自动修改DNS地址"></a>二. 登录之后可能不能自动修改DNS地址</h3><p>那就需要手动设置。<br>在的“网络偏好设置”里面设置总是很麻烦。用命令行设置，<a href="http://blog.51cto.com/liongmagezi/1386792" target="_blank" rel="noopener">参考链接</a></p>
+<h3 id="二-登录之后可能不能自动修改DNS地址"><a href="#二-登录之后可能不能自动修改DNS地址" class="headerlink" title="二. 登录之后可能不能自动修改DNS地址"></a>二. 登录之后可能不能自动修改DNS地址</h3><p>那就需要手动设置。<br>在的“网络偏好设置”里面设置总是很麻烦。用命令行设置，<a href="http://blog.51cto.com/liongmagezi/1386792" target="_blank" rel="noopener">参考链接</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">➜ /Users/buer $ networksetup -listallnetworkservices</span><br><span class="line">An asterisk (*) denotes that a network service is disabled.</span><br><span class="line">Wi-Fi</span><br><span class="line">iPhone USB</span><br><span class="line">Thunderbolt Bridge</span><br><span class="line">Bluetooth PAN</span><br><span class="line">➜ /Users/buer $ sudo networksetup -setdnsservers Wi-Fi 192.168.121.20</span><br></pre></td></tr></table></figure>
 <p>操作完了记得改回来<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo networksetup -setdnsservers Wi-Fi 8.8.8.8</span><br></pre></td></tr></table></figure></p>
 ]]></content>
