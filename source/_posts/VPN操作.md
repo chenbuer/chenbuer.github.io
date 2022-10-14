@@ -14,7 +14,7 @@ mac可以选择[tunnelblick](https://tunnelblick.net/downloads.html)
 ### 二. 登录之后可能不能自动修改DNS地址
 
 那就需要手动设置。
-在的“网络偏好设置”里面设置总是很麻烦。用命令行设置，[参考链接](http://blog.51cto.com/liongmagezi/1386792)
+在的“网络偏好设置”里面设置总是很麻烦。用命令行设置，[参考链接](http://blog.51cto.com/liongmagezi/1386792)
 
 ```bash
 ➜ /Users/buer $ networksetup -listallnetworkservices

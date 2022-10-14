@@ -14,7 +14,7 @@ tags: java
 [参考链接](https://www.jianshu.com/p/ebda253a8daa)
 
 ### 三、安装数据库mariadb
-直接利用yum工具安装：`yum install mariadb-server mariadb `
+直接利用yum工具安装：`yum install mariadb-server mariadb `
 
 [参考链接](http://www.cnblogs.com/starof/p/4680083.html)
 
@@ -79,7 +79,7 @@ source path/xxx.sql
 
 除了要在安全策略组里面打开8080，还需要设置防火墙，我是直接关闭`systemctl stop firewalld.service`
 
-**attention: 后来改成了利用Nginx的反向代理，就不需要打开8080端口了**
+**attention: 后来改成了利用Nginx的反向代理，就不需要打开8080端口了**
 
 ### 八、Nginx部署vue项目，刷新之后是Nginx的404页面
 在server的配置中加上如下：
@@ -98,7 +98,7 @@ location /api {
 }
 ```
 
-### 九、springboot运行一段时间之后就挂了
+### 九、springboot运行一段时间之后就挂了
 [参考链接](https://blog.csdn.net/zzq900503/article/details/80577490)
 
 个人估计远程的bash断了之后，对应的进行也就断了，所以用nohup命令，[参见](https://www.cnblogs.com/superjt/p/4079013.html)。`nohup java -jar buer-***.jar`

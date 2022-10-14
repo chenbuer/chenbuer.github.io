@@ -142,7 +142,7 @@ protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authcTo
         }  
 } 
 ```
-但是这时候我们就回有一疑问：这里面都没有验证密码？这个其实是交给`credentialsMatcher`去验证的。所以我们可以自定义一个bean，其实现类继承自`SimpleCredentialsMatcher`，复写`doCredentialsMatch`方法:
+但是这时候我们就回有一疑问：这里面都没有验证密码？这个其实是交给`credentialsMatcher`去验证的。所以我们可以自定义一个bean，其实现类继承自`SimpleCredentialsMatcher`，复写`doCredentialsMatch`方法:
 ```java
 public class MyCredentialsMatcher extends SimpleCredentialsMatcher {
     @Override

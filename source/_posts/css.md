@@ -24,7 +24,7 @@ tags: 前端
 - font-size     文字大小
     - 绝对单位
         - in 英寸
-        - cm 厘米
+        - cm 厘米
         - mm 毫米
         - pt 磅
         - pc pica，1pc=12pt
