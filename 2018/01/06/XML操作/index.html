@@ -1,0 +1,289 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>XML操作 | 陈不二的博客</title>
+  <meta name="author" content="陈不二">
+  
+  <meta name="description" content="谈技术也谈风月">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="XML操作">
+  <meta property="og:site_name" content="陈不二的博客">
+
+  
+    <meta property="og:image" content="undefined">
+  
+
+  
+  
+    <link href="/logo.ico" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/cosmo.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+</head>
+</html>
+ <body>  
+  <nav id="main-nav" class="navbar  navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">陈不二的博客</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="所有文章.">
+			  <i class="fa fa-archive"></i>归档
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>分类
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>标签
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="关于我.">
+			  <i class="fa fa-user"></i>关于我
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header ">		
+			<h1 class="title "> XML操作</h1>
+		</div>		
+	
+
+
+
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h3 id="一、需要被解析的xml"><a href="#一、需要被解析的xml" class="headerlink" title="一、需要被解析的xml"></a>一、需要被解析的xml</h3><p>解析一个这样的xml：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">学生花名册</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">学生</span> <span class="attr">id</span>=<span class="string">"1"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">性别</span>&gt;</span>男<span class="tag">&lt;/<span class="name">性别</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">姓名</span>&gt;</span>李华<span class="tag">&lt;/<span class="name">姓名</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">年龄</span>&gt;</span>14<span class="tag">&lt;/<span class="name">年龄</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">电话</span>&gt;</span>6287555<span class="tag">&lt;/<span class="name">电话</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">学生</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">学生</span> <span class="attr">id</span>=<span class="string">"2"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">性别</span>&gt;</span>女<span class="tag">&lt;/<span class="name">性别</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">姓名</span>&gt;</span>张三<span class="tag">&lt;/<span class="name">姓名</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">年龄</span>&gt;</span>16<span class="tag">&lt;/<span class="name">年龄</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">电话</span>&gt;</span>8273425<span class="tag">&lt;/<span class="name">电话</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">学生</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">学生花名册</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h3 id="二、利用Dom4j进行解析"><a href="#二、利用Dom4j进行解析" class="headerlink" title="二、利用Dom4j进行解析"></a>二、利用Dom4j进行解析</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dom4jParseXML</span><span class="params">(String path)</span></span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// 1. 获取SAXReader对象</span></span><br><span class="line">        org.dom4j.io.SAXReader reader = <span class="keyword">new</span> SAXReader();</span><br><span class="line">        <span class="comment">// 获取resouce</span></span><br><span class="line">        URL resource = getClass().getClassLoader().getResource(path);</span><br><span class="line">        <span class="comment">// 2. 利用SAXReader对象的read方法获取Docment对象</span></span><br><span class="line">        org.dom4j.Document document = reader.read(resource);</span><br><span class="line">        <span class="comment">// 3. 获取document对象的根节点</span></span><br><span class="line">        org.dom4j.Element rootElement = document.getRootElement();</span><br><span class="line">        <span class="comment">// 4. 通过根节点的elementIterator方法获取对应下面的所有子节点</span></span><br><span class="line">        Iterator it = rootElement.elementIterator();</span><br><span class="line">        <span class="comment">// 5. 循环迭代器</span></span><br><span class="line">        <span class="keyword">while</span> (it.hasNext())&#123;</span><br><span class="line">            <span class="comment">// 5.1 获取到每一个学生节点</span></span><br><span class="line">            org.dom4j.Element ele = (org.dom4j.Element) it.next();</span><br><span class="line"></span><br><span class="line">            System.out.println(<span class="string">"======开始一个学生的解析======"</span>);</span><br><span class="line">            <span class="comment">//开始某一个学生的解析</span></span><br><span class="line">            List&lt;Attribute&gt; attributes = ele.attributes();</span><br><span class="line">            <span class="keyword">for</span> (Attribute attribute : attributes) &#123;</span><br><span class="line">                System.out.println(attribute.getName() + <span class="string">":"</span> + attribute.getValue());</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//获取该学生的所有的子节点</span></span><br><span class="line">            Iterator stdAtt = ele.elementIterator();</span><br><span class="line">            <span class="keyword">while</span> (stdAtt.hasNext())&#123;</span><br><span class="line">                org.dom4j.Element oneAttr = (org.dom4j.Element) stdAtt.next();</span><br><span class="line">                System.out.println(oneAttr.getQName().getName() +<span class="string">":"</span>+ oneAttr.getText());</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(<span class="string">"======结束一个学生的解析======"</span>);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (DocumentException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="三、直接利用的jdk的dom进行解析"><a href="#三、直接利用的jdk的dom进行解析" class="headerlink" title="三、直接利用的jdk的dom进行解析"></a>三、直接利用的jdk的dom进行解析</h3><p>（目前此段代码还有点儿问题，暂时不究，后期再补）<br>目标是将上述的xml解析成为一个map对象：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[id1:&#123;</span><br><span class="line">    属性<span class="number">1</span>：值<span class="number">1</span>，</span><br><span class="line">    属性<span class="number">2</span>：值<span class="number">2</span></span><br><span class="line">&#125;，</span><br><span class="line">id2:&#123;</span><br><span class="line">    属性<span class="number">1</span>：值<span class="number">1</span>，</span><br><span class="line">    属性<span class="number">2</span>：值<span class="number">2</span></span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure></p>
+<p>代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XMLParseTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">        parseXML(<span class="string">"students.xml  "</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> Map&lt;String,Object&gt; <span class="title">parseXML</span><span class="params">(String path)</span></span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 获取到DocumentBuilder</span></span><br><span class="line">            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();</span><br><span class="line">            DocumentBuilder db = dbf.newDocumentBuilder();</span><br><span class="line"></span><br><span class="line">            <span class="comment">//获取到Document</span></span><br><span class="line"><span class="comment">//            InputStream in = new FileInputStream(path);//经常出现找不到文件的错误</span></span><br><span class="line">            URL resource = getClass().getClassLoader().getResource(path);</span><br><span class="line">            URLConnection urlConnection = resource.openConnection();</span><br><span class="line">            <span class="keyword">final</span> InputStream in = urlConnection.getInputStream();</span><br><span class="line">            Document doc = db.parse(in);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//获取到根节点</span></span><br><span class="line">            Element root = doc.getDocumentElement();</span><br><span class="line"></span><br><span class="line">            <span class="comment">//获取到根节点下的子节点，也就是所有的学生</span></span><br><span class="line">            NodeList childNodes = root.getChildNodes();</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">null</span> == childNodes)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 所有学生的所有信息都放到了这个map里面</span></span><br><span class="line">            Map&lt;String, Object&gt; allStds = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span> ; i &lt; childNodes.getLength() ; i++)&#123;</span><br><span class="line">                <span class="comment">// 一个学生</span></span><br><span class="line">                Node oneStd = childNodes.item(i);</span><br><span class="line">                <span class="comment">// 若此Node是一个节点</span></span><br><span class="line">                <span class="keyword">if</span> (Node.ELEMENT_NODE == oneStd.getNodeType())&#123;</span><br><span class="line">                    <span class="comment">// 属性也是一个Node，获取到Id</span></span><br><span class="line">                    Node idNode = oneStd.getAttributes().getNamedItem(<span class="string">"id"</span>);</span><br><span class="line">                    String id = idNode.getNodeValue();</span><br><span class="line"></span><br><span class="line">                    <span class="comment">//获取这个学生的子节点</span></span><br><span class="line">                    NodeList oneStdChildNodes = oneStd.getChildNodes();</span><br><span class="line">                    <span class="comment">//这个学生的所有属性都放到了这个map里面</span></span><br><span class="line">                    Map&lt;String , Object&gt; oneStdAttrs = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;oneStdChildNodes.getLength(); j++)&#123;</span><br><span class="line">                        <span class="comment">//获取到该学生的一个属性Node</span></span><br><span class="line">                        Node stdOne = oneStdChildNodes.item(j);</span><br><span class="line">                        String attribute = stdOne.getNodeName();</span><br><span class="line">                        String val = stdOne.getNodeValue();</span><br><span class="line">                        oneStdAttrs.put(attribute,val);</span><br><span class="line"></span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    allStds.put(id, oneStdChildNodes);</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> allStds;</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+<ul class="pagination">
+	 
+				
+    	<li class="prev"><a href="/2018/02/09/VPN操作/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+  		
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>归档</a></li>
+
+		
+		   <li class="next"><a href="/2018/01/02/JSON/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+        
+	
+</ul>
+</div>
+
+    </center>
+	</div>
+
+    <!-- share -->
+    
+        
+    <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+        <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+        <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+    </div>
+    <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+
+
+        
+
+    
+	
+	<!-- comment -->
+	<!-- 
+  
+<section id="comment">
+  <h2 class="title">留言</h2>
+
+  
+</section>
+ -->
+
+<!--我自己添加的评论功能-->
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'chenbuer',
+  repo: 'chenbuer.github.io',
+  oauth: {
+  client_id: 'c8819a6086d97f4c90e7',
+  client_secret: '64f822e6b47604072e08527a965817df12faeab6',
+  },
+})
+gitment.render('container')
+</script>
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2018-01-06 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/JAVA/">JAVA<span>14</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/JAVA/">JAVA<span>9</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2022 陈不二
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>
