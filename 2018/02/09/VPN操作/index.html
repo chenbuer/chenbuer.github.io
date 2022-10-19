@@ -117,7 +117,14 @@
 <h3 id="二-登录之后可能不能自动修改DNS地址"><a href="#二-登录之后可能不能自动修改DNS地址" class="headerlink" title="二. 登录之后可能不能自动修改DNS地址"></a>二. 登录之后可能不能自动修改DNS地址</h3><p>那就需要手动设置。<br>在的“网络偏好设置”里面设置总是很麻烦。用命令行设置，<a href="http://blog.51cto.com/liongmagezi/1386792" target="_blank" rel="noopener">参考链接</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">➜ /Users/buer $ networksetup -listallnetworkservices</span><br><span class="line">An asterisk (*) denotes that a network service is disabled.</span><br><span class="line">Wi-Fi</span><br><span class="line">iPhone USB</span><br><span class="line">Thunderbolt Bridge</span><br><span class="line">Bluetooth PAN</span><br><span class="line">➜ /Users/buer $ sudo networksetup -setdnsservers Wi-Fi 192.168.121.20</span><br></pre></td></tr></table></figure>
 <p>操作完了记得改回来<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo networksetup -setdnsservers Wi-Fi 8.8.8.8</span><br></pre></td></tr></table></figure></p>
-<h3 id="三、其他客户端"><a href="#三、其他客户端" class="headerlink" title="三、其他客户端"></a>三、其他客户端</h3><p>ssr：<a href="https://github.com/wzdnzd/ShadowsocksX-NG-R" target="_blank" rel="noopener">ShadowsocksX-NG-R</a><br>ss：<a href="https://github.com/shadowsocks/ShadowsocksX-NG" target="_blank" rel="noopener">ShadowsocksX-NG</a></p>
+<h3 id="三、其他客户端"><a href="#三、其他客户端" class="headerlink" title="三、其他客户端"></a>三、其他客户端</h3><ul>
+<li>ssr：<ul>
+<li>mac:<a href="https://github.com/wzdnzd/ShadowsocksX-NG-R" target="_blank" rel="noopener">ShadowsocksX-NG-R</a></li>
+<li>windows:<a href="https://github.com/shadowsocksrr/shadowsocksr-csharp" target="_blank" rel="noopener">shadowsocksr-csharp</a>,<a href="https://github.com/HMBSbige/ShadowsocksR-Windows" target="_blank" rel="noopener">ShadowsocksR-Windows</a></li>
+</ul>
+</li>
+<li>ss：<a href="https://github.com/shadowsocks/ShadowsocksX-NG" target="_blank" rel="noopener">ShadowsocksX-NG</a></li>
+</ul>
 	  
 	</div>
 
