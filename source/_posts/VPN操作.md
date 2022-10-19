@@ -29,3 +29,7 @@ Bluetooth PAN
 ```bash
 sudo networksetup -setdnsservers Wi-Fi 8.8.8.8
 ```
+
+### 三、其他客户端
+ssr：[ShadowsocksX-NG-R](https://github.com/wzdnzd/ShadowsocksX-NG-R)
+ss：[ShadowsocksX-NG](https://github.com/shadowsocks/ShadowsocksX-NG)
