@@ -31,5 +31,7 @@ sudo networksetup -setdnsservers Wi-Fi 8.8.8.8
 ```
 
 ### 三、其他客户端
-ssr：[ShadowsocksX-NG-R](https://github.com/wzdnzd/ShadowsocksX-NG-R)
-ss：[ShadowsocksX-NG](https://github.com/shadowsocks/ShadowsocksX-NG)
+- ssr：
+    - mac:[ShadowsocksX-NG-R](https://github.com/wzdnzd/ShadowsocksX-NG-R)
+    - windows:[shadowsocksr-csharp](https://github.com/shadowsocksrr/shadowsocksr-csharp),[ShadowsocksR-Windows](https://github.com/HMBSbige/ShadowsocksR-Windows)
+- ss：[ShadowsocksX-NG](https://github.com/shadowsocks/ShadowsocksX-NG)
