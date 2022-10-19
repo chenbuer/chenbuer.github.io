@@ -10,7 +10,8 @@
 <a id="more"></a>
 <p>奶奶老了。刚下车，车库的光照也并不明亮，往电梯的一个台阶奶奶踉跄了一下。奶奶87了，她这个年纪就怕摔倒了。平时在家里，坑坑洼洼的砖泥路她身手矫健，种菜苗，拎水浇水都不在话下，陌生的地方平地都能绊脚，再走路她就得牵着我或者爸爸，她的手心都出汗了。</p>
 <p>转了趟虹悦城，她倒是挺感兴趣，抓着衣服摸摸布料，看看样式，说谁谁穿着好看；金店的售货员给她一只手带上两个戒指她笑得合不拢嘴，询问着价钱。她讲着方言，她和售货员之间语言并不通，但是她自己复述的时候却讲讲头头是道，我和老爸在旁边也是哈哈大笑。半个下午，奶奶兴奋劲就过去了，晚上和第二天就略显疲态，回程的车上也少搭我话。</p>
-<p>爸爸看着家里，他很轻声的说了一句：儿子这就算自立门户了。是啊，这么多年辛苦他们了，也让他们操心了。爸爸妈妈辛辛苦苦把家里打扫了个遍，很干净。把他们送走了，回到家里冷冷清清的，不过家里很干净，有了家的感觉。</p>
+<p>我想着给奶奶多看看几个地方，回家的时候可以跟其他老头老太吹吹牛逼。晚上牵着奶奶去隔壁小公园时，她说这辈子也没来过南京，要不是我哪里会跑到这里来。她还不知道我之前谈的对象分手了，她问起来就搪塞过去，带着点遗憾，要是再有个小姑娘围着她转转应该会更加开心吧。</p>
+<p>刚打开门，爸爸看着家里，他很轻声的说了一句：儿子这就算自立门户了。是啊，这么多年辛苦他们了，也让他们操心了。爸爸妈妈辛辛苦苦把家里打扫了个遍，很干净。把他们送走了，回到家里冷冷清清的，不过家里很干净，有了家的感觉。</p>
 ]]></content>
       
         <categories>
@@ -1261,7 +1262,7 @@
     <entry>
       <title><![CDATA[静态网页]]></title>
       <url>https://chenbuer.github.io/2017/02/13/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/</url>
-      <content type="html"><![CDATA[<h3 id="一、添加categories、tags和about"><a href="#一、添加categories、tags和about" class="headerlink" title="一、添加categories、tags和about"></a>一、添加categories、tags和about</h3><p>在直接利用hexo和freemind生成博客之后，点击categories、tags和about三个都是404的，</p>
+      <content type="html"><![CDATA[<h3 id="一、添加categories、tags和about"><a href="#一、添加categories、tags和about" class="headerlink" title="一、添加categories、tags和about"></a>一、添加categories、tags和about</h3><p>在直接利用hexo和<a href="https://github.com/wzpan/hexo-theme-freemind" target="_blank" rel="noopener">freemind</a>生成博客之后，点击categories、tags和about三个都是404的，</p>
 <ol>
 <li>categories和tags的生成方法是（参考<a href="https://github.com/wzpan/hexo-theme-freemind/issues/16" target="_blank" rel="noopener">categories和tags页面生成方法</a>）：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1.manually create <span class="built_in">source</span>/categories/index.html and paste the following contents：</span><br><span class="line"></span><br><span class="line">title: Categories</span><br><span class="line">layout: categories</span><br><span class="line">---</span><br><span class="line">2.manually create <span class="built_in">source</span>/tags/index.html and paste the following contents：</span><br><span class="line"></span><br><span class="line">title: Tags</span><br><span class="line">layout: tags</span><br><span class="line">---</span><br><span class="line">3.restart hexo and refresh the browser</span><br></pre></td></tr></table></figure>
 </li>
