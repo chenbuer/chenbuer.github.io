@@ -1,0 +1,302 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Java操作Redis | 陈不二的博客</title>
+  <meta name="author" content="陈不二">
+  
+  <meta name="description" content="谈技术也谈风月">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Java操作Redis"/>
+  <meta property="og:site_name" content="陈不二的博客"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/logo.ico" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/cosmo.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar  navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">陈不二的博客</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="所有文章.">
+			  <i class="fa fa-archive"></i>归档
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>分类
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>标签
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="关于我.">
+			  <i class="fa fa-user"></i>关于我
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header ">		
+			<h1 class="title "> Java操作Redis</h1>
+		</div>		
+	
+
+
+
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h3 id="一、利用jedis客户端直接操作reids"><a href="#一、利用jedis客户端直接操作reids" class="headerlink" title="一、利用jedis客户端直接操作reids"></a>一、利用jedis客户端直接操作reids</h3><p><a href="http://www.cnblogs.com/edisonfeng/p/3571870.html">基础操作参考</a></p>
+<p>1.1 概念： 切片池 &amp; 非切片池<br>关于切片池和非切片池的区别，  一般项目基本都使用非切片池；切片池主要用于分布式项目，可以设置主从Redis库。 </p>
+<span id="more"></span>
+<p>1.2 获取redis客户端</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RedisClient</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Jedis jedis;<span class="comment">// 非切片客户端连接</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> JedisPool jedisPool; <span class="comment">//非切片连接池</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ShardedJedis shardedJedis; <span class="comment">//切片客户端链接</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ShardedJedisPool shardedJedisPool;<span class="comment">// 切片链接池</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//初始化非切片池</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">initialPool</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">JedisPoolConfig</span> <span class="variable">config</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JedisPoolConfig</span>();</span><br><span class="line">        config.setMaxActive(<span class="number">20</span>);</span><br><span class="line">        config.setMaxIdle(<span class="number">5</span>);</span><br><span class="line">        config.setMaxWait(<span class="number">10001</span>);</span><br><span class="line">        config.setTestOnBorrow(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">        jedisPool = <span class="keyword">new</span> <span class="title class_">JedisPool</span>(config, <span class="string">&quot;127.0.0.1&quot;</span>, <span class="number">6379</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 初始化切片池</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">initialShardedPool</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">// 配置</span></span><br><span class="line">        <span class="type">JedisPoolConfig</span> <span class="variable">config</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JedisPoolConfig</span>();</span><br><span class="line">        config.setMaxActive(<span class="number">20</span>);</span><br><span class="line">        config.setMaxIdle(<span class="number">5</span>);</span><br><span class="line">        config.setMaxWait(<span class="number">10001</span>);</span><br><span class="line">        config.setTestOnBorrow(<span class="literal">false</span>);</span><br><span class="line">        <span class="comment">// slave</span></span><br><span class="line">        List&lt;JedisShardInfo&gt; shards = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;JedisShardInfo&gt;();</span><br><span class="line">        shards.add(<span class="keyword">new</span> <span class="title class_">JedisShardInfo</span>(<span class="string">&quot;127.0.0.1&quot;</span>, <span class="number">6379</span>, <span class="string">&quot;master&quot;</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// const</span></span><br><span class="line">        shardedJedisPool = <span class="keyword">new</span> <span class="title class_">ShardedJedisPool</span>(config, shards);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">RedisClient</span><span class="params">()</span>&#123;</span><br><span class="line">        initialPool();</span><br><span class="line">        initialShardedPool();</span><br><span class="line">        shardedJedis = shardedJedisPool.getResource();</span><br><span class="line">        jedis = jedisPool.getResource();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Jedis <span class="title function_">getJedis</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> jedis;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setJedis</span><span class="params">(Jedis jedis)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.jedis = jedis;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> ShardedJedis <span class="title function_">getShardedJedis</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> shardedJedis;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setShardedJedis</span><span class="params">(ShardedJedis shardedJedis)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.shardedJedis = shardedJedis;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>1.3 key操作和String操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RedisTest</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="type">RedisClient</span> <span class="variable">redisClient</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RedisClient</span>();</span><br><span class="line">    <span class="keyword">private</span> Jedis jedis;</span><br><span class="line">    <span class="keyword">private</span> ShardedJedis shardedJedis;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Before</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">getCli</span><span class="params">()</span>&#123;</span><br><span class="line">        jedis = redisClient.getJedis();</span><br><span class="line">        shardedJedis = redisClient.getShardedJedis();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">KeyOperate</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;===key===&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 清空数据</span></span><br><span class="line">        System.out.println(<span class="string">&quot;清空库中所有数据：&quot;</span> + jedis.flushDB());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 判断key是否存在</span></span><br><span class="line">        System.out.println(<span class="string">&quot;判断key999键是否存在：&quot;</span> + shardedJedis.exists(<span class="string">&quot;key999&quot;</span>));</span><br><span class="line">        System.out.println(<span class="string">&quot;新增key001及其对应值：&quot;</span> + shardedJedis.set(<span class="string">&quot;key001&quot;</span>, <span class="string">&quot;value001&quot;</span>));</span><br><span class="line">        System.out.println(<span class="string">&quot;判断key001键是否存在：&quot;</span> + shardedJedis.exists(<span class="string">&quot;key001&quot;</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 输出系统中所有key</span></span><br><span class="line">        System.out.println(<span class="string">&quot;新增key002键值：&quot;</span> + shardedJedis.set(<span class="string">&quot;key002&quot;</span>, <span class="string">&quot;value002&quot;</span>));</span><br><span class="line">        System.out.println(<span class="string">&quot;系统中所有键如下：&quot;</span>);</span><br><span class="line">        Set&lt;String&gt; keys = jedis.keys(<span class="string">&quot;*&quot;</span>);</span><br><span class="line">        Iterator&lt;String&gt; it = keys.iterator();</span><br><span class="line">        <span class="keyword">while</span> (it.hasNext()) &#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">key</span> <span class="operator">=</span> it.next();</span><br><span class="line">            System.out.println(key);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 删除某个key，若key不存在，忽略该命令</span></span><br><span class="line">        System.out.println(<span class="string">&quot;系统中删除key002：&quot;</span> + jedis.del(<span class="string">&quot;key002&quot;</span>));</span><br><span class="line">        System.out.println(<span class="string">&quot;判断key002是否存在：&quot;</span> + shardedJedis.exists(<span class="string">&quot;key002&quot;</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 设置key001的过期时间</span></span><br><span class="line">        System.out.println(<span class="string">&quot;设置key001的过期时间为5秒&quot;</span> + jedis.expire(<span class="string">&quot;key001&quot;</span>, <span class="number">5</span>));</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 查看某个key的剩余时间，单位【秒】</span></span><br><span class="line">        System.out.println(<span class="string">&quot;查看key001的剩余生存时间：&quot;</span>+jedis.ttl(<span class="string">&quot;key001&quot;</span>));</span><br><span class="line">        <span class="comment">// 移除某个key的生存时间</span></span><br><span class="line">        System.out.println(<span class="string">&quot;移除key001的生存时间：&quot;</span>+jedis.persist(<span class="string">&quot;key001&quot;</span>));</span><br><span class="line">        System.out.println(<span class="string">&quot;查看key001的剩余生存时间：&quot;</span>+jedis.ttl(<span class="string">&quot;key001&quot;</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 查看key所存储的值的类型</span></span><br><span class="line">        System.out.println(<span class="string">&quot;查看key所存储的值的类型&quot;</span> + jedis.type(<span class="string">&quot;key001&quot;</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * 一些其他方法：1、修改键名：jedis.rename(&quot;key6&quot;, &quot;key0&quot;);</span></span><br><span class="line"><span class="comment">         *             2、将当前db的key移动到给定的db当中：jedis.move(&quot;foo&quot;, 1)</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">StringOperate</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;====String Operate====&quot;</span>);</span><br><span class="line">        <span class="comment">// 清空数据</span></span><br><span class="line">        System.out.println(<span class="string">&quot;清空所有数据：&quot;</span>+jedis.flushDB());</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;=====增加=====&quot;</span>);</span><br><span class="line">        jedis.set(<span class="string">&quot;key001&quot;</span>, <span class="string">&quot;value001&quot;</span>);</span><br><span class="line">        jedis.set(<span class="string">&quot;key002&quot;</span>, <span class="string">&quot;value002&quot;</span>);</span><br><span class="line">        jedis.set(<span class="string">&quot;key003&quot;</span>, <span class="string">&quot;value003&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;已新增的3个键值如下：&quot;</span>);</span><br><span class="line">        System.out.println(jedis.get(<span class="string">&quot;key001&quot;</span>));</span><br><span class="line">        System.out.println(jedis.get(<span class="string">&quot;key002&quot;</span>));</span><br><span class="line">        System.out.println(jedis.get(<span class="string">&quot;key003&quot;</span>));</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;=====删除=====&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;删除key003对应的键值：&quot;</span> + jedis.del(<span class="string">&quot;key003&quot;</span>));</span><br><span class="line">        System.out.println(<span class="string">&quot;获取key003对应的值：&quot;</span> + jedis.get(<span class="string">&quot;key003&quot;</span>));</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;=======修改======&quot;</span>);</span><br><span class="line">        <span class="comment">// 1.直接修改</span></span><br><span class="line">        System.out.println(<span class="string">&quot;直接覆盖key001数据&quot;</span>+jedis.set(<span class="string">&quot;key001&quot;</span>, <span class="string">&quot;value001-update&quot;</span>));</span><br><span class="line">        System.out.println(<span class="string">&quot;获取key001对应的值：&quot;</span> + jedis.get(<span class="string">&quot;key001&quot;</span>));</span><br><span class="line">        <span class="comment">// 2.append</span></span><br><span class="line">        System.out.println(<span class="string">&quot;在key002后面追加&quot;</span>+jedis.append(<span class="string">&quot;key002&quot;</span>,<span class="string">&quot;-append2&quot;</span>));</span><br><span class="line">        System.out.println(<span class="string">&quot;获取key002对应的值：&quot;</span> + jedis.get(<span class="string">&quot;key002&quot;</span>));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二、PubSub机制"><a href="#二、PubSub机制" class="headerlink" title="二、PubSub机制"></a>二、PubSub机制</h3><p><a href="http://blog.csdn.net/lihao21/article/details/48370687">参考链接</a></p>
+<h3 id="三、从缓存中处理请求的两种方式：time-count"><a href="#三、从缓存中处理请求的两种方式：time-count" class="headerlink" title="三、从缓存中处理请求的两种方式：time&amp;count"></a>三、从缓存中处理请求的两种方式：time&amp;count</h3><p>首先：两种模式下，时间阈值（假设10s） 和 count阈值（100） 都是有用的：</p>
+<ul>
+<li>时间模式：若5s时已经add了100个，再等5s到10s后处理；若到了10s，还没add到100个，也处理</li>
+<li>cout模式（适合较多数据的时候）：若5s时add到了100，直接处理；若到了10s，还没add到100个，也处理</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (MODE_TIME.equals(mode)) &#123;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (buffer.size() &lt; countThreshold) &#123;</span><br><span class="line">            <span class="type">C</span> <span class="variable">item</span> <span class="operator">=</span> pool.outPool();</span><br><span class="line">            <span class="keyword">if</span> (item != <span class="literal">null</span>) &#123;</span><br><span class="line">                buffer.add(item);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">while</span> (System.currentTimeMillis() &lt; end);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (MODE_COUNT.equals(mode)) &#123;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="type">C</span> <span class="variable">item</span> <span class="operator">=</span> pool.outPool();</span><br><span class="line">        <span class="keyword">if</span> (item != <span class="literal">null</span>) &#123;</span><br><span class="line">            buffer.add(item);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">while</span> (System.currentTimeMillis() &lt; end &amp;&amp; buffer.size() &lt; countThreshold);</span><br><span class="line">    pool.releaseLock();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="四、Redis-Sentinel"><a href="#四、Redis-Sentinel" class="headerlink" title="四、Redis Sentinel"></a>四、Redis Sentinel</h3><p><a href="http://redis.io/topics/sentinel">官方文档</a></p>
+<p><a href="https://segmentfault.com/a/1190000002680804">Redis Sentinel机制与用法</a></p>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+<ul class="pagination">
+	 
+				
+    	<li class="prev"><a href="/2018/04/30/zheng/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+  		
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>归档</a></li>
+
+		
+		   <li class="next"><a href="/2018/02/19/很多话，但是不知如何表达/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+        
+	
+</ul>
+</div>
+
+    </center>
+	</div>
+
+    <!-- share -->
+    
+        
+    <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+        <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+        <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+    </div>
+    <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+
+
+        
+
+    
+	
+	<!-- comment -->
+	<!-- 
+  
+<section id="comment">
+  <h2 class="title">留言</h2>
+
+  
+</section>
+ -->
+
+<!--我自己添加的评论功能-->
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'chenbuer',
+  repo: 'chenbuer.github.io',
+  oauth: {
+  client_id: 'c8819a6086d97f4c90e7',
+  client_secret: '64f822e6b47604072e08527a965817df12faeab6',
+  },
+})
+gitment.render('container')
+</script>
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2018-02-28 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/JAVA/">JAVA<span>14</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/JAVA/">JAVA<span>9</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2024 陈不二
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

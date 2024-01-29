@@ -1,0 +1,312 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>静态网页 | 陈不二的博客</title>
+  <meta name="author" content="陈不二">
+  
+  <meta name="description" content="谈技术也谈风月">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="静态网页"/>
+  <meta property="og:site_name" content="陈不二的博客"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/logo.ico" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/cosmo.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar  navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">陈不二的博客</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="所有文章.">
+			  <i class="fa fa-archive"></i>归档
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>分类
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>标签
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="关于我.">
+			  <i class="fa fa-user"></i>关于我
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header ">		
+			<h1 class="title "> 静态网页</h1>
+		</div>		
+	
+
+
+
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h3 id="一、添加categories、tags和about"><a href="#一、添加categories、tags和about" class="headerlink" title="一、添加categories、tags和about"></a>一、添加categories、tags和about</h3><p>在直接利用hexo和<a href="https://github.com/wzpan/hexo-theme-freemind">freemind</a>生成博客之后，点击categories、tags和about三个都是404的，</p>
+<ol>
+<li><p>categories和tags的生成方法是（参考<a href="https://github.com/wzpan/hexo-theme-freemind/issues/16">categories和tags页面生成方法</a>）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1.manually create <span class="built_in">source</span>/categories/index.html and <span class="built_in">paste</span> the following contents：</span><br><span class="line"></span><br><span class="line">title: Categories</span><br><span class="line">layout: categories</span><br><span class="line">---</span><br><span class="line">2.manually create <span class="built_in">source</span>/tags/index.html and <span class="built_in">paste</span> the following contents：</span><br><span class="line"></span><br><span class="line">title: Tags</span><br><span class="line">layout: tags</span><br><span class="line">---</span><br><span class="line">3.restart hexo and refresh the browser</span><br></pre></td></tr></table></figure>
+<span id="more"></span></li>
+<li><p>about页面有一个方法，应该也可以像上面一样手动创建(参考<a href="https://segmentfault.com/q/1010000000618915/a-1020000000752865">about页面的生成方法</a>)：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;about&quot;</span></span><br></pre></td></tr></table></figure>
+<p>当然，这个只是限于about页面的生成（参考<a href="issue:https://github.com/wzpan/hexo-theme-freemind/issues/24">github中issue讨论</a>）</p>
+</li>
+<li><p>若是想要categories页面也可以正常显示东西，需要在文章的开头书写格式为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 添加categories、tags和about</span><br><span class="line"><span class="built_in">date</span>: 2017-02-13 21:50:13</span><br><span class="line">categories: 静态网页</span><br><span class="line">tags: hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="二、修改本地hexo-server的监听端口"><a href="#二、修改本地hexo-server的监听端口" class="headerlink" title="二、修改本地hexo-server的监听端口"></a>二、修改本地hexo-server的监听端口</h3><p>已经在本地模块中安装了hexo-server，而且也已经运行起来了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">czy@czy-PC MINGW64 /e/hexo (hexo)</span><br><span class="line">$ hexo s</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<p>但是打开浏览器<strong>并不能正确的显示页面</strong>，可能是在windows下端口冲突，故修改hexo-server的监听端口（文件路径为<code>node_modules/hexo-server/index.js</code>）：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo.<span class="property">config</span>.<span class="property">server</span> = <span class="title function_">assign</span>(&#123;</span><br><span class="line">  <span class="attr">port</span>: <span class="number">4444</span>,</span><br><span class="line">  <span class="attr">log</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">ip</span>: <span class="string">&#x27;0.0.0.0&#x27;</span>,</span><br><span class="line">  <span class="attr">compress</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">header</span>: <span class="literal">true</span></span><br><span class="line">&#125;, hexo.<span class="property">config</span>.<span class="property">server</span>);</span><br></pre></td></tr></table></figure>
+<p>再次运行就可以正常显示了。<br>在知乎上有<a href="https://www.zhihu.com/question/28847824">这个问题的讨论</a></p>
+<h3 id="三、给pages添加评论功能"><a href="#三、给pages添加评论功能" class="headerlink" title="三、给pages添加评论功能"></a>三、给pages添加评论功能</h3><blockquote>
+<p>最近很多的评论插件都停用了，多说直接停止服务，disqus经常访问不了。所以只能求助GitHub，给了我们新的利器<a href="https://github.com/imsun/gitment">Gitment</a></p>
+</blockquote>
+<p>具体的使用步骤如下：</p>
+<ol>
+<li><p>首先需要在GitHub的OAuth Apps里面注册一个repo<br>这个可以参考gitment的文档，不赘述，也是GitHub OAuth的一般注册方法</p>
+</li>
+<li><p>将Gitment的静态文件配置到文章中<br>我的文件主要是配置在themes-&gt;freemind-&gt;layout-&gt;_partial-&gt;post-&gt;comment.ejs文件中。</p>
+</li>
+</ol>
+<p>【完毕】</p>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+<ul class="pagination">
+	 
+				
+    	<li class="prev"><a href="/2017/02/16/maven初体验/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+  		
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>归档</a></li>
+
+		
+		   <li class="next"><a href="/2017/02/11/Hibernate初体验/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+        
+	
+</ul>
+</div>
+
+    </center>
+	</div>
+
+    <!-- share -->
+    
+        
+    <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+        <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+        <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+    </div>
+    <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+
+
+        
+
+    
+	
+	<!-- comment -->
+	<!-- 
+  
+<section id="comment">
+  <h2 class="title">留言</h2>
+
+  
+</section>
+ -->
+
+<!--我自己添加的评论功能-->
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'chenbuer',
+  repo: 'chenbuer.github.io',
+  oauth: {
+  client_id: 'c8819a6086d97f4c90e7',
+  client_secret: '64f822e6b47604072e08527a965817df12faeab6',
+  },
+})
+gitment.render('container')
+</script>
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2017-02-13 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/hexo/">hexo<span>1</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/工具/">工具<span>7</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2024 陈不二
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>
