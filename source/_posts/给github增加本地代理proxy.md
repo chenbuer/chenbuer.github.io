@@ -1,5 +1,5 @@
 ---
-title: 给github增加本地代理
+title: 给github增加本地代理proxy
 date: 2024-1-29 19:08:00
 categories: GIT
 tags: 工具
@@ -28,9 +28,9 @@ gost.exe -L :8888 -F https://www.qfy12345.xyz:443?auth=base64(user:passwod)
 
 ### 2.3 设置git proxy，指向本地proxy 服务
 ```shell
-git config --global https.proxy http://127.0.0.1:1080
+git config --global https.proxy http://127.0.0.1:8888
 
-git config --global https.proxy https://127.0.0.1:1080
+git config --global https.proxy https://127.0.0.1:8888
 
 git config --global --unset http.proxy
 
