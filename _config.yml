@@ -71,7 +71,7 @@ theme: freemind
 deploy:
   type: git
   repo: https://github.com/chenbuer/chenbuer.github.io.git
-  branch: gh-pages
+  branch: master
 
 markdown:
   gfm: true
