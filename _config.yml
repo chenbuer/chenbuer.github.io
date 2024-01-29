@@ -70,8 +70,8 @@ theme: freemind
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:chenbuer/chenbuer.github.io.git
-  branch: master
+  repo: https://github.com/chenbuer/chenbuer.github.io.git
+  branch: gh-pages
 
 markdown:
   gfm: true
