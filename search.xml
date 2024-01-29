@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>升级hexo</title>
+      <link href="/2024/01/29/%E5%8D%87%E7%BA%A7hexo/"/>
+      <url>/2024/01/29/%E5%8D%87%E7%BA%A7hexo/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p><a href="https://novnan.github.io/Hexo/update_hexo/">参考</a><br>Hexo 升级比较简单，老方法 npm-check、npm-upgrade、npm-update 一键三连。按以下顺序逐步执行完成后，Hexo 版本及系统插件均会升级到最新。</p><span id="more"></span><h2 id="二、设置过程"><a href="#二、设置过程" class="headerlink" title="二、设置过程"></a>二、设置过程</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//以下指令均在Hexo目录下操作，先定位到Hexo目录</span><br><span class="line">//查看当前版本，判断是否需要升级</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">hexo version</span></span><br><span class="line"></span><br><span class="line">//全局升级hexo-cli</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">npm i hexo-cli -g</span></span><br><span class="line"></span><br><span class="line">//再次查看版本，看hexo-cli是否升级成功</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">hexo version</span></span><br><span class="line"></span><br><span class="line">//安装npm-check，若已安装可以跳过</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">npm install -g npm-check</span></span><br><span class="line"></span><br><span class="line">//检查系统插件是否需要升级</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">npm-check</span></span><br><span class="line"></span><br><span class="line">//安装npm-upgrade，若已安装可以跳过</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">npm install -g npm-upgrade</span></span><br><span class="line"></span><br><span class="line">//更新package.json</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">npm-upgrade</span></span><br><span class="line"></span><br><span class="line">//更新全局插件</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">npm update -g</span></span><br><span class="line"></span><br><span class="line">//更新系统插件</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">npm update --save</span></span><br><span class="line"></span><br><span class="line">//再次查看版本，判断是否升级成功</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">hexo version</span></span><br></pre></td></tr></table></figure><p>【完毕】</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>git config 文件</title>
       <link href="/2024/01/29/git%20config%20%E6%96%87%E4%BB%B6/"/>
       <url>/2024/01/29/git%20config%20%E6%96%87%E4%BB%B6/</url>

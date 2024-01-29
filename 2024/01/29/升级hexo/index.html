@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>给github增加本地代理proxy | 陈不二的博客</title>
+  <title>升级hexo | 陈不二的博客</title>
   <meta name="author" content="陈不二">
   
   <meta name="description" content="谈技术也谈风月">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="给github增加本地代理proxy"/>
+  <meta property="og:title" content="升级hexo"/>
   <meta property="og:site_name" content="陈不二的博客"/>
 
   
@@ -91,7 +91,7 @@
 
 	
 		<div class="page-header ">		
-			<h1 class="title "> 给github增加本地代理proxy</h1>
+			<h1 class="title "> 升级hexo</h1>
 		</div>		
 	
 
@@ -111,25 +111,11 @@
 	<div class="mypage">		
 	  		
 
-	  <h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p>GitHub被block，而且proxy server是基于https的，所以直接设置ssh代理有点麻烦。所以，将ssh改成https。</p>
-<ol>
-<li>购买VPS，设置https的代理服务</li>
-<li>设置本地的转发服务</li>
-<li>设置git proxy，指向本地proxy 服务</li>
-<li>修改本地已存在的repo，由ssh改成https<span id="more"></span></li>
-</ol>
-<h2 id="二、设置过程"><a href="#二、设置过程" class="headerlink" title="二、设置过程"></a>二、设置过程</h2><h3 id="2-1-购买VPS，设置https代理服务"><a href="#2-1-购买VPS，设置https代理服务" class="headerlink" title="2.1 购买VPS，设置https代理服务"></a>2.1 购买VPS，设置https代理服务</h3><p>可以参考<a href="https://github.com/chenbuer/haoel.github.io/blob/master/gost_install.ipynb">这个教程</a></p>
-<h3 id="2-2-设置本地的转发服务"><a href="#2-2-设置本地的转发服务" class="headerlink" title="2.2 设置本地的转发服务"></a>2.2 设置本地的转发服务</h3><p>没有比较好的local https代理客户端，所以用gost监听一个端口，将git指向该端口。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gost.exe -L :8888 -F https://www.proxyServer.xyz:443?auth=base64(user:passwod)</span><br></pre></td></tr></table></figure>
-<p>将用户名密码（user:password）进行base64编码后替换</p>
-<h3 id="2-3-设置git-proxy，指向本地proxy-服务"><a href="#2-3-设置git-proxy，指向本地proxy-服务" class="headerlink" title="2.3 设置git proxy，指向本地proxy 服务"></a>2.3 设置git proxy，指向本地proxy 服务</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git config --global https.proxy http://127.0.0.1:8888</span><br><span class="line"></span><br><span class="line">git config --global https.proxy https://127.0.0.1:8888</span><br><span class="line"></span><br><span class="line">git config --global --unset http.proxy</span><br><span class="line"></span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
-<p>修改之后用<code>git config --list</code>命令查看。</p>
-<h3 id="2-4-修改本地已存在的repo，由ssh改成https"><a href="#2-4-修改本地已存在的repo，由ssh改成https" class="headerlink" title="2.4 修改本地已存在的repo，由ssh改成https"></a>2.4 修改本地已存在的repo，由ssh改成https</h3><p>打开本地仓库的.git文件夹，修改config文件，e.g 原来的ssh配置为</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">	url = git@github.com:chenbuer/chenbuer.github.io.git</span><br><span class="line">	fetch = +refs/heads/*:refs/remotes/origin/*</span><br></pre></td></tr></table></figure>
-<p>直接替换<code>url</code>，由ssh格式改成https格式</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url = https://github.com/chenbuer/chenbuer.github.io.git</span><br></pre></td></tr></table></figure>
-<p>即可。</p>
-<p>至此，就可以像利用ssh一样利用https去操作repo了。</p>
+	  <h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p><a href="https://novnan.github.io/Hexo/update_hexo/">参考</a><br>Hexo 升级比较简单，老方法 npm-check、npm-upgrade、npm-update 一键三连。按以下顺序逐步执行完成后，Hexo 版本及系统插件均会升级到最新。</p>
+<span id="more"></span>
+
+<h2 id="二、设置过程"><a href="#二、设置过程" class="headerlink" title="二、设置过程"></a>二、设置过程</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//以下指令均在Hexo目录下操作，先定位到Hexo目录</span><br><span class="line">//查看当前版本，判断是否需要升级</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">hexo version</span></span><br><span class="line"></span><br><span class="line">//全局升级hexo-cli</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">npm i hexo-cli -g</span></span><br><span class="line"></span><br><span class="line">//再次查看版本，看hexo-cli是否升级成功</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">hexo version</span></span><br><span class="line"></span><br><span class="line">//安装npm-check，若已安装可以跳过</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">npm install -g npm-check</span></span><br><span class="line"></span><br><span class="line">//检查系统插件是否需要升级</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">npm-check</span></span><br><span class="line"></span><br><span class="line">//安装npm-upgrade，若已安装可以跳过</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">npm install -g npm-upgrade</span></span><br><span class="line"></span><br><span class="line">//更新package.json</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">npm-upgrade</span></span><br><span class="line"></span><br><span class="line">//更新全局插件</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">npm update -g</span></span><br><span class="line"></span><br><span class="line">//更新系统插件</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">npm update --save</span></span><br><span class="line"></span><br><span class="line">//再次查看版本，判断是否升级成功</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">hexo version</span></span><br></pre></td></tr></table></figure>
+
 <p>【完毕】</p>
 	  
 	</div>
@@ -139,14 +125,14 @@
 	<div class="pagination">
 <ul class="pagination">
 	 
-				
-    	<li class="prev"><a href="/2024/01/29/git config 文件/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
-  		
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>归档</a></li>
 
 		
-		   <li class="next"><a href="/2022/10/14/家/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+		   <li class="next"><a href="/2024/01/29/git config 文件/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -225,7 +211,7 @@ gitment.render('container')
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/GIT/">GIT<span>3</span></a></li>
+    <li><a href="/categories/hexo/">hexo<span>2</span></a></li>
   </li>
 
     </ul>
