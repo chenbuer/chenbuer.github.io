@@ -115,6 +115,34 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> 2017-02-28 </div>
+			<div class="article-title"><a href="/2017/02/28/事务与spring的事务管理/" >事务与spring的事务管理</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	
+		<p>理解了spring的事务管理，必须要理解事务以及AOP，当然DI是基础，这样也就深刻理解了spring了。</p>
+<h3 id="一、事务的隔离级别"><a href="#一、事务的隔离级别" class="headerlink" title="一、事务的隔离级别"></a>一、事务的隔离级别</h3><p>可以参考<a href="http://www.ibm.com/developerworks/cn/education/opensource/os-cn-spring-trans/index.html">这篇文章</a>，对事务还是有不错的解释，但是讲解spring事务管理有点不清晰，简单的spring事务管理配置可以参考<a href="http://blog.csdn.net/bjyfb/article/details/8705684">这篇文章</a>。</p>
+<ol>
+<li>TransactionDefinition.ISOLATION_DEFAULT：这是默认值，表示使用底层数据库的默认隔离级别。对大部分数据库而言，通常这值就是TransactionDefinition.ISOLATION_READ_COMMITTED。</li>
+<li>TransactionDefinition.ISOLATION_READ_UNCOMMITTED：该隔离级别表示一个事务可以读取另一个事务修改但还没有提交的数据。该级别不能防止脏读和不可重复读，因此很少使用该隔离级别。
+		<!-- only display read_more button if there's more to display -->
+		<a type="button" href="/2017/02/28/事务与spring的事务管理/#more" class="btn btn-default more">继续阅读</a>
+	
+	</div>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> 2017-02-16 </div>
 			<div class="article-title"><a href="/2017/02/16/maven初体验/" >maven初体验</a></div>						
 		</h3>
@@ -190,30 +218,6 @@
 
            
 		
-           
-			  
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> 2017-02-11 </div>
-			<div class="article-title"><a href="/2017/02/11/久未出门/" >久未出门</a></div>						
-		</h3>
-	
-
-
-			  <div class="entry">
-  <div class="row">
-	
-	
-		<p>许久未出门，<br>偶见好多人，<br>拥进人群，<br>撞得胳臂疼，</p>
-		<!-- only display read_more button if there's more to display -->
-		<a type="button" href="/2017/02/11/久未出门/#more" class="btn btn-default more">继续阅读</a>
-	
-	</div>
-</div>
-
-           
-		
 
 		</div>
 
@@ -274,7 +278,7 @@
 		
 			<li><a href="/categories/hexo/">hexo<span>2</span></a></li>
 		
-			<li><a href="/categories/java/">java<span>3</span></a></li>
+			<li><a href="/categories/java/">java<span>4</span></a></li>
 		
 			<li><a href="/categories/javascript/">javascript<span>1</span></a></li>
 		
@@ -297,9 +301,9 @@
 		
 			<li><a href="/tags/javascript/">javascript<span>1</span></a></li>
 		
-			<li><a href="/tags/struts/">struts<span>1</span></a></li>
+			<li><a href="/tags/Hibernate/">Hibernate<span>1</span></a></li>
 		
-			<li><a href="/tags/hibernate/">hibernate<span>1</span></a></li>
+			<li><a href="/tags/struts/">struts<span>1</span></a></li>
 		
 			<li><a href="/tags/spring/">spring<span>3</span></a></li>
 		
@@ -307,23 +311,23 @@
 		
 			<li><a href="/tags/运维/">运维<span>1</span></a></li>
 		
-			<li><a href="/tags/apache2/">apache2<span>1</span></a></li>
+			<li><a href="/tags/yii2-tree-manager/">yii2-tree-manager<span>1</span></a></li>
+		
+			<li><a href="/tags/java/">java<span>4</span></a></li>
+		
+			<li><a href="/tags/tomcat/">tomcat<span>1</span></a></li>
 		
 			<li><a href="/tags/前端/">前端<span>2</span></a></li>
 		
-			<li><a href="/tags/java/">java<span>3</span></a></li>
+			<li><a href="/tags/JAVA/">JAVA<span>9</span></a></li>
 		
 			<li><a href="/tags/maven/">maven<span>1</span></a></li>
 		
-			<li><a href="/tags/JAVA/">JAVA<span>9</span></a></li>
-		
-			<li><a href="/tags/yii2-tree-manager/">yii2-tree-manager<span>1</span></a></li>
+			<li><a href="/tags/hibernate/">hibernate<span>1</span></a></li>
 		
 			<li><a href="/tags/工具/">工具<span>8</span></a></li>
 		
-			<li><a href="/tags/Hibernate/">Hibernate<span>1</span></a></li>
-		
-			<li><a href="/tags/tomcat/">tomcat<span>1</span></a></li>
+			<li><a href="/tags/apache2/">apache2<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -335,6 +339,10 @@
 <div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2024/02/11/刘欣悦 刘欣阳/" ><i class="fa fa-file-o"></i>刘欣悦 刘欣阳</a>
+      </li>
     
       <li>
         <a href="/2024/01/29/升级hexo/" ><i class="fa fa-file-o"></i>升级hexo</a>
@@ -350,10 +358,6 @@
     
       <li>
         <a href="/2022/10/14/家/" ><i class="fa fa-file-o"></i>家</a>
-      </li>
-    
-      <li>
-        <a href="/2018/07/29/内网穿透工具ngrok/" ><i class="fa fa-file-o"></i>内网穿透工具ngrok</a>
       </li>
     
   </ul>
