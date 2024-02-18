@@ -46,9 +46,9 @@ tags: 工具
 	process = git-lfs filter-process
 	required = true
 [https]
-	proxy = http://127.0.0.1:8888
+	proxy = http://127.0.0.1:6666
 [http]
-	proxy = http://127.0.0.1:8888
+	proxy = http://127.0.0.1:6666
 ```
 
 

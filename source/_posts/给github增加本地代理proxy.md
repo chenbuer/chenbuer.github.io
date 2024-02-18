@@ -22,15 +22,15 @@ GitHub被block，而且proxy server是基于https的，所以直接设置ssh代�
 没有比较好的local https代理客户端，所以用gost监听一个端口，将git指向该端口。
 
 ```shell
-gost.exe -L :8888 -F https://www.proxyServer.xyz:443?auth=base64(user:passwod)
+gost.exe -L :6666 -F https://www.proxyServer.xyz:443?auth=base64(user:passwod)
 ```
 将用户名密码（user:password）进行base64编码后替换
 
 ### 2.3 设置git proxy，指向本地proxy 服务
 ```shell
-git config --global https.proxy http://127.0.0.1:8888
+git config --global http.proxy http://127.0.0.1:6666
 
-git config --global https.proxy https://127.0.0.1:8888
+git config --global https.proxy https://127.0.0.1:6666
 
 git config --global --unset http.proxy
 
