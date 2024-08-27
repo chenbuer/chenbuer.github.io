@@ -134,7 +134,7 @@
 </ol>
 <h4 id="2-3-大部分终端走主路由，少部分终端走旁路由"><a href="#2-3-大部分终端走主路由，少部分终端走旁路由" class="headerlink" title="2.3 大部分终端走主路由，少部分终端走旁路由"></a>2.3 大部分终端走主路由，少部分终端走旁路由</h4><p>设置规则为：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag:!proxy,3,10.0.0.1</span><br><span class="line">tag:!proxy,6,10.0.0.1</span><br></pre></td></tr></table></figure>
-<p><code>!</code>是指不是proxy标签的，网关和dns为主路由（10.0.0.1），标签为proxy的是默认的旁路由（10.0.0.2）</p>
+<p><code>!</code>：不是proxy标签的，网关和dns为主路由（10.0.0.1），标签为proxy的是默认的旁路由（10.0.0.2）。所以，只要指定<code>走旁路由的终端</code>的标签为proxy。</p>
 <h3 id="二、相关概念"><a href="#二、相关概念" class="headerlink" title="二、相关概念"></a>二、相关概念</h3><ol>
 <li>固件版本分EXT4和SQUASHFS，他们之间什么联系与区别？还分FACTORY和SYSUPGRADE，他们之间又是什么关系？<blockquote>
 <p>SYSUPGRADE用于保留设置的升级，提供的是增量更新；FACTORY是完整映像，用于首次刷机。SQUASHFS和EXT4都是文件系统，SQUASHFS有一个layout层，可以恢复出厂设置。</p>
