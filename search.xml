@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>科学上网</title>
+      <link href="/2024/08/27/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+      <url>/2024/08/27/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、ImmortalWRT系统及其安装"><a href="#一、ImmortalWRT系统及其安装" class="headerlink" title="一、ImmortalWRT系统及其安装"></a>一、ImmortalWRT系统及其安装</h3><p>openwrt的一个分支，有好的软件源。</p><ol><li><a href="https://firmware-selector.immortalwrt.org/">固件选择器</a><span id="more"></span></li><li><a href="https://rufus.ie/">写盘工具refus</a></li><li>安装的软件包</li></ol><ul><li>luci-theme-argon</li><li>luci-i18n-ttyd-zh-cn</li><li>上网工具（选择打开其一即可）<ul><li>luci-app-openclash</li><li>luci-i18n-passwall-zh-cn</li><li>luci-i18n-homeproxy-zh-cn</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>升级hexo</title>
       <link href="/2024/01/29/%E5%8D%87%E7%BA%A7hexo/"/>
       <url>/2024/01/29/%E5%8D%87%E7%BA%A7hexo/</url>
@@ -146,31 +171,6 @@
         <tags>
             
             <tag> java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>科学上网</title>
-      <link href="/2018/07/28/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
-      <url>/2018/07/28/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</url>
-      
-        <content type="html"><![CDATA[<h3 id="一、ImmortalWRT系统及其安装"><a href="#一、ImmortalWRT系统及其安装" class="headerlink" title="一、ImmortalWRT系统及其安装"></a>一、ImmortalWRT系统及其安装</h3><p>openwrt的一个分支，有好的软件源。</p><ol><li><a href="https://firmware-selector.immortalwrt.org/">固件选择器</a><span id="more"></span></li><li><a href="https://rufus.ie/">写盘工具refus</a></li><li>安装的软件包</li></ol><ul><li>luci-theme-argon</li><li>luci-i18n-ttyd-zh-cn</li><li>上网工具（选择打开其一即可）<ul><li>luci-app-openclash</li><li>luci-i18n-passwall-zh-cn</li><li>luci-i18n-homeproxy-zh-cn</li></ul></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 工具 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 工具 </tag>
             
         </tags>
       
