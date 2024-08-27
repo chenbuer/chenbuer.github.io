@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>科学上网 | 陈不二的博客</title>
+  <title>buer系统部署 | 陈不二的博客</title>
   <meta name="author" content="陈不二">
   
   <meta name="description" content="谈技术也谈风月">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="科学上网"/>
+  <meta property="og:title" content="buer系统部署"/>
   <meta property="og:site_name" content="陈不二的博客"/>
 
   
@@ -91,7 +91,7 @@
 
 	
 		<div class="page-header ">		
-			<h1 class="title "> 科学上网</h1>
+			<h1 class="title "> buer系统部署</h1>
 		</div>		
 	
 
@@ -111,12 +111,22 @@
 	<div class="mypage">		
 	  		
 
-	  <p>十一的时候把奶奶和父母带到装修好的房子住了一宿。</p>
-<span id="more"></span>
-<p>奶奶老了。刚下车，车库的光照也并不明亮，往电梯的一个台阶奶奶踉跄了一下。奶奶87了，她这个年纪就怕摔倒。平时在家里，坑坑洼洼的砖泥路上她身手矫健：种菜苗、拎水、浇水全都不在话下，陌生的地方平地都能绊脚。再走路的时候，她就得牵着我或者爸爸，她的手心都出汗了。</p>
-<p>转了趟虹悦城，她倒是挺感兴趣。抓着衣服摸摸布料，看看样式，说谁谁穿着好看；金店的售货员给她一只手带上两个戒指她笑得合不拢嘴，询问着价钱。她讲着方言，她和售货员之间语言并不通，但是她自己复述的时候却讲讲头头是道，我和老爸在旁边也被她逗得哈哈大笑。没半个下午，奶奶兴奋劲就过去了，晚上和第二天就略显疲态，回程的车上也少搭我话。</p>
-<p>我想着给奶奶多看看几个地方，回家的时候可以跟其他老头老太吹吹牛逼。晚上牵着奶奶去隔壁小公园时，她说这辈子也没来过南京，要不是我哪里会跑到这里来。她还不知道我之前谈的对象分手了，她问起来就搪塞过去。她带着点遗憾，要是再有个小姑娘围着她转转应该会更加开心吧。</p>
-<p>刚打开门，爸爸看着家里，他很轻声的说了一句：儿子这就算自立门户了。是啊，这么多年辛苦他们了，也让他们操心了。爸爸妈妈辛辛苦苦把家里打扫了个遍，很干净。把他们送走了，回到家里冷冷清清的。不过家里很干净，也有了家的感觉。</p>
+	  <h3 id="一、ImmortalWRT系统及其安装"><a href="#一、ImmortalWRT系统及其安装" class="headerlink" title="一、ImmortalWRT系统及其安装"></a>一、ImmortalWRT系统及其安装</h3><p>openwrt的一个分支，有好的软件源。</p>
+<ol>
+<li><a href="https://firmware-selector.immortalwrt.org/">固件选择器</a><span id="more"></span></li>
+<li><a href="https://rufus.ie/">写盘工具refus</a></li>
+<li>安装的软件包</li>
+</ol>
+<ul>
+<li>luci-theme-argon</li>
+<li>luci-i18n-ttyd-zh-cn</li>
+<li>上网工具（选择打开其一即可）<ul>
+<li>luci-app-openclash</li>
+<li>luci-i18n-passwall-zh-cn</li>
+<li>luci-i18n-homeproxy-zh-cn</li>
+</ul>
+</li>
+</ul>
 	  
 	</div>
 
@@ -125,14 +135,14 @@
 	<div class="pagination">
 <ul class="pagination">
 	 
-		
-          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
-        
+				
+    	<li class="prev"><a href="/2018/07/28/buer系统部署/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+  		
 
         <li><a href="/archives"><i class="fa fa-archive"></i>归档</a></li>
 
 		
-		   <li class="next"><a href="/2024/01/29/升级hexo/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+		   <li class="next"><a href="/2018/07/08/buer系统过程中的问题/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -200,7 +210,7 @@ gitment.render('container')
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2024-08-27 
+	2018-07-28 
 	</div>
 	
 
@@ -211,7 +221,7 @@ gitment.render('container')
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/风月/">风月<span>5</span></a></li>
+    <li><a href="/categories/工具/">工具<span>3</span></a></li>
   </li>
 
     </ul>
@@ -224,7 +234,7 @@ gitment.render('container')
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/风月/">风月<span>5</span></a></li>
+  <li><a href="/tags/工具/">工具<span>9</span></a></li>
     </ul>
 	</div>
 		
