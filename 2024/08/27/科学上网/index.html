@@ -136,7 +136,7 @@
 <h4 id="2-3-大部分终端走主路由，少部分终端走旁路由"><a href="#2-3-大部分终端走主路由，少部分终端走旁路由" class="headerlink" title="2.3 大部分终端走主路由，少部分终端走旁路由"></a>2.3 大部分终端走主路由，少部分终端走旁路由</h4><p>设置规则为：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag:!proxy,3,10.0.0.1</span><br><span class="line">tag:!proxy,6,10.0.0.1</span><br></pre></td></tr></table></figure>
 <p><code>!</code>：不是proxy标签的，网关和dns为主路由（10.0.0.1），标签为proxy的是默认的旁路由（10.0.0.2）。所以，只要指定<code>走旁路由的终端</code>的标签为proxy。</p>
-<h4 id="2-4-防火墙设置"><a href="#2-4-防火墙设置" class="headerlink" title="2.4 防火墙设置"></a>2.4 防火墙设置</h4><p>一定要把<code>网络 → 防火墙 → 区域 → lan-wan(入站、出站、转发)</code>的<code>IP地址动态伪装</code>给选上。不然<font color='red'><strong>网关为旁路由的终端无法上网</strong></font>，即使在旁路由上可以正常访问百度等外网。</p>
+<h4 id="2-4-防火墙设置"><a href="#2-4-防火墙设置" class="headerlink" title="2.4 防火墙设置"></a>2.4 防火墙设置</h4><p>一定要把<code>网络 → 防火墙 → 区域 → lan-wan(入站、出站、转发)</code>的<code>IP地址动态伪装</code>给选上。不然<font color='red'><strong>网关为旁路由的终端无法上网</strong></font>，即使在旁路由上可以正常访问百度等外网。<strong>和主路由类型有关系；主路由是openwrt的话，不打开也没关系</strong></p>
 <p>另外，网络 → 防火墙 → 常规设置中的<code>丢弃无效数据包</code>这个选项不能勾选，不然网关为旁路由的终端不能上网。因为数据包出去的时候经过旁路由，但是响应回来的时候，都不经过旁路由，无法完成握手。</p>
 <h3 id="二、相关概念"><a href="#二、相关概念" class="headerlink" title="二、相关概念"></a>二、相关概念</h3><ol>
 <li>固件版本分EXT4和SQUASHFS，他们之间什么联系与区别？还分FACTORY和SYSUPGRADE，他们之间又是什么关系？<blockquote>
