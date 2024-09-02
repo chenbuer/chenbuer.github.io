@@ -129,23 +129,23 @@
     
     
     <entry>
-      <title>内网穿透工具ngrok</title>
-      <link href="/2018/07/29/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E5%B7%A5%E5%85%B7ngrok/"/>
-      <url>/2018/07/29/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E5%B7%A5%E5%85%B7ngrok/</url>
+      <title>内网穿透</title>
+      <link href="/2018/07/29/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
+      <url>/2018/07/29/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</url>
       
-        <content type="html"><![CDATA[<h3 id="一、本地映射工具"><a href="#一、本地映射工具" class="headerlink" title="一、本地映射工具"></a>一、本地映射工具</h3><p>用ngrok，<a href="https://blog.csdn.net/u011886447/article/details/73268407">操作方法</a></p>]]></content>
+        <content type="html"><![CDATA[<h3 id="一、本地映射工具ngrok"><a href="#一、本地映射工具ngrok" class="headerlink" title="一、本地映射工具ngrok"></a>一、本地映射工具ngrok</h3><p>用ngrok，<a href="https://blog.csdn.net/u011886447/article/details/73268407">操作方法</a></p><span id="more"></span><h3 id="二、frp"><a href="#二、frp" class="headerlink" title="二、frp"></a>二、frp</h3><p><a href="https://github.com/fatedier/frp">项目地址</a></p><h3 id="三、nsp"><a href="#三、nsp" class="headerlink" title="三、nsp"></a>三、nsp</h3><p><a href="https://github.com/ehang-io/nps">项目地址</a></p><h3 id="四、gost"><a href="#四、gost" class="headerlink" title="四、gost"></a>四、gost</h3><p><a href="https://github.com/go-gost/gost">项目地址</a></p>]]></content>
       
       
       <categories>
           
-          <category> java </category>
+          <category> 运维 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> java </tag>
+            <tag> 运维 </tag>
             
         </tags>
       
