@@ -151,8 +151,9 @@
 </ol>
 <h4 id="问题3：pc可以访问，但是iPhone访问不了"><a href="#问题3：pc可以访问，但是iPhone访问不了" class="headerlink" title="问题3：pc可以访问，但是iPhone访问不了"></a>问题3：pc可以访问，但是iPhone访问不了</h4><p>是因为我原来的两个公网peer，一个明确了<code>允许的IP</code>为<code>192.168.100.3</code>。另一个没配置，就觉得他会自动获取一个地址，其实还是需要配置允许的IP为<code>192.168.100.0/24</code></p>
 <h3 id="四、疑问"><a href="#四、疑问" class="headerlink" title="四、疑问"></a>四、疑问</h3><ol>
-<li>为什么lan区域没有任何终端作为peer也能直接访问？</li>
 <li>路由策略<code>ip route add 192.168.100.0/24 dev wg0</code>是什么意思？为什么其他接口没配置，但是WireGuard需要自己手动配置？</li>
+<li>为什么lan区域没有任何终端作为peer也能直接访问？</li>
+<li>所有的peer获取到隧道内的局域网地址都没有配置网关，他怎么只知道请求lan网段的流量往哪个端口发送？</li>
 </ol>
 	  
 	</div>
