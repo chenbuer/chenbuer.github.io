@@ -113,7 +113,7 @@
 
 	  <p>接入家庭局域网有多种方式：<a href="https://github.com/OpenVPN/openvpn">openVPN</a>、<a href="https://github.com/tailscale/tailscale">Tailscale</a>、<a href="https://gofrp.org/zh-cn/">frp</a>、<a href="https://github.com/ehang-io/nps">nps</a>、<a href="https://www.zerotier.com/">ZeroTier</a>等等。但若是可以拨号获得一个公网IP，则不需要公网的服务器搭建一个转发服务，构建VPN局域网。这里选择的是<a href="https://www.youtube.com/watch?v=F8z74oE71Gg">WireGuard</a>。</p>
 <span id="more"></span>
-<h3 id="一、测试网络结构"><a href="#一、测试网络结构" class="headerlink" title="一、测试网络结构"></a>一、测试网络结构</h3><p><img src="/images/WireGuard%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95/%E6%B5%8B%E8%AF%95%E7%BD%91%E7%BB%9C.jpg" alt="测试网络"></p>
+<h3 id="一、测试网络结构"><a href="#一、测试网络结构" class="headerlink" title="一、测试网络结构"></a>一、测试网络结构</h3><p><img src="/images/WireGuard%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95/%E6%B5%8B%E8%AF%95%E7%BD%91%E7%BB%9C.png" alt="测试网络"></p>
 <h3 id="二、配置WireGuard"><a href="#二、配置WireGuard" class="headerlink" title="二、配置WireGuard"></a>二、配置WireGuard</h3><p>大概过程分为：</p>
 <ul>
 <li>openwrt中安装WireGuard：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opkg update</span><br><span class="line">opkg install luci-proto-wireguard luci-app-wireguard wireguard kmod-wireguard wireguard-tools</span><br></pre></td></tr></table></figure></li>
