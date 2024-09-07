@@ -63,7 +63,7 @@ $ vi ~/.gitconfig
         merge = refs/heads/hexo
 ```
 修改之后：
-![modGitCfg](https://github.com/chenbuer/markdownImgs/blob/master/blog/modGitCfg.png?raw=true)
+![modGitCfg](/images/git/modGitCfg.png)
 
 ### 七、本地添加github远程
 首先需要在github上添加repo为test，然后在本地项目下执行命令：

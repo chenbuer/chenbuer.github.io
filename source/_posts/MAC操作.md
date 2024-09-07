@@ -53,4 +53,4 @@ open CONSOLA*.TTF
 
 ### 四、Mac常用键的简写
 
-![Mac常用键的简写](https://github.com/chenbuer/markdownImgs/blob/master/blog/mac%E5%B8%B8%E7%94%A8%E9%94%AE.png?raw=true)
+![Mac常用键的简写](/images/MAC操作/mac常用键.png)

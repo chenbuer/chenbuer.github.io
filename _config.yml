@@ -81,3 +81,5 @@ markdown:
   breaks: false
   smartLists: true
   smartypants: true
+
+favicon: /images/logo.ico

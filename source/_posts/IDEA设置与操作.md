@@ -35,59 +35,59 @@ alt+ctrl+→代表前进，但是Windows本身有热键，表示旋转屏幕，�
 [MAC下快捷键1](http://www.ituring.com.cn/article/37792)-[参考链接2](http://blog.csdn.net/wfp458113181wfp/article/details/24579781)-[MAC下快捷键2](http://wiki.jikexueyuan.com/project/intellij-idea-tutorial/keymap-mac-introduce.html)
 
 ### 四、不能创建package
-![不能创建package](https://github.com/chenbuer/markdownImgs/blob/master/blog/canNotCreatePackage.png?raw=true)
+![不能创建package](/images/IDEA设置与操作/canNotCreatePackage.png)
 
 ### 五、使得package展示和eclipse一样
-![使得package展示和eclipse一样](https://github.com/chenbuer/markdownImgs/blob/master/blog/makePackageLikeEclipse.png?raw=true)
+![使得package展示和eclipse一样](/images/IDEA设置与操作/makePackageLikeEclipse.png)
 
 ### 六、函数的注释因为跟入参不一致，IDEA红色报错
-![函数的注释因为跟入参不一致，IDEA红色报错](https://github.com/chenbuer/markdownImgs/blob/master/blog/annotationIsRed.png?raw=true)
+![函数的注释因为跟入参不一致，IDEA红色报错](/images/IDEA设置与操作/annotationIsRed.png)
 
 [参考链接](http://blog.csdn.net/river_continent/article/details/72841428)
 
 ### 七、IDEA中SVN不好使
 > 现象：
 
-![IDEA中SVN不好使](https://github.com/chenbuer/markdownImgs/blob/master/blog/ideaSvnUnuseful.png?raw=true)
+![IDEA中SVN不好使](/images/IDEA设置与操作/ideaSvnUnuseful.png)
 
 > 解决方法：
 
-![IDEA中SVN不好使的解决方法](https://github.com/chenbuer/markdownImgs/blob/master/blog/ideaSvnUnusefulSolution.png?raw=true)
+![IDEA中SVN不好使的解决方法](/images/IDEA设置与操作/ideaSvnUnusefulSolution.png)
 
 [参考链接](http://blog.csdn.net/u012940983/article/details/38679667)
 
 ### 八、删除文件，SVN提示Schedule for Deletion
 > 现象：
 
-![Schedule for Deletion](https://github.com/chenbuer/markdownImgs/blob/master/blog/scheduleForDel.png?raw=true)
+![Schedule for Deletion](/images/IDEA设置与操作/scheduleForDel.png)
 
 > 不同选择会有不同的结果：选择Yes之后Status为deleted，选择No之后Status为missing
 
-![不同选择会有不同的结果](https://github.com/chenbuer/markdownImgs/blob/master/blog/scheduleForDelAndChooseYes.png?raw=true)
+![不同选择会有不同的结果](/images/IDEA设置与操作/scheduleForDelAndChooseYes.png)
 
 ### 九、IDEA的JDK设置
 
 > 每个module都可以设置自己的：
 
-![每个module单独设置](https://github.com/chenbuer/markdownImgs/blob/master/blog/IDEAAddJdk.png?raw=true)
+![每个module单独设置](/images/IDEA设置与操作/IDEAAddJdk.png)
 
 > 全局的设置？如下：
 
-![全局JDK设置](https://github.com/chenbuer/markdownImgs/blob/master/blog/globalJdkSetting.png?raw=true)
+![全局JDK设置](/images/IDEA设置与操作/globalJdkSetting.png)
 
 ### 十、MAC下IDEA补全快捷键和搜狗快捷键冲突
 这两个快捷键都是`ctrl+Space`，所以就给IDEA添加一个补全的快捷键为`Option+Command+Space`与Windows下的`Alt+Ctrl+Space`对应起来，但是`Option+Command+Space`又与系统快捷键冲突。处理方法如下：
 > 删除系统的快捷键
 
-![删除系统的快捷键](https://github.com/chenbuer/markdownImgs/blob/master/blog/idea-completion/rmMacAltCmdSpace.png?raw=true)
+![删除系统的快捷键](/images/IDEA设置与操作/rmMacAltCmdSpace.png)
 > 给IDEA增加一个快捷键
-![给IDEA增加一个快捷键](https://github.com/chenbuer/markdownImgs/blob/master/blog/idea-completion/addOneCutForCompletion.png?raw=true)
+![给IDEA增加一个快捷键](/images/IDEA设置与操作/addOneCutForCompletion.png)
 
 ### 十一、pom.xml中增加了jar包，但是在Library中没有添加进来
 
 > 解决方法：
 
-![pom.xml中增加了jar包，但是在Library中没有添加进来](https://github.com/chenbuer/markdownImgs/blob/master/blog/IDEAMvnAutoImport.png?raw=true)
+![pom.xml中增加了jar包，但是在Library中没有添加进来](/images/IDEA设置与操作/IDEAMvnAutoImport.png)
 
 
 ### 十二、IDEA设置tomcat，在选择deploy项目时war和war exploded的区别
@@ -110,7 +110,7 @@ settings->搜索File Encoding->把最下面的“Transparent native-to-ascii con
 
 ### 十五、pom的依赖关系
 IDEA可以直接展示pom之间的依赖关系，简直牛逼的一腿
-![](https://img-blog.csdn.net/20171130184732567)
+![展示pom之间的依赖关系](/images/IDEA设置与操作/展示pom之间的依赖关系.png)
 
 [参考](https://blog.csdn.net/qq_27093465/article/details/69226949)。学习怎么利用这个排除依赖冲突
 
