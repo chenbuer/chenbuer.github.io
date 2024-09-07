@@ -1,0 +1,318 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>WireGuard配置方法 | 陈不二的博客</title>
+  <meta name="author" content="陈不二">
+  
+  <meta name="description" content="谈技术也谈风月">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="WireGuard配置方法"/>
+  <meta property="og:site_name" content="陈不二的博客"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/logo.ico" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/cosmo.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar  navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">陈不二的博客</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="所有文章.">
+			  <i class="fa fa-archive"></i>归档
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>分类
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>标签
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="关于我.">
+			  <i class="fa fa-user"></i>关于我
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header ">		
+			<h1 class="title "> WireGuard配置方法</h1>
+		</div>		
+	
+
+
+
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p>接入家庭局域网有多种方式：<a href="https://github.com/OpenVPN/openvpn">openVPN</a>、<a href="https://github.com/tailscale/tailscale">Tailscale</a>、<a href="https://gofrp.org/zh-cn/">frp</a>、<a href="https://github.com/ehang-io/nps">nps</a>、<a href="https://www.zerotier.com/">ZeroTier</a>等等。但若是可以拨号获得一个公网IP，则不需要公网的服务器搭建一个转发服务，构建VPN局域网。这里选择的是<a href="https://www.youtube.com/watch?v=F8z74oE71Gg">WireGuard</a>。</p>
+<span id="more"></span>
+<h3 id="一、测试网络结构"><a href="#一、测试网络结构" class="headerlink" title="一、测试网络结构"></a>一、测试网络结构</h3><p><img src="/images/WireGuard%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95/%E6%B5%8B%E8%AF%95%E7%BD%91%E7%BB%9C.jpg" alt="测试网络"></p>
+<h3 id="二、配置WireGuard"><a href="#二、配置WireGuard" class="headerlink" title="二、配置WireGuard"></a>二、配置WireGuard</h3><p>大概过程分为：</p>
+<ul>
+<li>openwrt中安装WireGuard：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opkg update</span><br><span class="line">opkg install luci-proto-wireguard luci-app-wireguard wireguard kmod-wireguard wireguard-tools</span><br></pre></td></tr></table></figure></li>
+<li>网络 -&gt; 接口 ，创建wg0接口，接口协议为 <code>WireGuard VPN</code></li>
+<li>编辑wg0接口</li>
+<li>配置peer信息，即允许接入的peer有哪些</li>
+<li>配置其他的peer端，获取配置后接入</li>
+</ul>
+<h4 id="所有配置："><a href="#所有配置：" class="headerlink" title="所有配置："></a>所有配置：</h4><ol>
+<li><strong>openwrt</strong>中的配置，配置后在<code>/etc/config/network</code>中查看：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">config interface &#x27;wg0&#x27;</span><br><span class="line">        option proto &#x27;wireguard&#x27;</span><br><span class="line">        option private_key &#x27;《openwrt的private key》&#x27;</span><br><span class="line">        option listen_port &#x27;8890&#x27;</span><br><span class="line">        option mtu &#x27;1250&#x27;</span><br><span class="line">        option nohostroute &#x27;1&#x27;</span><br><span class="line">        option ip4table &#x27;21&#x27;</span><br><span class="line">        list addresses &#x27;192.168.100.1/32&#x27;</span><br><span class="line"></span><br><span class="line">config wireguard_wg0 &#x27;wgserver&#x27;</span><br><span class="line">        option description &#x27;iPhone&#x27;</span><br><span class="line">        option public_key &#x27;e++EP53PQnMQhMcJ0dJd9cvnGIl+gxJEx9a8EtSJuCY=&#x27;</span><br><span class="line">        option preshared_key &#x27;AO5DXGfwDwm0WgQqTuPIvHpVeOwAdZeUOG0qQXhFPzI=&#x27;</span><br><span class="line">        option persistent_keepalive &#x27;25&#x27;</span><br><span class="line">        option route_allowed_ips &#x27;1&#x27;</span><br><span class="line">        list allowed_ips &#x27;192.168.100.0/24&#x27;</span><br><span class="line"></span><br><span class="line">config wireguard_wg0</span><br><span class="line">        option description &#x27;pc&#x27;</span><br><span class="line">        option public_key &#x27;O0q757lZh7+cG5Q1js7wx9df1936kpH5NQ9TWAJEqRk=&#x27;</span><br><span class="line">        option preshared_key &#x27;s4ZLhXba8bEEJW+Zc8T9qDlbu2f1I6bRyejBrMWCbS4=&#x27;</span><br><span class="line">        option route_allowed_ips &#x27;1&#x27;</span><br><span class="line">        option persistent_keepalive &#x27;25&#x27;</span><br><span class="line">        list allowed_ips &#x27;192.168.100.3&#x27;</span><br></pre></td></tr></table></figure></li>
+<li><strong>iPhone</strong>的配置：<br>在openwrt配置的allowed_ips为’192.168.100.0&#x2F;24’，但是我直接指定为192.168.100.2<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Interface]</span><br><span class="line">PrivateKey = 《iPhone的private》</span><br><span class="line">Address = 192.168.100.2</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">ListenPort not defined</span></span><br><span class="line">DNS = 10.0.0.1</span><br><span class="line"></span><br><span class="line">[Peer]</span><br><span class="line">PublicKey = AkVgVs2lcYUs5UtpD04RJPBSbnpKklzZQ4/3AK9uTH0=</span><br><span class="line">PresharedKey = AO5DXGfwDwm0WgQqTuPIvHpVeOwAdZeUOG0qQXhFPzI=</span><br><span class="line">AllowedIPs = 0.0.0.0/0, ::/0</span><br><span class="line">Endpoint = 172.16.0.6:8890</span><br><span class="line">PersistentKeepAlive = 25</span><br></pre></td></tr></table></figure></li>
+<li><strong>pc</strong>的配置：<br>为了分流，配置AllowedIPs 为 192.168.10.0&#x2F;0, 10.0.0.0&#x2F;0   这样，pc上只有这两个网段的流量经过WireGuard，其他不从这里走。<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Interface]</span><br><span class="line">PrivateKey = 《pc的privateky》</span><br><span class="line">Address = 192.168.100.3</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">ListenPort not defined</span></span><br><span class="line">DNS = 10.0.0.1</span><br><span class="line"></span><br><span class="line">[Peer]</span><br><span class="line">PublicKey = AkVgVs2lcYUs5UtpD04RJPBSbnpKklzZQ4/3AK9uTH0=</span><br><span class="line">PresharedKey = s4ZLhXba8bEEJW+Zc8T9qDlbu2f1I6bRyejBrMWCbS4=</span><br><span class="line">AllowedIPs = 192.168.10.0/0, 10.0.0.0/0</span><br><span class="line">Endpoint = 172.16.0.6:8890</span><br><span class="line">PersistentKeepAlive = 25</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="三、遇到的问题"><a href="#三、遇到的问题" class="headerlink" title="三、遇到的问题"></a>三、遇到的问题</h3><p>由于WireGuard使用人数不多</p>
+<h4 id="问题1：配置完成后无法正确握手"><a href="#问题1：配置完成后无法正确握手" class="headerlink" title="问题1：配置完成后无法正确握手"></a>问题1：配置完成后无法正确握手</h4><p>防火墙问题，需要配置openwrt允许wireguard来握手。<code>网络 -&gt; 防火墙 -&gt; 通信规则 -&gt; 添加</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">名称:allow-wireguard-handshake</span><br><span class="line">协议：UDP</span><br><span class="line">源区域:wan</span><br><span class="line">目标区域：设备</span><br><span class="line">目标地址：172.16.0.6  #openwrt的wan口地址，相当于拨号获得</span><br><span class="line">目标端口：8890  # wireguard配置在8890端口</span><br></pre></td></tr></table></figure>
+
+<h4 id="问题2：可以正确握手，但是无法利用局域网br-lan网络"><a href="#问题2：可以正确握手，但是无法利用局域网br-lan网络" class="headerlink" title="问题2：可以正确握手，但是无法利用局域网br-lan网络"></a>问题2：可以正确握手，但是无法利用局域网br-lan网络</h4><ol>
+<li><p>在openwrt命令行中查看路由信息：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">default via 172.16.0.1 dev eth0  src 172.16.0.6</span><br><span class="line">10.0.0.0/24 dev br-lan scope link  src 10.0.0.1</span><br><span class="line">172.16.0.0/24 dev eth0 scope link  src 172.16.0.6</span><br></pre></td></tr></table></figure>
+<p>没有192.168.100.0&#x2F;24网段的路由信息，在openwrt上运行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip route add 192.168.100.0/24 dev wg0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>发现一重启网络（<code>/etc/init.d/network restart</code>）配置就丢失，在luci配置静态IPv4路由：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">接口（Interface）: wg0</span><br><span class="line">路由类型（Route Type）: unicast</span><br><span class="line">目标（Target）: 192.168.100.0/24</span><br><span class="line">网关（Gateway）: 留空</span><br><span class="line">表（Table）: 使用默认的 main</span><br><span class="line">源地址（Source Address）: 留空</span><br><span class="line">On-Link 路由（On-Link Route）: 关闭</span><br></pre></td></tr></table></figure>
+<p>配置信息保存在<code>/etc/config/network</code>中，重启Network服务，不管是<code>ip route</code>还是<code>ip route show table 254</code>，都不显示配置的信息。怀疑openwrt版本问题。</p>
+</li>
+<li><p>在<code>/etc/rc.local</code>脚本中添加这条命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip route add 192.168.100.0/24 dev wg0</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="问题3：pc可以访问，但是iPhone访问不了"><a href="#问题3：pc可以访问，但是iPhone访问不了" class="headerlink" title="问题3：pc可以访问，但是iPhone访问不了"></a>问题3：pc可以访问，但是iPhone访问不了</h4><p>是因为我原来的两个公网peer，一个明确了<code>允许的IP</code>为<code>192.168.100.3</code>。另一个没配置，就觉得他会自动获取一个地址，其实还是需要配置允许的IP为<code>192.168.100.0/24</code></p>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+<ul class="pagination">
+	 
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+        
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>归档</a></li>
+
+		
+		   <li class="next"><a href="/2024/09/06/家庭组网/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+        
+	
+</ul>
+</div>
+
+    </center>
+	</div>
+
+    <!-- share -->
+    
+        
+    <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+        <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+        <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+    </div>
+    <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+
+
+        
+
+    
+	
+	<!-- comment -->
+	<!-- 
+  
+<section id="comment">
+  <h2 class="title">留言</h2>
+
+  
+</section>
+ -->
+
+<!--我自己添加的评论功能-->
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'chenbuer',
+  repo: 'chenbuer.github.io',
+  oauth: {
+  client_id: 'c8819a6086d97f4c90e7',
+  client_secret: '64f822e6b47604072e08527a965817df12faeab6',
+  },
+})
+gitment.render('container')
+</script>
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2024-09-07 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/网络/">网络<span>2</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/网络/">网络<span>2</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  陈不二 &copy; 2024
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>
