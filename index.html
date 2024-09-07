@@ -183,12 +183,6 @@
 		
             
 		
-            
-		
-            
-		
-            
-		
         
         <!-- render other articles -->
         
@@ -222,7 +216,7 @@
 	<!-- display as entry -->	
 		<h3 class="title">
 			<div class="date"> 2024-09-06 </div>
-			<div class="article-title"><a href="/2024/09/06/家庭组网/" >家庭组网</a></div>						
+			<div class="article-title"><a href="/2024/09/06/cloudflare动态路由/" >cloudflare动态路由</a></div>						
 		</h3>
 	
 
@@ -232,10 +226,38 @@
 	
 	
 		<h4 id="一、问题"><a href="#一、问题" class="headerlink" title="一、问题"></a>一、问题</h4><p>nas黑群晖版本较低，不能直接将nas的5000端口通过<code>openwrt -&gt; 网络 -&gt; 防火墙 -&gt; 端口转发</code>直接将服务暴露出去，容易有安全问题。</p>
-<p>所以需要一个VPN服务，在外网可以加入VPN，像在家中访问局域网内的NAS服务一样。</p>
-<p>家里又没有固定IP，所以需要ddns来获取到公网ip。通过域名连接+VPN加入家庭局域网。</p>
 		<!-- only display read_more button if there's more to display -->
-		<a type="button" href="/2024/09/06/家庭组网/#more" class="btn btn-default more">继续阅读</a>
+		<a type="button" href="/2024/09/06/cloudflare动态路由/#more" class="btn btn-default more">继续阅读</a>
+	
+	</div>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2024-09-03 </div>
+			<div class="article-title"><a href="/2024/09/03/frp配置方法/" >frp配置方法</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	
+		<p>将局域网内的服务暴露出去有几种方法：</p>
+<ol>
+<li>在路由器中配置为dmz区，就是将整个服务器所有接口全都暴露出去，较简单；</li>
+<li>有些路由器不支持dmz，只支持<strong>端口转发</strong>，该方法指定暴露出去的服务器端口&#x2F;具体服务；</li>
+<li>还有就是frp、nps、<a href="https://blog.csdn.net/u011886447/article/details/73268407">ngrok</a></li>
+</ol>
+<p>frp配置方法就是这篇文章的介绍内容。</p>
+		<!-- only display read_more button if there's more to display -->
+		<a type="button" href="/2024/09/03/frp配置方法/#more" class="btn btn-default more">继续阅读</a>
 	
 	</div>
 </div>
@@ -262,30 +284,6 @@
 <li><a href="https://firmware-selector.immortalwrt.org/">固件选择器</a>
 		<!-- only display read_more button if there's more to display -->
 		<a type="button" href="/2024/08/27/科学上网/#more" class="btn btn-default more">继续阅读</a>
-	
-	</div>
-</div>
-
-           
-		
-           
-			  
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> 2024-01-29 </div>
-			<div class="article-title"><a href="/2024/01/29/升级hexo/" >升级hexo</a></div>						
-		</h3>
-	
-
-
-			  <div class="entry">
-  <div class="row">
-	
-	
-		<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p><a href="https://novnan.github.io/Hexo/update_hexo/">参考</a><br>Hexo 升级比较简单，老方法 npm-check、npm-upgrade、npm-update 一键三连。按以下顺序逐步执行完成后，Hexo 版本及系统插件均会升级到最新。</p>
-		<!-- only display read_more button if there's more to display -->
-		<a type="button" href="/2024/01/29/升级hexo/#more" class="btn btn-default more">继续阅读</a>
 	
 	</div>
 </div>
@@ -360,11 +358,11 @@
 		
 			<li><a href="/categories/工具/">工具<span>3</span></a></li>
 		
-			<li><a href="/categories/网络/">网络<span>2</span></a></li>
+			<li><a href="/categories/杂/">杂<span>1</span></a></li>
 		
-			<li><a href="/categories/运维/">运维<span>2</span></a></li>
+			<li><a href="/categories/网络/">网络<span>3</span></a></li>
 		
-			<li><a href="/categories/风月/">风月<span>4</span></a></li>
+			<li><a href="/categories/运维/">运维<span>1</span></a></li>
 		
 		</ul>
 	</div>
@@ -375,37 +373,37 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/maven/">maven<span>1</span></a></li>
-		
-			<li><a href="/tags/hibernate/">hibernate<span>1</span></a></li>
-		
-			<li><a href="/tags/tomcat/">tomcat<span>1</span></a></li>
+			<li><a href="/tags/struts/">struts<span>1</span></a></li>
 		
 			<li><a href="/tags/yii2-tree-manager/">yii2-tree-manager<span>1</span></a></li>
 		
+			<li><a href="/tags/hibernate/">hibernate<span>1</span></a></li>
+		
 			<li><a href="/tags/Hibernate/">Hibernate<span>1</span></a></li>
 		
-			<li><a href="/tags/struts/">struts<span>1</span></a></li>
+			<li><a href="/tags/前端/">前端<span>2</span></a></li>
 		
-			<li><a href="/tags/风月/">风月<span>4</span></a></li>
-		
-			<li><a href="/tags/网络/">网络<span>2</span></a></li>
-		
-			<li><a href="/tags/javascript/">javascript<span>1</span></a></li>
-		
-			<li><a href="/tags/运维/">运维<span>2</span></a></li>
+			<li><a href="/tags/JAVA/">JAVA<span>9</span></a></li>
 		
 			<li><a href="/tags/apache2/">apache2<span>1</span></a></li>
 		
-			<li><a href="/tags/工具/">工具<span>9</span></a></li>
+			<li><a href="/tags/网络/">网络<span>3</span></a></li>
+		
+			<li><a href="/tags/maven/">maven<span>1</span></a></li>
+		
+			<li><a href="/tags/运维/">运维<span>1</span></a></li>
+		
+			<li><a href="/tags/tomcat/">tomcat<span>1</span></a></li>
 		
 			<li><a href="/tags/java/">java<span>2</span></a></li>
 		
 			<li><a href="/tags/spring/">spring<span>3</span></a></li>
 		
-			<li><a href="/tags/JAVA/">JAVA<span>9</span></a></li>
+			<li><a href="/tags/杂/">杂<span>1</span></a></li>
 		
-			<li><a href="/tags/前端/">前端<span>2</span></a></li>
+			<li><a href="/tags/工具/">工具<span>9</span></a></li>
+		
+			<li><a href="/tags/javascript/">javascript<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -423,7 +421,11 @@
       </li>
     
       <li>
-        <a href="/2024/09/06/家庭组网/" ><i class="fa fa-file-o"></i>家庭组网</a>
+        <a href="/2024/09/06/cloudflare动态路由/" ><i class="fa fa-file-o"></i>cloudflare动态路由</a>
+      </li>
+    
+      <li>
+        <a href="/2024/09/03/frp配置方法/" ><i class="fa fa-file-o"></i>frp配置方法</a>
       </li>
     
       <li>
@@ -432,10 +434,6 @@
     
       <li>
         <a href="/2024/01/29/升级hexo/" ><i class="fa fa-file-o"></i>升级hexo</a>
-      </li>
-    
-      <li>
-        <a href="/2024/01/29/git config 文件/" ><i class="fa fa-file-o"></i>git config 文件</a>
       </li>
     
   </ul>

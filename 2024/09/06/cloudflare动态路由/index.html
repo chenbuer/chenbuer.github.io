@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>家庭组网 | 陈不二的博客</title>
+  <title>cloudflare动态路由 | 陈不二的博客</title>
   <meta name="author" content="陈不二">
   
   <meta name="description" content="谈技术也谈风月">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="家庭组网"/>
+  <meta property="og:title" content="cloudflare动态路由"/>
   <meta property="og:site_name" content="陈不二的博客"/>
 
   
@@ -91,7 +91,7 @@
 
 	
 		<div class="page-header ">		
-			<h1 class="title "> 家庭组网</h1>
+			<h1 class="title "> cloudflare动态路由</h1>
 		</div>		
 	
 
@@ -112,11 +112,10 @@
 	  		
 
 	  <h4 id="一、问题"><a href="#一、问题" class="headerlink" title="一、问题"></a>一、问题</h4><p>nas黑群晖版本较低，不能直接将nas的5000端口通过<code>openwrt -&gt; 网络 -&gt; 防火墙 -&gt; 端口转发</code>直接将服务暴露出去，容易有安全问题。</p>
+<span id="more"></span>
 <p>所以需要一个VPN服务，在外网可以加入VPN，像在家中访问局域网内的NAS服务一样。</p>
 <p>家里又没有固定IP，所以需要ddns来获取到公网ip。通过域名连接+VPN加入家庭局域网。</p>
-<span id="more"></span>
-
-<h4 id="二、动态路由"><a href="#二、动态路由" class="headerlink" title="二、动态路由"></a>二、动态路由</h4><p>在openwrt的<code>软件包</code>中下载<code>luci-i18n-ddns-zh-cn</code>。在ddns中<code>添加新服务</code>，发现在DDNS服务提供商中并没有cloudflare（<code>cloudflare.com-v4</code>）。ssh到openwrt，运行：</p>
+<h4 id="二、cloudflare动态路由"><a href="#二、cloudflare动态路由" class="headerlink" title="二、cloudflare动态路由"></a>二、cloudflare动态路由</h4><p>在openwrt的<code>软件包</code>中下载<code>luci-i18n-ddns-zh-cn</code>。在ddns中<code>添加新服务</code>，发现在DDNS服务提供商中并没有cloudflare（<code>cloudflare.com-v4</code>）。ssh到openwrt，运行：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opkg update &amp;&amp; opkg install ddns-scripts_cloudflare.com-v4</span><br></pre></td></tr></table></figure>
 <p>至此，软件包安装完成。</p>
 <p>添加ddns服务可以参照<a href="https://cloud.tencent.com/developer/article/2179526">这篇文章</a>。里面介绍了如何在cloudflare中获取token，如何新增ddns服务。若是在局域网中测试，但是<code>update_cloudflare_com_v4.sh</code>会检查要更新的IP地址是不是公网IP地址，所以可以将<code>IP地址来源</code>设置为URL，<code>用于检测的 URL</code>设置为<code>http://checkip.dyndns.com/</code>。</p>
@@ -124,7 +123,6 @@
 <p>有坑：还是报错：<br> 093154  WARN : Could not detect ‘zone id’ for domain.tld: ‘home.example.com’<br> 093154 ERROR : No update send to DDNS Provider</p>
 </blockquote>
 <p> 这是因为读取了域名字段的值，是根据@字符分割，前部分就是HOST，后部分是DOMAIN。参考<a href="https://www.elthon.me/2021/07/01/cloudflare-ddns-in-openwrt-settings-problem">这篇文章</a>。所以需要将域名设置为<code>home@expample.com</code>。</p>
-<h4 id="三、VPN"><a href="#三、VPN" class="headerlink" title="三、VPN"></a>三、VPN</h4><p>可以参照我的另一篇博文：《WireGuard配置方法》</p>
 	  
 	</div>
 
@@ -140,7 +138,7 @@
         <li><a href="/archives"><i class="fa fa-archive"></i>归档</a></li>
 
 		
-		   <li class="next"><a href="/2024/08/27/科学上网/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+		   <li class="next"><a href="/2024/09/03/frp配置方法/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -219,7 +217,7 @@ gitment.render('container')
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/网络/">网络<span>2</span></a></li>
+    <li><a href="/categories/网络/">网络<span>3</span></a></li>
   </li>
 
     </ul>
@@ -232,7 +230,7 @@ gitment.render('container')
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/网络/">网络<span>2</span></a></li>
+  <li><a href="/tags/网络/">网络<span>3</span></a></li>
     </ul>
 	</div>
 		

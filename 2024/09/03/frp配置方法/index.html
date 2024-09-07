@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>内网穿透 | 陈不二的博客</title>
+  <title>frp配置方法 | 陈不二的博客</title>
   <meta name="author" content="陈不二">
   
   <meta name="description" content="谈技术也谈风月">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="内网穿透"/>
+  <meta property="og:title" content="frp配置方法"/>
   <meta property="og:site_name" content="陈不二的博客"/>
 
   
@@ -91,7 +91,7 @@
 
 	
 		<div class="page-header ">		
-			<h1 class="title "> 内网穿透</h1>
+			<h1 class="title "> frp配置方法</h1>
 		</div>		
 	
 
@@ -111,9 +111,15 @@
 	<div class="mypage">		
 	  		
 
-	  <h3 id="一、本地映射工具ngrok"><a href="#一、本地映射工具ngrok" class="headerlink" title="一、本地映射工具ngrok"></a>一、本地映射工具ngrok</h3><p>用ngrok，<a href="https://blog.csdn.net/u011886447/article/details/73268407">操作方法</a></p>
+	  <p>将局域网内的服务暴露出去有几种方法：</p>
+<ol>
+<li>在路由器中配置为dmz区，就是将整个服务器所有接口全都暴露出去，较简单；</li>
+<li>有些路由器不支持dmz，只支持<strong>端口转发</strong>，该方法指定暴露出去的服务器端口&#x2F;具体服务；</li>
+<li>还有就是frp、nps、<a href="https://blog.csdn.net/u011886447/article/details/73268407">ngrok</a></li>
+</ol>
+<p>frp配置方法就是这篇文章的介绍内容。</p>
 <span id="more"></span>
-<h3 id="二、frp"><a href="#二、frp" class="headerlink" title="二、frp"></a>二、frp</h3><p><a href="https://github.com/fatedier/frp">项目地址</a></p>
+<h3 id="二、frp配置方法"><a href="#二、frp配置方法" class="headerlink" title="二、frp配置方法"></a>二、frp配置方法</h3><p>frp配置在<br><a href="https://github.com/fatedier/frp">项目地址</a></p>
 <h4 id="2-1-openwrt-frpc"><a href="#2-1-openwrt-frpc" class="headerlink" title="2.1 openwrt-frpc"></a>2.1 openwrt-frpc</h4><p>是c-s架构，由于openwrt自带的软件包更新不及时，查看最新的openwrt-frp：（下载的是<code>aarch64_generic</code>版本）</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/kuoruan/openwrt-frp/releases/download/v0.57.0-1/frpc_0.57.0-r1_aarch64_generic.ipk</span><br><span class="line">opkg install frpc_0.57.0-r1_aarch64_generic.ipk</span><br></pre></td></tr></table></figure>
 
@@ -141,13 +147,13 @@
 <ul class="pagination">
 	 
 				
-    	<li class="prev"><a href="/2022/10/14/家/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+    	<li class="prev"><a href="/2024/09/06/cloudflare动态路由/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
   		
 
         <li><a href="/archives"><i class="fa fa-archive"></i>归档</a></li>
 
 		
-		   <li class="next"><a href="/2018/07/28/buer系统部署/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+		   <li class="next"><a href="/2024/08/27/科学上网/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -215,7 +221,7 @@ gitment.render('container')
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2018-07-29 
+	2024-09-03 
 	</div>
 	
 
@@ -226,7 +232,7 @@ gitment.render('container')
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/运维/">运维<span>2</span></a></li>
+    <li><a href="/categories/网络/">网络<span>3</span></a></li>
   </li>
 
     </ul>
@@ -239,7 +245,7 @@ gitment.render('container')
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/运维/">运维<span>2</span></a></li>
+  <li><a href="/tags/网络/">网络<span>3</span></a></li>
     </ul>
 	</div>
 		
