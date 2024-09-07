@@ -88,7 +88,7 @@ PersistentKeepAlive = 25
 ```
 
 ### 三、遇到的问题
-由于WireGuard使用人数不多
+由于WireGuard使用人数不多，很多问题网络上没有完整解释。
 #### 问题1：配置完成后无法正确握手
 防火墙问题，需要配置openwrt允许wireguard来握手。`网络 -> 防火墙 -> 通信规则 -> 添加`：
 ```
