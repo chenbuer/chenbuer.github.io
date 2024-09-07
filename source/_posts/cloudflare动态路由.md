@@ -4,7 +4,7 @@ date: 2024-09-06 9:56:52
 categories: 网络
 tags: 网络
 ---
-
+路由器是openwrt，dns解析服务器是cloudflare
 #### 一、问题
 nas黑群晖版本较低，不能直接将nas的5000端口通过`openwrt -> 网络 -> 防火墙 -> 端口转发`直接将服务暴露出去，容易有安全问题。
 <!--more-->
@@ -22,6 +22,7 @@ opkg update && opkg install ddns-scripts_cloudflare.com-v4
 
 添加ddns服务可以参照[这篇文章](https://cloud.tencent.com/developer/article/2179526)。里面介绍了如何在cloudflare中获取token，如何新增ddns服务。若是在局域网中测试，但是`update_cloudflare_com_v4.sh`会检查要更新的IP地址是不是公网IP地址，所以可以将`IP地址来源`设置为URL，`用于检测的 URL`设置为`http://checkip.dyndns.com/`。
 
+#### 三、问题
 > 有坑：还是报错：
  093154  WARN : Could not detect 'zone id' for domain.tld: 'home.example.com'
  093154 ERROR : No update send to DDNS Provider

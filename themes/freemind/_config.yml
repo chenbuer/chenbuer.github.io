@@ -26,14 +26,6 @@ links:
     url: http://www.github.com/chenbuer
     intro: "我的github地址."
     icon: "fa fa-github"
-  - title: "twitter"
-    url: https://twitter.com/chenzybuer1
-    intro: "我的twitter地址."
-    icon: "fa fa-twitter"
-  - title: "facebook"
-    url: https://www.facebook.com/profile.php?id=100008395485667
-    intro: "我的facebook地址."
-    icon: "fa fa-facebook"
 
 widgets:
 - search
