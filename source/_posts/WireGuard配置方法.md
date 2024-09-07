@@ -6,7 +6,7 @@ tags: 网络
 ---
 
 
-接入家庭局域网有多种方式：[openVPN](https://github.com/OpenVPN/openvpn)、[Tailscale](https://github.com/tailscale/tailscale)、[frp](https://gofrp.org/zh-cn/)、[nps](https://github.com/ehang-io/nps)、[ZeroTier](https://www.zerotier.com/)等等。但若是可以拨号获得一个公网IP，则不需要公网的服务器搭建一个转发服务，构建VPN局域网。这里选择的是[WireGuard](https://www.youtube.com/watch?v=F8z74oE71Gg)。
+接入家庭局域网有多种方式：[openVPN](https://github.com/OpenVPN/openvpn)、[Tailscale](https://github.com/tailscale/tailscale)、[frp](https://gofrp.org/zh-cn/)、[nps](https://github.com/ehang-io/nps)、[ZeroTier](https://www.zerotier.com/)（zerotier的配置信息看[视频](https://www.bilibili.com/video/BV1Vh411F7Mr)）等等。但若是可以拨号获得一个公网IP，则不需要公网的服务器搭建一个转发服务，构建VPN局域网。这里选择的是[WireGuard](https://www.youtube.com/watch?v=F8z74oE71Gg)。
 <!--more-->
 ### 一、测试网络结构
 ![测试网络](/images/WireGuard配置方法/测试网络.png)
