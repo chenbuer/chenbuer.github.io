@@ -150,11 +150,135 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip route add 192.168.100.0/24 dev wg0</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h4 id="问题3：pc可以访问，但是iPhone访问不了"><a href="#问题3：pc可以访问，但是iPhone访问不了" class="headerlink" title="问题3：pc可以访问，但是iPhone访问不了"></a>问题3：pc可以访问，但是iPhone访问不了</h4><p>是因为我原来的两个公网peer，一个明确了<code>允许的IP</code>为<code>192.168.100.3</code>。另一个没配置，就觉得他会自动获取一个地址，其实还是需要配置允许的IP为<code>192.168.100.0/24</code></p>
-<h3 id="四、疑问"><a href="#四、疑问" class="headerlink" title="四、疑问"></a>四、疑问</h3><ol>
-<li>路由策略<code>ip route add 192.168.100.0/24 dev wg0</code>是什么意思？为什么其他接口没配置，但是WireGuard需要自己手动配置？</li>
-<li>为什么lan区域没有任何终端作为peer也能直接访问？</li>
-<li>所有的peer获取到隧道内的局域网地址都没有配置网关，他怎么只知道请求lan网段的流量往哪个端口发送？</li>
+<h3 id="四、疑问"><a href="#四、疑问" class="headerlink" title="四、疑问"></a>四、疑问</h3><blockquote>
+<p>以下问答基于AI找到的答案，不负责真实性权威性</p>
+</blockquote>
+<h4 id="1-路由策略ip-route-add-192-168-100-0-24-dev-wg0是什么意思？为什么其他接口没配置，但是WireGuard需要自己手动配置？"><a href="#1-路由策略ip-route-add-192-168-100-0-24-dev-wg0是什么意思？为什么其他接口没配置，但是WireGuard需要自己手动配置？" class="headerlink" title="1. 路由策略ip route add 192.168.100.0/24 dev wg0是什么意思？为什么其他接口没配置，但是WireGuard需要自己手动配置？"></a>1. 路由策略<code>ip route add 192.168.100.0/24 dev wg0</code>是什么意思？为什么其他接口没配置，但是WireGuard需要自己手动配置？</h4><ul>
+<li>这条命令告诉系统:要到达192.168.100.0到192.168.100.255范围内的任何IP地址，都应该通过wg0接口发送流量。</li>
+<li>wg0接口通常与WireGuard（一种现代VPN协议）相关联。这表明该路由可能是为了通过WireGuard VPN隧道将流量定向到特定网络。</li>
+<li>这种设置常见于VPN配置中，用于将特定网段的流量路由through VPN隧道。</li>
+</ul>
+<h4 id="2-所有的peer获取到隧道内的局域网地址都没有配置网关；请求lan网段的流量，根据上述路由也只是表明wg0发送，它往哪个端口发送？"><a href="#2-所有的peer获取到隧道内的局域网地址都没有配置网关；请求lan网段的流量，根据上述路由也只是表明wg0发送，它往哪个端口发送？" class="headerlink" title="2. 所有的peer获取到隧道内的局域网地址都没有配置网关；请求lan网段的流量，根据上述路由也只是表明wg0发送，它往哪个端口发送？"></a>2. 所有的peer获取到隧道内的局域网地址都没有配置网关；请求lan网段的流量，根据上述路由也只是表明wg0发送，它往哪个端口发送？</h4><ul>
+<li>关于peers不配置网关：<br>在WireGuard配置中，通常不需要为peers明确指定网关。WireGuard使用公钥加密和隧道技术，不同于传统VPN需要指定网关的方式。</li>
+<li>关于”往哪里发送”的问题，当添加 <code>ip route add 192.168.100.0/24 dev wg0</code> 这条路由时：<ul>
+<li>系统知道要将目标为192.168.100.0&#x2F;24的流量发送到wg0接口。</li>
+<li>WireGuard然后根据其配置，决定使用哪个peer的公钥来加密数据。</li>
+<li>加密后的数据被封装在UDP包中，通过您的物理网络接口发送到配置的peer的公网IP和端口。</li>
+</ul>
+</li>
+</ul>
+<p>这种方法允许WireGuard在不需要传统意义上的”网关”的情况下，建立安全的点对点连接。</p>
+<h4 id="3-为什么lan区域没有任何终端作为peer也能直接访问？"><a href="#3-为什么lan区域没有任何终端作为peer也能直接访问？" class="headerlink" title="3. 为什么lan区域没有任何终端作为peer也能直接访问？"></a>3. 为什么lan区域没有任何终端作为peer也能直接访问？</h4><ul>
+<li>WireGuard隧道建立后，远程peer实际上成为了本地网络的一个虚拟成员。</li>
+<li>由于WireGuard接口和br-lan在同一防火墙区域，来自WireGuard的流量被视为”本地”流量。</li>
+<li>路由器的配置允许这些”本地”流量访问br-lan网段的服务。</li>
+<li>安全考虑：<ul>
+<li>这种配置提供了便利性，但也需要谨慎管理访问控制。</li>
+<li>可以通过WireGuard的AllowedIPs配置和额外的防火墙规则来限制访问。</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-WireGuard原理"><a href="#4-WireGuard原理" class="headerlink" title="4. WireGuard原理"></a>4. WireGuard原理</h4><ol>
+<li><p><strong>WireGuard接口（wg0）的角色</strong>：</p>
+<ul>
+<li>wg0是一个虚拟网络接口，作为WireGuard隧道的端点。</li>
+<li>它封装和解封装通过WireGuard隧道传输的数据包。</li>
+</ul>
+</li>
+<li><p><strong>路由决策过程</strong>：</p>
+<ul>
+<li>当系统需要发送数据包到192.168.100.0&#x2F;24网段时，它会查询路由表。</li>
+<li>路由表指示这些数据包应该通过wg0接口发送。</li>
+<li>数据包被传递给wg0接口处理。</li>
+</ul>
+</li>
+<li><p><strong>WireGuard的处理</strong>：</p>
+<ul>
+<li>wg0接口接收到数据包后，WireGuard会查看其内部配置。</li>
+<li>它会根据目标IP地址决定使用哪个peer的公钥来加密数据包。</li>
+<li>加密后的数据包被封装在UDP数据包中。</li>
+</ul>
+</li>
+<li><p><strong>数据包的实际发送</strong>：</p>
+<ul>
+<li>封装后的UDP数据包会通过系统的默认路由（通常是物理网络接口）发送出去。</li>
+<li>数据包的目标是WireGuard配置中指定的peer的公网IP地址和端口。</li>
+</ul>
+</li>
+<li><p><strong>Peer端的处理</strong>：</p>
+<ul>
+<li>对端的WireGuard服务接收到UDP数据包后，解密并处理内部的原始数据包。</li>
+<li>如果目标IP在对端的允许IP列表中，数据包会被转发到对端的本地网络。</li>
+</ul>
+</li>
 </ol>
+<p>这个过程展示了WireGuard如何在不需要传统网关的情况下，利用加密和隧道技术实现安全的点对点通信。</p>
+<h4 id="5-所以peer的每条往lan区域的流量都是先广播，到达了路由器就知道了交给wg0，然后再转发吗？不然其他peer也不知道我要往路由上的peer发送啊"><a href="#5-所以peer的每条往lan区域的流量都是先广播，到达了路由器就知道了交给wg0，然后再转发吗？不然其他peer也不知道我要往路由上的peer发送啊" class="headerlink" title="5. 所以peer的每条往lan区域的流量都是先广播，到达了路由器就知道了交给wg0，然后再转发吗？不然其他peer也不知道我要往路由上的peer发送啊"></a>5. 所以peer的每条往lan区域的流量都是先广播，到达了路由器就知道了交给wg0，然后再转发吗？不然其他peer也不知道我要往路由上的peer发送啊</h4><p>参照<strong>WireGuard数据包流动过程</strong>，再回答具体问题：</p>
+<ol>
+<li><p><strong>不是广播</strong>：WireGuard不使用广播机制。每个peer的流量都是经过精确路由的。</p>
+</li>
+<li><p><strong>路由决策</strong>：每个peer在发送数据包时，首先查看自己的路由表。如果目标IP属于WireGuard路由的网段，数据包就会被发送到WireGuard接口（如wg0）。</p>
+</li>
+<li><p><strong>Peer选择</strong>：WireGuard接口根据配置（特别是<code>AllowedIPs</code>字段）决定使用哪个peer的公钥来加密数据。</p>
+</li>
+<li><p><strong>路由器角色</strong>：当加密的数据包到达路由器时，路由器知道这是WireGuard流量，因为它是发往WireGuard监听的UDP端口的。</p>
+</li>
+<li><p><strong>转发过程</strong>：路由器解密数据包后，根据目标IP和自己的路由表决定如何转发。如果目标是LAN区域，它会直接转发到相应的接口。</p>
+</li>
+<li><p><strong>Peer间通信</strong>：其他peer不需要”知道”您要往路由器上的peer发送。每个peer只需要知道自己的直接连接对象（通常是路由器的WireGuard接口）。</p>
+</li>
+</ol>
+<p>所以，整个过程是基于配置和路由表的精确导向，而不是依赖广播。这就是为什么WireGuard能够高效且安全地工作，同时允许复杂的网络拓扑。</p>
+<h4 id="6-WireGuard数据包流动过程"><a href="#6-WireGuard数据包流动过程" class="headerlink" title="6. WireGuard数据包流动过程"></a>6. WireGuard数据包流动过程</h4><ol>
+<li><p><strong>初始路由决策</strong>:</p>
+<ul>
+<li>当一个peer要发送数据包时，它首先查看自己的路由表。</li>
+<li>路由表中包含了通过WireGuard接口（如wg0）可达的网段信息。</li>
+</ul>
+</li>
+<li><p><strong>WireGuard接口处理</strong>:</p>
+<ul>
+<li>如果目标IP属于WireGuard路由的网段，数据包被传递给WireGuard接口。</li>
+<li>WireGuard不使用广播，而是点对点加密通信。</li>
+</ul>
+</li>
+<li><p><strong>Peer选择</strong>:</p>
+<ul>
+<li>WireGuard查看其配置，确定哪个peer负责目标IP地址。</li>
+<li>这基于每个peer配置中的<code>AllowedIPs</code>字段。</li>
+</ul>
+</li>
+<li><p><strong>加密和封装</strong>:</p>
+<ul>
+<li>数据包被使用目标peer的公钥加密。</li>
+<li>加密后的数据被封装在UDP数据包中。</li>
+</ul>
+</li>
+<li><p><strong>发送到路由器</strong>:</p>
+<ul>
+<li>封装后的UDP包通过物理网络接口发送到路由器。</li>
+<li>路由器接收到这个UDP包，识别为WireGuard流量。</li>
+</ul>
+</li>
+<li><p><strong>路由器处理</strong>:</p>
+<ul>
+<li>路由器解封装WireGuard数据包。</li>
+<li>根据目标IP和路由表，决定如何转发。</li>
+</ul>
+</li>
+<li><p><strong>转发到LAN</strong>:</p>
+<ul>
+<li>如果目标是LAN区域，路由器直接将数据包转发到相应的LAN接口。</li>
+</ul>
+</li>
+<li><p><strong>返回路径</strong>:</p>
+<ul>
+<li>响应遵循类似的过程，但方向相反。</li>
+<li>LAN设备的响应通过路由器，再通过WireGuard隧道返回到原始peer。</li>
+</ul>
+</li>
+</ol>
+<p>这个过程是自动的，不需要广播。每个peer和路由器都基于其配置和路由表做出决策。</p>
 	  
 	</div>
 
