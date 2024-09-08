@@ -213,8 +213,8 @@
 </li>
 </ol>
 <p>这个过程展示了WireGuard如何在不需要传统网关的情况下，利用加密和隧道技术实现安全的点对点通信。</p>
-<h4 id="5-所以peer的每条往lan区域的流量都是先广播，到达了路由器就知道了交给wg0，然后再转发吗？不然其他peer也不知道我要往路由上的peer发送啊"><a href="#5-所以peer的每条往lan区域的流量都是先广播，到达了路由器就知道了交给wg0，然后再转发吗？不然其他peer也不知道我要往路由上的peer发送啊" class="headerlink" title="5. 所以peer的每条往lan区域的流量都是先广播，到达了路由器就知道了交给wg0，然后再转发吗？不然其他peer也不知道我要往路由上的peer发送啊"></a>5. 所以peer的每条往lan区域的流量都是先广播，到达了路由器就知道了交给wg0，然后再转发吗？不然其他peer也不知道我要往路由上的peer发送啊</h4><blockquote>
-<p>这触及了WireGuard和网络路由的核心工作原理。让我们详细分析这个过程:</p>
+<h4 id="5-所以peer的每条往lan区域的流量都是先广播，到达了路由器就知道了交给wg0，然后再转发吗？不然其他peer也不知道我要往路由上的peer发送啊"><a href="#5-所以peer的每条往lan区域的流量都是先广播，到达了路由器就知道了交给wg0，然后再转发吗？不然其他peer也不知道我要往路由上的peer发送啊" class="headerlink" title="5. 所以peer的每条往lan区域的流量都是先广播，到达了路由器就知道了交给wg0，然后再转发吗？不然其他peer也不知道我要往路由上的peer发送啊"></a>5. 所以peer的每条往lan区域的流量都是先广播，到达了路由器就知道了交给wg0，然后再转发吗？不然其他peer也不知道我要往路由上的peer发送啊</h4><p>这触及了WireGuard和网络路由的核心工作原理。让我们详细分析这个过程:</p>
+<blockquote>
 <h1 id="WireGuard数据包流动过程"><a href="#WireGuard数据包流动过程" class="headerlink" title="WireGuard数据包流动过程"></a>WireGuard数据包流动过程</h1><ol>
 <li><p><strong>初始路由决策</strong>:</p>
 <ul>
