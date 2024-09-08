@@ -14,7 +14,7 @@ nas黑群晖版本较低，不能直接将nas的5000端口通过`openwrt -> 网�
 
 
 #### 二、cloudflare动态路由
-在openwrt的`软件包`中下载`luci-i18n-ddns-zh-cn`。在ddns中`添加新服务`，发现在DDNS服务提供商中并没有cloudflare（`cloudflare.com-v4`）。ssh到openwrt，运行：
+在openwrt的`软件包`中下载`luci-i18n-ddns-zh-cn`。在ddns中`添加新服务`，发现在DDNS服务提供商中并没有cloudflare（`cloudflare.com-v4`）。在`软件包`里搜索安装`ddns-scripts-cloudflare`，或者ssh到openwrt，运行：
 ```shell
 opkg update && opkg install ddns-scripts_cloudflare.com-v4
 ```
