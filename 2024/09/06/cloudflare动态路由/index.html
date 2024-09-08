@@ -116,7 +116,7 @@
 <span id="more"></span>
 <p>所以需要一个VPN服务，在外网可以加入VPN，像在家中访问局域网内的NAS服务一样。</p>
 <p>家里又没有固定IP，所以需要ddns来获取到公网ip。通过域名连接+VPN加入家庭局域网。</p>
-<h4 id="二、cloudflare动态路由"><a href="#二、cloudflare动态路由" class="headerlink" title="二、cloudflare动态路由"></a>二、cloudflare动态路由</h4><p>在openwrt的<code>软件包</code>中下载<code>luci-i18n-ddns-zh-cn</code>。在ddns中<code>添加新服务</code>，发现在DDNS服务提供商中并没有cloudflare（<code>cloudflare.com-v4</code>）。ssh到openwrt，运行：</p>
+<h4 id="二、cloudflare动态路由"><a href="#二、cloudflare动态路由" class="headerlink" title="二、cloudflare动态路由"></a>二、cloudflare动态路由</h4><p>在openwrt的<code>软件包</code>中下载<code>luci-i18n-ddns-zh-cn</code>。在ddns中<code>添加新服务</code>，发现在DDNS服务提供商中并没有cloudflare（<code>cloudflare.com-v4</code>）。在<code>软件包</code>里搜索安装<code>ddns-scripts-cloudflare</code>，或者ssh到openwrt，运行：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opkg update &amp;&amp; opkg install ddns-scripts_cloudflare.com-v4</span><br></pre></td></tr></table></figure>
 <p>至此，软件包安装完成。</p>
 <p>添加ddns服务可以参照<a href="https://cloud.tencent.com/developer/article/2179526">这篇文章</a>。里面介绍了如何在cloudflare中获取token，如何新增ddns服务。若是在局域网中测试，但是<code>update_cloudflare_com_v4.sh</code>会检查要更新的IP地址是不是公网IP地址，所以可以将<code>IP地址来源</code>设置为URL，<code>用于检测的 URL</code>设置为<code>http://checkip.dyndns.com/</code>。</p>
