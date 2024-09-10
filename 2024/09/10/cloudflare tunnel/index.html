@@ -119,7 +119,9 @@
 <h3 id="2-3-服务器设置"><a href="#2-3-服务器设置" class="headerlink" title="2.3 服务器设置"></a>2.3 服务器设置</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64.deb &amp;&amp; </span><br><span class="line">sudo dpkg -i cloudflared.deb &amp;&amp; </span><br><span class="line">sudo cloudflared service install &lt; token &gt;</span><br></pre></td></tr></table></figure>
 <p>服务器端设置完成之后，到tunnel的dashboard上看，status为HEALTHY。</p>
 <p>服务器运行了<code>sudo cloudflared service install </code>之后就会创建<code>/etc/systemd/system/cloudflared.service</code>服务，会自启动。</p>
-<h3 id="2-4-配置cloudflare的tunnel"><a href="#2-4-配置cloudflare的tunnel" class="headerlink" title="2.4 配置cloudflare的tunnel"></a>2.4 配置cloudflare的tunnel</h3>	  
+<h3 id="2-4-配置cloudflare的tunnel"><a href="#2-4-配置cloudflare的tunnel" class="headerlink" title="2.4 配置cloudflare的tunnel"></a>2.4 配置cloudflare的tunnel</h3><p>edit tunnel页面上除了overall基本配置之外，还有Public Hostname和private Network。</p>
+<p>Public Hostname就是将内网的服务映射出去，类似于frp。更棒的是，在Public Hostname里Service可以直接配置内网内的其他主机，不需要在pi上做端口映射&#x2F;反向代理。</p>
+	  
 	</div>
 
 	<div>
