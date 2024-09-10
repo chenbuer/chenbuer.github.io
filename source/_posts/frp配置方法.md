@@ -82,7 +82,7 @@ systemctl start frps
 ```
 
 
-### 三、nsp
+### 三、nps
 [项目地址](https://github.com/ehang-io/nps)
 ### 四、gost
 [项目地址](https://github.com/go-gost/gost)
