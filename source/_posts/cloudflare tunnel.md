@@ -38,11 +38,11 @@ Server: TCP://DS_local_IP:6690
 ```
 ### 3.2 链接的客户端（使用桌面drive的电脑）设置
 桌面也需要一个cloudflared来和cloudflare之间创建一个warp连接，桌面从[此链接](https://github.com/cloudflare/cloudflared/releases)下载cloudflared。
-安装完成之后运行：
+安装完成之后运行**（注意此处类型选择TCP）**：
 ```shell
 cloudflared access tcp --hostname pcdrive.example.com --url localhost:6690
 ```
-再在桌面drive上创建一个连接：
+再在桌面drive上创建一个连接**（注意此处IP写本地localhost）**：
 ```shell
 IP、域名： 127.0.0.1
 账号：<username>
