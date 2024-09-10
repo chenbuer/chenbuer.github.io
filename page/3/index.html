@@ -115,6 +115,59 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> 2024-01-29 </div>
+			<div class="article-title"><a href="/2024/01/29/给github增加本地代理proxy/" >给github增加本地代理proxy</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	
+		<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p>GitHub被block，而且proxy server是基于https的，所以直接设置ssh代理有点麻烦。所以，将ssh改成https。</p>
+<ol>
+<li>购买VPS，设置https的代理服务</li>
+<li>设置本地的转发服务</li>
+<li>设置git proxy，指向本地proxy 服务</li>
+<li>修改本地已存在的repo，由ssh改成https
+		<!-- only display read_more button if there's more to display -->
+		<a type="button" href="/2024/01/29/给github增加本地代理proxy/#more" class="btn btn-default more">继续阅读</a>
+	
+	</div>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2018-07-28 </div>
+			<div class="article-title"><a href="/2018/07/28/buer系统部署/" >buer系统部署</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	
+		<h3 id="一、Nginx虚拟机"><a href="#一、Nginx虚拟机" class="headerlink" title="一、Nginx虚拟机"></a>一、Nginx虚拟机</h3><p>不再赘述，碰到一个坑就是：虚拟机配置好了，但是admin的url一直访问不了，原来是因为自己没有配置DNS的A类型域名解析。</p>
+		<!-- only display read_more button if there's more to display -->
+		<a type="button" href="/2018/07/28/buer系统部署/#more" class="btn btn-default more">继续阅读</a>
+	
+	</div>
+</div>
+
+           
+		
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> 2018-07-08 </div>
 			<div class="article-title"><a href="/2018/07/08/buer系统过程中的问题/" >buer系统过程中的问题</a></div>						
 		</h3>
@@ -153,62 +206,6 @@
 		<h3 id="一、处理cookie用模块js-cookie"><a href="#一、处理cookie用模块js-cookie" class="headerlink" title="一、处理cookie用模块js-cookie"></a>一、处理cookie用模块js-cookie</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Cookies</span> <span class="keyword">from</span> <span class="string">&#x27;js-cookie&#x27;</span></span><br><span class="line"><span class="comment">// 获取到cookie中key对应的value值</span></span><br><span class="line"><span class="keyword">return</span> <span class="title class_">Cookies</span>.<span class="title function_">get</span>(<span class="string">&quot;key&quot;</span>)</span><br><span class="line"><span class="comment">// 置cookie中key对应的值为value</span></span><br><span class="line"><span class="keyword">return</span> <span class="title class_">Cookies</span>.<span class="title function_">set</span>(<span class="string">&quot;key&quot;</span>, <span class="string">&quot;value&quot;</span>)</span><br></pre></td></tr></table></figure>
 		<!-- only display read_more button if there's more to display -->
 		<a type="button" href="/2018/07/01/vue学习/#more" class="btn btn-default more">继续阅读</a>
-	
-	</div>
-</div>
-
-           
-		
-           
-			  
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> 2018-06-19 </div>
-			<div class="article-title"><a href="/2018/06/19/nginx配置/" >nginx配置</a></div>						
-		</h3>
-	
-
-
-			  <div class="entry">
-  <div class="row">
-	
-	
-		<h3 id="Centos下降前段文件放到了buer家目录下"><a href="#Centos下降前段文件放到了buer家目录下" class="headerlink" title="Centos下降前段文件放到了buer家目录下"></a>Centos下降前段文件放到了buer家目录下</h3><p>修改Nginx配置之后，访问报403错误，是访问权限错误。修改方法：</p>
-<p>I solved this problem by adding user settings.</p>
-<p>in nginx.conf</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">worker_processes 4;</span><br><span class="line">user username</span><br></pre></td></tr></table></figure>
-<p>change the ‘username’ with linux user name.</p>
-		<!-- only display read_more button if there's more to display -->
-		<a type="button" href="/2018/06/19/nginx配置/#more" class="btn btn-default more">继续阅读</a>
-	
-	</div>
-</div>
-
-           
-		
-           
-			  
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> 2018-06-10 </div>
-			<div class="article-title"><a href="/2018/06/10/css/" >css</a></div>						
-		</h3>
-	
-
-
-			  <div class="entry">
-  <div class="row">
-	
-	
-		<h4 id="一、伪类，不一定只对a标签，其他标签也适用"><a href="#一、伪类，不一定只对a标签，其他标签也适用" class="headerlink" title="一、伪类，不一定只对a标签，其他标签也适用"></a>一、伪类，不一定只对a标签，其他标签也适用</h4><ul>
-<li>:link   a标签未访问状态</li>
-<li>:visited   已访问状态</li>
-<li>:hover    鼠标悬浮状态</li>
-<li>:active   激活状态，比如点击了
-		<!-- only display read_more button if there's more to display -->
-		<a type="button" href="/2018/06/10/css/#more" class="btn btn-default more">继续阅读</a>
 	
 	</div>
 </div>
@@ -287,7 +284,7 @@
 		
 			<li><a href="/categories/网络/">网络<span>3</span></a></li>
 		
-			<li><a href="/categories/运维/">运维<span>1</span></a></li>
+			<li><a href="/categories/运维/">运维<span>3</span></a></li>
 		
 		</ul>
 	</div>
@@ -298,37 +295,37 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/前端/">前端<span>2</span></a></li>
-		
-			<li><a href="/tags/hibernate/">hibernate<span>1</span></a></li>
-		
-			<li><a href="/tags/Hibernate/">Hibernate<span>1</span></a></li>
-		
-			<li><a href="/tags/apache2/">apache2<span>1</span></a></li>
-		
-			<li><a href="/tags/杂/">杂<span>1</span></a></li>
-		
 			<li><a href="/tags/JAVA/">JAVA<span>9</span></a></li>
 		
-			<li><a href="/tags/java/">java<span>2</span></a></li>
+			<li><a href="/tags/前端/">前端<span>2</span></a></li>
 		
-			<li><a href="/tags/javascript/">javascript<span>1</span></a></li>
-		
-			<li><a href="/tags/运维/">运维<span>1</span></a></li>
+			<li><a href="/tags/spring/">spring<span>3</span></a></li>
 		
 			<li><a href="/tags/tomcat/">tomcat<span>1</span></a></li>
 		
-			<li><a href="/tags/maven/">maven<span>1</span></a></li>
+			<li><a href="/tags/运维/">运维<span>1</span></a></li>
 		
-			<li><a href="/tags/网络/">网络<span>3</span></a></li>
+			<li><a href="/tags/apache2/">apache2<span>1</span></a></li>
 		
-			<li><a href="/tags/struts/">struts<span>1</span></a></li>
-		
-			<li><a href="/tags/yii2-tree-manager/">yii2-tree-manager<span>1</span></a></li>
+			<li><a href="/tags/Hibernate/">Hibernate<span>1</span></a></li>
 		
 			<li><a href="/tags/工具/">工具<span>9</span></a></li>
 		
-			<li><a href="/tags/spring/">spring<span>3</span></a></li>
+			<li><a href="/tags/yii2-tree-manager/">yii2-tree-manager<span>1</span></a></li>
+		
+			<li><a href="/tags/杂/">杂<span>1</span></a></li>
+		
+			<li><a href="/tags/maven/">maven<span>1</span></a></li>
+		
+			<li><a href="/tags/java/">java<span>2</span></a></li>
+		
+			<li><a href="/tags/hibernate/">hibernate<span>1</span></a></li>
+		
+			<li><a href="/tags/javascript/">javascript<span>1</span></a></li>
+		
+			<li><a href="/tags/struts/">struts<span>1</span></a></li>
+		
+			<li><a href="/tags/网络/">网络<span>5</span></a></li>
 		
 		 
 		</ul>
@@ -342,6 +339,14 @@
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2024/09/10/cloudflare tunnel/" ><i class="fa fa-file-o"></i>cloudflare tunnel</a>
+      </li>
+    
+      <li>
+        <a href="/2024/09/10/ubuntu server24.04 操作方法/" ><i class="fa fa-file-o"></i>ubuntu server24.04 操作方法</a>
+      </li>
+    
+      <li>
         <a href="/2024/09/07/WireGuard配置方法/" ><i class="fa fa-file-o"></i>WireGuard配置方法</a>
       </li>
     
@@ -351,14 +356,6 @@
     
       <li>
         <a href="/2024/09/03/frp配置方法/" ><i class="fa fa-file-o"></i>frp配置方法</a>
-      </li>
-    
-      <li>
-        <a href="/2024/08/27/OpenWrt旁路由/" ><i class="fa fa-file-o"></i>OpenWrt旁路由</a>
-      </li>
-    
-      <li>
-        <a href="/2024/01/29/升级hexo/" ><i class="fa fa-file-o"></i>升级hexo</a>
       </li>
     
   </ul>
