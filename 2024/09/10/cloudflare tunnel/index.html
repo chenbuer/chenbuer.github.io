@@ -124,9 +124,9 @@
 <h2 id="三、穿透非http-https服务"><a href="#三、穿透非http-https服务" class="headerlink" title="三、穿透非http&#x2F;https服务"></a>三、穿透非http&#x2F;https服务</h2><p>群辉的桌面drive使用的端口为6690，用http&#x2F;https服务不能完成同步任务。<a href="https://hackfang.me/nas-cloudflare-tunnel">这篇文章</a>给了解决方案。官方给出的解决方法参照<a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/use-cases/">该链接</a>。</p>
 <h3 id="3-1-cloudflare-tunnel仪表盘设置"><a href="#3-1-cloudflare-tunnel仪表盘设置" class="headerlink" title="3.1 cloudflare tunnel仪表盘设置"></a>3.1 cloudflare tunnel仪表盘设置</h3><p>在Public Hostname中添加一条记录：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Public hostname: pcdrive.example.com</span><br><span class="line">Server: TCP://DS_local_IP:6690</span><br></pre></td></tr></table></figure>
-<h3 id="3-2-链接的客户端（使用桌面drive的电脑）设置"><a href="#3-2-链接的客户端（使用桌面drive的电脑）设置" class="headerlink" title="3.2 链接的客户端（使用桌面drive的电脑）设置"></a>3.2 链接的客户端（使用桌面drive的电脑）设置</h3><p>桌面也需要一个cloudflared来和cloudflare之间创建一个warp连接，桌面从<a href="https://github.com/cloudflare/cloudflared/releases">此链接</a>下载cloudflared。<br>安装完成之后运行：</p>
+<h3 id="3-2-链接的客户端（使用桌面drive的电脑）设置"><a href="#3-2-链接的客户端（使用桌面drive的电脑）设置" class="headerlink" title="3.2 链接的客户端（使用桌面drive的电脑）设置"></a>3.2 链接的客户端（使用桌面drive的电脑）设置</h3><p>桌面也需要一个cloudflared来和cloudflare之间创建一个warp连接，桌面从<a href="https://github.com/cloudflare/cloudflared/releases">此链接</a>下载cloudflared。<br>安装完成之后运行<strong>（注意此处类型选择TCP）</strong>：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cloudflared access tcp --hostname pcdrive.example.com --url localhost:6690</span><br></pre></td></tr></table></figure>
-<p>再在桌面drive上创建一个连接：</p>
+<p>再在桌面drive上创建一个连接<strong>（注意此处IP写本地localhost）</strong>：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IP、域名： 127.0.0.1</span><br><span class="line">账号：&lt;username&gt;</span><br><span class="line">密码：&lt;password&gt;</span><br></pre></td></tr></table></figure>	  
 	</div>
 
