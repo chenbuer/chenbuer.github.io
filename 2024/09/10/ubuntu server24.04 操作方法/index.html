@@ -126,7 +126,10 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin yes #允许root登录</span><br><span class="line">PermitEmptyPasswords no #不允许空密码登录</span><br><span class="line">PasswordAuthentication yes # 设置是否使用口令验证。</span><br></pre></td></tr></table></figure>
 <p>配置后重启sshd服务：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ssh restart</span><br></pre></td></tr></table></figure>
-	  
+<h2 id="三、检查服务是否开机自启动"><a href="#三、检查服务是否开机自启动" class="headerlink" title="三、检查服务是否开机自启动"></a>三、检查服务是否开机自启动</h2><p>用命令二其一：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl is-enabled nginx</span><br><span class="line">systemctl status nginx</span><br></pre></td></tr></table></figure>
+<p>[检查服务是否开机自启动](&#x2F;images&#x2F;ubuntu server24.04 操作方法&#x2F;检查服务开机自启动.png)<br>若是disabled，设置开机自启动：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable xxx</span><br></pre></td></tr></table></figure>	  
 	</div>
 
 	<div>
