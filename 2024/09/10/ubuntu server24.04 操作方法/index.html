@@ -113,9 +113,8 @@
 
 	  <p>功能：</p>
 <ol>
-<li>配置了个cloudflared.server，作为cloudflare tunnel的Connector，接入cloudflare。</li>
-<li>配置了个gost.server，作转发节点。这是使用docker的前置条件。</li>
-<li>作docker客户端。<span id="more"></span></li>
+<li>作为cloudflare tunnel的Connector、配置了个cloudflared.server，接入cloudflare。</li>
+<li>作转发节点。配置了个gost.server，这是使用pi能使用docker的前置条件。(PS:不过在群辉配置好环境变量，能连接dockerhub之后，下载了gost，也就不需要它了。属于“过河拆桥”了)<span id="more"></span></li>
 </ol>
 <h2 id="一、网络配置"><a href="#一、网络配置" class="headerlink" title="一、网络配置"></a>一、网络配置</h2><h3 id="1-1-配置WiFi"><a href="#1-1-配置WiFi" class="headerlink" title="1.1 配置WiFi"></a>1.1 配置WiFi</h3><p>配置的password是经过加密的，利用<code>wpa_passphrase</code>:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">~$ </span><span class="language-bash">sudo wpa_passphrase <span class="string">&quot;wifiuser&quot;</span> <span class="string">&quot;wifipasswd&quot;</span></span></span><br><span class="line">network=&#123;</span><br><span class="line">        ssid=&quot;wifiuser&quot;</span><br><span class="line">        #psk=&quot;wifipasswd&quot;</span><br><span class="line">        psk=9d074d88c78d11caa5a8748f2751b88266c683010f272d94708f3064504f7cf1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
