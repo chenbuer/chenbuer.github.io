@@ -5,10 +5,14 @@ categories: 运维
 tags: 网络
 ---
 
+功能：
+1. 作为cloudflare tunnel的Connector、配置了个cloudflared.server，接入cloudflare。
+2. 作转发节点。配置了个gost.server，这是使用pi能使用docker的前置条件。(PS:不过在群辉配置好环境变量，能连接dockerhub之后，下载了gost，也就不需要它了。属于“过河拆桥”了)
+<!--more-->
+
 ## 一、网络配置
 ### 1.1 配置WiFi
 配置的password是经过加密的，利用`wpa_passphrase`:
-<!--more-->
 ```shell
 ~$ sudo wpa_passphrase "wifiuser" "wifipasswd"
 network={
@@ -62,7 +66,35 @@ network:
 sudo netplan apply
 ```
 
-## 二、scp拷贝文件到服务器
+## 二、配置镜像源
+`sudo vi /etc/apt/sources.list.d/ubuntu.sources`:
+```shell
+Types: deb
+URIs: http://ports.ubuntu.com/ubuntu-ports
+Suites: noble noble-updates noble-backports
+Components: main universe restricted multiverse
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+
+## Ubuntu security updates. Aside from URIs and Suites,
+## this should mirror your choices in the previous section.
+Types: deb
+URIs: http://ports.ubuntu.com/ubuntu-ports
+Suites: noble-security
+Components: main universe restricted multiverse
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+
+
+# 阿里云
+Types: deb
+URIs: http://mirrors.aliyun.com/ubuntu/
+Suites: noble noble-updates noble-security
+Components: main restricted universe multiverse
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+```
+原来的源不能删除，因为有些deb国内下载不了，比如`sudo apt install docker.io`
+
+
+## 三、scp拷贝文件到服务器
 ```shell
 > scp local_file_name root@server_ip:/path
 root@server_ip's password:
@@ -77,4 +109,49 @@ PasswordAuthentication yes # 设置是否使用口令验证。
 配置后重启sshd服务：
 ```shell
 /etc/init.d/ssh restart
+```
+## 四、检查服务是否开机自启动
+用命令二其一：
+```shell
+systemctl is-enabled gost.service
+systemctl status gost.service
+```
+![检查服务是否开机自启动](/images/ubuntu_server24.04_操作方法/检查服务开机自启动.png)
+若是disabled，设置开机自启动：
+```shell
+sudo systemctl enable gost.service
+```
+
+## 五、docker
+配置一个gost服务，略。
+```shell
+/opt/gost/gost -L :6666 -F proxy?auth=< auth >
+```
+在`sudo vi /etc/profile`中配置环境变量：
+```shell
+export http_proxy=http://127.0.0.1:6666
+export https_proxy=http://127.0.0.1:6666
+```
+使生效：
+```shell
+source /etc/profile
+```
+### 问题：配置好了之后`sudo docker search gost`仍然报错
+报错内容：
+```shell
+sudo HTTP_PROXY=http://127.0.0.1:6666 HTTPS_PROXY=http://127.0.0.1:6666 docker search gost
+[sudo] password for buer:
+Error response from daemon: Get "https://index.docker.io/v1/search?q=gost&n=25": dial tcp 104.16.252.55:443: i/o timeout
+```
+原因（来自AI）：***Docker 守护进程的代理设置***:命令行中设置的代理环境变量只对当前命令生效,不会影响 Docker 守护进程。Docker 守护进程需要单独配置代理。为 Docker 守护进程配置代理:
+- 编辑 Docker 服务文件(通常在 `/etc/systemd/system/docker.service.d/http-proxy.conf`),添加:
+```
+[Service]
+Environment="HTTP_PROXY=http://127.0.0.1:6666"
+Environment="HTTPS_PROXY=http://127.0.0.1:6666"
+```
+- 然后重启 Docker 服务:
+```
+sudo systemctl daemon-reload
+sudo systemctl restart docker
 ```
