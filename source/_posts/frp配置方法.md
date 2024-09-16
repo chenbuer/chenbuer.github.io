@@ -114,6 +114,5 @@ journalctl -u frpc.service -n 50
 
 ### 四、参考资料
 - [成功配置了web穿透](https://www.talaxy.site/lets-use-frp/)
-- [原理](https://sspai.com/post/52523)（还没看）
 - [暴露内网ssh服务（官方教程）](https://gofrp.org/zh-cn/docs/examples/stcp/)
 - [暴露内网web服务（官方教程）](https://gofrp.org/zh-cn/docs/examples/vhost-http/)
