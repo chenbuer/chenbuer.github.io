@@ -86,7 +86,31 @@ bindPort = 6000
 ssh -o Port=6000 buer@127.0.0.1
 ```
 
-#### 2.4 openwrt-frpc
+#### 2.4 https
+```shell
+serverAddr = "www.proxy.com"
+serverPort = 7000
+
+[[proxies]]
+name = "video_web"
+type = "https"
+customDomains = ["video.proxy.com"]
+
+[proxies.plugin]
+type = "https2http"
+localAddr = "127.0.0.1:8096"
+
+# HTTPS 证书相关的配置
+crtPath = "/opt/frpc/ssl/fullchain.crt"
+keyPath = "/opt/frpc/ssl/privkey.key"
+hostHeaderRewrite = "127.0.0.1"
+requestHeaders.set.x-from-where = "frp"
+```
+ssl证书我是用letsencrypt获得的，
+**linux下生成的证书为fullchain.pem格式，复制到Windows上改成.crt后缀即可**
+**linux下生成的证书为privkey.pem格式，复制到Windows上改成.key后缀即可**
+
+#### 2.5 openwrt-frpc
 在openwrt上配置，试了几次都没有成功连接上。以下方法也不行。frpc版本和luci本身的问题？
 是c-s架构，由于openwrt自带的软件包更新不及时，查看最新的openwrt-frp：（下载的是`aarch64_generic`版本）
 ```shell
@@ -116,3 +140,6 @@ journalctl -u frpc.service -n 50
 - [成功配置了web穿透](https://www.talaxy.site/lets-use-frp/)
 - [暴露内网ssh服务（官方教程）](https://gofrp.org/zh-cn/docs/examples/stcp/)
 - [暴露内网web服务（官方教程）](https://gofrp.org/zh-cn/docs/examples/vhost-http/)
+- https
+    - [配置示例博客](https://www.cnblogs.com/shook/p/12790532.html)
+    - [暴露内网https服务（官方教程）](https://gofrp.org/zh-cn/docs/examples/https2http/)
