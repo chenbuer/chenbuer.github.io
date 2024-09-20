@@ -1,6 +1,6 @@
 ---
 title: frp配置方法
-date: 2024-9-14 17:35:52
+date: 2024-9-20 17:35:52
 categories: 运维
 tags: 网络
 ---
