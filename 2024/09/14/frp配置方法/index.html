@@ -138,7 +138,9 @@
 <p>然后本地就可以ssh登录了：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -o Port=6000 buer@127.0.0.1</span><br></pre></td></tr></table></figure>
 
-<h4 id="2-4-openwrt-frpc"><a href="#2-4-openwrt-frpc" class="headerlink" title="2.4 openwrt-frpc"></a>2.4 openwrt-frpc</h4><p>在openwrt上配置，试了几次都没有成功连接上。以下方法也不行。frpc版本和luci本身的问题？<br>是c-s架构，由于openwrt自带的软件包更新不及时，查看最新的openwrt-frp：（下载的是<code>aarch64_generic</code>版本）</p>
+<h4 id="2-4-https"><a href="#2-4-https" class="headerlink" title="2.4 https"></a>2.4 https</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">serverAddr = &quot;www.proxy.com&quot;</span><br><span class="line">serverPort = 7000</span><br><span class="line"></span><br><span class="line">[[proxies]]</span><br><span class="line">name = &quot;video_web&quot;</span><br><span class="line">type = &quot;https&quot;</span><br><span class="line">customDomains = [&quot;video.proxy.com&quot;]</span><br><span class="line"></span><br><span class="line">[proxies.plugin]</span><br><span class="line">type = &quot;https2http&quot;</span><br><span class="line">localAddr = &quot;127.0.0.1:8096&quot;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">HTTPS 证书相关的配置</span></span><br><span class="line">crtPath = &quot;/opt/frpc/ssl/fullchain.crt&quot;</span><br><span class="line">keyPath = &quot;/opt/frpc/ssl/privkey.key&quot;</span><br><span class="line">hostHeaderRewrite = &quot;127.0.0.1&quot;</span><br><span class="line">requestHeaders.set.x-from-where = &quot;frp&quot;</span><br></pre></td></tr></table></figure>
+<p>ssl证书我是用letsencrypt获得的，<br><strong>linux下生成的证书为fullchain.pem格式，复制到Windows上改成.crt后缀即可</strong><br><strong>linux下生成的证书为privkey.pem格式，复制到Windows上改成.key后缀即可</strong></p>
+<h4 id="2-5-openwrt-frpc"><a href="#2-5-openwrt-frpc" class="headerlink" title="2.5 openwrt-frpc"></a>2.5 openwrt-frpc</h4><p>在openwrt上配置，试了几次都没有成功连接上。以下方法也不行。frpc版本和luci本身的问题？<br>是c-s架构，由于openwrt自带的软件包更新不及时，查看最新的openwrt-frp：（下载的是<code>aarch64_generic</code>版本）</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/kuoruan/openwrt-frp/releases/download/v0.57.0-1/frpc_0.57.0-r1_aarch64_generic.ipk</span><br><span class="line">opkg install frpc_0.57.0-r1_aarch64_generic.ipk</span><br></pre></td></tr></table></figure>
 
 <p>luci界面：参考<a href="https://hwhloveslife.com/?p=20">这篇文章</a>，他强调了，luci-app-frpc请使用1.4-2版本：</p>
@@ -151,6 +153,11 @@
 <li><a href="https://www.talaxy.site/lets-use-frp/">成功配置了web穿透</a></li>
 <li><a href="https://gofrp.org/zh-cn/docs/examples/stcp/">暴露内网ssh服务（官方教程）</a></li>
 <li><a href="https://gofrp.org/zh-cn/docs/examples/vhost-http/">暴露内网web服务（官方教程）</a></li>
+<li>https<ul>
+<li><a href="https://www.cnblogs.com/shook/p/12790532.html">配置示例博客</a></li>
+<li><a href="https://gofrp.org/zh-cn/docs/examples/https2http/">暴露内网https服务（官方教程）</a></li>
+</ul>
+</li>
 </ul>
 	  
 	</div>
