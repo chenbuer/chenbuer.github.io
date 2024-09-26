@@ -187,9 +187,38 @@
 		
             
 		
+            
+		
         
         <!-- render other articles -->
         
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2024-09-24 </div>
+			<div class="article-title"><a href="/2024/09/24/家庭组网方法/" >家庭组网方法</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	
+		<p>openwrt</p>
+<ul>
+<li>固定群辉和pi获取的地址，不要手动配置他们的地址，因为没有显示器，连接不上就很麻烦</li>
+<li>配置端口映射</li>
+</ul>
+<h2 id="pi-ddns-go-cloudflare：cf-tunnel出去op和群辉5000等-nginx反向代理-jellyfin-挂载群辉samba-测试-任务，编辑-etc-fstab，末尾增加一行-编辑之后sudo-systemctl-daemon-reload-sudo-mount-a去挂载-nginx反向代理https-www-bilibili-com-video-BV1ULbJevEGj-https-mixuying-com-archives-1720316602169群辉"><a href="#pi-ddns-go-cloudflare：cf-tunnel出去op和群辉5000等-nginx反向代理-jellyfin-挂载群辉samba-测试-任务，编辑-etc-fstab，末尾增加一行-编辑之后sudo-systemctl-daemon-reload-sudo-mount-a去挂载-nginx反向代理https-www-bilibili-com-video-BV1ULbJevEGj-https-mixuying-com-archives-1720316602169群辉" class="headerlink" title="pi- ddns-go- cloudflare：cf tunnel出去op和群辉5000等- nginx反向代理- jellyfin- 挂载群辉samba    - 测试        - 任务，编辑/etc/fstab，末尾增加一行        - 编辑之后sudo systemctl daemon-reload &amp; sudo mount -a去挂载- nginx反向代理https://www.bilibili.com/video/BV1ULbJevEGj/https://mixuying.com/archives/1720316602169群辉"></a>pi<br>- ddns-go<br>- cloudflare：cf tunnel出去op和群辉5000等<br>- nginx反向代理<br>- jellyfin<br>- 挂载群辉samba<br>    - 测试<br>    <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mount -t cifs //172.16.18.18/docker/jellyfin/media /mnt/ds/media -o username=jellyfin,password=oIuezh,vers=2.0</span><br></pre></td></tr></table></figure><br>    - 任务，编辑<code>/etc/fstab</code>，末尾增加一行<br>    <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//172.16.18.18/docker/jellyfin/media /mnt/ds/media cifs username=jellyfin,password=oIuezh,vers=2.0,uid=1000,gid=1000,_netdev,x-systemd.automount,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s 0 0</span><br></pre></td></tr></table></figure><br>    - 编辑之后<code>sudo systemctl daemon-reload &amp; sudo mount -a</code>去挂载<br>- nginx反向代理<br><a href="https://www.bilibili.com/video/BV1ULbJevEGj/">https://www.bilibili.com/video/BV1ULbJevEGj/</a><br><a href="https://mixuying.com/archives/1720316602169">https://mixuying.com/archives/1720316602169</a><br>群辉</h2>
+	
+	</div>
+</div>
+
+           
+		
            
 			  
 	
@@ -272,30 +301,6 @@
 
            
 		
-           
-			  
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> 2024-09-07 </div>
-			<div class="article-title"><a href="/2024/09/07/WireGuard配置方法/" >WireGuard配置方法</a></div>						
-		</h3>
-	
-
-
-			  <div class="entry">
-  <div class="row">
-	
-	
-		<p>接入家庭局域网有多种方式：<a href="https://github.com/OpenVPN/openvpn">openVPN</a>、<a href="https://github.com/tailscale/tailscale">Tailscale</a>、<a href="https://gofrp.org/zh-cn/">frp</a>、<a href="https://github.com/ehang-io/nps">nps</a>、<a href="https://www.zerotier.com/">ZeroTier</a>（zerotier的配置信息看<a href="https://www.bilibili.com/video/BV1Vh411F7Mr">视频</a>）等等。但若是可以拨号获得一个公网IP，则不需要公网的服务器搭建一个转发服务，构建VPN局域网。这里选择的是<a href="https://www.youtube.com/watch?v=F8z74oE71Gg">WireGuard</a>。</p>
-		<!-- only display read_more button if there's more to display -->
-		<a type="button" href="/2024/09/07/WireGuard配置方法/#more" class="btn btn-default more">继续阅读</a>
-	
-	</div>
-</div>
-
-           
-		
 
 		</div>
 
@@ -368,7 +373,7 @@
 		
 			<li><a href="/categories/网络/">网络<span>2</span></a></li>
 		
-			<li><a href="/categories/运维/">运维<span>4</span></a></li>
+			<li><a href="/categories/运维/">运维<span>5</span></a></li>
 		
 		</ul>
 	</div>
@@ -379,37 +384,37 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/前端/">前端<span>2</span></a></li>
-		
-			<li><a href="/tags/网络/">网络<span>5</span></a></li>
-		
-			<li><a href="/tags/java/">java<span>2</span></a></li>
+			<li><a href="/tags/工具/">工具<span>9</span></a></li>
 		
 			<li><a href="/tags/hibernate/">hibernate<span>1</span></a></li>
 		
-			<li><a href="/tags/JAVA/">JAVA<span>9</span></a></li>
-		
 			<li><a href="/tags/杂/">杂<span>1</span></a></li>
 		
-			<li><a href="/tags/javascript/">javascript<span>1</span></a></li>
-		
-			<li><a href="/tags/tomcat/">tomcat<span>1</span></a></li>
-		
-			<li><a href="/tags/apache2/">apache2<span>1</span></a></li>
-		
-			<li><a href="/tags/工具/">工具<span>9</span></a></li>
-		
-			<li><a href="/tags/struts/">struts<span>1</span></a></li>
-		
-			<li><a href="/tags/运维/">运维<span>1</span></a></li>
+			<li><a href="/tags/JAVA/">JAVA<span>9</span></a></li>
 		
 			<li><a href="/tags/maven/">maven<span>1</span></a></li>
 		
-			<li><a href="/tags/spring/">spring<span>3</span></a></li>
+			<li><a href="/tags/java/">java<span>2</span></a></li>
+		
+			<li><a href="/tags/tomcat/">tomcat<span>1</span></a></li>
+		
+			<li><a href="/tags/运维/">运维<span>1</span></a></li>
 		
 			<li><a href="/tags/Hibernate/">Hibernate<span>1</span></a></li>
 		
 			<li><a href="/tags/yii2-tree-manager/">yii2-tree-manager<span>1</span></a></li>
+		
+			<li><a href="/tags/struts/">struts<span>1</span></a></li>
+		
+			<li><a href="/tags/spring/">spring<span>3</span></a></li>
+		
+			<li><a href="/tags/apache2/">apache2<span>1</span></a></li>
+		
+			<li><a href="/tags/网络/">网络<span>6</span></a></li>
+		
+			<li><a href="/tags/javascript/">javascript<span>1</span></a></li>
+		
+			<li><a href="/tags/前端/">前端<span>2</span></a></li>
 		
 		 
 		</ul>
@@ -421,6 +426,10 @@
 <div class="widget">
   <h4>最新文章</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2024/09/24/家庭组网方法/" ><i class="fa fa-file-o"></i>家庭组网方法</a>
+      </li>
     
       <li>
         <a href="/2024/09/20/frp配置方法/" ><i class="fa fa-file-o"></i>frp配置方法</a>
@@ -436,10 +445,6 @@
     
       <li>
         <a href="/2024/09/07/WireGuard配置方法/" ><i class="fa fa-file-o"></i>WireGuard配置方法</a>
-      </li>
-    
-      <li>
-        <a href="/2024/09/06/cloudflare动态路由/" ><i class="fa fa-file-o"></i>cloudflare动态路由</a>
       </li>
     
   </ul>
