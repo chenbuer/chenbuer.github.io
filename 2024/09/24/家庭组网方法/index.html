@@ -111,12 +111,24 @@
 	<div class="mypage">		
 	  		
 
-	  <p>openwrt</p>
-<ul>
+	  <h2 id="一、openwrt"><a href="#一、openwrt" class="headerlink" title="一、openwrt"></a>一、openwrt</h2><ul>
 <li>固定群辉和pi获取的地址，不要手动配置他们的地址，因为没有显示器，连接不上就很麻烦</li>
-<li>配置端口映射</li>
+<li>配置端口映射<span id="more"></span></li>
 </ul>
-<h2 id="pi-ddns-go-cloudflare：cf-tunnel出去op和群辉5000等-nginx反向代理-jellyfin-挂载群辉samba-测试-任务，编辑-etc-fstab，末尾增加一行-编辑之后sudo-systemctl-daemon-reload-sudo-mount-a去挂载-nginx反向代理https-www-bilibili-com-video-BV1ULbJevEGj-https-mixuying-com-archives-1720316602169群辉"><a href="#pi-ddns-go-cloudflare：cf-tunnel出去op和群辉5000等-nginx反向代理-jellyfin-挂载群辉samba-测试-任务，编辑-etc-fstab，末尾增加一行-编辑之后sudo-systemctl-daemon-reload-sudo-mount-a去挂载-nginx反向代理https-www-bilibili-com-video-BV1ULbJevEGj-https-mixuying-com-archives-1720316602169群辉" class="headerlink" title="pi- ddns-go- cloudflare：cf tunnel出去op和群辉5000等- nginx反向代理- jellyfin- 挂载群辉samba    - 测试        - 任务，编辑/etc/fstab，末尾增加一行        - 编辑之后sudo systemctl daemon-reload &amp; sudo mount -a去挂载- nginx反向代理https://www.bilibili.com/video/BV1ULbJevEGj/https://mixuying.com/archives/1720316602169群辉"></a>pi<br>- ddns-go<br>- cloudflare：cf tunnel出去op和群辉5000等<br>- nginx反向代理<br>- jellyfin<br>- 挂载群辉samba<br>    - 测试<br>    <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mount -t cifs //172.16.18.18/docker/jellyfin/media /mnt/ds/media -o username=jellyfin,password=oIuezh,vers=2.0</span><br></pre></td></tr></table></figure><br>    - 任务，编辑<code>/etc/fstab</code>，末尾增加一行<br>    <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//172.16.18.18/docker/jellyfin/media /mnt/ds/media cifs username=jellyfin,password=oIuezh,vers=2.0,uid=1000,gid=1000,_netdev,x-systemd.automount,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s 0 0</span><br></pre></td></tr></table></figure><br>    - 编辑之后<code>sudo systemctl daemon-reload &amp; sudo mount -a</code>去挂载<br>- nginx反向代理<br><a href="https://www.bilibili.com/video/BV1ULbJevEGj/">https://www.bilibili.com/video/BV1ULbJevEGj/</a><br><a href="https://mixuying.com/archives/1720316602169">https://mixuying.com/archives/1720316602169</a><br>群辉</h2>	  
+<h2 id="二、pi"><a href="#二、pi" class="headerlink" title="二、pi"></a>二、pi</h2><ul>
+<li>ddns-go</li>
+<li>cloudflare：cf tunnel出去op和群辉5000等</li>
+<li>nginx反向代理</li>
+<li>jellyfin</li>
+<li>挂载群辉samba<ul>
+<li>测试  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mount -t cifs //172.16.18.18/docker/jellyfin/media /mnt/ds/media -o username=jellyfin,password=oIuezh,vers=2.0</span><br></pre></td></tr></table></figure></li>
+<li>任务，编辑<code>/etc/fstab</code>，末尾增加一行  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//172.16.18.18/docker/jellyfin/media /mnt/ds/media cifs username=jellyfin,password=oIuezh,vers=2.0,uid=1000,gid=1000,_netdev,x-systemd.automount,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s 0 0</span><br></pre></td></tr></table></figure></li>
+<li>编辑之后<code>sudo systemctl daemon-reload &amp; sudo mount -a</code>去挂载</li>
+</ul>
+</li>
+<li>nginx反向代理<br><a href="https://www.bilibili.com/video/BV1ULbJevEGj/">https://www.bilibili.com/video/BV1ULbJevEGj/</a><br><a href="https://mixuying.com/archives/1720316602169">https://mixuying.com/archives/1720316602169</a></li>
+</ul>
+<h2 id="三、群辉"><a href="#三、群辉" class="headerlink" title="三、群辉"></a>三、群辉</h2>	  
 	</div>
 
 	<div>

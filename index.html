@@ -207,12 +207,11 @@
   <div class="row">
 	
 	
-		<p>openwrt</p>
-<ul>
+		<h2 id="一、openwrt"><a href="#一、openwrt" class="headerlink" title="一、openwrt"></a>一、openwrt</h2><ul>
 <li>固定群辉和pi获取的地址，不要手动配置他们的地址，因为没有显示器，连接不上就很麻烦</li>
-<li>配置端口映射</li>
-</ul>
-<h2 id="pi-ddns-go-cloudflare：cf-tunnel出去op和群辉5000等-nginx反向代理-jellyfin-挂载群辉samba-测试-任务，编辑-etc-fstab，末尾增加一行-编辑之后sudo-systemctl-daemon-reload-sudo-mount-a去挂载-nginx反向代理https-www-bilibili-com-video-BV1ULbJevEGj-https-mixuying-com-archives-1720316602169群辉"><a href="#pi-ddns-go-cloudflare：cf-tunnel出去op和群辉5000等-nginx反向代理-jellyfin-挂载群辉samba-测试-任务，编辑-etc-fstab，末尾增加一行-编辑之后sudo-systemctl-daemon-reload-sudo-mount-a去挂载-nginx反向代理https-www-bilibili-com-video-BV1ULbJevEGj-https-mixuying-com-archives-1720316602169群辉" class="headerlink" title="pi- ddns-go- cloudflare：cf tunnel出去op和群辉5000等- nginx反向代理- jellyfin- 挂载群辉samba    - 测试        - 任务，编辑/etc/fstab，末尾增加一行        - 编辑之后sudo systemctl daemon-reload &amp; sudo mount -a去挂载- nginx反向代理https://www.bilibili.com/video/BV1ULbJevEGj/https://mixuying.com/archives/1720316602169群辉"></a>pi<br>- ddns-go<br>- cloudflare：cf tunnel出去op和群辉5000等<br>- nginx反向代理<br>- jellyfin<br>- 挂载群辉samba<br>    - 测试<br>    <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mount -t cifs //172.16.18.18/docker/jellyfin/media /mnt/ds/media -o username=jellyfin,password=oIuezh,vers=2.0</span><br></pre></td></tr></table></figure><br>    - 任务，编辑<code>/etc/fstab</code>，末尾增加一行<br>    <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//172.16.18.18/docker/jellyfin/media /mnt/ds/media cifs username=jellyfin,password=oIuezh,vers=2.0,uid=1000,gid=1000,_netdev,x-systemd.automount,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s 0 0</span><br></pre></td></tr></table></figure><br>    - 编辑之后<code>sudo systemctl daemon-reload &amp; sudo mount -a</code>去挂载<br>- nginx反向代理<br><a href="https://www.bilibili.com/video/BV1ULbJevEGj/">https://www.bilibili.com/video/BV1ULbJevEGj/</a><br><a href="https://mixuying.com/archives/1720316602169">https://mixuying.com/archives/1720316602169</a><br>群辉</h2>
+<li>配置端口映射
+		<!-- only display read_more button if there's more to display -->
+		<a type="button" href="/2024/09/24/家庭组网方法/#more" class="btn btn-default more">继续阅读</a>
 	
 	</div>
 </div>
@@ -289,7 +288,7 @@
   <div class="row">
 	
 	
-		<p>功能：</p>
+		<p>用<code>树莓派镜像烧录器(Raspberry Pi Imager)</code>烧录系统，在烧录系统的时候就可以配置用户名、密码、主机名、wifi等，这样就不需要先用键盘&#x2F;显示器登录。<br>功能：</p>
 <ol>
 <li>作为cloudflare tunnel的Connector、配置了个cloudflared.server，接入cloudflare。</li>
 <li>作转发节点。配置了个gost.server，这是使用pi能使用docker的前置条件。(PS:不过在群辉配置好环境变量，能连接dockerhub之后，下载了gost，也就不需要它了。属于“过河拆桥”了)
@@ -384,37 +383,37 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/工具/">工具<span>9</span></a></li>
-		
-			<li><a href="/tags/hibernate/">hibernate<span>1</span></a></li>
-		
-			<li><a href="/tags/杂/">杂<span>1</span></a></li>
+			<li><a href="/tags/运维/">运维<span>1</span></a></li>
 		
 			<li><a href="/tags/JAVA/">JAVA<span>9</span></a></li>
 		
-			<li><a href="/tags/maven/">maven<span>1</span></a></li>
+			<li><a href="/tags/前端/">前端<span>2</span></a></li>
 		
-			<li><a href="/tags/java/">java<span>2</span></a></li>
+			<li><a href="/tags/工具/">工具<span>9</span></a></li>
 		
 			<li><a href="/tags/tomcat/">tomcat<span>1</span></a></li>
 		
-			<li><a href="/tags/运维/">运维<span>1</span></a></li>
+			<li><a href="/tags/javascript/">javascript<span>1</span></a></li>
 		
-			<li><a href="/tags/Hibernate/">Hibernate<span>1</span></a></li>
+			<li><a href="/tags/杂/">杂<span>1</span></a></li>
 		
 			<li><a href="/tags/yii2-tree-manager/">yii2-tree-manager<span>1</span></a></li>
 		
 			<li><a href="/tags/struts/">struts<span>1</span></a></li>
 		
-			<li><a href="/tags/spring/">spring<span>3</span></a></li>
+			<li><a href="/tags/hibernate/">hibernate<span>1</span></a></li>
 		
-			<li><a href="/tags/apache2/">apache2<span>1</span></a></li>
+			<li><a href="/tags/maven/">maven<span>1</span></a></li>
+		
+			<li><a href="/tags/java/">java<span>2</span></a></li>
+		
+			<li><a href="/tags/spring/">spring<span>3</span></a></li>
 		
 			<li><a href="/tags/网络/">网络<span>6</span></a></li>
 		
-			<li><a href="/tags/javascript/">javascript<span>1</span></a></li>
+			<li><a href="/tags/apache2/">apache2<span>1</span></a></li>
 		
-			<li><a href="/tags/前端/">前端<span>2</span></a></li>
+			<li><a href="/tags/Hibernate/">Hibernate<span>1</span></a></li>
 		
 		 
 		</ul>
