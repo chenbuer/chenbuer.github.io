@@ -236,13 +236,13 @@ Error response from daemon: Get "https://index.docker.io/v1/search?q=gost&n=25":
 ```
 原因（来自AI，后面也找到了依据，在下面的参考文档里）：***Docker 守护进程的代理设置***:命令行中设置的代理环境变量只对当前命令生效,不会影响 Docker 守护进程。Docker 守护进程需要单独配置代理。为 Docker 守护进程配置代理:
 - 编辑 Docker 服务文件(通常在 `/etc/systemd/system/docker.service.d/http-proxy.conf`),添加:
-```
+```shell
 [Service]
 Environment="HTTP_PROXY=http://127.0.0.1:6666"
 Environment="HTTPS_PROXY=http://127.0.0.1:6666"
 ```
 - 然后重启 Docker 服务:
-```
+```shell
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
@@ -274,7 +274,3 @@ sudo mount -t cifs //samba_ip/path_to_floder /mnt/ds/media -o username=jellyfin,
 需要在server的.ssh/authorized_keys里面添加ssh client的publickey才能登录，不然不允许ssh登录。
 ### 7.2 修改配置文件
 修改`/etc/ssh/sshd_config.d/60-cloudimg-settings.conf`中的`PasswordAuthentication yes`，若是没有这个文件就到`/etc/ssh/sshd_config`中找。修改之后重启sshd服务`sudo systemctl restart sshd`
-
-## 八、seafile
-[在ubuntu server 24.04 上安装seafile](https://cloud.seafile.com/published/seafile-manual-cn/docker/%E7%94%A8Docker%E9%83%A8%E7%BD%B2Seafile.md)
-[使用教程](https://www.bilibili.com/video/BV13r4y187cL)
