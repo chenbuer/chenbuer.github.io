@@ -142,6 +142,20 @@
 <h2 id="三、配置定时重启"><a href="#三、配置定时重启" class="headerlink" title="三、配置定时重启"></a>三、配置定时重启</h2><p>防止长时间系统卡主，<code>crontab -e</code>添加一行定时任务：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 3 1 * * /usr/sbin/reboot</span><br></pre></td></tr></table></figure>
 <p>每个月1号凌晨3点重启一次</p>
+<h2 id="四、使用"><a href="#四、使用" class="headerlink" title="四、使用"></a>四、使用</h2><h3 id="4-1-创建用户"><a href="#4-1-创建用户" class="headerlink" title="4.1 创建用户"></a>4.1 创建用户</h3><p>管理员登录，<code>系统管理-&gt;用户</code></p>
+<h3 id="4-2-iphone上传下载失败"><a href="#4-2-iphone上传下载失败" class="headerlink" title="4.2 iphone上传下载失败"></a>4.2 iphone上传下载失败</h3><p>一直显示“排队上传中”或者“排队下载中”。参考<a href="https://blog.csdn.net/weixin_40559937/article/details/102544313">该配置</a>，管理员登入-&gt;系统管理-&gt;设置-&gt;设置<code>SERVICE_URL</code>或<code>FILE_SERVER_ROOT</code>为内网服务器地址。</p>
+<h3 id="4-3-不显示绿色小图标"><a href="#4-3-不显示绿色小图标" class="headerlink" title="4.3 不显示绿色小图标"></a>4.3 不显示绿色小图标</h3><p>重启。要是重启也不行，就需要修改注册表，参考<a href="https://bbs.seafile.com/t/seafile/1521/3">这篇文章</a>：</p>
+<ul>
+<li>打开运行,输入 regedit.</li>
+<li>移动到<code>HKEY_LOCAL_MACHINE-&gt;SOFTWARE-&gt;Microsoft-&gt;Windows-&gt;CurrentVersion-&gt;Explorer-&gt;ShellIconOverlayIdentifiers</code></li>
+<li>发现有6个 Seafile 开头的文件夹,将这些文件夹重命名,前面添加多几个空格.</li>
+<li>打开任务管理器,找到”windows 资源管理器”,右键,重新启动.</li>
+<li>OK 小绿标回来了.</li>
+</ul>
+<h3 id="4-4-重置密码"><a href="#4-4-重置密码" class="headerlink" title="4.4 重置密码"></a>4.4 重置密码</h3><p>用管理员用户登录，<code>系统管理-&gt;用户</code>，找到那个用户，重置密码，确认之后，上方有一个弹框，会给出新的密码。</p>
+<h3 id="4-5增加管理员"><a href="#4-5增加管理员" class="headerlink" title="4.5增加管理员"></a>4.5增加管理员</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it seafile bash</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入了seafile容器</span></span><br><span class="line">cd seafile-server-latest</span><br><span class="line">./reset-admin.sh</span><br></pre></td></tr></table></figure>
+<p>其实是添加管理员，即使是email和已有的管理员一致，它也是新增一个同样email的管理员，没测试出机制，不建议这样操作。</p>
+<h3 id="4-6-设置邮件通知"><a href="#4-6-设置邮件通知" class="headerlink" title="4.6 设置邮件通知"></a>4.6 设置邮件通知</h3><p><a href="https://cloud.seafile.com/published/seafile-manual-cn/config/sending_email.md">设置参考</a>，不设置了。</p>
 	  
 	</div>
 
