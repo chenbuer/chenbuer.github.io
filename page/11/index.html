@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>第 10 页 | 陈不二的博客</title>
+  <title>第 11 页 | 陈不二的博客</title>
   <meta name="author" content="陈不二">
   
   <meta name="description" content="谈技术也谈风月">
@@ -115,8 +115,8 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
-			<div class="date"> 2017-02-28 </div>
-			<div class="article-title"><a href="/2017/02/28/事务与spring的事务管理/" >事务与spring的事务管理</a></div>						
+			<div class="date"> 2011-05-20 </div>
+			<div class="article-title"><a href="/2011/05/20/上帝的本意：二值系统/" >上帝的本意：二值系统</a></div>						
 		</h3>
 	
 
@@ -125,93 +125,9 @@
   <div class="row">
 	
 	
-		<p>理解了spring的事务管理，必须要理解事务以及AOP，当然DI是基础，这样也就深刻理解了spring了。</p>
-<h3 id="一、事务的隔离级别"><a href="#一、事务的隔离级别" class="headerlink" title="一、事务的隔离级别"></a>一、事务的隔离级别</h3><p>可以参考<a href="http://www.ibm.com/developerworks/cn/education/opensource/os-cn-spring-trans/index.html">这篇文章</a>，对事务还是有不错的解释，但是讲解spring事务管理有点不清晰，简单的spring事务管理配置可以参考<a href="http://blog.csdn.net/bjyfb/article/details/8705684">这篇文章</a>。</p>
-<ol>
-<li>TransactionDefinition.ISOLATION_DEFAULT：这是默认值，表示使用底层数据库的默认隔离级别。对大部分数据库而言，通常这值就是TransactionDefinition.ISOLATION_READ_COMMITTED。</li>
-<li>TransactionDefinition.ISOLATION_READ_UNCOMMITTED：该隔离级别表示一个事务可以读取另一个事务修改但还没有提交的数据。该级别不能防止脏读和不可重复读，因此很少使用该隔离级别。
+		<p>昨天突然有这么一个想法，觉得，大自然赋予我们最原始的数制是二进制的：0和1，而我们人类一开始没有体会到上帝的本意最先创造了十进制。</p>
 		<!-- only display read_more button if there's more to display -->
-		<a type="button" href="/2017/02/28/事务与spring的事务管理/#more" class="btn btn-default more">继续阅读</a>
-	
-	</div>
-</div>
-
-           
-		
-           
-			  
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> 2017-02-16 </div>
-			<div class="article-title"><a href="/2017/02/16/maven初体验/" >maven初体验</a></div>						
-		</h3>
-	
-
-
-			  <div class="entry">
-  <div class="row">
-	
-	
-		<ol>
-<li>maven配置(本地仓库配置和本地设置、以及在eclipse中的配置)</li>
-</ol>
-<p>下载完成之后，创建环境变量<code>M2_HOME=E:\apache-maven-3.3.9</code>也就是指向安装目录。在path环境变量中添加<code>%M2_HOME%\bin</code>也就是指向安装目录。在path环境变量中添加<br>在eclipse中Window-&gt;Preference-&gt;Maven4MyEclipse中设置Installationsd到达安装目录，User Settins中设置配置文件在<code>E:\maven-repo\settings.xml</code></p>
-		<!-- only display read_more button if there's more to display -->
-		<a type="button" href="/2017/02/16/maven初体验/#more" class="btn btn-default more">继续阅读</a>
-	
-	</div>
-</div>
-
-           
-		
-           
-			  
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> 2017-02-13 </div>
-			<div class="article-title"><a href="/2017/02/13/静态网页/" >静态网页</a></div>						
-		</h3>
-	
-
-
-			  <div class="entry">
-  <div class="row">
-	
-	
-		<h3 id="一、添加categories、tags和about"><a href="#一、添加categories、tags和about" class="headerlink" title="一、添加categories、tags和about"></a>一、添加categories、tags和about</h3><p>在直接利用hexo和<a href="https://github.com/wzpan/hexo-theme-freemind">freemind</a>生成博客之后，点击categories、tags和about三个都是404的，</p>
-<ol>
-<li><p>categories和tags的生成方法是（参考<a href="https://github.com/wzpan/hexo-theme-freemind/issues/16">categories和tags页面生成方法</a>）：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1.manually create <span class="built_in">source</span>/categories/index.html and <span class="built_in">paste</span> the following contents：</span><br><span class="line"></span><br><span class="line">title: Categories</span><br><span class="line">layout: categories</span><br><span class="line">---</span><br><span class="line">2.manually create <span class="built_in">source</span>/tags/index.html and <span class="built_in">paste</span> the following contents：</span><br><span class="line"></span><br><span class="line">title: Tags</span><br><span class="line">layout: tags</span><br><span class="line">---</span><br><span class="line">3.restart hexo and refresh the browser</span><br></pre></td></tr></table></figure>
-		<!-- only display read_more button if there's more to display -->
-		<a type="button" href="/2017/02/13/静态网页/#more" class="btn btn-default more">继续阅读</a>
-	
-	</div>
-</div>
-
-           
-		
-           
-			  
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> 2017-02-11 </div>
-			<div class="article-title"><a href="/2017/02/11/Hibernate初体验/" >Hibernate初体验</a></div>						
-		</h3>
-	
-
-
-			  <div class="entry">
-  <div class="row">
-	
-	
-		<h3 id="一、Hibernate的操作流程"><a href="#一、Hibernate的操作流程" class="headerlink" title="一、Hibernate的操作流程"></a>一、Hibernate的操作流程</h3><blockquote>
-<p>在一个测试类中表示如下所示：</p>
-</blockquote>
-		<!-- only display read_more button if there's more to display -->
-		<a type="button" href="/2017/02/11/Hibernate初体验/#more" class="btn btn-default more">继续阅读</a>
+		<a type="button" href="/2011/05/20/上帝的本意：二值系统/#more" class="btn btn-default more">继续阅读</a>
 	
 	</div>
 </div>
@@ -228,13 +144,13 @@
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/page/9/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i> 上一页</a></li>
+    	<li class="prev"><a href="/page/10/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i> 上一页</a></li>
   		
 
         <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
 
 		
-		   <li class="next"> <a href="/page/11/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a> </li>          
+          <li class="next disabled"><a>下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -301,37 +217,37 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/Hibernate/">Hibernate<span>1</span></a></li>
-		
-			<li><a href="/tags/前端/">前端<span>2</span></a></li>
-		
-			<li><a href="/tags/javascript/">javascript<span>1</span></a></li>
-		
-			<li><a href="/tags/struts/">struts<span>1</span></a></li>
-		
-			<li><a href="/tags/JAVA/">JAVA<span>9</span></a></li>
-		
-			<li><a href="/tags/运维/">运维<span>1</span></a></li>
-		
-			<li><a href="/tags/maven/">maven<span>1</span></a></li>
-		
-			<li><a href="/tags/spring/">spring<span>3</span></a></li>
-		
-			<li><a href="/tags/工具/">工具<span>9</span></a></li>
-		
-			<li><a href="/tags/杂/">杂<span>1</span></a></li>
+			<li><a href="/tags/apache2/">apache2<span>1</span></a></li>
 		
 			<li><a href="/tags/yii2-tree-manager/">yii2-tree-manager<span>1</span></a></li>
 		
+			<li><a href="/tags/运维/">运维<span>1</span></a></li>
+		
+			<li><a href="/tags/tomcat/">tomcat<span>1</span></a></li>
+		
 			<li><a href="/tags/网络/">网络<span>7</span></a></li>
+		
+			<li><a href="/tags/spring/">spring<span>3</span></a></li>
+		
+			<li><a href="/tags/前端/">前端<span>2</span></a></li>
 		
 			<li><a href="/tags/hibernate/">hibernate<span>1</span></a></li>
 		
-			<li><a href="/tags/apache2/">apache2<span>1</span></a></li>
+			<li><a href="/tags/struts/">struts<span>1</span></a></li>
+		
+			<li><a href="/tags/maven/">maven<span>1</span></a></li>
 		
 			<li><a href="/tags/java/">java<span>2</span></a></li>
 		
-			<li><a href="/tags/tomcat/">tomcat<span>1</span></a></li>
+			<li><a href="/tags/杂/">杂<span>1</span></a></li>
+		
+			<li><a href="/tags/Hibernate/">Hibernate<span>1</span></a></li>
+		
+			<li><a href="/tags/JAVA/">JAVA<span>9</span></a></li>
+		
+			<li><a href="/tags/javascript/">javascript<span>1</span></a></li>
+		
+			<li><a href="/tags/工具/">工具<span>9</span></a></li>
 		
 		 
 		</ul>
