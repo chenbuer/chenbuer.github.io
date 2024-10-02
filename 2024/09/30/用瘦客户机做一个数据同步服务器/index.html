@@ -135,7 +135,7 @@
 <li><a href="https://cloud.seafile.com/published/seafile-manual-cn/docker/%E7%94%A8Docker%E9%83%A8%E7%BD%B2Seafile.md">在ubuntu server 24.04 上安装seafile</a></li>
 <li><a href="https://www.bilibili.com/video/BV13r4y187cL">使用教程</a></li>
 </ul>
-<h1 id="2-4-安装seafile客户端"><a href="#2-4-安装seafile客户端" class="headerlink" title="2.4 安装seafile客户端"></a>2.4 安装seafile客户端</h1><ul>
+<h3 id="2-4-安装seafile客户端"><a href="#2-4-安装seafile客户端" class="headerlink" title="2.4 安装seafile客户端"></a>2.4 安装seafile客户端</h3><ul>
 <li>win7<br>由于<a href="https://forum.seafile.com/t/in-which-version-of-client-for-windows-support-for-windows-7-was-disabled/21811">新版的qt不支持win7</a>，从别人备份的获取到了客户端：<a href="https://bbs.seafile.com/t/topic/19923">地址一</a>，<a href="https://www.iteait.com/archives/1204">地址二</a>。</li>
 <li>win10<br>从<a href="https://www.seafile.com/download/">官网</a>下载。不要下载挂载盘客户端，这个不落到自己的电脑，而是直接编辑在云端。</li>
 </ul>
@@ -156,6 +156,14 @@
 <h3 id="4-5增加管理员"><a href="#4-5增加管理员" class="headerlink" title="4.5增加管理员"></a>4.5增加管理员</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it seafile bash</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入了seafile容器</span></span><br><span class="line">cd seafile-server-latest</span><br><span class="line">./reset-admin.sh</span><br></pre></td></tr></table></figure>
 <p>其实是添加管理员，即使是email和已有的管理员一致，它也是新增一个同样email的管理员，没测试出机制，不建议这样操作。</p>
 <h3 id="4-6-设置邮件通知"><a href="#4-6-设置邮件通知" class="headerlink" title="4.6 设置邮件通知"></a>4.6 设置邮件通知</h3><p><a href="https://cloud.seafile.com/published/seafile-manual-cn/config/sending_email.md">设置参考</a>，不设置了。</p>
+<h2 id="五、小管家软件-数据恢复"><a href="#五、小管家软件-数据恢复" class="headerlink" title="五、小管家软件&amp;数据恢复"></a>五、小管家软件&amp;数据恢复</h2><ol>
+<li>seafile客户端恢复所有数据；</li>
+<li>安装小管家软件，软件为trxgjsoft.exe 安装包，从<a href="https://pc.qq.com/detail/0/detail_12200.html">该下载页</a>下载；</li>
+<li>把seafile同步到的数据全量拷贝到新的安装目录；</li>
+<li>创建个人用户，参考原来的账户信息，如“xx京东家电专卖店”等；</li>
+<li>将u盘（加密狗）插到新电脑；</li>
+<li>重新打开软件。</li>
+</ol>
 	  
 	</div>
 
