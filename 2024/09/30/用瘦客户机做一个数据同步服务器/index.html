@@ -156,6 +156,7 @@
 <h3 id="4-5增加管理员"><a href="#4-5增加管理员" class="headerlink" title="4.5增加管理员"></a>4.5增加管理员</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it seafile bash</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入了seafile容器</span></span><br><span class="line">cd seafile-server-latest</span><br><span class="line">./reset-admin.sh</span><br></pre></td></tr></table></figure>
 <p>其实是添加管理员，即使是email和已有的管理员一致，它也是新增一个同样email的管理员，没测试出机制，不建议这样操作。</p>
 <h3 id="4-6-设置邮件通知"><a href="#4-6-设置邮件通知" class="headerlink" title="4.6 设置邮件通知"></a>4.6 设置邮件通知</h3><p><a href="https://cloud.seafile.com/published/seafile-manual-cn/config/sending_email.md">设置参考</a>，不设置了。</p>
+<h3 id="4-7-文件被误删"><a href="#4-7-文件被误删" class="headerlink" title="4.7 文件被误删"></a>4.7 文件被误删</h3><p>登录seafile网页端；进入同步的文件夹；有一个时钟的同步，点击进入修改&#x2F;同步历史；找到被误删前面的镜像文件；选择“还原”。<br><a href="https://cloud.seafile.com/published/seafile-user-manual/web_client/file_history_recycle.md">参考操作方法</a></p>
 <h2 id="五、小管家软件-数据恢复"><a href="#五、小管家软件-数据恢复" class="headerlink" title="五、小管家软件&amp;数据恢复"></a>五、小管家软件&amp;数据恢复</h2><ol>
 <li>seafile客户端恢复所有数据；</li>
 <li>安装小管家软件，软件为trxgjsoft.exe 安装包，从<a href="https://pc.qq.com/detail/0/detail_12200.html">该下载页</a>下载；</li>
