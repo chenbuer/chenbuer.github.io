@@ -186,6 +186,11 @@
 </ul>
 <h2 id="七、修改ubuntu-server登录方式"><a href="#七、修改ubuntu-server登录方式" class="headerlink" title="七、修改ubuntu server登录方式"></a>七、修改ubuntu server登录方式</h2><h3 id="7-1-默认登录方式"><a href="#7-1-默认登录方式" class="headerlink" title="7.1 默认登录方式"></a>7.1 默认登录方式</h3><p>需要在server的.ssh&#x2F;authorized_keys里面添加ssh client的publickey才能登录，不然不允许ssh登录。</p>
 <h3 id="7-2-修改配置文件"><a href="#7-2-修改配置文件" class="headerlink" title="7.2 修改配置文件"></a>7.2 修改配置文件</h3><p>修改<code>/etc/ssh/sshd_config.d/60-cloudimg-settings.conf</code>中的<code>PasswordAuthentication yes</code>，若是没有这个文件就到<code>/etc/ssh/sshd_config</code>中找。修改之后重启sshd服务<code>sudo systemctl restart sshd</code></p>
+<h2 id="八、笔记本合上盖子之后休眠"><a href="#八、笔记本合上盖子之后休眠" class="headerlink" title="八、笔记本合上盖子之后休眠"></a>八、笔记本合上盖子之后休眠</h2><p><a href="https://blog.csdn.net/no1xium/article/details/107633520">参考博客</a></p>
+<ul>
+<li>修改配置文件<code>/etc/systemd/logind.conf</code>中的<code>HandleLidSwitch</code>选项为<code>ignore</code>:<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">HandleLidSwitch=<span class="built_in">suspend</span></span> </span><br><span class="line">HandleLidSwitch=ignore</span><br></pre></td></tr></table></figure>
+重启服务：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service systemd-logind restart</span><br></pre></td></tr></table></figure></li>
+</ul>
 	  
 	</div>
 

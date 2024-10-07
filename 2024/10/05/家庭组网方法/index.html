@@ -111,10 +111,17 @@
 	<div class="mypage">		
 	  		
 
-	  <h2 id="一、openwrt"><a href="#一、openwrt" class="headerlink" title="一、openwrt"></a>一、openwrt</h2><ul>
-<li>固定群辉和pi获取的地址，不要手动配置他们的地址，因为没有显示器，连接不上就很麻烦</li>
-<li>配置端口映射<span id="more"></span></li>
+	  <p>家庭可以获取公网ipv6，但没有公网ipv4。所以，openwrt功能：</p>
+<ul>
+<li>配置ipv6。openwrt进行pppoe拨号获取ipv4和ipv6，并给接入终端分配公网ipv6。</li>
+<li>配置ddns-go，域名可动态获取公网ipv6地址</li>
+<li>配置wireguard，在外的流量可以回家</li>
+<li>配置wol。在nas不需要的时候页面关闭，需要时候利用openwrt来wol唤醒</li>
+<li>cloudflare tunnel。TODO:&#x2F;&#x2F;看看放到哪台机器上。<span id="more"></span></li>
 </ul>
+<h2 id="一、配置ipv6"><a href="#一、配置ipv6" class="headerlink" title="一、配置ipv6"></a>一、配置ipv6</h2><p><a href="https://www.youtube.com/watch?v=dQ1AMXAiEJk">IPv6新手入门</a><br><a href="https://www.youtube.com/watch?v=klQ6JbZEeJ0">ipv6工作流程详解</a></p>
+<h2 id="二、ddns-go"><a href="#二、ddns-go" class="headerlink" title="二、ddns-go"></a>二、ddns-go</h2><h2 id="三、wireguard"><a href="#三、wireguard" class="headerlink" title="三、wireguard"></a>三、wireguard</h2><p>握手时，利用公网ipv6。握手成功之后，在外的终端设备就像加入了家庭的局域网，可以利用家庭局域网的ipv4地址进行互访。</p>
+<h2 id="四、wol"><a href="#四、wol" class="headerlink" title="四、wol"></a>四、wol</h2><p>安装luci-i18n-wol-zh-cn（依赖luci-i18n-wol和etherwake）。</p>
 <h2 id="二、pi"><a href="#二、pi" class="headerlink" title="二、pi"></a>二、pi</h2><ul>
 <li>ddns-go</li>
 <li>cloudflare：cf tunnel出去op和群辉5000等</li>
@@ -128,7 +135,7 @@
 </li>
 <li>nginx反向代理<br><a href="https://www.bilibili.com/video/BV1ULbJevEGj/">https://www.bilibili.com/video/BV1ULbJevEGj/</a><br><a href="https://mixuying.com/archives/1720316602169">https://mixuying.com/archives/1720316602169</a></li>
 </ul>
-<h2 id="三、群辉"><a href="#三、群辉" class="headerlink" title="三、群辉"></a>三、群辉</h2>	  
+	  
 	</div>
 
 	<div>
@@ -136,14 +143,14 @@
 	<div class="pagination">
 <ul class="pagination">
 	 
-				
-    	<li class="prev"><a href="/2024/09/30/用瘦客户机做一个数据同步服务器/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
-  		
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>归档</a></li>
 
 		
-		   <li class="next"><a href="/2024/09/20/frp配置方法/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+		   <li class="next"><a href="/2024/09/30/用瘦客户机做一个数据同步服务器/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -211,7 +218,7 @@ gitment.render('container')
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2024-09-24 
+	2024-10-05 
 	</div>
 	
 
