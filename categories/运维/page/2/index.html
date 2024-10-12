@@ -109,8 +109,8 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
-			<div class="date"> 2024-09-10 </div>
-			<div class="article-title"><a href="/2024/09/10/ubuntu server24.04 操作方法/" >ubuntu server24.04 操作方法</a></div>						
+			<div class="date"> 2024-09-20 </div>
+			<div class="article-title"><a href="/2024/09/20/frp配置方法/" >frp配置方法</a></div>						
 		</h3>
 	
 
@@ -119,12 +119,66 @@
   <div class="row">
 	
 	
-		<p>用<code>树莓派镜像烧录器(Raspberry Pi Imager)</code>烧录系统，在烧录系统的时候就可以配置用户名、密码、主机名、wifi等，这样就不需要先用键盘&#x2F;显示器登录。<br>功能：</p>
+		<p>将局域网内的服务暴露出去有几种方法：</p>
+<ol>
+<li>在路由器中配置为dmz区，就是将整个服务器所有接口全都暴露出去，较简单；</li>
+<li>有些路由器不支持dmz，只支持<strong>端口转发</strong>，该方法指定暴露出去的服务器端口&#x2F;具体服务；</li>
+<li>还有就是frp、nps（常年不维护，有漏洞）、<a href="https://blog.csdn.net/u011886447/article/details/73268407">ngrok</a></li>
+</ol>
+<p>frp配置方法就是这篇文章的介绍内容。</p>
+		<!-- only display read_more button if there's more to display -->
+		<a type="button" href="/2024/09/20/frp配置方法/#more" class="btn btn-default more">继续阅读</a>
+	
+	</div>
+</div>
+
+	  
+	    	
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2024-09-10 </div>
+			<div class="article-title"><a href="/2024/09/10/cloudflare tunnel/" >cloudflare tunnel</a></div>						
+		</h3>
+	
+
+
+	    	<div class="entry">
+  <div class="row">
+	
+	
+		<p>cloudflare tunnel是内网穿透工具，相比zerotier和tailscale要快很多，满足日常可用。</p>
+<h2 id="一、前置条件"><a href="#一、前置条件" class="headerlink" title="一、前置条件"></a>一、前置条件</h2><p>需要一个域名托管在cloudflare</p>
+		<!-- only display read_more button if there's more to display -->
+		<a type="button" href="/2024/09/10/cloudflare tunnel/#more" class="btn btn-default more">继续阅读</a>
+	
+	</div>
+</div>
+
+	  
+	    	
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2024-09-10 </div>
+			<div class="article-title"><a href="/2024/09/10/ubuntu server 操作方法/" >ubuntu server 操作方法</a></div>						
+		</h3>
+	
+
+
+	    	<div class="entry">
+  <div class="row">
+	
+	
+		<p><strong>主要使用的是20.04legacy版本，或24.04LTS版本</strong></p>
+<blockquote>
+<p>用<code>树莓派镜像烧录器(Raspberry Pi Imager)</code>烧录系统，在烧录系统的时候就可以配置用户名、密码、主机名、wifi等，这样就不需要先用键盘&#x2F;显示器登录。<br>功能：</p>
+</blockquote>
 <ol>
 <li>作为cloudflare tunnel的Connector、配置了个cloudflared.server，接入cloudflare。</li>
 <li>作转发节点。配置了个gost.server，这是使用pi能使用docker的前置条件。(PS:不过在群辉配置好环境变量，能连接dockerhub之后，下载了gost，也就不需要它了。属于“过河拆桥”了)
 		<!-- only display read_more button if there's more to display -->
-		<a type="button" href="/2024/09/10/ubuntu server24.04 操作方法/#more" class="btn btn-default more">继续阅读</a>
+		<a type="button" href="/2024/09/10/ubuntu server 操作方法/#more" class="btn btn-default more">继续阅读</a>
 	
 	</div>
 </div>
@@ -224,7 +278,7 @@
 		
 			<li><a href="/categories/网络/">网络<span>2</span></a></li>
 		
-			<li><a href="/categories/运维/">运维<span>6</span></a></li>
+			<li><a href="/categories/运维/">运维<span>8</span></a></li>
 		
 		</ul>
 	</div>
@@ -235,37 +289,37 @@
 		<h4>标签云</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/Hibernate/">Hibernate<span>1</span></a></li>
-		
-			<li><a href="/tags/yii2-tree-manager/">yii2-tree-manager<span>1</span></a></li>
-		
-			<li><a href="/tags/杂/">杂<span>1</span></a></li>
-		
-			<li><a href="/tags/工具/">工具<span>9</span></a></li>
-		
-			<li><a href="/tags/前端/">前端<span>2</span></a></li>
-		
-			<li><a href="/tags/JAVA/">JAVA<span>9</span></a></li>
-		
 			<li><a href="/tags/apache2/">apache2<span>1</span></a></li>
 		
+			<li><a href="/tags/网络/">网络<span>9</span></a></li>
+		
+			<li><a href="/tags/struts/">struts<span>1</span></a></li>
+		
 			<li><a href="/tags/javascript/">javascript<span>1</span></a></li>
+		
+			<li><a href="/tags/yii2-tree-manager/">yii2-tree-manager<span>1</span></a></li>
 		
 			<li><a href="/tags/spring/">spring<span>3</span></a></li>
 		
 			<li><a href="/tags/hibernate/">hibernate<span>1</span></a></li>
 		
-			<li><a href="/tags/maven/">maven<span>1</span></a></li>
+			<li><a href="/tags/杂/">杂<span>1</span></a></li>
 		
-			<li><a href="/tags/运维/">运维<span>1</span></a></li>
-		
-			<li><a href="/tags/tomcat/">tomcat<span>1</span></a></li>
-		
-			<li><a href="/tags/网络/">网络<span>7</span></a></li>
+			<li><a href="/tags/JAVA/">JAVA<span>9</span></a></li>
 		
 			<li><a href="/tags/java/">java<span>2</span></a></li>
 		
-			<li><a href="/tags/struts/">struts<span>1</span></a></li>
+			<li><a href="/tags/工具/">工具<span>9</span></a></li>
+		
+			<li><a href="/tags/前端/">前端<span>2</span></a></li>
+		
+			<li><a href="/tags/tomcat/">tomcat<span>1</span></a></li>
+		
+			<li><a href="/tags/Hibernate/">Hibernate<span>1</span></a></li>
+		
+			<li><a href="/tags/maven/">maven<span>1</span></a></li>
+		
+			<li><a href="/tags/运维/">运维<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -279,23 +333,23 @@
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2024/10/11/科技金融/" ><i class="fa fa-file-o"></i>科技金融</a>
+      </li>
+    
+      <li>
+        <a href="/2024/10/08/fnos使用/" ><i class="fa fa-file-o"></i>fnos使用</a>
+      </li>
+    
+      <li>
         <a href="/2024/10/05/家庭组网方法/" ><i class="fa fa-file-o"></i>家庭组网方法</a>
       </li>
     
       <li>
-        <a href="/2024/09/30/用瘦客户机做一个数据同步服务器/" ><i class="fa fa-file-o"></i>用瘦客户机做一个数据同步服务器</a>
+        <a href="/2024/09/30/用seafile做一个数据同步服务器/" ><i class="fa fa-file-o"></i>用seafile做一个数据同步服务器</a>
       </li>
     
       <li>
         <a href="/2024/09/20/frp配置方法/" ><i class="fa fa-file-o"></i>frp配置方法</a>
-      </li>
-    
-      <li>
-        <a href="/2024/09/10/cloudflare tunnel/" ><i class="fa fa-file-o"></i>cloudflare tunnel</a>
-      </li>
-    
-      <li>
-        <a href="/2024/09/10/ubuntu server24.04 操作方法/" ><i class="fa fa-file-o"></i>ubuntu server24.04 操作方法</a>
       </li>
     
   </ul>

@@ -1,0 +1,370 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ubuntu server 操作方法 | 陈不二的博客</title>
+  <meta name="author" content="陈不二">
+  
+  <meta name="description" content="谈技术也谈风月">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="ubuntu server 操作方法"/>
+  <meta property="og:site_name" content="陈不二的博客"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/logo.ico" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/cosmo.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar  navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">陈不二的博客</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="所有文章.">
+			  <i class="fa fa-archive"></i>归档
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>分类
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>标签
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="关于我.">
+			  <i class="fa fa-user"></i>关于我
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header ">		
+			<h1 class="title "> ubuntu server 操作方法</h1>
+		</div>		
+	
+
+
+
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p><strong>主要使用的是20.04legacy版本，或24.04LTS版本</strong></p>
+<blockquote>
+<p>用<code>树莓派镜像烧录器(Raspberry Pi Imager)</code>烧录系统，在烧录系统的时候就可以配置用户名、密码、主机名、wifi等，这样就不需要先用键盘&#x2F;显示器登录。<br>功能：</p>
+</blockquote>
+<ol>
+<li>作为cloudflare tunnel的Connector、配置了个cloudflared.server，接入cloudflare。</li>
+<li>作转发节点。配置了个gost.server，这是使用pi能使用docker的前置条件。(PS:不过在群辉配置好环境变量，能连接dockerhub之后，下载了gost，也就不需要它了。属于“过河拆桥”了)<span id="more"></span></li>
+</ol>
+<h2 id="一、网络配置"><a href="#一、网络配置" class="headerlink" title="一、网络配置"></a>一、网络配置</h2><h3 id="1-1-配置WiFi"><a href="#1-1-配置WiFi" class="headerlink" title="1.1 配置WiFi"></a>1.1 配置WiFi</h3><p>配置的password是经过加密的，利用<code>wpa_passphrase</code>:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">~$ </span><span class="language-bash">sudo wpa_passphrase <span class="string">&quot;wifiuser&quot;</span> <span class="string">&quot;wifipasswd&quot;</span></span></span><br><span class="line">network=&#123;</span><br><span class="line">        ssid=&quot;wifiuser&quot;</span><br><span class="line">        #psk=&quot;wifipasswd&quot;</span><br><span class="line">        psk=9d074d88c78d11caa5a8748f2751b88266c683010f272d94708f3064504f7cf1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>修改配置文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">network:</span><br><span class="line">    version: 2</span><br><span class="line">    ethernets:</span><br><span class="line">        eth0:</span><br><span class="line">            dhcp4: true</span><br><span class="line">    wifis:</span><br><span class="line">        renderer: networkd</span><br><span class="line">        wlan0:</span><br><span class="line">            access-points:</span><br><span class="line">                wifiuser:</span><br><span class="line">                    password: 9d074d88c78d11caa5a8748f2751b88266c683010f272d94708f3064504f7cf1</span><br><span class="line">            dhcp4: true</span><br><span class="line">            optional: true</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-修改eth0为静态IP"><a href="#1-2-修改eth0为静态IP" class="headerlink" title="1.2 修改eth0为静态IP"></a>1.2 修改eth0为静态IP</h3><p>建议在openwrt里面绑定静态地址，不要在这里直接改，防止更换了路由器还得修改之后再接入。</p>
+<p>要是一定要修改，如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">network:</span><br><span class="line">    version: 2</span><br><span class="line">    ethernets:</span><br><span class="line">      eth0:</span><br><span class="line">        addresses: [192.168.1.100/24]</span><br><span class="line">        routes:</span><br><span class="line">          - to: default</span><br><span class="line">            via: 192.168.1.1</span><br><span class="line">        nameservers:</span><br><span class="line">            addresses: [192.168.1.1]</span><br><span class="line">    wifis:</span><br><span class="line">        renderer: networkd</span><br><span class="line">        wlan0:</span><br><span class="line">            access-points:</span><br><span class="line">                wifiuser:</span><br><span class="line">                    password: 9d074d88c78d11caa5a8748f2751b88266c683010f272d94708f3064504f7cf1</span><br><span class="line">            dhcp4: true</span><br><span class="line">            optional: true</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-使网络配置生效"><a href="#1-3-使网络配置生效" class="headerlink" title="1.3 使网络配置生效"></a>1.3 使网络配置生效</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netplan apply</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、配置镜像源"><a href="#二、配置镜像源" class="headerlink" title="二、配置镜像源"></a>二、配置镜像源</h2><p><code>sudo vi /etc/apt/sources.list.d/ubuntu.sources</code>:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Types: deb</span><br><span class="line">URIs: http://ports.ubuntu.com/ubuntu-ports</span><br><span class="line">Suites: noble noble-updates noble-backports</span><br><span class="line">Components: main universe restricted multiverse</span><br><span class="line">Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># Ubuntu security updates. Aside from URIs and Suites,</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># this should mirror your choices in the previous section.</span></span></span><br><span class="line">Types: deb</span><br><span class="line">URIs: http://ports.ubuntu.com/ubuntu-ports</span><br><span class="line">Suites: noble-security</span><br><span class="line">Components: main universe restricted multiverse</span><br><span class="line">Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">阿里云</span></span><br><span class="line">Types: deb</span><br><span class="line">URIs: http://mirrors.aliyun.com/ubuntu/</span><br><span class="line">Suites: noble noble-updates noble-security</span><br><span class="line">Components: main restricted universe multiverse</span><br><span class="line">Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg</span><br></pre></td></tr></table></figure>
+<p>原来的源不能删除，因为有些deb国内下载不了，比如<code>sudo apt install docker.io</code></p>
+<h2 id="三、scp拷贝文件到服务器"><a href="#三、scp拷贝文件到服务器" class="headerlink" title="三、scp拷贝文件到服务器"></a>三、scp拷贝文件到服务器</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">scp local_file_name root@server_ip:/path</span></span><br><span class="line">root@server_ip&#x27;s password:</span><br><span class="line">Permission denied, please try again.</span><br></pre></td></tr></table></figure>
+<p>这不是因为路径文件夹没有权限，也不是因为root密码输入错误，更不是sshd服务没开。是因为server默认不允许远程用root身份ssh登录，需要修改<code>sshd</code>的配置文件<code> sudo vi /etc/ssh/sshd_config</code>：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin yes #允许root登录</span><br><span class="line">PermitEmptyPasswords no #不允许空密码登录</span><br><span class="line">PasswordAuthentication yes # 设置是否使用口令验证。</span><br></pre></td></tr></table></figure>
+<p>配置后重启sshd服务：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ssh restart</span><br></pre></td></tr></table></figure>
+<h2 id="四、本地gost代理中转"><a href="#四、本地gost代理中转" class="headerlink" title="四、本地gost代理中转"></a>四、本地gost代理中转</h2><h3 id="4-1-配置"><a href="#4-1-配置" class="headerlink" title="4.1 配置"></a>4.1 配置</h3><p>在windows上直接是<code>gost.exe -L :6666 -F https://www.proxyServer.xyz:443?auth=base64(user:passwod)</code>，其实也可以利用<code>./gost -L :6666 -F https://username:passwd@www.proxyServer.xyz:443 -O yaml</code>导出为一个配置文件写在<code>/opt/gost/config.yaml</code>中：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">service-0</span></span><br><span class="line">    <span class="attr">addr:</span> <span class="string">:6666</span></span><br><span class="line">    <span class="attr">handler:</span></span><br><span class="line">      <span class="attr">type:</span> <span class="string">auto</span></span><br><span class="line">      <span class="attr">chain:</span> <span class="string">chain-0</span></span><br><span class="line">    <span class="attr">listener:</span></span><br><span class="line">      <span class="attr">type:</span> <span class="string">tcp</span></span><br><span class="line"><span class="attr">chains:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">chain-0</span></span><br><span class="line">    <span class="attr">hops:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">hop-0</span></span><br><span class="line">        <span class="attr">bypass:</span> <span class="string">bypass-0</span></span><br><span class="line">        <span class="attr">nodes:</span></span><br><span class="line">          <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">node-0</span></span><br><span class="line">            <span class="attr">addr:</span> <span class="string">www.proxyServer.xyz:443</span></span><br><span class="line">            <span class="attr">connector:</span></span><br><span class="line">              <span class="attr">type:</span> <span class="string">http</span></span><br><span class="line">              <span class="attr">auth:</span></span><br><span class="line">                <span class="attr">username:</span> <span class="string">username</span></span><br><span class="line">                <span class="attr">password:</span> <span class="string">passwd</span></span><br><span class="line">            <span class="attr">dialer:</span></span><br><span class="line">              <span class="attr">type:</span> <span class="string">tls</span></span><br></pre></td></tr></table></figure>
+<p>然后在<code>/usr/lib/systemd/system/gost.service</code>配置服务：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Gost Service</span><br><span class="line">After=network.target</span><br><span class="line">Wants=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">User=root</span><br><span class="line">ExecStart=/opt/gost/gost -C /opt/gost/config.yaml</span><br><span class="line">Restart=on-failure</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<h3 id="4-2-检查服务是否开机自启动"><a href="#4-2-检查服务是否开机自启动" class="headerlink" title="4.2 检查服务是否开机自启动"></a>4.2 检查服务是否开机自启动</h3><p>用命令二其一：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl is-enabled gost.service</span><br><span class="line">systemctl status gost.service</span><br></pre></td></tr></table></figure>
+<p><img src="/images/ubuntu_server24.04_%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95/%E6%A3%80%E6%9F%A5%E6%9C%8D%E5%8A%A1%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8.png" alt="检查服务是否开机自启动"><br>若是disabled，设置开机自启动：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable gost.service</span><br></pre></td></tr></table></figure>
+
+<h2 id="五、docker"><a href="#五、docker" class="headerlink" title="五、docker"></a>五、docker</h2><h3 id="5-1-docker需要代理"><a href="#5-1-docker需要代理" class="headerlink" title="5.1 docker需要代理"></a>5.1 docker需要代理</h3><h4 id="5-1-1-配置一个gost服务"><a href="#5-1-1-配置一个gost服务" class="headerlink" title="5.1.1 配置一个gost服务"></a>5.1.1 配置一个gost服务</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/gost/gost -L :6666 -F proxy?auth=&lt; auth &gt;</span><br></pre></td></tr></table></figure>
+<h4 id="5-1-2-配置环境变量"><a href="#5-1-2-配置环境变量" class="headerlink" title="5.1.2 配置环境变量"></a>5.1.2 配置环境变量</h4><p>在<code>sudo vi /etc/profile</code>中配置环境变量：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export http_proxy=http://127.0.0.1:6666</span><br><span class="line">export https_proxy=http://127.0.0.1:6666</span><br></pre></td></tr></table></figure>
+<p>使生效：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+<h3 id="5-2-安装docker和docker-compose"><a href="#5-2-安装docker和docker-compose" class="headerlink" title="5.2 安装docker和docker compose"></a>5.2 安装docker和docker compose</h3><p><strong>这里需要先设置http_proxy和https_proxy环境变量，不然会访问超时。</strong></p>
+<ul>
+<li>卸载原来的docker相关包，防止冲突<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done</span><br></pre></td></tr></table></figure></li>
+<li>更新<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt upgrade</span><br><span class="line">sudo apt full-upgrade</span><br></pre></td></tr></table></figure></li>
+<li>首先，安装必要的证书并允许 apt 包管理器使用以下命令通过 HTTPS 使用存储库<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install apt-transport-https ca-certificates curl software-properties-common gnupg lsb-release</span><br></pre></td></tr></table></figure></li>
+<li>运行下列命令添加 Docker 的官方 GPG 密钥<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</span><br></pre></td></tr></table></figure></li>
+<li>再添加 Docker 官方库<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br></pre></td></tr></table></figure></li>
+<li>证书安装好了再update，因为docker用的是https<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure></li>
+<li>开始安装docker（耗时长）<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin</span><br></pre></td></tr></table></figure></li>
+<li>安装其他版本参考教程</li>
+<li>验证 Docker 服务是否在运行<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status docker</span><br></pre></td></tr></table></figure></li>
+<li>使 Docker 服务在每次重启时自动启动<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable docker</span><br></pre></td></tr></table></figure></li>
+<li>参照 5.1 给dokcer守护进程加代理</li>
+</ul>
+<h3 id="5-3-配置docker守护进程的proxy"><a href="#5-3-配置docker守护进程的proxy" class="headerlink" title="5.3 配置docker守护进程的proxy"></a>5.3 配置docker守护进程的proxy</h3><h3 id="问题：配置好了之后sudo-docker-search-gost仍然报错"><a href="#问题：配置好了之后sudo-docker-search-gost仍然报错" class="headerlink" title="问题：配置好了之后sudo docker search gost仍然报错"></a>问题：配置好了之后<code>sudo docker search gost</code>仍然报错</h3><p>报错内容：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo HTTP_PROXY=http://127.0.0.1:6666 HTTPS_PROXY=http://127.0.0.1:6666 docker search gost</span><br><span class="line">[sudo] password for buer:</span><br><span class="line">Error response from daemon: Get &quot;https://index.docker.io/v1/search?q=gost&amp;n=25&quot;: dial tcp 104.16.252.55:443: i/o timeout</span><br></pre></td></tr></table></figure>
+<p>原因（来自AI，后面也找到了依据，在下面的参考文档里）：<em><strong>Docker 守护进程的代理设置</strong></em>:命令行中设置的代理环境变量只对当前命令生效,不会影响 Docker 守护进程。Docker 守护进程需要单独配置代理。为 Docker 守护进程配置代理:</p>
+<ul>
+<li>编辑 Docker 服务文件(通常在 <code>/etc/systemd/system/docker.service.d/http-proxy.conf</code>),添加:<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[Service]</span><br><span class="line">Environment=&quot;HTTP_PROXY=http://127.0.0.1:6666&quot;</span><br><span class="line">Environment=&quot;HTTPS_PROXY=http://127.0.0.1:6666&quot;</span><br></pre></td></tr></table></figure></li>
+<li>然后重启 Docker 服务:<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
+后面用<code>docker-compose</code>命令时，用<code>sudo docker compose </code>去执行</li>
+</ul>
+<h3 id="5-4-参考文章"><a href="#5-4-参考文章" class="headerlink" title="5.4 参考文章"></a>5.4 参考文章</h3><ul>
+<li><a href="https://www.cnblogs.com/carmi/p/17939025">如何在 Ubuntu 22.04 LTS 中安装 Docker 和 Docker Compose</a></li>
+<li><a href="https://docs.docker.com/engine/install/ubuntu/">安装docker的官方文档</a></li>
+<li><a href="https://www.lfhacks.com/tech/pull-docker-images-behind-proxy/">如何配置docker通过代理服务器拉取镜像</a></li>
+</ul>
+<h2 id="六、挂载设备"><a href="#六、挂载设备" class="headerlink" title="六、挂载设备"></a>六、挂载设备</h2><h3 id="6-1-挂载硬盘"><a href="#6-1-挂载硬盘" class="headerlink" title="6.1 挂载硬盘"></a>6.1 挂载硬盘</h3><h3 id="6-2-挂载samba服务"><a href="#6-2-挂载samba服务" class="headerlink" title="6.2 挂载samba服务"></a>6.2 挂载samba服务</h3><ul>
+<li><p>测试</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mount -t cifs //samba_ip/path_to_floder /mnt/ds/media -o username=jellyfin,password=my_passwd,vers=2.0</span><br></pre></td></tr></table></figure>
+<p>用<code>ls /mnt/ds/media</code>查看是不是都挂载成功了，要是可以正确列出文件，则samba服务没问题。<code>sudo umount /mnt/ds/media</code>先卸载掉。</p>
+</li>
+<li><p>防止重启之后挂载信息丢失<br>编辑<code>/etc/fstab</code>，末尾增加一行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//samba_ip/path_to_floder /mnt/ds/media cifs username=jellyfin,passwormy_passwd,vers=2.0,uid=1000,gid=1000,_netdev,x-systemd.automount,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s 0 0</span><br></pre></td></tr></table></figure>
+<p>编辑之后<code>sudo systemctl daemon-reload &amp; sudo mount -a</code>去挂载</p>
+</li>
+</ul>
+<h2 id="七、修改ubuntu-server登录方式"><a href="#七、修改ubuntu-server登录方式" class="headerlink" title="七、修改ubuntu server登录方式"></a>七、修改ubuntu server登录方式</h2><h3 id="7-1-默认登录方式"><a href="#7-1-默认登录方式" class="headerlink" title="7.1 默认登录方式"></a>7.1 默认登录方式</h3><p>需要在server的.ssh&#x2F;authorized_keys里面添加ssh client的publickey才能登录，不然不允许ssh登录。</p>
+<h3 id="7-2-修改配置文件"><a href="#7-2-修改配置文件" class="headerlink" title="7.2 修改配置文件"></a>7.2 修改配置文件</h3><p>修改<code>/etc/ssh/sshd_config.d/60-cloudimg-settings.conf</code>中的<code>PasswordAuthentication yes</code>，若是没有这个文件就到<code>/etc/ssh/sshd_config</code>中找。修改之后重启sshd服务<code>sudo systemctl restart sshd</code></p>
+<h2 id="八、笔记本合上盖子之后休眠"><a href="#八、笔记本合上盖子之后休眠" class="headerlink" title="八、笔记本合上盖子之后休眠"></a>八、笔记本合上盖子之后休眠</h2><p><a href="https://blog.csdn.net/no1xium/article/details/107633520">参考博客</a></p>
+<ul>
+<li>修改配置文件<code>/etc/systemd/logind.conf</code>中的<code>HandleLidSwitch</code>选项为<code>ignore</code>:<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">HandleLidSwitch=<span class="built_in">suspend</span></span> </span><br><span class="line">HandleLidSwitch=ignore</span><br></pre></td></tr></table></figure></li>
+<li>重启服务：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service systemd-logind restart</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="九、查看systemctl服务日志"><a href="#九、查看systemctl服务日志" class="headerlink" title="九、查看systemctl服务日志"></a>九、查看systemctl服务日志</h2><h4 id="systemctl服务启动失败"><a href="#systemctl服务启动失败" class="headerlink" title="systemctl服务启动失败"></a>systemctl服务启动失败</h4><p>用命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">journalctl -u frpc.service -n 50</span><br></pre></td></tr></table></figure>
+<p>查看日志</p>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+<ul class="pagination">
+	 
+				
+    	<li class="prev"><a href="/2024/09/10/cloudflare tunnel/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+  		
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>归档</a></li>
+
+		
+		   <li class="next"><a href="/2024/09/07/WireGuard配置方法/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+        
+	
+</ul>
+</div>
+
+    </center>
+	</div>
+
+    <!-- share -->
+    
+        
+    <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+        <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+        <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+    </div>
+    <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+
+
+        
+
+    
+	
+	<!-- comment -->
+	<!-- 
+  
+<section id="comment">
+  <h2 class="title">留言</h2>
+
+  
+</section>
+ -->
+
+<!--我自己添加的评论功能-->
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'chenbuer',
+  repo: 'chenbuer.github.io',
+  oauth: {
+  client_id: 'c8819a6086d97f4c90e7',
+  client_secret: '64f822e6b47604072e08527a965817df12faeab6',
+  },
+})
+gitment.render('container')
+</script>
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2024-09-10 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/运维/">运维<span>8</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/网络/">网络<span>9</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  陈不二 &copy; 2024
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

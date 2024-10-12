@@ -146,10 +146,7 @@
 <p>luci界面：参考<a href="https://hwhloveslife.com/?p=20">这篇文章</a>，他强调了，luci-app-frpc请使用1.4-2版本：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget https://istore.linkease.com/repo/all/nas_luci/luci-app-frpc_1.4-2_all.ipk</span><br><span class="line">wget https://istore.linkease.com/repo/all/nas_luci/luci-i18n-frpc-zh-cn_1.4-2_all.ipk</span><br><span class="line">opkg install luci-app-frpc_1.4-2_all.ipk</span><br><span class="line">opkg install luci-i18n-frpc-zh-cn_1.4-2_all.ipk</span><br></pre></td></tr></table></figure>
 <p>经过试用，这个版本的luci界面<strong>配置生效，且有日志</strong>！</p>
-<h3 id="三、一些技巧"><a href="#三、一些技巧" class="headerlink" title="三、一些技巧"></a>三、一些技巧</h3><h4 id="systemctl服务启动失败"><a href="#systemctl服务启动失败" class="headerlink" title="systemctl服务启动失败"></a>systemctl服务启动失败</h4><p>用命令</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">journalctl -u frpc.service -n 50</span><br></pre></td></tr></table></figure>
-<p>查看日志</p>
-<h3 id="四、参考资料"><a href="#四、参考资料" class="headerlink" title="四、参考资料"></a>四、参考资料</h3><ul>
+<h3 id="三、参考资料"><a href="#三、参考资料" class="headerlink" title="三、参考资料"></a>三、参考资料</h3><ul>
 <li><a href="https://www.talaxy.site/lets-use-frp/">成功配置了web穿透</a></li>
 <li><a href="https://gofrp.org/zh-cn/docs/examples/stcp/">暴露内网ssh服务（官方教程）</a></li>
 <li><a href="https://gofrp.org/zh-cn/docs/examples/vhost-http/">暴露内网web服务（官方教程）</a></li>
@@ -168,7 +165,7 @@
 <ul class="pagination">
 	 
 				
-    	<li class="prev"><a href="/2024/09/30/用瘦客户机做一个数据同步服务器/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+    	<li class="prev"><a href="/2024/09/30/用seafile做一个数据同步服务器/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
   		
 
         <li><a href="/archives"><i class="fa fa-archive"></i>归档</a></li>
@@ -253,7 +250,7 @@ gitment.render('container')
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/运维/">运维<span>6</span></a></li>
+    <li><a href="/categories/运维/">运维<span>8</span></a></li>
   </li>
 
     </ul>
@@ -266,7 +263,7 @@ gitment.render('container')
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/网络/">网络<span>7</span></a></li>
+  <li><a href="/tags/网络/">网络<span>9</span></a></li>
     </ul>
 	</div>
 		
