@@ -1,11 +1,11 @@
 ---
-title: ubuntu server24.04 操作方法
+title: ubuntu server 操作方法
 date: 2024-9-10 14:35:52
 categories: 运维
 tags: 网络
 ---
-
-用`树莓派镜像烧录器(Raspberry Pi Imager)`烧录系统，在烧录系统的时候就可以配置用户名、密码、主机名、wifi等，这样就不需要先用键盘/显示器登录。
+**主要使用的是20.04legacy版本，或24.04LTS版本**
+> 用`树莓派镜像烧录器(Raspberry Pi Imager)`烧录系统，在烧录系统的时候就可以配置用户名、密码、主机名、wifi等，这样就不需要先用键盘/显示器登录。
 功能：
 1. 作为cloudflare tunnel的Connector、配置了个cloudflared.server，接入cloudflare。
 2. 作转发节点。配置了个gost.server，这是使用pi能使用docker的前置条件。(PS:不过在群辉配置好环境变量，能连接dockerhub之后，下载了gost，也就不需要它了。属于“过河拆桥”了)
@@ -274,3 +274,23 @@ sudo mount -t cifs //samba_ip/path_to_floder /mnt/ds/media -o username=jellyfin,
 需要在server的.ssh/authorized_keys里面添加ssh client的publickey才能登录，不然不允许ssh登录。
 ### 7.2 修改配置文件
 修改`/etc/ssh/sshd_config.d/60-cloudimg-settings.conf`中的`PasswordAuthentication yes`，若是没有这个文件就到`/etc/ssh/sshd_config`中找。修改之后重启sshd服务`sudo systemctl restart sshd`
+
+## 八、笔记本合上盖子之后休眠
+[参考博客](https://blog.csdn.net/no1xium/article/details/107633520)
+- 修改配置文件`/etc/systemd/logind.conf`中的`HandleLidSwitch`选项为`ignore`:
+```shell
+#HandleLidSwitch=suspend 
+HandleLidSwitch=ignore
+```
+- 重启服务：
+```shell
+service systemd-logind restart
+```
+
+## 九、查看systemctl服务日志
+#### systemctl服务启动失败
+用命令
+```shell
+journalctl -u frpc.service -n 50
+```
+查看日志

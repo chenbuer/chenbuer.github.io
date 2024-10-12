@@ -127,16 +127,7 @@ opkg install luci-i18n-frpc-zh-cn_1.4-2_all.ipk
 ```
 经过试用，这个版本的luci界面**配置生效，且有日志**！
 
-### 三、一些技巧
-#### systemctl服务启动失败
-用命令
-```shell
-journalctl -u frpc.service -n 50
-```
-查看日志
-
-
-### 四、参考资料
+### 三、参考资料
 - [成功配置了web穿透](https://www.talaxy.site/lets-use-frp/)
 - [暴露内网ssh服务（官方教程）](https://gofrp.org/zh-cn/docs/examples/stcp/)
 - [暴露内网web服务（官方教程）](https://gofrp.org/zh-cn/docs/examples/vhost-http/)
